@@ -2,12 +2,9 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Create from "./pages/Create";
 import BlogDetails from "./components/BlogDetails";
-import {
-	BrowserRouter as Router,
-	Route,
-	Routes,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NotFound from "./pages/NotFound";
+import Resume from "./pages/Resume";
 
 function App() {
 	return (
@@ -18,10 +15,8 @@ function App() {
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/create" element={<Create />} />
-						<Route
-							path="/blogs/:id"
-							element={<BlogDetails />}
-						/>
+						<Route path="/resume" element={<Resume />} />
+						<Route path="/blogs/:id" element={<BlogDetails />} />
 						<Route path="*" element={<NotFound />} />
 					</Routes>
 				</div>
