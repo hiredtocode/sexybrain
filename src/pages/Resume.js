@@ -126,9 +126,9 @@ const Resume = () => {
 						</li>
 					</div>
 					<div className="logo-box">
-						<li id="css3" className="changeText">
+						<li className="changeText">
 							<span className="logo-name">
-								<img src={css} alt="CSS3" />
+								<img id="css3" src={css} alt="CSS3" />
 								<span>
 									<span className="text"> CSS3 </span>
 								</span>
