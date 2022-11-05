@@ -236,39 +236,7 @@ const Resume = () => {
 				<div className="bullets"></div>
 				<div className="bullets"></div>
 			</section>
-			<section className="mainTitle">
-				<h2 className="mainTitle">
-					<span id="workExp"> 경력 </span>
-				</h2>
 
-				<div className="linebreak"></div>
-			</section>
-			<section className="subMainSection">
-				<h3>InterSpark(SealComm)</h3>
-				{/* <a href="#" target="_blank" className="linkUnderline">  */}
-				<span className="light"> 2021.04 ~ 2021.08</span>
-				<br />
-				{/* </a> */}
-				<br />
-				<ul className="projectBullet">
-					<li>Angular로 SPA를 활용한 웹앱</li>
-					<li>매 주 CTO가 미국 회사 CEO와 진행된 회의 녹취를 분석하여 프로젝트에 구현</li>
-					<li>REST API를 통해 CRUD operation을 구현</li>
-					<li>
-						<p>
-							3개월간 Angular(JavaScript + TypeScript), Angular Material, HTML5, CSS3로 스타트업
-							회사에서 미국에 있는 고객을 위한
-							{/* <a href="#" target="_blank" className="linkUnderline">  */}
-							Truck and Drivers
-							{/* </a>  */}
-							라는 프로젝트에 혼자 프론트엔드 역활을 회사의 CTO/PM이 고객과 진행된 영상/통화 내용을
-							검토하여, 반복되는 일을 자동화하고 비효율적인 프로세스를 개선하여 업무 시간을
-							<span className="underlineHighlight"> 70% 이상</span> 줄일 수 있게 만들기 위해 웹앱을
-							개발하는 게 목표였습니다.
-						</p>
-					</li>
-				</ul>
-			</section>
 			<section className="mainTitle">
 				<h2 className="mainTitle">개인 프로젝트</h2>
 				<div className="linebreak"></div>
@@ -288,7 +256,6 @@ const Resume = () => {
 							<li>블로그 - blog.sexybrain.dev</li>
 						</ul>
 					</li>
-					<li>한글 / 영어 기능 투입 예정</li>
 					<li>라이트 / 다크모드 기능 투입 예정</li>
 				</ul>
 			</section>
