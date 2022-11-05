@@ -5,6 +5,7 @@ import BlogDetails from "./components/BlogDetails";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import Resume from "./pages/Resume";
+import "./App.scss";
 
 function App() {
 	return (
