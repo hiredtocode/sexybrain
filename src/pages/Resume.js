@@ -247,7 +247,7 @@ const Resume = () => {
 				<br />
 				<ul className="projectBullet">
 					<li>React 프레임워크를 사용</li>
-					<li>이미 만들어진 템플릿을 사용하지 않고, 처음부터 끝까지 개인 제작을 진행 중입니다</li>
+					<li>이미 만들어진 템플릿을 사용하지 않고, 처음부터 끝까지 개인 제작</li>
 					<li>
 						SexyBrain.Dev는 3가지로 만들 예정입니다
 						<ul>
