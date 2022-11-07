@@ -8,9 +8,11 @@ const Create = () => {
 	const [form, setForm] = useState({
 		title: "",
 		body: "",
-		author: "",
+		category: "",
+		tags: "",
 	});
 
+	const { title, tags, category, body } = form;
 	const recipesCollectionRef = collection(db, "blogPosts");
 
 	const handleSubmit = (event) => {
@@ -25,8 +27,36 @@ const Create = () => {
 		setForm({
 			title: "",
 			body: "",
-			author: "",
+			category: "",
+			tags: [],
 		});
+	};
+
+	const categoryOption = [
+		"JavaScript",
+		"TypeScript",
+		"React",
+		"Angular",
+		"CSS",
+		"HTML",
+		"SASS",
+		"Bootstrap",
+		"Material UI",
+		"Tailwind CSS",
+		"Styled Components",
+	];
+
+	const onCategoryChange = (e) => {
+		setForm({ ...form, category: e.target.value });
+	};
+	const onTitleChange = (e) => {
+		setForm({ ...form, category: e.target.value });
+	};
+	const onBodyChange = (e) => {
+		setForm({ ...form, category: e.target.value });
+	};
+	const handleTags = (tags) => {
+		setForm({ ...form, tags });
 	};
 
 	return (
@@ -34,25 +64,22 @@ const Create = () => {
 			<h2>Add a New Blog</h2>
 			<form onSubmit={handleSubmit}>
 				<label>Blog title:</label>
-				<input
-					type="text"
-					value={form.title}
-					onChange={(e) => setForm({ ...form, title: e.target.value })}
-					required
-				/>
+				<input type="text" value={form.title} onChange={onTitleChange} required />
 				<label>Blog body:</label>
-				<textarea
-					value={form.body}
-					onChange={(e) => setForm({ ...form, body: e.target.value })}
-					required
-				/>
-				<label>Blog author:</label>
-				<input
-					value={form.author}
-					onChange={(e) => setForm({ ...form, author: e.target.value })}
-					type="text"
-					required
-				/>
+				<textarea value={form.body} onChange={onBodyChange} required />
+				<div className="category">
+					<select value={category} onChange={onCategoryChange} className="catg-dropdown">
+						<option>Please select category</option>
+						{categoryOption.map((option, index) => (
+							<option value={option || ""} key={index}>
+								{option}
+							</option>
+						))}
+					</select>
+				</div>
+				<div className="col-12 py-3">
+					{/* <ReactTagInput tags={tags} placeholder="Tags" onChange={handleTags} /> */}
+				</div>
 
 				{!isLoading && <button type="submit">Add Blog</button>}
 				{isLoading && <button disabled>Adding Blog...</button>}
