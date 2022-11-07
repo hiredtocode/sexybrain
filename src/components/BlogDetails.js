@@ -1,33 +1,36 @@
 import { useNavigate, useParams } from "react-router-dom";
 import useFetch from "../services/useFetch";
+import { doc, getDoc } from "firebase/firestore";
+import { useState, useEffect } from "react";
+import db from "../firebase";
 
 const BlogDetails = () => {
 	const { id } = useParams();
-	const {
-		data: blog,
-		error,
-		isLoading,
-	} = useFetch("http://localhost:8000/blogs/" + id);
-	const history = useNavigate();
+	const [blog, setBlog] = useState(null);
+	console.log("blog:", blog);
 
-	const handleClick = (event) => {
-		fetch("http://localhost:8000/blogs/" + blog.id, {
-			method: "DELETE",
-		}).then(() => {
-			history.push("/");
-		});
+	useEffect(() => {
+		id && getBlogDetail();
+	}, [id]);
+
+	const getBlogDetail = async () => {
+		const docRef = doc(db, "blogPosts", id);
+		const blogDetail = await getDoc(docRef);
+		setBlog(blogDetail.data());
 	};
+
+	const removePost = async () => {};
 
 	return (
 		<div className="blog-details">
-			{isLoading && <div>Loading...</div>}
-			{error && <div>{error}</div>}
+			{/* {isLoading && <div>Loading...</div>}
+			{error && <div>{error}</div>} */}
 			{blog && (
 				<article>
 					<h2>{blog.title}</h2>
 					<p>Written by {blog.author}</p>
 					<div>{blog.body}</div>
-					<button onClick={handleClick}>Delete</button>
+					<button onClick={removePost}>Delete</button>
 				</article>
 			)}
 		</div>
