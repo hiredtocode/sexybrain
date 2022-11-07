@@ -1,27 +1,31 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { addDoc, collection } from "firebase/firestore";
+import db from "../firebase";
 
 const Create = () => {
-	const [title, setTitle] = useState("");
-	const [body, setBody] = useState("");
-	const [author, setAuthor] = useState("mario");
 	const [isLoading, setIsLoading] = useState(false);
-	const history = useNavigate();
+	const [form, setForm] = useState({
+		title: "",
+		body: "",
+		author: "",
+	});
+
+	const recipesCollectionRef = collection(db, "blogPosts");
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		const blog = { title, body, author };
+		if (!form.title || !form.body || !form.author) {
+			alert("Please fill out all fields");
+			return;
+		}
 
-		setIsLoading(true);
+		addDoc(recipesCollectionRef, form);
 
-		fetch("http://localhost:8000/blogs", {
-			method: "POST",
-			headers: { "content-type": "application/json" },
-			body: JSON.stringify(blog),
-		}).then(() => {
-			console.log("new blog added");
-			setIsLoading(false);
-			history.push("/");
+		setForm({
+			title: "",
+			body: "",
+			author: "",
 		});
 	};
 
@@ -30,16 +34,27 @@ const Create = () => {
 			<h2>Add a New Blog</h2>
 			<form onSubmit={handleSubmit}>
 				<label>Blog title:</label>
-				<input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />
+				<input
+					type="text"
+					value={form.title}
+					onChange={(e) => setForm({ ...form, title: e.target.value })}
+					required
+				/>
 				<label>Blog body:</label>
-				<textarea value={body} onChange={(e) => setBody(e.target.value)} required></textarea>
+				<textarea
+					value={form.body}
+					onChange={(e) => setForm({ ...form, body: e.target.value })}
+					required
+				/>
 				<label>Blog author:</label>
-				<select value={author} onChange={(e) => setAuthor(e.target.value)}>
-					<option value="mario">mario</option>
-					<option value="yoshi">yoshi</option>
-				</select>
+				<input
+					value={form.author}
+					onChange={(e) => setForm({ ...form, author: e.target.value })}
+					type="text"
+					required
+				/>
 
-				{!isLoading && <button>Add Blog</button>}
+				{!isLoading && <button type="submit">Add Blog</button>}
 				{isLoading && <button disabled>Adding Blog...</button>}
 			</form>
 		</div>
