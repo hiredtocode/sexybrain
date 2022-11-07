@@ -5,9 +5,7 @@ import { collection, onSnapshot } from "firebase/firestore";
 import useFetch from "../services/useFetch";
 
 function Home() {
-	const { blogs, isLoading, error, id } = useFetch();
-	console.log("id:", id);
-	console.log("blogs:", blogs);
+	const { blogs, isLoading, error } = useFetch();
 	return (
 		<div className="home">
 			{error && <div>{error}</div>}

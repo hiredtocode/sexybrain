@@ -20,9 +20,9 @@ const useFetch = (url) => {
 					};
 				})
 			);
+			setIsLoading(false);
 		});
 	}, []);
-	console.log("blogsId:", blogs.id);
 	return { blogs, isLoading, error };
 };
 
