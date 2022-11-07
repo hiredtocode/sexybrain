@@ -1,40 +1,29 @@
 import { useEffect, useState } from "react";
+import db from "../firebase";
+import { collection, onSnapshot } from "firebase/firestore";
 
 const useFetch = (url) => {
-	const [data, setData] = useState(null);
+	const [blogs, setBlogs] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState(null);
 
+	const blogCollectionRef = collection(db, "blogPosts");
+
 	useEffect(() => {
-		const abortController = new AbortController();
+		onSnapshot(blogCollectionRef, (snapshot) => {
+			setBlogs(
+				snapshot.docs.map((doc) => {
+					return {
+						id: doc.id,
 
-		fetch(url, { signal: abortController.signal })
-			.then((response) => {
-				if (!response.ok) {
-					throw Error("Couldn't fetch the data");
-				}
-				return response.json();
-			})
-			.then((data) => {
-				setData(data);
-				setIsLoading(false);
-				setError(null);
-			})
-			.catch((error) => {
-				if (error.name === "AbortError") {
-					console.log("error:", error);
-				} else {
-					setIsLoading(false);
-					setError(error.message);
-				}
-			});
-
-		return () => {
-			abortController.abort();
-		};
-	}, [url]);
-
-	return { data, isLoading, error };
+						...doc.data(),
+					};
+				})
+			);
+		});
+	}, []);
+	console.log("blogsId:", blogs.id);
+	return { blogs, isLoading, error };
 };
 
 export default useFetch;
