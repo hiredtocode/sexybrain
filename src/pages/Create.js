@@ -50,13 +50,10 @@ const Create = () => {
 		setForm({ ...form, category: e.target.value });
 	};
 	const onTitleChange = (e) => {
-		setForm({ ...form, category: e.target.value });
+		setForm({ ...form, title: e.target.value });
 	};
 	const onBodyChange = (e) => {
-		setForm({ ...form, category: e.target.value });
-	};
-	const handleTags = (tags) => {
-		setForm({ ...form, tags });
+		setForm({ ...form, body: e.target.value });
 	};
 
 	return (
@@ -77,9 +74,13 @@ const Create = () => {
 						))}
 					</select>
 				</div>
-				<div className="col-12 py-3">
-					{/* <ReactTagInput tags={tags} placeholder="Tags" onChange={handleTags} /> */}
-				</div>
+				<label>Tag:</label>
+				<input
+					value={form.tags}
+					onChange={(e) => setForm({ ...form, tags: e.target.value })}
+					type="text"
+					required
+				/>
 
 				{!isLoading && <button type="submit">Add Blog</button>}
 				{isLoading && <button disabled>Adding Blog...</button>}
