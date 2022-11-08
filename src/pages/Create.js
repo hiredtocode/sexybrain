@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { addDoc, collection } from "firebase/firestore";
 import db from "../firebase";
+import { TagComponent, TagInput } from "../components/Tags";
 
 const Create = () => {
 	const [isLoading, setIsLoading] = useState(false);
@@ -17,7 +18,7 @@ const Create = () => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		if (!form.title || !form.body || !form.author) {
+		if (!form.title || !form.body || !form.tags || !form.category) {
 			alert("Please fill out all fields");
 			return;
 		}
@@ -67,14 +68,20 @@ const Create = () => {
 				<div className="category">
 					<select value={category} onChange={onCategoryChange} className="catg-dropdown">
 						<option>Please select category</option>
-						{categoryOption.map((option, index) => (
-							<option value={option || ""} key={index}>
-								{option}
+						{categoryOption.map((selection, index) => (
+							<option value={selection || ""} key={index}>
+								{selection}
 							</option>
 						))}
 					</select>
 				</div>
 				<label>Tag:</label>
+				<TagInput>
+					<TagComponent />
+				</TagInput>
+				{/* {tags.map((tag, index) => (
+					<TagInput value={tag} key={index}></TagInput>
+				))} */}
 				<input
 					value={form.tags}
 					onChange={(e) => setForm({ ...form, tags: e.target.value })}
