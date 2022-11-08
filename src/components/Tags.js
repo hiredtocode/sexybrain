@@ -35,20 +35,23 @@ export const TagInput = (props) => {
 	};
 
 	return (
-		<div className="tagArea">
-			<div className="tagArea__displayArea">
-				{tags.map((tag) => (
-					<TagComponent text={tag} cullTagFromTags={cullTagFromTags} />
-				))}
+		tags,
+		(
+			<div className="tagArea">
+				<div className="tagArea__displayArea">
+					{tags.map((tag) => (
+						<TagComponent text={tag} cullTagFromTags={cullTagFromTags} />
+					))}
+				</div>
+				<input
+					type="text"
+					ref={inputRef}
+					value={inputValue}
+					onChange={(e) => inputValueChangeHandler(e.target.value)}
+					placeholder="separated by commas"
+					className="tagArea__input"
+				/>
 			</div>
-			<input
-				type="text"
-				ref={inputRef}
-				value={inputValue}
-				onChange={(e) => inputValueChangeHandler(e.target.value)}
-				placeholder="separated by commas"
-				className="tagArea__input"
-			/>
-		</div>
+		)
 	);
 };

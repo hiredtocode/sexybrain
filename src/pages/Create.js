@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { addDoc, collection } from "firebase/firestore";
 import db from "../firebase";
 import { TagInput } from "../components/Tags";
@@ -14,7 +13,7 @@ const Create = () => {
 	});
 
 	const { tags } = TagInput();
-
+	console.log("tags:", tags);
 	const recipesCollectionRef = collection(db, "blogPosts");
 
 	const handleSubmit = (event) => {
@@ -77,7 +76,7 @@ const Create = () => {
 					</select>
 				</div>
 				<label>Tag:</label>
-				<TagInput text={tags} />
+				<TagInput />
 
 				<input
 					value={form.tags}
