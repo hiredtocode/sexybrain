@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
-import db from "../firebase";
+import db from "../firebase.config";
 import { TagInput } from "../components/Tags";
 
 const Create = () => {
