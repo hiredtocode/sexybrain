@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { addDoc, collection } from "firebase/firestore";
 import db from "../firebase";
-import { TagComponent, TagInput } from "../components/Tags";
+import { TagInput } from "../components/Tags";
 
 const Create = () => {
 	const [isLoading, setIsLoading] = useState(false);
@@ -13,7 +13,8 @@ const Create = () => {
 		tags: "",
 	});
 
-	const { title, tags, category, body } = form;
+	const { tags } = TagInput();
+
 	const recipesCollectionRef = collection(db, "blogPosts");
 
 	const handleSubmit = (event) => {
@@ -66,7 +67,7 @@ const Create = () => {
 				<label>Blog body:</label>
 				<textarea value={form.body} onChange={onBodyChange} required />
 				<div className="category">
-					<select value={category} onChange={onCategoryChange} className="catg-dropdown">
+					<select value={form.category} onChange={onCategoryChange} className="catg-dropdown">
 						<option>Please select category</option>
 						{categoryOption.map((selection, index) => (
 							<option value={selection || ""} key={index}>
@@ -76,10 +77,8 @@ const Create = () => {
 					</select>
 				</div>
 				<label>Tag:</label>
-				<TagInput />
-				{/* {tags.map((tag, index) => (
-					<TagInput value={tag} key={index}></TagInput>
-				))} */}
+				<TagInput text={tags} />
+
 				<input
 					value={form.tags}
 					onChange={(e) => setForm({ ...form, tags: e.target.value })}

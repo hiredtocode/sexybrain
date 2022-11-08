@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import "./Tags.scss";
 
-export const TagComponent = (props) => {
+const TagComponent = (props) => {
 	return (
 		<div className="tagComponent">
 			<div className="tagComponent__text">{props.text}</div>
