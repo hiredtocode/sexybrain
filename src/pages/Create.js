@@ -76,9 +76,7 @@ const Create = () => {
 					</select>
 				</div>
 				<label>Tag:</label>
-				<TagInput>
-					<TagComponent />
-				</TagInput>
+				<TagInput />
 				{/* {tags.map((tag, index) => (
 					<TagInput value={tag} key={index}></TagInput>
 				))} */}
