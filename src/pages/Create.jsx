@@ -13,24 +13,6 @@ const Create = () => {
 		tags: [],
 	});
 
-	const [tags, setTags] = useState(['JavaScript', 'TypeScript']);
-	const [inputValue, setInputValue] = useState('');
-	const inputRef = useRef();
-
-	const inputValueChangeHandler = (inputValue) => {
-		setInputValue(inputValue);
-
-		if (inputValue[inputValue.length - 1] === ',') {
-			setTags([...tags, inputValue.slice(0, inputValue.length - 1)]);
-		}
-		setInputValue('');
-	};
-	console.log('tags from inputValueChangeHandler:', tags);
-
-	const cullTagFromTags = (tag) => {
-		setTags([...tags.filter((element) => element !== tag)]);
-	};
-
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		if (!form.title || !form.body || !form.category) {
@@ -71,21 +53,6 @@ const Create = () => {
 		setForm({ ...form, body: e.target.value });
 	};
 
-	const TagComponent = (props) => {
-		return (
-			<div className='tagComponent'>
-				<div className='tagComponent__text'>{props.tag}</div>
-				<div
-					className='tagComponent__close'
-					onClick={() => {
-						props.cullTagFromTags(props.tag);
-					}}
-				>
-					X
-				</div>
-			</div>
-		);
-	};
 	return (
 		<div className='create'>
 			<h2>Add a New Blog</h2>
@@ -105,23 +72,6 @@ const Create = () => {
 					</select>
 				</div>
 				<label>Tag:</label>
-				<div className='tagArea'>
-					<div className='tagArea__displayArea'>
-						{tags.map((tag, index) => (
-							<TagComponent tag={tag} key={index} cullTagFromTags={cullTagFromTags} />
-						))}
-					</div>
-					<div>
-						<input
-							type='text'
-							ref={inputRef}
-							value={form.tags}
-							onChange={(e) => inputValueChangeHandler(e.target.value)}
-							placeholder='separated by commas'
-							className='tagArea__input'
-						/>
-					</div>
-				</div>
 
 				{!isLoading && <button type='submit'>Add Blog</button>}
 				{isLoading && <button disabled>Adding Blog...</button>}
