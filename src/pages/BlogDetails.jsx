@@ -1,20 +1,20 @@
-import { useNavigate, useParams } from "react-router-dom";
-import useFetch from "../services/useFetch";
-import { doc, getDoc } from "firebase/firestore";
-import { useState, useEffect } from "react";
-import db from "../firebase.config";
+import { useParams } from 'react-router-dom';
+import { doc, getDoc } from 'firebase/firestore';
+import { useState, useEffect } from 'react';
+import { db } from '../firebase.config';
 
 const BlogDetails = () => {
 	const { id } = useParams();
 	const [blog, setBlog] = useState(null);
-	console.log("blog:", blog);
+	console.log('blog:', blog);
 
 	useEffect(() => {
 		id && getBlogDetail();
+		// eslint-disable-next-line
 	}, [id]);
 
 	const getBlogDetail = async () => {
-		const docRef = doc(db, "blogPosts", id);
+		const docRef = doc(db, 'blogPosts', id);
 		const blogDetail = await getDoc(docRef);
 		setBlog(blogDetail.data());
 	};
@@ -22,7 +22,7 @@ const BlogDetails = () => {
 	const removePost = async () => {};
 
 	return (
-		<div className="blog-details">
+		<div className='blog-details'>
 			{/* {isLoading && <div>Loading...</div>}
 			{error && <div>{error}</div>} */}
 			{blog && (
