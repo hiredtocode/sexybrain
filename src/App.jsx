@@ -41,9 +41,8 @@ function App() {
 	return (
 		<div className='App'>
 			<Navbar setActive={setActive} active={active} user={user} handleLogout={handleLogout} />
-			<ToastContainer position='top-center' />
+			<ToastContainer />
 			<div className='content'>
-				<ToastContainer />
 				<Routes>
 					<Route path='/' element={<Home setActive={setActive} user={user} />} />
 					<Route path='/blogs/:id' element={<BlogDetails setActive={setActive} />} />
