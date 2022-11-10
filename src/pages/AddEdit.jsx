@@ -36,6 +36,33 @@ const AddEdit = ({ user, setActive }) => {
 
 	const { title, body, tags, category } = form;
 
+	// Upload file
+	useEffect(() => {
+		const uploadFile = () => {
+			if (!file) return;
+
+			const storageRef = ref(storage, file.name);
+			const uploadTask = uploadBytesResumable(storageRef, file);
+
+			uploadTask.on(
+				'state_changed',
+				(snapshot) => {
+					const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+					setProgress(progress);
+				},
+				(error) => toast.error(`${error}`),
+				() => {
+					getDownloadURL(uploadTask.snapshot.ref).then((downloadUrl) => {
+						setForm((prev) => ({ ...prev, imgUrl: downloadUrl }));
+						toast.info(`Image upload to firebase successfully and the URL is: ${downloadUrl}`);
+					});
+				}
+			);
+		};
+		file && uploadFile();
+	}, [file]);
+	// Upload file end
+
 	useEffect(() => {
 		id && getBlogDetail();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -50,7 +77,19 @@ const AddEdit = ({ user, setActive }) => {
 		setActive(null);
 	};
 
-	// Submit handle
+	const onCategoryChange = (e) => {
+		setForm({ ...form, category: e.target.value });
+	};
+	const onTitleChange = (e) => {
+		setForm({ ...form, title: e.target.value });
+	};
+	const onBodyChange = (e) => {
+		setForm({ ...form, body: e.target.value });
+	};
+	const handleTags = (tags) => {
+		setForm({ ...form, tags });
+	};
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
@@ -87,46 +126,6 @@ const AddEdit = ({ user, setActive }) => {
 	};
 	// Submit handle end
 
-	// Upload file
-	const uploadFile = (file) => {
-		if (!file) return;
-
-		const storageRef = ref(storage, file.name);
-		const uploadTask = uploadBytesResumable(storageRef, file);
-
-		uploadTask.on(
-			'state_changed',
-			(snapshot) => {
-				const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-
-				setProgress(progress);
-			},
-			(error) => toast.error(`${error}`),
-			() => {
-				getDownloadURL(uploadTask.snapshot.ref).then((downloadUrl) => {
-					setForm((prev) => ({ ...prev, imgUrl: downloadUrl }));
-					toast.info(`Image upload to firebase successfully and the URL is: ${downloadUrl}`);
-				});
-			}
-		);
-	};
-	// Upload file end
-
-	const onCategoryChange = (e) => {
-		setForm({ ...form, category: e.target.value });
-	};
-	const onTitleChange = (e) => {
-		setForm({ ...form, title: e.target.value });
-	};
-	const onBodyChange = (e) => {
-		setForm({ ...form, body: e.target.value });
-	};
-	const handleTags = (tags) => {
-		setForm({ ...form, tags });
-	};
-	const onUpload = () => {
-		uploadFile();
-	};
 	return (
 		<div className='container-fluid mb-4'>
 			<div className='container'>
@@ -148,13 +147,11 @@ const AddEdit = ({ user, setActive }) => {
 								/>
 							</div>
 							{/* Title section end */}
-
 							{/* Tag section */}
 							<div className='col-12 py-3'>
 								<ReactTagInput tags={tags} placeholder='Tags' onChange={handleTags} />
 							</div>
 							{/* Tag section end */}
-
 							{/* category section */}
 							<div className='col-12 py-3'>
 								<select value={category} onChange={onCategoryChange} className='catg-dropdown'>
@@ -166,8 +163,7 @@ const AddEdit = ({ user, setActive }) => {
 									))}
 								</select>
 							</div>
-							{/* category section end */}
-							{/* body section */}
+							{/* category section end */} {/* body section */}
 							<div className='col-12 py-3'>
 								<textarea
 									className='form-control body-box'
@@ -185,7 +181,6 @@ const AddEdit = ({ user, setActive }) => {
 									className='form-control'
 									onChange={(e) => setFile(e.target.files[0])}
 								/>
-								<button onClick={onUpload}>Upload Image</button>
 							</div>
 							<div className='col-12 py-3 text-center'>
 								<h3>Uploaded {progress}%</h3>
