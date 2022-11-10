@@ -15,7 +15,6 @@ const BlogSection = ({ blogs, user, handleDelete }) => {
 						<div className=''>
 							<div className=''>
 								<img src={item.imgUrl} alt={item.title} />
-								<div></div>
 							</div>
 						</div>
 					</div>
