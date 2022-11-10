@@ -45,7 +45,7 @@ function App() {
 			<div className='content'>
 				<Routes>
 					<Route path='/' element={<Home setActive={setActive} user={user} />} />
-					<Route path='/blogs/:id' element={<BlogDetails setActive={setActive} />} />
+					<Route path='/detail/:id' element={<BlogDetails setActive={setActive} />} />
 					<Route
 						path='/create'
 						element={user?.uid ? <AddEdit user={user} /> : <Navigate to='/auth' />}
