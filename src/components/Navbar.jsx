@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 
 const Navbar = ({ active, setActive, user, handleLogout }) => {
 	const userId = user?.uid;
-	console.log('userId:', userId);
-	console.log('name:', user?.displayName);
+	console.log('userId from navbar:', userId);
+	console.log('name from navbar:', user?.displayName);
 
 	return (
 		<nav className='navbar'>
