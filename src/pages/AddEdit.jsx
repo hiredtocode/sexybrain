@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
-import { addDoc, collection, getDoc, serverTimestamp, doc, updateDoc } from 'firebase/firestore';
-import { db, storage } from '../firebase.config';
-import { TagInput } from '../components/Tags';
 import ReactTagInput from '@pathofdev/react-tag-input';
 import '@pathofdev/react-tag-input/build/index.css';
+import { db, storage } from '../firebase.config';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
+import { addDoc, collection, getDoc, serverTimestamp, doc, updateDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 
 const AddEdit = ({ user, setActive }) => {
@@ -57,8 +56,7 @@ const AddEdit = ({ user, setActive }) => {
 		e.preventDefault();
 
 		console.log('e from handleSubmit:', e);
-		uploadFile(file);
-		if (category && title && body) {
+		if (category && title && body && tags) {
 			if (!id) {
 				try {
 					await addDoc(blogCollectionRef, {
@@ -109,8 +107,8 @@ const AddEdit = ({ user, setActive }) => {
 			(error) => console.log('error:', error),
 			() => {
 				getDownloadURL(uploadTask.snapshot.ref).then((downloadUrl) => {
-					toast.info(`Image upload to firebase successfully and the URL is: ${downloadUrl}`);
 					setForm((prev) => ({ ...prev, imgUrl: downloadUrl }));
+					toast.info(`Image upload to firebase successfully and the URL is: ${downloadUrl}`);
 				});
 			}
 		);
@@ -126,10 +124,13 @@ const AddEdit = ({ user, setActive }) => {
 	const onBodyChange = (e) => {
 		setForm({ ...form, body: e.target.value });
 	};
-
 	const handleTags = (tags) => {
 		setForm({ ...form, tags });
 	};
+	const onUpload = () => {
+		uploadFile();
+	};
+	console.log('file from addedit page:', file);
 	return (
 		<div className='container-fluid mb-4'>
 			<div className='container'>
@@ -153,9 +154,9 @@ const AddEdit = ({ user, setActive }) => {
 							{/* Title section end */}
 
 							{/* Tag section */}
-							{/* <div className='col-12 py-3'>
+							<div className='col-12 py-3'>
 								<ReactTagInput tags={tags} placeholder='Tags' onChange={handleTags} />
-							</div> */}
+							</div>
 							{/* Tag section end */}
 
 							{/* category section */}
@@ -188,6 +189,7 @@ const AddEdit = ({ user, setActive }) => {
 									className='form-control'
 									onChange={(e) => setFile(e.target.files[0])}
 								/>
+								<button onClick={onUpload}>Upload</button>
 							</div>
 							<div className='col-12 py-3 text-center'>
 								<h3>Uploaded {progress}%</h3>
