@@ -44,7 +44,7 @@ const Home = ({ setActive, user }) => {
 				setActive('home');
 			},
 			(error) => {
-				console.log(error);
+				toast.error(`There was an error ${error}`);
 			}
 		);
 
@@ -67,7 +67,7 @@ const Home = ({ setActive, user }) => {
 				toast.success('Blog deleted successfully');
 				setLoading(false);
 			} catch (err) {
-				console.log(err);
+				toast.error(`Sorry there was an error ${err}`);
 			}
 		}
 	};
