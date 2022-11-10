@@ -1,5 +1,5 @@
-import { collection, deleteDoc, doc, getDocs, onSnapshot, query, where } from 'firebase/firestore';
 import React, { useState, useEffect } from 'react';
+import { collection, deleteDoc, doc, getDocs, onSnapshot, query, where } from 'firebase/firestore';
 import BlogSection from '../components/BlogSection';
 import Spinner from '../components/Spinner';
 import { db } from '../firebase.config';
