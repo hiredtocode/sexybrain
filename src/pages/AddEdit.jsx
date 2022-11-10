@@ -127,19 +127,19 @@ const AddEdit = ({ user, setActive }) => {
 	// Submit handle end
 
 	return (
-		<div className='container-fluid mb-4'>
-			<div className='container'>
-				<div className='col-12'>
-					<div className='text-center heading py-2'>{id ? 'Update Blog' : 'Create Blog'}</div>
+		<div className=''>
+			<div className=''>
+				<div className=''>
+					<div className=''>{id ? 'Update Blog' : 'Create Blog'}</div>
 				</div>
-				<div className='row h-100 justify-content-center align-items-center'>
-					<div className='col-10 col-md-8 col-lg-6'>
-						<form className='row blog-form' onSubmit={handleSubmit}>
+				<div className=''>
+					<div className=''>
+						<form className=' ' onSubmit={handleSubmit}>
 							{/* Title section  */}
-							<div className='col-12 py-3'>
+							<div className=''>
 								<input
 									type='text'
-									className='form-control input-text-box'
+									className=''
 									placeholder='Title'
 									name='title'
 									value={title}
@@ -148,13 +148,13 @@ const AddEdit = ({ user, setActive }) => {
 							</div>
 							{/* Title section end */}
 							{/* Tag section */}
-							<div className='col-12 py-3'>
+							<div className=''>
 								<ReactTagInput tags={tags} placeholder='Tags' onChange={handleTags} />
 							</div>
 							{/* Tag section end */}
 							{/* category section */}
-							<div className='col-12 py-3'>
-								<select value={category} onChange={onCategoryChange} className='catg-dropdown'>
+							<div className=''>
+								<select value={category} onChange={onCategoryChange} className=''>
 									<option>Please select category</option>
 									{categoryOption.map((option, index) => (
 										<option value={option || ''} key={index}>
@@ -164,9 +164,9 @@ const AddEdit = ({ user, setActive }) => {
 								</select>
 							</div>
 							{/* category section end */} {/* body section */}
-							<div className='col-12 py-3'>
+							<div className=''>
 								<textarea
-									className='form-control body-box'
+									className=''
 									placeholder='body'
 									value={body}
 									name='body'
@@ -175,20 +175,12 @@ const AddEdit = ({ user, setActive }) => {
 							</div>
 							{/* body section end  */}
 							{/* file upload section */}
-							<div className='mb-3'>
-								<input
-									type='file'
-									className='form-control'
-									onChange={(e) => setFile(e.target.files[0])}
-								/>
+							<div className=''>
+								<input type='file' className='' onChange={(e) => setFile(e.target.files[0])} />
 							</div>
-							<div className='col-12 py-3 text-center'>
+							<div className=''>
 								<h3>Uploaded {progress}%</h3>
-								<button
-									className='btn btn-add'
-									type='submit'
-									disabled={progress !== null && progress < 100}
-								>
+								<button className='' type='submit' disabled={progress !== null && progress < 100}>
 									{id ? 'Update' : 'Submit'}
 								</button>
 							</div>

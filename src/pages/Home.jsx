@@ -76,13 +76,13 @@ const Home = ({ setActive, user }) => {
 			{/* {error && <div>{error}</div>}
 			{isLoading && <div>Loading...</div>}
 			{blogs && <BlogList blogs={blogs} title='Awesome Blog!' />} */}
-			<div className='container-fluid pb-4 pt-4 padding'>
-				<div className='container padding'>
-					<div className='row mx-0'>
-						<div className='col-md-8'>
+			<div className=''>
+				<div className=''>
+					<div className=''>
+						<div className=''>
 							<BlogSection blogs={blogs} user={user} handleDelete={handleDelete} />
 						</div>
-						<div className='col-md-3'>
+						<div className=''>
 							<Tags tags={tags} />
 						</div>
 					</div>

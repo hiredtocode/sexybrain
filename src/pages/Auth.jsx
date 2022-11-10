@@ -54,14 +54,14 @@ const Auth = ({ setActive, setUser }) => {
 	};
 
 	return (
-		<div className='container-fluid mb-4'>
-			<div className='container'>
-				<div className='col-12 text-center'>
-					<div className='text-center heading py-2'>{!signUp ? 'Sign-In' : 'Sign-Up'}</div>
+		<div className=''>
+			<div className=''>
+				<div className=''>
+					<div className=''>{!signUp ? 'Sign-In' : 'Sign-Up'}</div>
 				</div>
-				<div className='row h-100 justify-content-center align-items-center'>
-					<div className='col-10 col-md-8 col-lg-6'>
-						<form className='row' onSubmit={handleAuth}>
+				<div className=''>
+					<div className=''>
+						<form className='' onSubmit={handleAuth}>
 							{/* {signUp && (
 								<>
 									<div className='col-6 py-3'>
@@ -86,7 +86,7 @@ const Auth = ({ setActive, setUser }) => {
 									</div>
 								</>
 							)} */}
-							<div className='col-12 py-3'>
+							<div className=''>
 								<input
 									type='email'
 									className='form-control input-text-box'
@@ -96,7 +96,7 @@ const Auth = ({ setActive, setUser }) => {
 									onChange={handleChange}
 								/>
 							</div>
-							<div className='col-12 py-3'>
+							<div className=''>
 								<input
 									type='password'
 									className='form-control input-text-box'
@@ -107,10 +107,10 @@ const Auth = ({ setActive, setUser }) => {
 								/>
 							</div>
 							{signUp && (
-								<div className='col-12 py-3'>
+								<div className=''>
 									<input
 										type='password'
-										className='form-control input-text-box'
+										className=''
 										placeholder='Confirm Password'
 										name='confirmPassword'
 										value={confirmPassword}
@@ -119,7 +119,7 @@ const Auth = ({ setActive, setUser }) => {
 								</div>
 							)}
 
-							<div className='col-12 py-3 text-center'>
+							<div className=''>
 								<button className={`btn ${!signUp ? 'btn-sign-in' : 'btn-sign-up'}`} type='submit'>
 									{!signUp ? 'Sign-in' : 'Sign-up'}
 								</button>
