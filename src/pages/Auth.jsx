@@ -62,7 +62,7 @@ const Auth = ({ setActive, setUser }) => {
 				<div className='row h-100 justify-content-center align-items-center'>
 					<div className='col-10 col-md-8 col-lg-6'>
 						<form className='row' onSubmit={handleAuth}>
-							{signUp && (
+							{/* {signUp && (
 								<>
 									<div className='col-6 py-3'>
 										<input
@@ -85,7 +85,7 @@ const Auth = ({ setActive, setUser }) => {
 										/>
 									</div>
 								</>
-							)}
+							)} */}
 							<div className='col-12 py-3'>
 								<input
 									type='email'
@@ -125,7 +125,7 @@ const Auth = ({ setActive, setUser }) => {
 								</button>
 							</div>
 						</form>
-						<div>
+						{/* <div>
 							{!signUp ? (
 								<>
 									<div className='text-center justify-content-center mt-2 pt-2'>
@@ -160,7 +160,7 @@ const Auth = ({ setActive, setUser }) => {
 									</div>
 								</>
 							)}
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</div>
