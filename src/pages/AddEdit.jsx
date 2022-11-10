@@ -33,7 +33,6 @@ const AddEdit = ({ user, setActive }) => {
 	const { id } = useParams();
 	const navigate = useNavigate();
 	const blogCollectionRef = collection(db, 'blogPosts');
-	const [isLoading, setIsLoading] = useState(false);
 
 	const { title, body, tags, category } = form;
 
