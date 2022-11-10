@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# About
+
+이 웹사이트는 React + Styled Components + Firebase로 만들었습니다.
+블로그, 리소스, W.I.L. 를 미리 만들어진 탬플릿을 사용하지 않고 프로젝트를 만들면서 공부도 할 겸 진행을 하고 있는 사이드 프로젝트 입니다.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
