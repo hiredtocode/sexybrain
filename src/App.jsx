@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import './App.scss';
-import './index.scss';
-import './media-query.scss';
+// import './App.scss';
+// import './index.scss';
+// import './media-query.scss';
 import Home from './pages/Home';
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -29,7 +29,6 @@ function App() {
 			}
 		});
 	}, []);
-
 	const handleLogout = () => {
 		signOut(auth).then(() => {
 			setUser(null);
