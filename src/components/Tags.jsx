@@ -1,57 +1,20 @@
-import { useState, useRef } from "react";
-import "./Tags.scss";
+import React from 'react';
 
-const TagComponent = (props) => {
+const Tags = ({ tags }) => {
 	return (
-		<div className="tagComponent">
-			<div className="tagComponent__text">{props.text}</div>
-			<div
-				className="tagComponent__close"
-				onClick={() => {
-					props.cullTagFromTags(props.text);
-				}}
-			>
-				X
+		<div>
+			<div>
+				<div className='blog-heading text-start py-2 mb-4'>Tags</div>
+			</div>
+			<div className='tags'>
+				{tags?.map((tag, index) => (
+					<p className='tag' key={index}>
+						{tag}
+					</p>
+				))}
 			</div>
 		</div>
 	);
 };
 
-export const TagInput = (props) => {
-	const [tags, setTags] = useState(["JavaScript", "TypeScript"]);
-	const [inputValue, setInputValue] = useState("");
-	const inputRef = useRef();
-
-	const inputValueChangeHandler = (inputValue) => {
-		setInputValue(inputValue);
-
-		if (inputValue[inputValue.length - 1] === ",") {
-			setTags([...tags, inputValue.slice(0, inputValue.length - 1)]);
-			setInputValue("");
-		}
-	};
-	const cullTagFromTags = (tag) => {
-		setTags([...tags.filter((element) => element !== tag)]);
-	};
-
-	return (
-		tags,
-		(
-			<div className="tagArea">
-				<div className="tagArea__displayArea">
-					{tags.map((tag) => (
-						<TagComponent text={tag} cullTagFromTags={cullTagFromTags} />
-					))}
-				</div>
-				<input
-					type="text"
-					ref={inputRef}
-					value={inputValue}
-					onChange={(e) => inputValueChangeHandler(e.target.value)}
-					placeholder="separated by commas"
-					className="tagArea__input"
-				/>
-			</div>
-		)
-	);
-};
+export default Tags;
