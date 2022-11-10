@@ -189,7 +189,7 @@ const AddEdit = ({ user, setActive }) => {
 									className='form-control'
 									onChange={(e) => setFile(e.target.files[0])}
 								/>
-								<button onClick={onUpload}>Upload</button>
+								<button onClick={onUpload}>Upload Image</button>
 							</div>
 							<div className='col-12 py-3 text-center'>
 								<h3>Uploaded {progress}%</h3>
