@@ -8,52 +8,44 @@ const Navbar = ({ active, setActive, user, handleLogout }) => {
 	return (
 		<nav className='navbar'>
 			<h1>The Blog</h1>
-			<div className='links'>
+			<ul className='links'>
 				<Link to='/'>
-					<ul>
-						<li
-							className={`navbar ${active === 'home' ? 'active' : ''}`}
-							onClick={() => setActive('home')}
-						>
-							Home
-						</li>
-					</ul>
+					<li
+						className={`nav-item ${active === 'home' ? 'active' : ''}`}
+						onClick={() => setActive('home')}
+					>
+						Home
+					</li>
 				</Link>
 				<Link to='/create'>
-					<ul>
-						<li
-							onClick={() => setActive('create')}
-							className={`navbar ${active === 'create' ? 'active' : ''}`}
-						>
-							Create
-						</li>
-					</ul>
+					<li
+						className={`nav-item ${active === 'create' ? 'active' : ''}`}
+						onClick={() => setActive('create')}
+					>
+						Create
+					</li>
 				</Link>
 				{userId ? (
-					<>
+					<Link to='/'>
 						{/* <img
 							id='profileImage'
 							src='https://cdn-icons-png.flaticon.com/512/149/149071.png'
 							alt='profile'
 						/> */}
-						<p>{user?.displayName}</p>
-						<ul>
-							<li onClick={handleLogout}>Logout</li>
-						</ul>
-					</>
+						{/* <p>{user?.displayName}</p> */}
+						<li onClick={handleLogout}>Logout</li>
+					</Link>
 				) : (
 					<Link to='/auth'>
-						<ul>
-							<li
-								className={`nav-item nav-link ${active === 'login' ? 'active' : ''}`}
-								onClick={() => setActive('login')}
-							>
-								Login
-							</li>
-						</ul>
+						<li
+							className={`nav-item ${active === 'login' ? 'active' : ''}`}
+							onClick={() => setActive('login')}
+						>
+							Login
+						</li>
 					</Link>
 				)}
-			</div>
+			</ul>
 		</nav>
 	);
 };
