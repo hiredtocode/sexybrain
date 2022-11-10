@@ -48,12 +48,12 @@ function App() {
 					<Route path='/blogs/:id' element={<BlogDetails setActive={setActive} />} />
 					<Route
 						path='/create'
-						element={user?.uid ? <AddEdit user={user} /> : <Navigate to='/' />}
+						element={user?.uid ? <AddEdit user={user} /> : <Navigate to='/auth' />}
 					/>
 					<Route
 						path='/update/:id'
 						element={
-							user?.uid ? <AddEdit user={user} setActive={setActive} /> : <Navigate to='/' />
+							user?.uid ? <AddEdit user={user} setActive={setActive} /> : <Navigate to='/auth' />
 						}
 					/>
 					<Route path='/auth' element={<Auth setActive={setActive} setUser={setUser} />} />
