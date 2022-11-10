@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
+// import transitions from 'bootstrap';
 
 const Navbar = ({ active, setActive, user, handleLogout }) => {
 	const userId = user?.uid;
-	console.log('userId from navbar:', userId);
-	console.log('name from navbar:', user?.displayName);
 
 	return (
 		<nav className='navbar'>

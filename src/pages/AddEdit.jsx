@@ -54,7 +54,6 @@ const AddEdit = ({ user, setActive }) => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		console.log('e from handleSubmit:', e);
 		if (category && title && body && tags) {
 			if (!id) {
 				try {
@@ -65,9 +64,8 @@ const AddEdit = ({ user, setActive }) => {
 						userId: user.uid,
 					});
 					toast.success('Blog created successfully');
-					console.log('user.uid:', user.uid);
 				} catch (err) {
-					console.log(err);
+					toast.error(`There was an error ${err}`);
 				}
 			} else {
 				try {
@@ -79,7 +77,7 @@ const AddEdit = ({ user, setActive }) => {
 					});
 					toast.success('Blog updated successfully');
 				} catch (err) {
-					console.log(err);
+					toast.error(`There was an error ${err}`);
 				}
 			}
 		} else {
@@ -103,7 +101,7 @@ const AddEdit = ({ user, setActive }) => {
 
 				setProgress(progress);
 			},
-			(error) => console.log('error:', error),
+			(error) => toast.error(`${error}`),
 			() => {
 				getDownloadURL(uploadTask.snapshot.ref).then((downloadUrl) => {
 					setForm((prev) => ({ ...prev, imgUrl: downloadUrl }));
@@ -129,7 +127,6 @@ const AddEdit = ({ user, setActive }) => {
 	const onUpload = () => {
 		uploadFile();
 	};
-	console.log('file from addedit page:', file);
 	return (
 		<div className='container-fluid mb-4'>
 			<div className='container'>
