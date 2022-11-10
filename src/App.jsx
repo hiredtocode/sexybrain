@@ -32,8 +32,7 @@ function App() {
 	const handleLogout = () => {
 		signOut(auth).then(() => {
 			setUser(null);
-			setActive('login');
-			navigate('/auth');
+			navigate('/');
 		});
 	};
 
