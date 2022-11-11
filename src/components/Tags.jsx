@@ -1,19 +1,20 @@
 import React from 'react';
+import TagSection from './styles/TagSection.styled.js';
 
 const Tags = ({ tags }) => {
 	return (
-		<div>
+		<TagSection>
 			<div>
-				<div className='blog-heading text-start py-2 mb-4'>Tags</div>
+				<h2>Tags</h2>
 			</div>
-			<div className='tags'>
+			<div>
 				{tags?.map((tag, index) => (
 					<p className='tag' key={index}>
 						{tag}
 					</p>
 				))}
 			</div>
-		</div>
+		</TagSection>
 	);
 };
 
