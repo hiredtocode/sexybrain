@@ -30,6 +30,10 @@ function App() {
 			body: '#fff',
 			footer: '#003333',
 		},
+		xs: '575.98px',
+		s: '767.98px',
+		md: '991.98px',
+		lg: '1199.98px',
 	};
 
 	useEffect(() => {
@@ -55,29 +59,23 @@ function App() {
 				<Header setActive={setActive} active={active} user={user} handleLogout={handleLogout} />
 				<ToastContainer />
 				<Container>
-					<div className='content'>
-						<Routes>
-							<Route path='/' element={<Home setActive={setActive} user={user} />} />
-							<Route path='/detail/:id' element={<BlogDetails setActive={setActive} />} />
-							<Route
-								path='/create'
-								element={user?.uid ? <AddEdit user={user} /> : <Navigate to='/auth' />}
-							/>
-							<Route
-								path='/update/:id'
-								element={
-									user?.uid ? (
-										<AddEdit user={user} setActive={setActive} />
-									) : (
-										<Navigate to='/auth' />
-									)
-								}
-							/>
-							<Route path='/auth' element={<Auth setActive={setActive} setUser={setUser} />} />
-							<Route path='/resume' element={<Resume />} />
-							<Route path='*' element={<NotFound />} />
-						</Routes>
-					</div>
+					<Routes>
+						<Route path='/' element={<Home setActive={setActive} user={user} />} />
+						<Route path='/detail/:id' element={<BlogDetails setActive={setActive} />} />
+						<Route
+							path='/create'
+							element={user?.uid ? <AddEdit user={user} /> : <Navigate to='/auth' />}
+						/>
+						<Route
+							path='/update/:id'
+							element={
+								user?.uid ? <AddEdit user={user} setActive={setActive} /> : <Navigate to='/auth' />
+							}
+						/>
+						<Route path='/auth' element={<Auth setActive={setActive} setUser={setUser} />} />
+						<Route path='/resume' element={<Resume />} />
+						<Route path='*' element={<NotFound />} />
+					</Routes>
 				</Container>
 			</div>
 		</ThemeProvider>
