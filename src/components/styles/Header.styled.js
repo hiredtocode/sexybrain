@@ -5,10 +5,23 @@ export const StyledHeader = styled.header`
 	position: fixed;
 	display: flex;
 	width: 100vw;
+	padding: 0 50px;
 	z-index: 100000;
 	height: 70px;
 	backdrop-filter: brightness(98%) blur(5px);
 	transition: 0.6s;
+
+	@media (max-width: ${({ theme }) => theme.xs}) {
+		padding: 0 15px;
+	}
+	@media (max-width: ${({ theme }) => theme.s}) {
+		padding: 0 15px;
+	}
+	@media (max-width: ${({ theme }) => theme.md}) {
+		padding: 0 15px;
+	}
+	@media (max-width: ${({ theme }) => theme.lg}) {
+	} ;
 `;
 
 export const Nav = styled.nav`
@@ -22,4 +35,9 @@ export const Nav = styled.nav`
 
 export const Logo = styled.img`
 	height: 60px;
+`;
+export const LinkContainer = styled.header`
+	display: flex;
+	justify-content: center;
+	align-items: center;
 `;

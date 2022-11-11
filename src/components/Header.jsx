@@ -1,14 +1,22 @@
-import { Link } from 'react-router-dom';
-// import transitions from 'bootstrap';
-import { StyledHeader, Nav, Logo } from './styles/Header.styled.js';
-import { Button } from './styles/Button.styled.js';
+import { Link, useLocation } from 'react-router-dom';
+import { StyledHeader, Nav, Logo, LinkContainer } from './styles/Header.styled.js';
+import Button from './styles/Button.styled.js';
 import JH from '../assets/img/jh-logo.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { FiLogIn } from 'react-icons/fa';
+import {
+	GithubImageBlack,
+	GithubImageWhite,
+	GithubImageContainer,
+} from './styles/Github.styled.js';
+import GithubImageB from '../assets/img/github-black.svg';
+import GithubImageW from '../assets/img/github-white.svg';
 
 const Header = ({ active, setActive, user, handleLogout }) => {
 	const userId = user?.uid;
+	const location = useLocation();
+	const path = location.pathname;
+	console.log('location from header:', path);
 
+	if (path === '/resume') console.log('true');
 	return (
 		<StyledHeader>
 			<Nav>
@@ -17,46 +25,63 @@ const Header = ({ active, setActive, user, handleLogout }) => {
 						<Logo src={JH} />
 					</Link>
 				</div>
-				<div>
-					<Link to='/'>
-						<Button
-							onClick={() => setActive('home')}
-							className={` ${active === 'home' ? 'active' : ''}`}
-						>
-							Home
-						</Button>
-					</Link>
-					{userId ? (
+				<LinkContainer>
+					{path !== '/resume' ? (
 						<>
-							<Link to='/create'>
+							<Link to='/'>
 								<Button
-									onClick={() => setActive('create')}
-									className={` ${active === 'create' ? 'active' : ''}`}
+									onClick={() => setActive('home')}
+									className={` ${active === 'home' ? 'active' : ''}`}
 								>
-									Create
+									Home
 								</Button>
 							</Link>
-							<Link to='/'>
-								{/* <img
-							id='profileImage'
-							src='https://cdn-icons-png.flaticon.com/512/149/149071.png'
-							alt='profile'
-						/> */}
-								{/* <p>{user?.displayName}</p> */}
-								<Button onClick={handleLogout}>Logout</Button>
-							</Link>
+							{userId ? (
+								<>
+									<Link to='/create'>
+										<Button
+											onClick={() => setActive('create')}
+											className={` ${active === 'create' ? 'active' : ''}`}
+										>
+											Create
+										</Button>
+									</Link>
+									<Link to='/'>
+										<Button onClick={handleLogout}>Logout</Button>
+									</Link>
+								</>
+							) : (
+								<Link to='/auth'>
+									<Button
+										className={` ${active === 'login' ? 'active' : ''}`}
+										onClick={() => setActive('login')}
+									>
+										Login
+									</Button>
+								</Link>
+							)}
 						</>
 					) : (
-						<Link to='/auth'>
-							<Button
-								className={` ${active === 'login' ? 'active' : ''}`}
-								onClick={() => setActive('login')}
-							>
-								Login
-							</Button>
-						</Link>
+						<>
+							<Link to='/'>
+								<Button
+									onClick={() => setActive('home')}
+									className={` ${active === 'home' ? 'active' : ''}`}
+								>
+									<span>Blog</span>
+								</Button>
+							</Link>
+						</>
 					)}
-				</div>
+					<GithubImageContainer
+						href='https://github.com/hiredtocode'
+						target='_blank'
+						rel='noreferrer'
+					>
+						<GithubImageWhite src={GithubImageW} />
+						<GithubImageBlack src={GithubImageB} />
+					</GithubImageContainer>
+				</LinkContainer>
 			</Nav>
 		</StyledHeader>
 	);
