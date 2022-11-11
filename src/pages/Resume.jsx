@@ -9,16 +9,13 @@ import bootstrap from '../assets/img/bootstrap.svg';
 import materialUi from '../assets/img/material-ui.svg';
 import wordpress from '../assets/img/wordpress.svg';
 import styledComponents from '../assets/img/styled-components.svg';
+import firebase from '../assets/img/firebase-icon.svg';
 import profilePicture from '../assets/resume/사진.jpg';
 import './resume.scss';
 
 const Resume = () => {
 	return (
 		<main>
-			{/* <div>
-    <button>한글</button>
-    <button>English</button>
-  </div>  */}
 			<header className='container'>
 				<section id='picture'>
 					<div className='box'>
@@ -52,17 +49,16 @@ const Resume = () => {
 				<div className='content'>
 					<p>
 						안녕하세요,
-						<span className='underlineHighlight'> 긍정적이고 밝은 성격</span>을 지닌 비전공자이며
-						37살(약 2년전) 때 코딩 매력에 빠져서 개발자가 되기로 마음을 먹고 독학을 했습니다. <br />
+						<span className='underlineHighlight'> 긍정적이고 밝은 성격</span>을 지닌 비전공자이며,
+						37살 때 코딩 매력에 빠져서 개발자가 되기로 마음을 먹고 독학을 했습니다. <br />
 						<span className='underlineHighlight'>논리적</span>인 사고방식과{' '}
 						<span className='underlineHighlight'>UX</span>를 항상 고민을 하며 레이아웃과{' '}
-						<span className='underlineHighlight'>반응형 앱</span>을 만들기 위해 노력을 하고
-						있습니다. <br />
+						<span className='underlineHighlight'>반응형 앱</span>을 만들고 있습니다. <br />
 						<br />
-						비즈니스 성장에 기여하는 일을 최우선으로, 시간과 사람을 관리하는
-						<span className='underlineHighlight'>리더쉽</span>의 중요성을 알고 생각과 계획보다
-						Execution이 제일 중요하다고 생각하며, 임팩트는 혼자가 아닌
-						<span className='underlineHighlight'>함께 만들어 나아가</span>는 것이기에
+						비즈니스 성장에 기여하는 일을 최우선으로, 시간과 사람을 관리하는{' '}
+						<span className='underlineHighlight'>리더십</span>의 중요성을 알고 생각과 계획보다
+						Execution이 제일 중요하다고 생각하며, 임팩트는 혼자가 아닌{' '}
+						<span className='underlineHighlight'>함께 만들어 나아가</span>는 것이기에{' '}
 						<span className='underlineHighlight'>대화 스킬과 협업</span>이 중요 하다고 생각합니다.
 					</p>
 					<p>
@@ -220,7 +216,6 @@ const Resume = () => {
 							<div className='card'>
 								<div className='content'>
 									<h3>Other</h3>
-									<p>비즈니스 영어</p>
 									<p>Communication Skills</p>
 									<p>영어작문</p>
 									<p>문제해결</p>
@@ -242,19 +237,70 @@ const Resume = () => {
 				<span className='light'> 2022.09 ~ Present</span>
 				<br />
 				<ul className='projectBullet'>
-					<li>React 프레임워크를 사용</li>
-					<li>Firebase 백앤드 사용</li>
-					<li>Styled Components 사용</li>
-					<li>이미 만들어진 템플릿을 사용하지 않고, 처음부터 끝까지 개발</li>
 					<li>
-						SexyBrain.Dev는 3가지로 만들 예정입니다
-						<ul>
-							<li>이력서 - resume.sexybrain.dev</li>
-							<li>포트폴리오 - portfolio.sexybrain.dev</li>
-							<li>블로그 - blog.sexybrain.dev</li>
-						</ul>
+						<div className='stack'>
+							<span>스택: </span>
+							<li id='react' className='changeText'>
+								<span className='logo-name'>
+									<img src={react} alt='React' />
+									<span className='text'> React </span>
+								</span>
+							</li>
+
+							<li id='styled' className='changeText'>
+								<span className='logo-name'>
+									<img src={styledComponents} alt='Styled Components' />
+									<span className='text'> Styled Components </span>
+								</span>
+							</li>
+
+							<li id='javascript' className='changeText'>
+								<span className='logo-name'>
+									<img src={JavascriptLogo} alt='Styled Components' />
+									<span className='text'> Javascript </span>
+								</span>
+							</li>
+							<li id='html' className='changeText'>
+								<span className='logo-name'>
+									<img src={html} alt='Styled Components' />
+									<span className='text'> HTML </span>
+								</span>
+							</li>
+							<li id='css' className='changeText'>
+								<span className='logo-name'>
+									<img src={css} alt='Styled Components' />
+									<span className='text'> CSS </span>
+								</span>
+							</li>
+							<li id='sass' className='changeText'>
+								<span className='logo-name'>
+									<img src={sass} alt='Styled Components' />
+									<span className='text'> SASS </span>
+								</span>
+							</li>
+							<li id='firebase' className='changeText'>
+								<span className='logo-name'>
+									<img src={firebase} alt='Styled Components' />
+									<span className='text'> Firebase </span>
+								</span>
+							</li>
+						</div>{' '}
 					</li>
+					<ul>
+						<li>이력서 - sexybrain.dev/resume</li>
+						<li>블로그 - sexybrain.dev</li>
+						<ul>
+							<li>로그인 / 로그아웃</li>
+							<li>로그인 > 포스팅 페이지 활성화 + 이미지 업로딩</li>
+							<li>태그 + 카테고리</li>
+							<li>검색 (개발중)</li>
+						</ul>
+						<li>포트폴리오 - sexybrain.dev/portfolio (개발중)</li>
+					</ul>
 					<li>라이트 / 다크모드 기능 투입 예정</li>
+					<li>
+						처음부터 끝까지 <span className='underlineHighlight'>템플릿 없이</span> 개발중
+					</li>
 				</ul>
 			</section>
 		</main>

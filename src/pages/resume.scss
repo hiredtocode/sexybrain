@@ -7,11 +7,11 @@
 	border-bottom: 1px solid rgba(55, 53, 47, 0.16);
 }
 
-main {
-	display: flex;
-	flex-direction: column;
-	padding-bottom: 200px;
-}
+// main {
+// 	display: flex;
+// 	flex-direction: column;
+// 	padding-bottom: 200px;
+// }
 
 .mainTitle {
 	font-weight: 500;
@@ -89,6 +89,7 @@ main {
 .light {
 	color: grey;
 	padding-left: 15px;
+	font-size: 1.2rem;
 }
 
 /* @media all and (max-width: 640px) {
@@ -163,9 +164,6 @@ h3 {
 	font-weight: 400;
 	margin: 1em 0;
 }
-p {
-	padding: 0.5em;
-}
 
 .frontend {
 	display: flex;
@@ -212,10 +210,10 @@ p {
 	flex-direction: column;
 }
 
-span .text {
+.text {
 	margin: auto;
 	padding-right: 8px;
-	font-size: 1.2em;
+	font-size: 1.3em;
 }
 
 #picture img {
@@ -229,7 +227,7 @@ span .text {
 	z-index: 11313;
 }
 .box-cover::after {
-	content: "";
+	content: '';
 	position: absolute;
 	width: 99px;
 	height: 129px;
@@ -254,7 +252,7 @@ span .text {
 }
 
 .box::after {
-	content: "";
+	content: '';
 	position: absolute;
 	width: 500px;
 	height: 500px;
@@ -263,7 +261,7 @@ span .text {
 	animation-delay: -3s;
 }
 .box::before {
-	content: "";
+	content: '';
 	position: absolute;
 	width: 500px;
 	height: 500px;
@@ -331,9 +329,10 @@ span .text {
 	border-radius: 15px;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: baseline;
 	transition: 0.5s;
 }
+
 .card-container .border:hover .card {
 	transform: translateY(-30px);
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
@@ -357,14 +356,15 @@ span .text {
 	color: rgb(0, 0, 0);
 	z-index: 1;
 	transition: 0.5s;
-	font-weight: 500;
+	font-weight: 600;
 }
 
 .card-container .border .card .content p {
-	font-size: 1em;
-	font-weight: 300;
+	font-size: 1.2rem;
+	font-weight: 500;
 	text-align: center;
 	color: #777;
+	margin: 10px auto;
 	z-index: 1;
 	transition: 0.5s;
 }
@@ -378,4 +378,24 @@ span .text {
 }
 ul > li {
 	margin-left: 30px;
+	font-size: 1.2rem;
+}
+.stack {
+	display: flex;
+	justify-content: flex-start;
+	margin: 0 auto;
+	flex-wrap: wrap;
+	max-width: 1000px;
+}
+
+.stack img {
+	height: 30px;
+}
+
+.stack span {
+	padding: 0 15px;
+}
+
+.stack li {
+	padding: 3px 3px;
 }
