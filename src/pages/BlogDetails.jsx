@@ -45,20 +45,14 @@ const Detail = ({ setActive }) => {
 				</div>
 			</div>
 			<div className=''>
-				<div className=''>
-					<div className=''>
-						<div className=''>
-							<span className=''>
-								By <p className='author'>{blog?.author}</p> -&nbsp;
-								{blog?.timestamp.toDate().toDateString()}
-							</span>
-							<p className=''>{blog?.body}</p>
-						</div>
-						<div className=''>
-							<Tags tags={tags} />
-						</div>
-					</div>
-				</div>
+				<span className=''>
+					By <p className='author'>{blog?.author}</p> -&nbsp;
+					{blog?.timestamp.toDate().toDateString()}
+				</span>
+				<p className=''>{blog?.body}</p>
+			</div>
+			<div className=''>
+				<Tags tags={tags} />
 			</div>
 		</div>
 	);

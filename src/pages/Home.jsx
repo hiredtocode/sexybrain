@@ -74,12 +74,14 @@ const Home = ({ setActive, user }) => {
 		}
 	};
 	return (
-		<Container>
-			<Flex>
+		<>
+			<Flex direction={'column'}>
 				<BlogSection blogs={blogs} user={user} handleDelete={handleDelete} />
+			</Flex>
+			<Flex>
 				<Tags tags={tags} />
 			</Flex>
-		</Container>
+		</>
 	);
 };
 
