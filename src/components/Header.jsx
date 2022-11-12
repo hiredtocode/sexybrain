@@ -14,7 +14,6 @@ const Header = ({ active, setActive, user, handleLogout }) => {
 	const userId = user?.uid;
 	const location = useLocation();
 	const path = location.pathname;
-	console.log('location from header:', path);
 
 	if (path === '/resume') console.log('true');
 	return (
