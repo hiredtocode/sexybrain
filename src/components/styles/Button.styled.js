@@ -14,10 +14,11 @@ const Button = styled.button`
 
 	&:hover {
 		opacity: 0.9;
-		transition: 0.8s;
+		transition: 0.5s;
 		transform: scale(0.98);
 		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 		background: linear-gradient(45deg, #3776d3, #55c1ff);
+		color: white;
 	}
 
 	&:hover span {
