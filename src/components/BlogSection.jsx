@@ -1,13 +1,14 @@
 import React from 'react';
-
+import Title from './styles/Title.styled.js';
 import Card from './Card';
 
 const BlogSection = ({ blogs, user, handleDelete }) => {
 	return (
-		<div>
-			<h1 className=''>Blogs</h1>
+		<>
+			<Title>Blogs</Title>
+
 			<Card blogs={blogs} user={user} handleDelete={handleDelete} />
-		</div>
+		</>
 	);
 };
 
