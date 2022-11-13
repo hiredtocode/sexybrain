@@ -5,10 +5,10 @@ const Button = styled.button`
 	border: none;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 	cursor: pointer;
-	font-size: 16px;
+	font-size: 1.2rem;
 	font-weight: 700;
 	margin: 0 5px;
-	padding: 15px 40px;
+	padding: 10px 15px;
 	background-color: ${({ bg }) => bg || '#fff'};
 	color: ${({ color }) => color || '#333'};
 
