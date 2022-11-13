@@ -54,30 +54,28 @@ function App() {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<div className='App'>
-				<GlobalStyles />
-				<Header setActive={setActive} active={active} user={user} handleLogout={handleLogout} />
-				<ToastContainer />
-				<Container>
-					<Routes>
-						<Route path='/' element={<Home setActive={setActive} user={user} />} />
-						<Route path='/detail/:id' element={<BlogDetails setActive={setActive} />} />
-						<Route
-							path='/create'
-							element={user?.uid ? <AddEdit user={user} /> : <Navigate to='/auth' />}
-						/>
-						<Route
-							path='/update/:id'
-							element={
-								user?.uid ? <AddEdit user={user} setActive={setActive} /> : <Navigate to='/auth' />
-							}
-						/>
-						<Route path='/auth' element={<Auth setActive={setActive} setUser={setUser} />} />
-						<Route path='/resume' element={<Resume />} />
-						<Route path='*' element={<NotFound />} />
-					</Routes>
-				</Container>
-			</div>
+			<GlobalStyles />
+			<Header setActive={setActive} active={active} user={user} handleLogout={handleLogout} />
+			<ToastContainer />
+			<Container>
+				<Routes>
+					<Route path='/' element={<Home setActive={setActive} user={user} />} />
+					<Route path='/detail/:id' element={<BlogDetails setActive={setActive} />} />
+					<Route
+						path='/create'
+						element={user?.uid ? <AddEdit user={user} /> : <Navigate to='/auth' />}
+					/>
+					<Route
+						path='/update/:id'
+						element={
+							user?.uid ? <AddEdit user={user} setActive={setActive} /> : <Navigate to='/auth' />
+						}
+					/>
+					<Route path='/auth' element={<Auth setActive={setActive} setUser={setUser} />} />
+					<Route path='/resume' element={<Resume />} />
+					<Route path='*' element={<NotFound />} />
+				</Routes>
+			</Container>
 		</ThemeProvider>
 	);
 }
