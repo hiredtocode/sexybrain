@@ -27,14 +27,14 @@ const Header = ({ active, setActive, user, handleLogout }) => {
 				<LinkContainer>
 					{path !== '/resume' ? (
 						<>
-							<Link to='/'>
+							{/* <Link to='/'>
 								<Button
 									onClick={() => setActive('home')}
 									className={` ${active === 'home' ? 'active' : ''}`}
 								>
 									Home
 								</Button>
-							</Link>
+							</Link> */}
 							{userId ? (
 								<>
 									<Link to='/create'>
