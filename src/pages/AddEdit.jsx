@@ -6,6 +6,15 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { addDoc, collection, getDoc, serverTimestamp, doc, updateDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
+import './Auth.scss';
+import {
+	FormContainer,
+	Form,
+	FormButton,
+	FormLabel,
+	FormInput,
+	FormSelect,
+} from '../components/styles/FormContainer.styled.js';
 
 const AddEdit = ({ user, setActive }) => {
 	const categoryOption = [
@@ -127,69 +136,67 @@ const AddEdit = ({ user, setActive }) => {
 	// Submit handle end
 
 	return (
-		<div className=''>
-			<div className=''>
-				<div className=''>
-					<div className=''>{id ? 'Update Blog' : 'Create Blog'}</div>
-				</div>
-				<div className=''>
-					<div className=''>
-						<form className=' ' onSubmit={handleSubmit}>
-							{/* Title section  */}
-							<div className=''>
-								<input
-									type='text'
-									className=''
-									placeholder='Title'
-									name='title'
-									value={title}
-									onChange={onTitleChange}
-								/>
-							</div>
-							{/* Title section end */}
-							{/* Tag section */}
-							<div className=''>
-								<ReactTagInput tags={tags} placeholder='Tags' onChange={handleTags} />
-							</div>
-							{/* Tag section end */}
-							{/* category section */}
-							<div className=''>
-								<select value={category} onChange={onCategoryChange} className=''>
-									<option>Please select category</option>
-									{categoryOption.map((option, index) => (
-										<option value={option || ''} key={index}>
-											{option}
-										</option>
-									))}
-								</select>
-							</div>
-							{/* category section end */} {/* body section */}
-							<div className=''>
-								<textarea
-									className=''
-									placeholder='body'
-									value={body}
-									name='body'
-									onChange={onBodyChange}
-								/>
-							</div>
-							{/* body section end  */}
-							{/* file upload section */}
-							<div className=''>
-								<input type='file' className='' onChange={(e) => setFile(e.target.files[0])} />
-							</div>
-							<div className=''>
-								<h3>Uploaded {progress}%</h3>
-								<button className='' type='submit' disabled={progress !== null && progress < 100}>
-									{id ? 'Update' : 'Submit'}
-								</button>
-							</div>
-							{/* file upload section end  */}
-						</form>
+		<FormContainer>
+			<div className='l-form'>
+				<Form className='form' onSubmit={handleSubmit}>
+					<h1 className='form__title'>{id ? 'Update Blog' : 'Create Blog'}</h1>
+					{/* Title section  */}
+					<div className='form__div'>
+						<FormInput
+							type='text'
+							className='form__input'
+							placeholder=''
+							name='title'
+							value={title}
+							onChange={onTitleChange}
+						/>
+						<FormLabel htmlFor='title' className='form__label'>
+							Title
+						</FormLabel>
 					</div>
-				</div>
+					{/* Title section end */}
+					{/* Tag section */}
+					<div className='form__div'>
+						Tags
+						<ReactTagInput tags={tags} onChange={handleTags} className='' />
+					</div>
+					{/* Tag section end */}
+					{/* category section */}
+					<div className='form__div'>
+						<FormSelect value={category} onChange={onCategoryChange} className=''>
+							<option>Please select category</option>
+							{categoryOption.map((option, index) => (
+								<option value={option || ''} key={index}>
+									{option}
+								</option>
+							))}
+						</FormSelect>
+					</div>
+					{/* category section end */} {/* body section */}
+					<div className='form__div'>
+						<textarea
+							className='form__input'
+							placeholder='body'
+							value={body}
+							name='body'
+							onChange={onBodyChange}
+						/>
+					</div>
+					{/* body section end  */}
+					{/* file upload section */}
+					<div className=''>
+						<input type='file' className='' onChange={(e) => setFile(e.target.files[0])} />
+					</div>
+					<div className=''>
+						<h3>Uploaded {progress}%</h3>
+						<FormButton className='' type='submit' disabled={progress !== null && progress < 100}>
+							{id ? 'Update' : 'Submit'}
+						</FormButton>
+					</div>
+					{/* file upload section end  */}
+				</Form>
 			</div>
-		</div>
+		</FormContainer>
 	);
 };
 
