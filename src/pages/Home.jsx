@@ -4,9 +4,9 @@ import BlogSection from '../components/BlogSection';
 import Spinner from '../components/Spinner';
 import { db } from '../firebase.config';
 import { toast } from 'react-toastify';
-import { Container } from '../components/styles/Container.styled.js';
 import Tags from '../components/Tags';
 import Flex from '../components/styles/Flex.styled.js';
+
 // import MostPopular from '../components/MostPopular';
 // import Trending from '../components/Trending';
 
@@ -73,12 +73,14 @@ const Home = ({ setActive, user }) => {
 			}
 		}
 	};
+
 	return (
 		<>
 			<Flex direction={'column'}>
 				<BlogSection blogs={blogs} user={user} handleDelete={handleDelete} />
 			</Flex>
-			<Flex>
+			<Flex direction={'column'}>
+				<h2>Tags</h2>
 				<Tags tags={tags} />
 			</Flex>
 		</>
