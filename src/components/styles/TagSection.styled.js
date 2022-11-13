@@ -1,17 +1,14 @@
 import styled from 'styled-components';
 
 const TagSection = styled.aside`
-	padding: 0 15px;
-
 	p {
 		background: #f1f1f1;
-		padding: 10px 15px;
+		padding: 5px 10px;
 		color: #222;
-		@include transition(0.5s);
-		margin-right: 8px;
-		margin-top: 5px;
-		margin-bottom: 5px;
+		margin: 3px;
+		font-size: 1rem;
 		display: inline-block;
+		border-radius: 10px;
 	}
 
 	p:hover {
