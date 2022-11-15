@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+export const CardContainer = styled.div`
+	position: relative;
+`;
 export const StyledCard = styled.div`
 	display: flex;
 	align-items: center;
@@ -53,4 +56,10 @@ export const Date = styled.div`
 `;
 export const Body = styled.div`
 	padding-bottom: 20px;
+`;
+export const IconContainer = styled.div`
+	position: absolute;
+	bottom: 35px;
+	right: 20px;
+	z-index: 1000;
 `;
