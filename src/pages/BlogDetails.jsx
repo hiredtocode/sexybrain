@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Tags from '../components/Tags';
 import { db } from '../firebase.config';
+import { BlogTitleBox, Author, BlogDetail } from '../components/styles/BlogDetails.styled.js';
+import Flex from '../components/styles/Flex.styled.js';
 
 const Detail = ({ setActive }) => {
 	const { id } = useParams();
@@ -36,24 +38,29 @@ const Detail = ({ setActive }) => {
 		setActive(null);
 	};
 	return (
-		<div className=''>
-			<div className='' style={{ backgroundImage: `url('${blog?.imgUrl}')` }}>
+		<div className='single'>
+			<BlogTitleBox style={{ backgroundImage: `url('${blog?.imgUrl}')` }}>
 				<div className='overlay'></div>
 				<div className='blog-title'>
 					<span>{blog?.timestamp.toDate().toDateString()}</span>
 					<h2>{blog?.title}</h2>
 				</div>
-			</div>
-			<div className=''>
-				<span className=''>
-					By <p className='author'>{blog?.author}</p> -&nbsp;
-					{blog?.timestamp.toDate().toDateString()}
-				</span>
-				<p className=''>{blog?.body}</p>
-			</div>
-			<div className=''>
-				<Tags tags={tags} />
-			</div>
+			</BlogTitleBox>
+			<BlogDetail>
+				<div className='authorInfo'>
+					<div>
+						By <Author>{blog?.author}</Author> -&nbsp;
+						{blog?.timestamp.toDate().toDateString()}
+					</div>
+					<Flex direction={'row'} align='center'>
+						<div style={{ paddingRight: '10px' }}>Tags:</div>
+						<div>
+							<Tags tags={blog?.tags} />
+						</div>
+					</Flex>
+				</div>
+				<p>{blog?.body}</p>
+			</BlogDetail>
 		</div>
 	);
 };
