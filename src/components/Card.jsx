@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { excerpt } from '../utility';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faEdit, faSignIn } from '@fortawesome/free-solid-svg-icons';
 import {
 	StyledCard,
 	Description,
@@ -9,6 +9,8 @@ import {
 	CategoryContainer,
 	Date,
 	Body,
+	IconContainer,
+	CardContainer,
 } from './styles/Card.styled.js';
 import Flex from './styles/Flex.styled.js';
 import Tags from '../components/Tags';
@@ -19,7 +21,7 @@ export default function Card({ blogs, user, handleDelete }) {
 	return (
 		<>
 			{blogs?.map((item, index) => (
-				<div key={index}>
+				<CardContainer key={index}>
 					<Link to={`/detail/${item.id}`} style={{ textDecoration: 'none', color: 'black' }}>
 						<StyledCard>
 							<Description>
@@ -43,15 +45,14 @@ export default function Card({ blogs, user, handleDelete }) {
 						</StyledCard>
 					</Link>
 					{userId && item.userId === userId && (
-						<div style={{ float: 'right' }}>
+						<IconContainer style={{ float: 'right' }}>
 							<FontAwesomeIcon
 								icon={faTrash}
-								style={{ cursor: 'pointer' }}
+								style={{ cursor: 'pointer', paddingRight: '10px', textDecoration: 'none' }}
 								size='2x'
 								onClick={() => handleDelete(item.id)}
 							/>
 							<Link to={`/update/${item.id}`}>
-								;
 								<FontAwesomeIcon
 									icon={faEdit}
 									name='edit'
@@ -59,9 +60,9 @@ export default function Card({ blogs, user, handleDelete }) {
 									size='2x'
 								/>
 							</Link>
-						</div>
+						</IconContainer>
 					)}
-				</div>
+				</CardContainer>
 			))}
 		</>
 	);
