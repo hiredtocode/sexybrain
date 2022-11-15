@@ -5,7 +5,10 @@ const Flex = styled.div`
 	flex-direction: ${({ direction }) => direction};
 	justify-content: ${({ justify }) => justify};
 	align-items: ${({ align }) => align};
-	margin: 0 10px;
+	margin-top: ${({ margin }) => margin};
+	margin-right: ${({ margin }) => margin};
+	margin-bottom: ${({ margin }) => margin};
+	margin-left: ${({ margin }) => margin};
 `;
 
 export default Flex;
