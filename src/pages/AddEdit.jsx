@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import ReactTagInput from '@pathofdev/react-tag-input';
 import '@pathofdev/react-tag-input/build/index.css';
 import { db, storage } from '../firebase.config';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { addDoc, collection, getDoc, serverTimestamp, doc, updateDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
@@ -14,7 +14,9 @@ import {
 	FormLabel,
 	FormInput,
 	FormSelect,
+	FormCancelButton,
 } from '../components/styles/FormContainer.styled.js';
+import Flex from '../components/styles/Flex.styled.js';
 
 const AddEdit = ({ user, setActive }) => {
 	const categoryOption = [
@@ -184,14 +186,19 @@ const AddEdit = ({ user, setActive }) => {
 					</div>
 					{/* body section end  */}
 					{/* file upload section */}
-					<div className=''>
-						<input type='file' className='' onChange={(e) => setFile(e.target.files[0])} />
+					<div>
+						<input type='file' onChange={(e) => setFile(e.target.files[0])} />
 					</div>
-					<div className=''>
+					<div>
 						<h3>Uploaded {progress}%</h3>
-						<FormButton className='' type='submit' disabled={progress !== null && progress < 100}>
-							{id ? 'Update' : 'Submit'}
-						</FormButton>
+						<Flex>
+							<FormCancelButton className='cancel' onClick={() => navigate('/')}>
+								Cancel
+							</FormCancelButton>
+							<FormButton type='submit' disabled={progress !== null && progress < 100}>
+								{id ? 'Update' : 'Submit'}
+							</FormButton>
+						</Flex>
 					</div>
 					{/* file upload section end  */}
 				</Form>
