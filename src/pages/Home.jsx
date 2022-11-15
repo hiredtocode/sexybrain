@@ -79,7 +79,7 @@ const Home = ({ setActive, user }) => {
 			<Flex direction={'column'}>
 				<BlogSection blogs={blogs} user={user} handleDelete={handleDelete} />
 			</Flex>
-			<Flex direction={'column'}>
+			<Flex direction={'column'} style={{ paddingLeft: '20px' }}>
 				<h2>Tags</h2>
 				<Tags tags={tags} />
 			</Flex>
