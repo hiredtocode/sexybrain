@@ -164,12 +164,12 @@ const AddEdit = ({ user, setActive }) => {
 					{/* Tag section */}
 					<div className='form__div'>
 						Tags
-						<ReactTagInput tags={tags} onChange={handleTags} className='' />
+						<ReactTagInput tags={tags} onChange={handleTags} />
 					</div>
 					{/* Tag section end */}
 					{/* category section */}
 					<div className='form__div'>
-						<FormSelect value={category} onChange={onCategoryChange} className=''>
+						<FormSelect value={category} onChange={onCategoryChange}>
 							<option>Please select category</option>
 							{categoryOption.map((option, index) => (
 								<option value={option || ''} key={index}>
