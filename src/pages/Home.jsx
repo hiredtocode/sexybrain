@@ -80,6 +80,14 @@ const Home = ({ setActive, user }) => {
 				<BlogSection blogs={blogs} user={user} handleDelete={handleDelete} />
 			</Flex>
 			<Flex direction={'column'} style={{ paddingLeft: '20px' }} grow={0.5}>
+				<h2>Categories</h2>
+				<Flex>
+					{blogs?.map((item, index) => (
+						<p key={index} style={{ paddingLeft: '5px' }}>
+							{item.category}
+						</p>
+					))}
+				</Flex>
 				<h2>Tags</h2>
 				<Tags tags={tags} />
 			</Flex>
