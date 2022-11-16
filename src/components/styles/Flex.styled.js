@@ -9,6 +9,10 @@ const Flex = styled.div`
 	margin-right: ${({ margin }) => margin};
 	margin-bottom: ${({ margin }) => margin};
 	margin-left: ${({ margin }) => margin};
+
+	h3 {
+		font-weight: bold;
+	}
 `;
 
 export default Flex;
