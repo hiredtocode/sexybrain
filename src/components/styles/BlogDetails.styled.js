@@ -69,7 +69,7 @@ export const BlogDetail = styled.div`
 		margin: 15px 0;
 		border-bottom: 1px solid #777;
 
-		font-size: 15px;
+		font-size: 1.2rem;
 		color: #222;
 		text-decoration: none;
 		align-items: center;
