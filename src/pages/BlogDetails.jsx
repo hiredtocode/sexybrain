@@ -38,7 +38,7 @@ const Detail = ({ setActive }) => {
 		setActive(null);
 	};
 	return (
-		<div className='single'>
+		<div className='single' style={{ flexGrow: '1' }}>
 			<BlogTitleBox style={{ backgroundImage: `url('${blog?.imgUrl}')` }}>
 				<div className='overlay'></div>
 				<div className='blog-title'>
