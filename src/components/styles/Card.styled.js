@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const CardContainer = styled.div`
 	position: relative;
+	min-width: 100%;
 `;
 export const StyledCard = styled.div`
 	display: flex;
