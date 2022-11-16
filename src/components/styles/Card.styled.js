@@ -26,6 +26,7 @@ export const StyledCard = styled.div`
 
 export const Description = styled.div`
 	justify-content: space-between;
+	min-width: 100%;
 `;
 
 export const Category = styled.div`
