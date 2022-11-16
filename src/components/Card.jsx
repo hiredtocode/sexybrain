@@ -31,12 +31,12 @@ export default function Card({ blogs, user, handleDelete }) {
 									</Category>
 								</CategoryContainer>
 								<Flex justify={'space-between'} align={'center'}>
-									<h2>{item.title}</h2>
+									<h3>{item.title}</h3>
 									<Date>
 										<span>{item.timestamp.toDate().toDateString()}</span>
 									</Date>
 								</Flex>
-								<Body>{excerpt(item.body, 120)}</Body>
+								<Body>{excerpt(item.description, 120)}</Body>
 								<Tags tags={item.tags} />
 							</Description>
 							{/* <div>
