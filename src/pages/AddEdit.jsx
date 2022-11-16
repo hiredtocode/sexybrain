@@ -38,6 +38,7 @@ const AddEdit = ({ user, setActive }) => {
 		tags: [],
 		category: '',
 		body: '',
+		description: '',
 	});
 	const [file, setFile] = useState(null);
 	const [progress, setProgress] = useState(null);
@@ -45,7 +46,7 @@ const AddEdit = ({ user, setActive }) => {
 	const navigate = useNavigate();
 	const blogCollectionRef = collection(db, 'blogPosts');
 
-	const { title, body, tags, category } = form;
+	const { title, body, tags, category, description } = form;
 
 	// Upload file
 	useEffect(() => {
@@ -97,6 +98,9 @@ const AddEdit = ({ user, setActive }) => {
 	const onBodyChange = (e) => {
 		setForm({ ...form, body: e.target.value });
 	};
+	const onDescriptionChange = (e) => {
+		setForm({ ...form, description: e.target.value });
+	};
 	const handleTags = (tags) => {
 		setForm({ ...form, tags });
 	};
@@ -104,7 +108,7 @@ const AddEdit = ({ user, setActive }) => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		if (category && title && body && tags) {
+		if (category && title && body && tags && description) {
 			if (!id) {
 				try {
 					await addDoc(blogCollectionRef, {
@@ -183,6 +187,19 @@ const AddEdit = ({ user, setActive }) => {
 							name='body'
 							onChange={onBodyChange}
 						/>
+					</div>
+					<div className='form__div'>
+						<FormInput
+							type='text'
+							className='form__input'
+							placeholder=''
+							name='description'
+							value={description}
+							onChange={onDescriptionChange}
+						/>
+						<FormLabel htmlFor='description' className='form__label'>
+							Description
+						</FormLabel>
 					</div>
 					{/* body section end  */}
 					{/* file upload section */}
