@@ -66,15 +66,16 @@ export const BlogDetail = styled.div`
 	.authorInfo {
 		display: flex;
 		flex-direction: row;
-		margin-top: 8px;
+		margin: 15px 0;
 		border-bottom: 1px solid #777;
-		margin-bottom: 15px;
+
 		font-size: 15px;
 		color: #222;
 		text-decoration: none;
 		align-items: center;
 		justify-content: space-between;
 		padding: 0 20px;
+		padding-bottom: 15px;
 	}
 `;
 export const Author = styled.p`
