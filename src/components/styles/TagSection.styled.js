@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const TagSection = styled.aside`
+export const TagSection = styled.aside`
 	p {
 		background: #f1f1f1;
 		padding: 5px 10px;
@@ -21,4 +21,8 @@ const TagSection = styled.aside`
 	}
 `;
 
-export default TagSection;
+export const TagContainer = styled.div`
+	background: white;
+	padding: 15px;
+	border-radius: 10px;
+`;
