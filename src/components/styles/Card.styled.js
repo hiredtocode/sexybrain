@@ -5,6 +5,7 @@ export const CardContainer = styled.div`
 	min-width: 100%;
 `;
 export const StyledCard = styled.div`
+	overflow: hidden;
 	display: flex;
 	align-items: center;
 	background-color: #fff;
@@ -12,10 +13,6 @@ export const StyledCard = styled.div`
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 	margin: 15px 0;
 	padding: 15px;
-
-	img {
-		width: 50%;
-	}
 
 	&:hover {
 		transition: all 0.5s ease;
@@ -27,6 +24,7 @@ export const StyledCard = styled.div`
 export const Description = styled.div`
 	justify-content: space-between;
 	min-width: 100%;
+	padding-left: 50px;
 `;
 
 export const Category = styled.div`
@@ -64,4 +62,16 @@ export const IconContainer = styled.div`
 	bottom: 35px;
 	right: 20px;
 	z-index: 1000;
+`;
+export const CategoryMark = styled.div`
+	position: relative;
+	img {
+		position: absolute;
+		height: 220px;
+		top: -40px;
+		left: -30px;
+		opacity: 0.2;
+		transform: rotate(-15deg);
+		z-index: 1;
+	}
 `;
