@@ -31,6 +31,8 @@ const AddEdit = ({ user, setActive }) => {
 		'Material UI',
 		'Tailwind CSS',
 		'Styled Components',
+		'Firebase',
+		'Wordpress',
 		'What I learned',
 	];
 	const [form, setForm] = useState({
@@ -164,7 +166,7 @@ const AddEdit = ({ user, setActive }) => {
 					{/* Tag section */}
 					<div className='form__div'>
 						Tags
-						<ReactTagInput tags={tags} onChange={handleTags} />
+						<ReactTagInput tags={tags} onChange={handleTags} removeOnBackspace={true} maxTags={5} />
 					</div>
 					{/* Tag section end */}
 					{/* category section */}
