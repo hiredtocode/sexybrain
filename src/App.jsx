@@ -27,7 +27,7 @@ function App() {
 	const theme = {
 		colors: {
 			header: '#ebfbff',
-			body: '#fff',
+			body: '#f5f5f5',
 			footer: '#003333',
 		},
 		xs: '575.98px',
