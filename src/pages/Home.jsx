@@ -99,8 +99,8 @@ const Home = ({ setActive, user }) => {
 				<BlogSection blogs={blogs} user={user} handleDelete={handleDelete} />
 			</Flex>
 			<Flex direction={'column'} style={{ paddingLeft: '20px', maxWidth: '300px' }} grow={0.5}>
-				<h2>Categories</h2>
-				<Flex wrap={'wrap'} style={{ marginBottom: '50px' }}>
+				<h2 style={{ textAlign: 'center' }}>Categories</h2>
+				<Flex wrap={'wrap'} style={{ marginBottom: '50px', marginTop: '10px' }}>
 					{category?.map((item, index) => {
 						switch (item) {
 							case 'JavaScript':
@@ -211,7 +211,7 @@ const Home = ({ setActive, user }) => {
 						}
 					})}
 				</Flex>
-				<h2>Tags</h2>
+				<h2 style={{ textAlign: 'center' }}>Tags</h2>
 				<TagContainer>
 					<Tags tags={tags} />
 				</TagContainer>
