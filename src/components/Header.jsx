@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { ThemeContext } from '../App';
 import { Link, useLocation } from 'react-router-dom';
 import { StyledHeader, Nav, Logo, LinkContainer } from './styles/Header.styled.js';
 import Button from './styles/Button.styled.js';
@@ -9,11 +11,13 @@ import {
 } from './styles/Github.styled.js';
 import GithubImageB from '../assets/img/github-black.svg';
 import GithubImageW from '../assets/img/github-white.svg';
+import { MoonIcon, SunIcon } from '../assets/icons';
 
 const Header = ({ active, setActive, user, handleLogout }) => {
 	const userId = user?.uid;
 	const location = useLocation();
 	const path = location.pathname;
+	const { isDark, setIsDark } = useContext(ThemeContext);
 
 	if (path === '/resume') console.log('true');
 	return (
@@ -72,6 +76,9 @@ const Header = ({ active, setActive, user, handleLogout }) => {
 							</Link>
 						</>
 					)}
+					<button onClick={() => setIsDark(!isDark)} className='icon'>
+						{isDark ? <MoonIcon /> : <SunIcon />}
+					</button>
 					<GithubImageContainer
 						href='https://github.com/hiredtocode'
 						target='_blank'
