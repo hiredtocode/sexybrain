@@ -72,14 +72,16 @@ export default function Card({ blogs, user, handleDelete }) {
 										<img key={index} src={question} alt={item.category} />
 									)}
 								</CategoryMark>
-								<Flex justify={'space-between'} align={'center'}>
+								<Flex justify={'space-between'} align={'center'} style={{ paddingLeft: '200px' }}>
 									<h3>{item.title}</h3>
 									<Date>
 										<span>{item.timestamp.toDate().toDateString()}</span>
 									</Date>
 								</Flex>
-								<Body>{excerpt(item.description, 120)}</Body>
-								<Tags tags={item.tags} />
+								<Body style={{ paddingLeft: '230px' }}>{excerpt(item.description, 120)}</Body>
+								<div style={{ paddingLeft: '260px' }}>
+									<Tags tags={item.tags} />
+								</div>
 							</Description>
 							{/* <div>
 								<img src={item.imgUrl} alt={item.title} />

@@ -11,48 +11,29 @@ export const StyledCard = styled.div`
 	background-color: #fff;
 	border-radius: 15px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-	margin: 15px 0;
+	margin: 10px 0;
 	padding: 15px;
 
 	&:hover {
 		transition: all 0.5s ease;
 		transform: translateY(-5px);
 		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+		img {
+			opacity: 0.5;
+			transition: 1s;
+		}
 	}
 `;
 
 export const Description = styled.div`
 	justify-content: space-between;
 	min-width: 100%;
-	padding-left: 50px;
-`;
-
-export const Category = styled.div`
-	border-radius: 15px;
-	border: none;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
-	font-size: 1rem;
-	font-weight: 700;
-	padding: 5px 15px;
-	height: 30px;
-	background-color: ${({ bg }) => bg || '#fff'};
-	color: ${({ color }) => color || '#333'};
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: absolute;
-	left: 0;
-	top: -30px;
-`;
-
-export const CategoryContainer = styled.div`
-	position: relative;
-
-	align-items: center;
+	font-size: 1.15rem;
 `;
 
 export const Date = styled.div`
 	align-items: center;
+	padding-right: 25px;
 `;
 export const Body = styled.div`
 	padding-bottom: 20px;
@@ -61,17 +42,17 @@ export const IconContainer = styled.div`
 	position: absolute;
 	bottom: 35px;
 	right: 20px;
-	z-index: 1000;
+	z-index: 5;
 `;
 export const CategoryMark = styled.div`
 	position: relative;
 	img {
 		position: absolute;
-		height: 220px;
-		top: -40px;
+		height: 240px;
+		top: -35px;
 		left: -30px;
 		opacity: 0.2;
 		transform: rotate(-15deg);
-		z-index: 1;
+		z-index: 0;
 	}
 `;
