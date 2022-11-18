@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const GithubImageBlack = styled.img`
+export const GithubIconBlack = styled.img`
 	width: 55px;
 	height: 55px;
 
@@ -9,7 +9,7 @@ export const GithubImageBlack = styled.img`
 	}
 `;
 
-export const GithubImageWhite = styled.img`
+export const GithubIconWhite = styled.img`
 	border-radius: 50px;
 	position: absolute;
 	transition: 0.6s;
@@ -23,7 +23,7 @@ export const GithubImageWhite = styled.img`
 	}
 `;
 
-export const GithubImageContainer = styled.a`
+export const GithubIconContainer = styled.a`
 	position: relative;
 	/* width: 70px;
 	height: 70px; */
