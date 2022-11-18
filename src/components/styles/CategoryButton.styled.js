@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const CategoryButton = styled.button`
-	border-radius: 5px;
+	border-radius: 8px;
 	border: none;
 	display: flex;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
@@ -9,7 +9,7 @@ const CategoryButton = styled.button`
 	font-size: 1.1rem;
 	font-weight: 500;
 	margin: 3px;
-	padding: 5px 10px;
+	padding: 10px 10px;
 	background-color: ${({ bg }) => bg || '#fff'};
 	color: ${({ color }) => color || '#333'};
 
