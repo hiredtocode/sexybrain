@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import Tags from '../components/Tags';
 import { db } from '../firebase.config';
 import { BlogTitleBox, Author, BlogDetail } from '../components/styles/BlogDetails.styled.js';
+import Post from '../components/markdown_component/post.js';
 import Flex from '../components/styles/Flex.styled.js';
 
 const Detail = ({ setActive }) => {
@@ -60,6 +61,7 @@ const Detail = ({ setActive }) => {
 					</Flex>
 				</div>
 				<p>{blog?.body}</p>
+				<Post />
 			</BlogDetail>
 		</div>
 	);
