@@ -4,13 +4,9 @@ import { Link, useLocation } from 'react-router-dom';
 import { StyledHeader, Nav, Logo, LinkContainer } from './styles/Header.styled.js';
 import Button from './styles/Button.styled.js';
 import JH from '../assets/img/jh-logo.png';
-import {
-	GithubImageBlack,
-	GithubImageWhite,
-	GithubImageContainer,
-} from './styles/Github.styled.js';
-import GithubImageB from '../assets/img/github-black.svg';
-import GithubImageW from '../assets/img/github-white.svg';
+import { GithubIconBlack, GithubIconWhite, GithubIconContainer } from './styles/Github.styled.js';
+import GithubIconB from '../assets/img/github-black.svg';
+import GithubIconW from '../assets/img/github-white.svg';
 import { MoonIcon, SunIcon } from '../assets/icons';
 
 const Header = ({ active, setActive, user, handleLogout }) => {
@@ -82,14 +78,14 @@ const Header = ({ active, setActive, user, handleLogout }) => {
 						>
 							{isDark ? <MoonIcon /> : <SunIcon />}
 						</Button>
-						<GithubImageContainer
+						<GithubIconContainer
 							href='https://github.com/hiredtocode'
 							target='_blank'
 							rel='noreferrer'
 						>
-							<GithubImageWhite src={GithubImageW} />
-							<GithubImageBlack src={GithubImageB} />
-						</GithubImageContainer>
+							<GithubIconWhite src={GithubIconW} />
+							<GithubIconBlack src={GithubIconB} />
+						</GithubIconContainer>
 					</LinkContainer>
 				</Nav>
 			</StyledHeader>
