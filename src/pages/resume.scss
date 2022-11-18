@@ -383,19 +383,20 @@ ul > li {
 .stack {
 	display: flex;
 	justify-content: flex-start;
-	margin: 0 auto;
 	flex-wrap: wrap;
-	max-width: 1000px;
+	max-width: 100%;
 }
 
 .stack img {
 	height: 30px;
 }
 
-.stack span {
-	padding: 0 15px;
-}
-
 .stack li {
 	padding: 3px 3px;
+}
+
+.stack span {
+	font-size: 1.2rem;
+	margin: auto 0;
+	padding-right: 15px;
 }

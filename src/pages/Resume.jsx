@@ -237,70 +237,49 @@ const Resume = () => {
 				<span className='light'> 2022.09 ~ Present</span>
 				<br />
 				<ul className='projectBullet'>
+					<div className='stack'>
+						<span>스택: </span>
+						<li id='react' className='changeText'>
+							<span className='logo-name'>
+								<img src={react} alt='React' />
+								<span className='text'> React </span>
+							</span>
+						</li>
+						<li id='styled' className='changeText'>
+							<span className='logo-name'>
+								<img src={styledComponents} alt='Styled Components' />
+								<span className='text'> Styled Components </span>
+							</span>
+						</li>
+
+						<li id='sass' className='changeText'>
+							<span className='logo-name'>
+								<img src={sass} alt='Styled Components' />
+								<span className='text'> SASS </span>
+							</span>
+						</li>
+						<li id='firebase' className='changeText'>
+							<span className='logo-name'>
+								<img src={firebase} alt='Styled Components' />
+								<span className='text'> Firebase </span>
+							</span>
+						</li>
+					</div>{' '}
 					<li>
-						<div className='stack'>
-							<span>스택: </span>
-							<li id='react' className='changeText'>
-								<span className='logo-name'>
-									<img src={react} alt='React' />
-									<span className='text'> React </span>
-								</span>
-							</li>
-
-							<li id='styled' className='changeText'>
-								<span className='logo-name'>
-									<img src={styledComponents} alt='Styled Components' />
-									<span className='text'> Styled Components </span>
-								</span>
-							</li>
-
-							<li id='javascript' className='changeText'>
-								<span className='logo-name'>
-									<img src={JavascriptLogo} alt='Styled Components' />
-									<span className='text'> Javascript </span>
-								</span>
-							</li>
-							<li id='html' className='changeText'>
-								<span className='logo-name'>
-									<img src={html} alt='Styled Components' />
-									<span className='text'> HTML </span>
-								</span>
-							</li>
-							<li id='css' className='changeText'>
-								<span className='logo-name'>
-									<img src={css} alt='Styled Components' />
-									<span className='text'> CSS </span>
-								</span>
-							</li>
-							<li id='sass' className='changeText'>
-								<span className='logo-name'>
-									<img src={sass} alt='Styled Components' />
-									<span className='text'> SASS </span>
-								</span>
-							</li>
-							<li id='firebase' className='changeText'>
-								<span className='logo-name'>
-									<img src={firebase} alt='Styled Components' />
-									<span className='text'> Firebase </span>
-								</span>
-							</li>
-						</div>{' '}
+						처음부터 끝까지 <span className='underlineHighlight'>템플릿 없이</span> 개발중
 					</li>
 					<ul>
 						<li>이력서 - sexybrain.dev/resume</li>
 						<li>블로그 - sexybrain.dev</li>
 						<ul>
 							<li>로그인 / 로그아웃</li>
-							<li>로그인 > 포스팅 페이지 활성화 + 이미지 업로딩</li>
+							<li>로그인시 포스팅 페이지 활성화 + 이미지 업로딩</li>
+							<li>마크다운</li>
 							<li>태그 + 카테고리</li>
 							<li>검색 (개발중)</li>
 						</ul>
 						<li>포트폴리오 - sexybrain.dev/portfolio (개발중)</li>
 					</ul>
-					<li>라이트 / 다크모드 기능 투입 예정</li>
-					<li>
-						처음부터 끝까지 <span className='underlineHighlight'>템플릿 없이</span> 개발중
-					</li>
 				</ul>
 			</section>
 		</main>
