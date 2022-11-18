@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 export const TagSection = styled.aside`
+	cursor: pointer;
+	z-index: 10;
+	padding-bottom: 10px;
+
 	p {
 		background: #f1f1f1;
 		padding: 5px 10px;
