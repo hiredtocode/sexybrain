@@ -21,7 +21,9 @@ p{
 img {
   max-width: 100%;
 }
-
+svg {
+  width: 1.5rem;
+}
 
 `;
 export default GlobalStyles;

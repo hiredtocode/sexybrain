@@ -11,7 +11,12 @@ const Button = styled.button`
 	padding: 10px 15px;
 	background-color: ${({ bg }) => bg || '#fff'};
 	color: ${({ color }) => color || '#333'};
-
+	.icon {
+		background: none;
+		outline: none;
+		border: none;
+		cursor: pointer;
+	}
 	&:hover {
 		opacity: 0.9;
 		transition: 0.5s;
