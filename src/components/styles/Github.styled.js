@@ -10,6 +10,7 @@ export const GithubImageBlack = styled.img`
 `;
 
 export const GithubImageWhite = styled.img`
+	border-radius: 50px;
 	position: absolute;
 	transition: 0.6s;
 	opacity: 0;
