@@ -100,7 +100,7 @@ const Home = ({ setActive, user }) => {
 			</Flex>
 			<Flex direction={'column'} style={{ paddingLeft: '20px', maxWidth: '300px' }} grow={0.5}>
 				<h2 style={{ textAlign: 'center' }}>Categories</h2>
-				<Flex wrap={'wrap'} style={{ marginBottom: '50px', marginTop: '10px' }}>
+				<Flex wrap={'wrap'} style={{ marginBottom: '50px', marginTop: '8px' }}>
 					{category?.map((item, index) => {
 						switch (item) {
 							case 'JavaScript':
