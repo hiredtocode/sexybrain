@@ -19,19 +19,19 @@ const Header = ({ active, setActive, user, handleLogout }) => {
 	const path = location.pathname;
 	const { isDark, setIsDark } = useContext(ThemeContext);
 
-	if (path === '/resume') console.log('true');
-	return (
-		<StyledHeader>
-			<Nav>
-				<div>
-					<Link to='/'>
-						<Logo src={JH} />
-					</Link>
-				</div>
-				<LinkContainer>
-					{path !== '/resume' ? (
-						<>
-							{/* <Link to='/'>
+	if (path === '/resume')
+		return (
+			<StyledHeader>
+				<Nav>
+					<div>
+						<Link to='/'>
+							<Logo src={JH} />
+						</Link>
+					</div>
+					<LinkContainer>
+						{path !== '/resume' ? (
+							<>
+								{/* <Link to='/'>
 								<Button
 									onClick={() => setActive('home')}
 									className={` ${active === 'home' ? 'active' : ''}`}
@@ -39,58 +39,61 @@ const Header = ({ active, setActive, user, handleLogout }) => {
 									Home
 								</Button>
 							</Link> */}
-							{userId ? (
-								<>
-									<Link to='/create'>
+								{userId ? (
+									<>
+										<Link to='/create'>
+											<Button
+												onClick={() => setActive('create')}
+												className={` ${active === 'create' ? 'active' : ''}`}
+											>
+												Create
+											</Button>
+										</Link>
+										<Link to='/'>
+											<Button onClick={handleLogout}>Logout</Button>
+										</Link>
+									</>
+								) : (
+									<Link to='/auth'>
 										<Button
-											onClick={() => setActive('create')}
-											className={` ${active === 'create' ? 'active' : ''}`}
+											className={` ${active === 'login' ? 'active' : ''}`}
+											onClick={() => setActive('login')}
 										>
-											Create
+											Login
 										</Button>
 									</Link>
-									<Link to='/'>
-										<Button onClick={handleLogout}>Logout</Button>
-									</Link>
-								</>
-							) : (
-								<Link to='/auth'>
+								)}
+							</>
+						) : (
+							<>
+								<Link to='/'>
 									<Button
-										className={` ${active === 'login' ? 'active' : ''}`}
-										onClick={() => setActive('login')}
+										onClick={() => setActive('home')}
+										className={` ${active === 'home' ? 'active' : ''}`}
 									>
-										Login
+										<span>Blog</span>
 									</Button>
 								</Link>
-							)}
-						</>
-					) : (
-						<>
-							<Link to='/'>
-								<Button
-									onClick={() => setActive('home')}
-									className={` ${active === 'home' ? 'active' : ''}`}
-								>
-									<span>Blog</span>
-								</Button>
-							</Link>
-						</>
-					)}
-					<button onClick={() => setIsDark(!isDark)} className='icon'>
-						{isDark ? <MoonIcon /> : <SunIcon />}
-					</button>
-					<GithubImageContainer
-						href='https://github.com/hiredtocode'
-						target='_blank'
-						rel='noreferrer'
-					>
-						<GithubImageWhite src={GithubImageW} />
-						<GithubImageBlack src={GithubImageB} />
-					</GithubImageContainer>
-				</LinkContainer>
-			</Nav>
-		</StyledHeader>
-	);
+							</>
+						)}
+						<Button
+							onClick={() => setIsDark(!isDark)}
+							style={{ border: 'none', cursor: 'pointer' }}
+						>
+							{isDark ? <MoonIcon /> : <SunIcon />}
+						</Button>
+						<GithubImageContainer
+							href='https://github.com/hiredtocode'
+							target='_blank'
+							rel='noreferrer'
+						>
+							<GithubImageWhite src={GithubImageW} />
+							<GithubImageBlack src={GithubImageB} />
+						</GithubImageContainer>
+					</LinkContainer>
+				</Nav>
+			</StyledHeader>
+		);
 };
 
 export default Header;
