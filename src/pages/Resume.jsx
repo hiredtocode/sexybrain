@@ -13,9 +13,15 @@ import firebase from '../assets/img/firebase-icon.svg';
 import profilePicture from '../assets/resume/사진.jpg';
 import Flex from '../components/styles/Flex.styled.js';
 import { ProfilePic } from '../components/styles/resume/profile.styled.js';
-import './resume.scss';
 import { Contact } from '../components/styles/resume/Contact.styled.js';
-import { CardContainer } from '../components/styles/resume/CardContainer.styled.js';
+import { Stack } from '../components/styles/resume/Stack.styled.js';
+import {
+	CardContainer,
+	Border,
+	Card,
+	Content1,
+	Content2,
+} from '../components/styles/resume/CardContainer.styled.js';
 import { Section } from '../components/styles/resume/Section.styled.js';
 import { Badge } from '../components/styles/resume/Badge.styled.js';
 import { Highlight } from '../components/styles/resume/Highlight.styled.js';
@@ -34,7 +40,7 @@ const Resume = () => {
 					</div>
 				</ProfilePic>
 
-				<Contact id='contact'>
+				<Contact>
 					<p>
 						한형석 / Jason
 						<span className='subText'> 1984 (39세/만 38세) / 남 </span>
@@ -50,10 +56,9 @@ const Resume = () => {
 			<H2 className='mainTitle'>자기소개서</H2>
 			<LineBreak />
 			<Section>
-				<H3>Section</H3>
-				<div className='content'>
+				<H3>안녕하세요,</H3>
+				<Content1>
 					<p>
-						안녕하세요,
 						<Highlight> 긍정적이고 밝은 성격</Highlight>을 지닌 비전공자이며, 37살 때 코딩 매력에
 						빠져서 개발자가 되기로 마음을 먹고 독학을 했습니다. <br />
 						<Highlight>논리적</Highlight>인 사고방식과 <Highlight>UX</Highlight>를 항상 고민을 하며
@@ -64,18 +69,10 @@ const Resume = () => {
 						중요하다고 생각하며, 임팩트는 혼자가 아닌 <Highlight>함께 만들어 나아가</Highlight>는
 						것이기에 <Highlight>대화 스킬과 협업</Highlight>이 중요 하다고 생각합니다.
 					</p>
-					<p>
-						비록 개발자 공부를 늦은 나이에 시작했지만, 꾸준히 노력하여 능력 있는 개발자가 되는것이
-						목표입니다. <br />
-						그리고, 해외(<Highlight>캐나다</Highlight>)에서 20년 넘게 쌓은 경험으로 도움이 되는
-						인재가 되길 원합니다.
-					</p>
-					{/* <p>
-        <a href="#" target="_blank" className="linkUnderline"
-          >여기를 클릭 하시면 PDF로 된 이력서를 보실수 있습니다.</a
-        >
-      </p>  */}
-				</div>
+					<br />
+					<br />
+					<p>비록 늦은 나이에 시작을 했지만, 꾸준히 노력하여 능력 있는 개발자가 될것입니다.</p>
+				</Content1>
 			</Section>
 			<H2 className='mainTitle'>보유기술</H2>
 			<LineBreak />
@@ -103,7 +100,7 @@ const Resume = () => {
 						<p> React </p>
 					</Badge>
 					<Badge>
-						<img id='css3' src={css} alt='CSS3' />
+						<img src={css} alt='CSS3' />
 						<p> CSS3 </p>
 					</Badge>
 					<Badge>
@@ -128,57 +125,56 @@ const Resume = () => {
 					</Badge>
 				</Flex>
 
-				<Flex wrap={'wrap'} justify={'space-between'}>
+				<Flex wrap={'wrap'} justify={'space-around'}>
 					<CardContainer>
-						<div className='border'>
-							<div className='card'>
-								<div className='content'>
+						<Border>
+							<Card>
+								<Content2>
 									<H3>백엔드</H3>
 									<p>RESTful API</p>
 									<p>NodeJS</p>
 									<p>Firebase</p>
-								</div>
-							</div>
-						</div>
+								</Content2>
+							</Card>
+						</Border>
 					</CardContainer>
 					<CardContainer>
-						<div className='border'>
-							<div className='card'>
-								<div className='content'>
+						<Border>
+							<Card>
+								<Content2>
 									<H3>DevOps</H3>
 									<p>Git (버전 컨트롤)</p>
-									<p>Github - CI/CD Integration</p>
-								</div>
-							</div>
-						</div>
+									<p>Github - CI/CD</p>
+								</Content2>
+							</Card>
+						</Border>
 					</CardContainer>
 					<CardContainer>
-						<div className='border'>
-							<div className='card'>
-								<div className='content'>
+						<Border>
+							<Card>
+								<Content2>
 									<H3>Collaboration</H3>
 									<p>Jira</p>
 									<p>Confluence</p>
 									<p>Google Drive</p>
 									<p>Slack</p>
 									<p>Notion</p>
-								</div>
-							</div>
-						</div>
+								</Content2>
+							</Card>
+						</Border>
 					</CardContainer>
 					<CardContainer>
-						<div className='border'>
-							<div className='card'>
-								<div className='content'>
+						<Border>
+							<Card>
+								<Content2>
 									<H3>Other</H3>
-									<p>Communication Skills</p>
 									<p>영어작문</p>
 									<p>문제해결</p>
 									<p>컴퓨터활용</p>
 									<p>리더십</p>
-								</div>
-							</div>
-						</div>
+								</Content2>
+							</Card>
+						</Border>
 					</CardContainer>
 				</Flex>
 			</Section>
@@ -192,7 +188,7 @@ const Resume = () => {
 				<span className='light'> 2022.09 ~ Present</span>
 				<br />
 				<ul className='projectBullet'>
-					<div className='stack'>
+					<Stack>
 						<span>스택: </span>
 						<Badge>
 							<img src={react} alt='React' />
@@ -210,7 +206,7 @@ const Resume = () => {
 							<img src={firebase} alt='Firebase' />
 							<p> Firebase </p>
 						</Badge>
-					</div>{' '}
+					</Stack>{' '}
 					<li>
 						처음부터 끝까지 <Highlight>템플릿 없이</Highlight> 개발중
 					</li>
