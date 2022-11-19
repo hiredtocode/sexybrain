@@ -65,10 +65,7 @@ const Header = ({ active, setActive, user, handleLogout }) => {
 						<>
 							{/* Set the "Home" button to display "Blog" instead when it's in the Resume page */}
 							<Link to='/'>
-								<Button
-									onClick={() => setActive('home')}
-									className={` ${active === 'home' ? 'active' : ''}`}
-								>
+								<Button onClick={() => setActive('home')} className={` ${active === ''}`}>
 									<span>Blog</span>
 								</Button>
 							</Link>
