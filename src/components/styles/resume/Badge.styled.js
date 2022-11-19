@@ -7,8 +7,9 @@ export const Badge = styled.div`
 	align-items: center;
 	max-height: 40px;
 	justify-content: center;
-	background-color: ${({ theme }) => theme.colors.button};
+	background-color: ${({ theme }) => theme.colors.button2};
 	border-radius: 10px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 	font-size: 1rem;
 	color: ${({ theme }) => theme.colors.font};
 
