@@ -11,7 +11,7 @@ import {
 	FormContainer,
 	FormInput,
 	FormLabel,
-	Form,
+	LoginForm,
 	FormButton,
 } from '../components/styles/FormContainer.styled.js';
 import './Auth.scss';
@@ -52,7 +52,7 @@ const Auth = ({ setActive, setUser }) => {
 		<>
 			<FormContainer>
 				<div className='l-form'>
-					<Form className='form' onSubmit={handleAuth}>
+					<LoginForm className='form' onSubmit={handleAuth}>
 						<h1 className='form__title'>{!signUp ? 'Sign-In' : 'Sign-Up'}</h1>
 
 						<div className='form__div'>
@@ -86,7 +86,7 @@ const Auth = ({ setActive, setUser }) => {
 						<FormButton className={`btn ${!signUp ? 'btn-sign-in' : 'btn-sign-up'}`} type='submit'>
 							{!signUp ? 'Login' : 'Sign-up'}
 						</FormButton>
-					</Form>
+					</LoginForm>
 				</div>
 			</FormContainer>
 		</>
