@@ -11,9 +11,10 @@ body{
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Quicksand', 'sans-serif';
+	font-display: swap;
 	background: ${({ theme }) => theme.colors.body};
 	color: ${({ theme }) => theme.colors.font};
-	transition: 1s;
+	transition-duration: 1s;
 }
 
 p{

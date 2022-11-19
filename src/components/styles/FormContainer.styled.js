@@ -29,7 +29,8 @@ export const FormInput = styled.input`
 export const FormButton = styled.button`
 	border-radius: 0.5rem;
 	border: none;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+
 	cursor: pointer;
 	font-size: 1.2rem;
 	font-weight: 700;
@@ -41,9 +42,9 @@ export const FormButton = styled.button`
 
 	&:hover {
 		opacity: 0.9;
-		transition: 0.5s;
 		transform: scale(0.98);
-		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
 		background: linear-gradient(
 			45deg,
 			${({ theme }) => theme.colors.hover},
@@ -59,7 +60,8 @@ export const FormButton = styled.button`
 export const FormCancelButton = styled.button`
 	border-radius: 0.5rem;
 	border: none;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+
 	cursor: pointer;
 	font-size: 1.2rem;
 	font-weight: 700;
@@ -71,9 +73,9 @@ export const FormCancelButton = styled.button`
 
 	&:hover {
 		opacity: 0.9;
-		transition: 0.5s;
 		transform: scale(0.98);
-		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
 		background: linear-gradient(
 			45deg,
 			${({ theme }) => theme.colors.cancelHover},
@@ -114,7 +116,7 @@ export const Form = styled.form`
 	padding: 4rem 2rem;
 	height: 800px;
 	border-radius: 1rem;
-	box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 `;
 
 export const LoginForm = styled.form`
@@ -125,7 +127,7 @@ export const LoginForm = styled.form`
 	padding: 4rem 2rem;
 	max-height: 400px;
 	border-radius: 1rem;
-	box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 
 	button {
 		margin: 0;

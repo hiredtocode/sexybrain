@@ -14,17 +14,18 @@ export const CardContainer = styled.article`
 		right: 20px;
 		bottom: 20px;
 		background: ${({ theme }) => theme.colors.card};
-		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+
 		border-radius: 15px;
 		display: flex;
 		justify-content: center;
 		align-items: baseline;
-		transition: 0.5s;
 	}
 
 	.border:hover .card {
 		transform: translateY(-30px);
-		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
 		background: linear-gradient(
 			45deg,
 			${({ theme }) => theme.colors.hover},
@@ -48,7 +49,6 @@ export const CardContainer = styled.article`
 		font-size: 1.3em;
 		color: ${({ theme }) => theme.colors.font};
 		z-index: 1;
-		transition: 0.5s;
 		font-weight: 600;
 	}
 
@@ -59,6 +59,5 @@ export const CardContainer = styled.article`
 		color: ${({ theme }) => theme.colors.font};
 		margin: 10px auto;
 		z-index: 1;
-		transition: 0.5s;
 	}
 `;

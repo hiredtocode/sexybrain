@@ -10,7 +10,6 @@ export const StyledHeader = styled.header`
 	height: 70px;
 	background-color: ${({ theme }) => theme.colors.header};
 	backdrop-filter: brightness(98%) blur(5px);
-	transition: 0.6s;
 
 	@media (max-width: ${({ theme }) => theme.xs}) {
 		padding: 0 15px;
@@ -30,12 +29,12 @@ export const Nav = styled.nav`
 	width: 1200px;
 	justify-content: space-between;
 	align-items: center;
-	transition: 0.6s;
 	margin: 0 auto;
 `;
 
 export const Logo = styled.img`
 	height: 60px;
+	width: 60px;
 `;
 export const LinkContainer = styled.header`
 	display: flex;
