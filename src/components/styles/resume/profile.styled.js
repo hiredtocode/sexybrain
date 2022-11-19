@@ -53,4 +53,13 @@ export const ProfilePic = styled.section`
 		background-image: conic-gradient(transparent, transparent, transparent, #ff5e00);
 		animation: animate 6s linear infinite;
 	}
+
+	@keyframes animate {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
 `;
