@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 export const GithubBottom = styled.img`
-	width: 42px;
-	height: 42px;
+	min-width: 50px;
+	min-height: 50px;
 	background: ${({ theme }) => theme.colors.button};
 	border-radius: 50px;
+	object-fit: cover;
 	transition: 0.5s;
 `;
 
@@ -12,8 +13,9 @@ export const GithubTop = styled.img`
 	border-radius: 50px;
 	position: absolute;
 	opacity: 0;
-	width: 42px;
-	height: 42px;
+	min-width: 50px;
+	min-height: 50px;
+	object-fit: cover;
 	transition: 0.5s;
 
 	background: linear-gradient(
