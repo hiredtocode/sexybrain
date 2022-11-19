@@ -28,15 +28,17 @@ import firebase from '../assets/img/firebase-icon.svg';
 import tailwindcss from '../assets/img/tailwindcss.svg';
 import programmer from '../assets/img/programmer.svg';
 import question from '../assets/img/question.svg';
+import { H3 } from '../components/styles/Title.styled.js';
 
 export default function Card({ blogs, user, handleDelete }) {
 	const userId = user?.uid;
+	const fontColor = `${({ theme }) => theme.colors.font}`;
 
 	return (
 		<>
 			{blogs?.map((item, index) => (
 				<CardContainer key={index}>
-					<Link to={`/detail/${item.id}`} style={{ textDecoration: 'none', color: 'black' }}>
+					<Link to={`/detail/${item.id}`} style={{ textDecoration: 'none', color: { fontColor } }}>
 						<StyledCard>
 							<Description>
 								<CategoryMark>
@@ -73,7 +75,7 @@ export default function Card({ blogs, user, handleDelete }) {
 									)}
 								</CategoryMark>
 								<Flex justify={'space-between'} align={'center'} style={{ paddingLeft: '200px' }}>
-									<h3>{item.title}</h3>
+									<H3>{item.title}</H3>
 									<Date>
 										<span>{item.timestamp.toDate().toDateString()}</span>
 									</Date>
@@ -94,6 +96,7 @@ export default function Card({ blogs, user, handleDelete }) {
 								icon={faTrash}
 								style={{ cursor: 'pointer', paddingRight: '10px', textDecoration: 'none' }}
 								size='2x'
+								aria-label={item.id}
 								onClick={() => handleDelete(item.id)}
 							/>
 							<Link to={`/update/${item.id}`}>
@@ -102,6 +105,7 @@ export default function Card({ blogs, user, handleDelete }) {
 									name='edit'
 									style={{ cursor: 'pointer' }}
 									size='2x'
+									aria-label={item.id}
 								/>
 							</Link>
 						</IconContainer>

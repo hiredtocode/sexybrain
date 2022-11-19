@@ -23,6 +23,7 @@ import firebase from '../assets/img/firebase-icon.svg';
 import tailwindcss from '../assets/img/tailwindcss.svg';
 import programmer from '../assets/img/programmer.svg';
 import question from '../assets/img/question.svg';
+import { H2 } from '../components/styles/Title.styled.js';
 
 // import MostPopular from '../components/MostPopular';
 // import Trending from '../components/Trending';
@@ -99,7 +100,7 @@ const Home = ({ setActive, user }) => {
 				<BlogSection blogs={blogs} user={user} handleDelete={handleDelete} />
 			</Flex>
 			<Flex direction={'column'} style={{ paddingLeft: '20px', maxWidth: '300px' }} grow={0.5}>
-				<h2 style={{ textAlign: 'center' }}>Categories</h2>
+				<H2 style={{ textAlign: 'center' }}>Categories</H2>
 				<Flex wrap={'wrap'} style={{ marginBottom: '50px', marginTop: '8px' }}>
 					{category?.map((item, index) => {
 						switch (item) {
@@ -211,7 +212,7 @@ const Home = ({ setActive, user }) => {
 						}
 					})}
 				</Flex>
-				<h2 style={{ textAlign: 'center' }}>Tags</h2>
+				<H2 style={{ textAlign: 'center' }}>Tags</H2>
 				<TagContainer>
 					<Tags tags={tags} />
 				</TagContainer>

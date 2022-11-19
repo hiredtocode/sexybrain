@@ -6,6 +6,7 @@ import { db } from '../firebase.config';
 import { BlogTitleBox, Author, BlogDetail } from '../components/styles/BlogDetails.styled.js';
 import Post from '../components/markdown_component/post.js';
 import Flex from '../components/styles/Flex.styled.js';
+import { H2 } from '../components/styles/Title.styled.js';
 
 const Detail = ({ setActive }) => {
 	const { id } = useParams();
@@ -44,7 +45,7 @@ const Detail = ({ setActive }) => {
 				<div className='overlay'></div>
 				<div className='blog-title'>
 					<span>{blog?.timestamp.toDate().toDateString()}</span>
-					<h2>{blog?.title}</h2>
+					<H2>{blog?.title}</H2>
 				</div>
 			</BlogTitleBox>
 			<BlogDetail>

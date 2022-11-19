@@ -17,6 +17,7 @@ import {
 	FormCancelButton,
 } from '../components/styles/FormContainer.styled.js';
 import Flex from '../components/styles/Flex.styled.js';
+import { H1, H3 } from '../components/styles/Title.styled.js';
 
 const AddEdit = ({ user, setActive }) => {
 	const categoryOption = [
@@ -147,7 +148,7 @@ const AddEdit = ({ user, setActive }) => {
 		<FormContainer>
 			<div className='l-form'>
 				<Form className='form' onSubmit={handleSubmit}>
-					<h1 className='form__title'>{id ? 'Update Blog' : 'Create Blog'}</h1>
+					<H1 className='form__title'>{id ? 'Update Blog' : 'Create Blog'}</H1>
 					{/* Title section  */}
 					<div className='form__div'>
 						<FormInput
@@ -209,7 +210,7 @@ const AddEdit = ({ user, setActive }) => {
 						<input type='file' onChange={(e) => setFile(e.target.files[0])} />
 					</div>
 					<div>
-						<h3>Uploaded {progress}%</h3>
+						<H3>Uploaded {progress}%</H3>
 						<Flex>
 							<FormCancelButton className='cancel' onClick={() => navigate('/')}>
 								Cancel

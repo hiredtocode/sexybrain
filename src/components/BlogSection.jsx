@@ -1,11 +1,11 @@
 import React from 'react';
-import Title from './styles/Title.styled.js';
+import { H2 } from './styles/Title.styled.js';
 import Card from './Card';
 
 const BlogSection = ({ blogs, user, handleDelete, handleUpdate }) => {
 	return (
 		<>
-			<Title>Blogs</Title>
+			<H2>Blogs</H2>
 
 			<Card blogs={blogs} user={user} handleDelete={handleDelete} handleUpdate={handleUpdate} />
 		</>
