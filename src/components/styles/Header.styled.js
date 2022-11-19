@@ -4,22 +4,25 @@ export const StyledHeader = styled.header`
 	/* background-color: ${({ theme }) => theme.colors.header}; */
 	position: fixed;
 	display: flex;
+	margin: 0 auto;
 	width: 100vw;
 	padding: 0 50px;
-	z-index: 100000;
+	z-index: 100;
 	height: 70px;
 	background-color: ${({ theme }) => theme.colors.header};
 	backdrop-filter: brightness(98%) blur(5px);
 
+	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
 		padding: 0 15px;
 	}
+	/* s: '767.98px'  */
 	@media (max-width: ${({ theme }) => theme.s}) {
-		padding: 0 15px;
 	}
+	/* md: '991.98px'  */
 	@media (max-width: ${({ theme }) => theme.md}) {
-		padding: 0 15px;
 	}
+	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
 	} ;
 `;
@@ -33,8 +36,9 @@ export const Nav = styled.nav`
 `;
 
 export const Logo = styled.img`
-	height: 60px;
-	width: 60px;
+	max-height: 60px;
+	max-width: 60px;
+	object-fit: cover;
 `;
 export const LinkContainer = styled.header`
 	display: flex;

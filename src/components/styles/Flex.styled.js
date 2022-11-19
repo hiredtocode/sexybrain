@@ -15,6 +15,19 @@ const Flex = styled.div`
 	h3 {
 		font-weight: bold;
 	}
+
+	/*	xs: '575.98px'*/
+	@media (max-width: ${({ theme }) => theme.xs}) {
+	}
+	/* s: '767.98px'  */
+	@media (max-width: ${({ theme }) => theme.s}) {
+	}
+	/* md: '991.98px'  */
+	@media (max-width: ${({ theme }) => theme.md}) {
+	}
+	/* lg: '1199.98px'  */
+	@media (max-width: ${({ theme }) => theme.lg}) {
+	} ;
 `;
 
 export default Flex;
