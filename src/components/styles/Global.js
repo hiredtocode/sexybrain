@@ -4,13 +4,13 @@ const GlobalStyles = createGlobalStyle`
 
 * {
   box-sizing: border-box;
+	font-family: 'Quicksand', 'sans-serif';
 }
 
 body{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Quicksand', 'sans-serif';
 	font-display: swap;
 	background: ${({ theme }) => theme.colors.body};
 	color: ${({ theme }) => theme.colors.font};
