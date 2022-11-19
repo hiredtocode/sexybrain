@@ -8,19 +8,20 @@ export const StyledCard = styled.div`
 	overflow: hidden;
 	display: flex;
 	align-items: center;
-	background-color: #fff;
+	background-color: ${({ theme }) => theme.colors.card};
 	border-radius: 15px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 	margin: 10px 0;
 	padding: 15px;
+	transition: 0.8s;
 
 	&:hover {
-		transition: all 0.5s ease;
+		transition: 0.5s;
 		transform: translateY(-5px);
 		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 		img {
-			opacity: 0.5;
-			transition: 1s;
+			opacity: 0.6;
+			transition: 0.7s;
 		}
 	}
 `;
@@ -29,6 +30,7 @@ export const Description = styled.div`
 	justify-content: space-between;
 	min-width: 100%;
 	font-size: 1.15rem;
+	color: ${({ theme }) => theme.colors.font};
 `;
 
 export const Date = styled.div`
@@ -51,7 +53,7 @@ export const CategoryMark = styled.div`
 		height: 240px;
 		top: -35px;
 		left: -30px;
-		opacity: 0.2;
+		opacity: 0.4;
 		transform: rotate(-15deg);
 		z-index: 0;
 	}

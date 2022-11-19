@@ -10,20 +10,26 @@ const CategoryButton = styled.button`
 	font-weight: 500;
 	margin: 3px;
 	padding: 10px 10px;
-	background-color: ${({ bg }) => bg || '#fff'};
-	color: ${({ color }) => color || '#333'};
+	background-color: ${({ theme }) => theme.colors.button2};
+	transition: 0.8s;
+	color: ${({ theme }) => theme.colors.font};
 
 	&:hover {
 		opacity: 0.9;
 		transition: 0.5s;
 		transform: scale(0.98);
 		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-		background: linear-gradient(45deg, #3776d3, #55c1ff);
-		color: white;
+		background: linear-gradient(
+			45deg,
+			${({ theme }) => theme.colors.hover},
+			${({ theme }) => theme.colors.hovered}
+		);
+		color: ${({ theme }) => theme.colors.font};
 	}
 
 	&:hover span {
-		color: #fff;
+		transition: 0.5s;
+		color: ${({ theme }) => theme.colors.font};
 	}
 
 	span {

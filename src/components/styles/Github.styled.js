@@ -25,8 +25,5 @@ export const GithubIconWhite = styled.img`
 
 export const GithubIconContainer = styled.a`
 	position: relative;
-	/* width: 70px;
-	height: 70px; */
-	padding-left: 20px;
 	align-items: center;
 `;

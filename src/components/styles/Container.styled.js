@@ -5,7 +5,6 @@ export const Container = styled.div`
 	max-width: 1200px;
 	align-items: flex-start;
 	padding: 130px 30px;
-	transition: 0.6s;
 	margin: 0 auto;
 
 	@media (max-width: ${({ theme }) => theme.xs}) {

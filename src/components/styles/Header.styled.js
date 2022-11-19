@@ -8,6 +8,7 @@ export const StyledHeader = styled.header`
 	padding: 0 50px;
 	z-index: 100000;
 	height: 70px;
+	background-color: ${({ theme }) => theme.colors.header};
 	backdrop-filter: brightness(98%) blur(5px);
 	transition: 0.6s;
 

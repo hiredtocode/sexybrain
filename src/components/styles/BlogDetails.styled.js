@@ -75,6 +75,7 @@ export const BlogDetail = styled.div`
 		justify-content: space-between;
 		padding: 0 20px;
 		padding-bottom: 15px;
+		color: ${({ theme }) => theme.colors.font};
 	}
 `;
 export const Author = styled.p`

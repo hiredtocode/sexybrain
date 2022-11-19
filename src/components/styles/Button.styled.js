@@ -9,8 +9,10 @@ const Button = styled.button`
 	font-weight: 700;
 	margin: 0 5px;
 	padding: 10px 15px;
-	background-color: ${({ bg }) => bg || '#fff'};
-	color: ${({ color }) => color || '#333'};
+	background-color: ${({ theme }) => theme.colors.button2};
+	color: ${({ theme }) => theme.colors.font};
+	transition: 0.8s;
+
 	.icon {
 		background: none;
 		outline: none;
@@ -22,12 +24,19 @@ const Button = styled.button`
 		transition: 0.5s;
 		transform: scale(0.98);
 		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-		background: linear-gradient(45deg, #3776d3, #55c1ff);
-		color: white;
+		background: linear-gradient(
+			45deg,
+			${({ theme }) => theme.colors.hover},
+			${({ theme }) => theme.colors.hovered}
+		);
+		color: ${({ theme }) => theme.colors.font};
+	}
+	&.active {
+		color: ${({ theme }) => theme.colors.active};
 	}
 
 	&:hover span {
-		color: #fff;
+		color: ${({ theme }) => theme.colors.font};
 	}
 `;
 

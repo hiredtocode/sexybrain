@@ -22,7 +22,6 @@ export const ThemeContext = createContext();
 
 function App() {
 	const [isDark, setIsDark] = useState(true);
-
 	const value = {
 		isDark,
 		setIsDark,
@@ -32,12 +31,51 @@ function App() {
 
 	const navigate = useNavigate();
 
-	const theme = {
+	const lightTheme = {
 		colors: {
-			header: '#ebfbff',
-			body: '#f5f5f5',
+			header: 'transparent',
+			body: '#E7F6F2',
 			footer: '#003333',
+			button: '#E7F6F2',
+			button2: '#ffffff',
+			font: '#395B64',
+			card: '#fcfcfc',
+			hover: '#befdff',
+			hovered: '#ffffff',
+			cancelButton: '#f6e7e7',
+			cancelHover: '#ffbebe',
+			cancelHovered: '#ffffff',
+			subText: '#A5C9CA',
+			accent: '#395B64',
+			underline: '#A5C9CA',
+			active: '#ff0000',
 		},
+
+		xs: '575.98px',
+		s: '767.98px',
+		md: '991.98px',
+		lg: '1199.98px',
+	};
+	const darkTheme = {
+		colors: {
+			header: '',
+			body: '#2C3333',
+			footer: '#2E3445',
+			button: '#347485',
+			button2: '#347485',
+			font: '#E7F6F2',
+			card: '#395B64',
+			hover: '#395B64',
+			hovered: '#2eb6bb',
+			cancelButton: '#853434',
+			cancelHover: '#643939',
+			cancelHovered: '#bb2e2e',
+			subText: '#A5C9CA',
+			accent: '#A5C9CA',
+			underline: '#A5C9CA',
+			active: '#2eb6bb',
+		},
+
 		xs: '575.98px',
 		s: '767.98px',
 		md: '991.98px',
@@ -62,7 +100,7 @@ function App() {
 
 	return (
 		<ThemeContext.Provider value={value}>
-			<ThemeProvider theme={theme}>
+			<ThemeProvider theme={isDark ? darkTheme : lightTheme}>
 				<GlobalStyles />
 				<Header setActive={setActive} active={active} user={user} handleLogout={handleLogout} />
 				<ToastContainer />
