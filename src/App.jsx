@@ -34,7 +34,7 @@ function App() {
 	const lightTheme = {
 		colors: {
 			header: 'transparent',
-			body: '#E7F6F2',
+			body: '#f0f8f6',
 			footer: '#003333',
 			button: '#E7F6F2',
 			button2: '#ffffff',
@@ -45,7 +45,7 @@ function App() {
 			cancelButton: '#f6e7e7',
 			cancelHover: '#ffbebe',
 			cancelHovered: '#ffffff',
-			subText: '#A5C9CA',
+			subText: '#9aa9aa',
 			accent: '#395B64',
 			underline: '#A5C9CA',
 			active: '#befdff',
@@ -55,6 +55,19 @@ function App() {
 		s: '767.98px',
 		md: '991.98px',
 		lg: '1199.98px',
+
+		// 		/* xs: '575.98px' */
+		// @media (max-width: ${({ theme }) => theme.xs}) {
+		// }
+		// /* s: '767.98px'  */
+		// @media (max-width: ${({ theme }) => theme.s}) {
+		// }
+		// /* md: '991.98px'  */
+		// @media (max-width: ${({ theme }) => theme.md}) {
+		// }
+		// /* lg: '1199.98px'  */
+		// @media (max-width: ${({ theme }) => theme.lg}) {
+		// } ;
 	};
 	const darkTheme = {
 		colors: {
@@ -66,7 +79,7 @@ function App() {
 			font: '#E7F6F2',
 			card: '#395B64',
 			hover: '#395B64',
-			hovered: '#2eb6bb',
+			hovered: '#239296',
 			cancelButton: '#853434',
 			cancelHover: '#643939',
 			cancelHovered: '#bb2e2e',
