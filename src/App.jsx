@@ -48,7 +48,7 @@ function App() {
 			subText: '#A5C9CA',
 			accent: '#395B64',
 			underline: '#A5C9CA',
-			active: '#ff0000',
+			active: '#befdff',
 		},
 
 		xs: '575.98px',

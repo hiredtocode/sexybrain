@@ -107,105 +107,109 @@ const Home = ({ setActive, user }) => {
 							case 'JavaScript':
 								return (
 									<CategoryButton key={index}>
-										<img src={javascript} alt={item} style={{ height: '20px' }} />
+										<img src={javascript} alt={item} style={{ height: '20px', width: '20px' }} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'TypeScript':
 								return (
 									<CategoryButton key={index}>
-										<img src={typescript} alt={item} style={{ height: '20px' }} />
+										<img src={typescript} alt={item} style={{ height: '20px', width: '20px' }} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'React':
 								return (
 									<CategoryButton key={index}>
-										<img src={react} alt={item} style={{ height: '20px' }} />
+										<img src={react} alt={item} style={{ height: '20px', width: '20px' }} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Angular':
 								return (
 									<CategoryButton key={index}>
-										<img src={angular} alt={item} style={{ height: '20px' }} />
+										<img src={angular} alt={item} style={{ height: '20px', width: '20px' }} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'CSS':
 								return (
 									<CategoryButton key={index}>
-										<img src={css} alt={item} style={{ height: '20px' }} />
+										<img src={css} alt={item} style={{ height: '20px', width: '20px' }} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'HTML':
 								return (
 									<CategoryButton key={index}>
-										<img src={html} alt={item} style={{ height: '20px' }} />
+										<img src={html} alt={item} style={{ height: '20px', width: '20px' }} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'SASS':
 								return (
 									<CategoryButton key={index}>
-										<img src={sass} alt={item} style={{ height: '20px' }} />
+										<img src={sass} alt={item} style={{ height: '20px', width: '20px' }} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Bootstrap':
 								return (
 									<CategoryButton key={index}>
-										<img src={bootstrap} alt={item} style={{ height: '20px' }} />
+										<img src={bootstrap} alt={item} style={{ height: '20px', width: '20px' }} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Material UI':
 								return (
 									<CategoryButton key={index}>
-										<img src={materialUi} alt={item} style={{ height: '20px' }} />
+										<img src={materialUi} alt={item} style={{ height: '20px', width: '20px' }} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Tailwind CSS':
 								return (
 									<CategoryButton key={index}>
-										<img src={tailwindcss} alt={item} style={{ height: '20px' }} />
+										<img src={tailwindcss} alt={item} style={{ height: '20px', width: '20px' }} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Styled Components':
 								return (
 									<CategoryButton key={index}>
-										<img src={styledComponents} alt={item} style={{ height: '20px' }} />
+										<img
+											src={styledComponents}
+											alt={item}
+											style={{ height: '20px', width: '20px' }}
+										/>
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'What I learned':
 								return (
 									<CategoryButton key={index}>
-										<img src={programmer} alt={item} style={{ height: '20px' }} />
+										<img src={programmer} alt={item} style={{ height: '20px', width: '20px' }} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Firebase':
 								return (
 									<CategoryButton key={index}>
-										<img src={firebase} alt={item} style={{ height: '20px' }} />
+										<img src={firebase} alt={item} style={{ height: '20px', width: '20px' }} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Wordpress':
 								return (
 									<CategoryButton key={index}>
-										<img src={wordpress} alt={item} style={{ height: '20px' }} />
+										<img src={wordpress} alt={item} style={{ height: '20px', width: '20px' }} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							default:
 								return (
 									<CategoryButton key={index}>
-										<img src={question} alt={item} style={{ height: '20px' }} />
+										<img src={question} alt={item} style={{ height: '20px', width: '20px' }} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
