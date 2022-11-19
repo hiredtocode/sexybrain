@@ -5,9 +5,10 @@ import { StyledHeader, Nav, Logo, LinkContainer } from './styles/Header.styled.j
 import Button from './styles/Button.styled.js';
 import JHLogo from '../assets/img/jh-logo.png';
 import JHLogoWhite from '../assets/img/jh-logo-white.png';
-import { GithubIconBlack, GithubIconWhite, GithubIconContainer } from './styles/Github.styled.js';
-import GithubIconB from '../assets/img/github-black.svg';
-import GithubIconW from '../assets/img/github-white.svg';
+import { GithubBottom, GithubTop, GithubIconContainer } from './styles/Github.styled.js';
+import Github from '../assets/img/github.svg';
+import GithubBlack from '../assets/img/github-black.svg';
+import GithubWhite from '../assets/img/github-white.svg';
 import { MoonIcon, SunIcon } from '../assets/icons';
 
 const Header = ({ active, setActive, user, handleLogout }) => {
@@ -78,7 +79,15 @@ const Header = ({ active, setActive, user, handleLogout }) => {
 					{/* Dark / light mode toggle */}
 					<Button
 						onClick={() => setIsDark(!isDark)}
-						style={{ border: 'none', cursor: 'pointer' }}
+						style={{
+							border: 'none',
+							cursor: 'pointer',
+							height: '42px',
+							width: '65px',
+							display: 'flex',
+							alignItems: 'center',
+							justifyContent: 'center',
+						}}
 						aria-label='Light dark mode'
 					>
 						{isDark ? <MoonIcon /> : <SunIcon />}
@@ -91,17 +100,35 @@ const Header = ({ active, setActive, user, handleLogout }) => {
 						target='_blank'
 						rel='noreferrer'
 					>
-						<GithubIconWhite
-							src={GithubIconW}
-							style={isDark ? { opacity: 0.9 } : null}
-							alt='Github'
-							aria-label='Click to go to my github page'
-						/>
-						<GithubIconBlack
-							src={GithubIconB}
-							alt='Github'
-							aria-label='Click to go to my github page'
-						/>
+						{isDark ? (
+							<>
+								<GithubTop
+									src={Github}
+									alt='Github Icon'
+									aria-label='Click to go to my github page'
+									style={{ outlineWidth: '1px', outlineStyle: 'groove', outlineColor: 'black' }}
+								/>
+								<GithubBottom
+									src={GithubWhite}
+									alt='Github bottom icon'
+									aria-label='Click to go to my github page'
+									style={{ outlineWidth: '1px', outlineStyle: 'groove', outlineColor: 'black' }}
+								/>
+							</>
+						) : (
+							<>
+								<GithubTop
+									src={GithubWhite}
+									alt='Github top icon'
+									aria-label='Click to go to my github page'
+								/>
+								<GithubBottom
+									src={GithubBlack}
+									alt='Github bottom icon'
+									aria-label='Click to go to my github page'
+								/>
+							</>
+						)}
 					</GithubIconContainer>
 					{/* Github icon END */}
 				</LinkContainer>
