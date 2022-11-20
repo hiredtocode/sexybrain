@@ -14,7 +14,7 @@ import { auth } from './firebase.config';
 import { signOut } from 'firebase/auth';
 import Header from './components/Header';
 import Resume from './pages/Resume';
-import { Container } from './components/styles/Container.styled.js';
+import { RootContainer } from './components/styles/RootContainer.styled.js';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './components/styles/Global';
 
@@ -117,7 +117,7 @@ function App() {
 				<GlobalStyles />
 				<Header setActive={setActive} active={active} user={user} handleLogout={handleLogout} />
 				<ToastContainer />
-				<Container>
+				<RootContainer>
 					<Routes>
 						<Route path='/' element={<Home setActive={setActive} user={user} />} />
 						<Route path='/detail/:id' element={<BlogDetails setActive={setActive} />} />
@@ -135,7 +135,7 @@ function App() {
 						<Route path='/resume' element={<Resume />} />
 						<Route path='*' element={<NotFound />} />
 					</Routes>
-				</Container>
+				</RootContainer>
 			</ThemeProvider>
 		</ThemeContext.Provider>
 	);
