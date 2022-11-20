@@ -1,22 +1,14 @@
 import styled from 'styled-components/macro';
 
-export const Section = styled.section`
+export const RootContainer = styled.div`
 	display: flex;
-	flex-direction: column;
-	margin-top: 20px;
-	padding-left: 20px;
-
-	ul > li {
-		margin-left: 30px;
-		font-size: 1.2rem;
-	}
+	max-width: 1200px;
+	align-items: flex-start;
+	padding: 130px 30px;
+	margin: 0 auto;
 
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
-		ul > li {
-			margin-left: -20px;
-			font-size: 1.2rem;
-		}
 	}
 	/* s: '767.98px'  */
 	@media (max-width: ${({ theme }) => theme.s}) {

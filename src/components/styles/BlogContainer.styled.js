@@ -1,25 +1,17 @@
 import styled from 'styled-components/macro';
 
-export const Section = styled.section`
+export const BlogContainer = styled.main`
 	display: flex;
 	flex-direction: column;
-	margin-top: 20px;
-	padding-left: 20px;
-
-	ul > li {
-		margin-left: 30px;
-		font-size: 1.2rem;
-	}
+	flex: 1 1 75%;
 
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
-		ul > li {
-			margin-left: -20px;
-			font-size: 1.2rem;
-		}
+		flex: 1 1 100%;
 	}
 	/* s: '767.98px'  */
 	@media (max-width: ${({ theme }) => theme.s}) {
+		flex: 1 1 90%;
 	}
 	/* md: '991.98px'  */
 	@media (max-width: ${({ theme }) => theme.md}) {

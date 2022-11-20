@@ -4,11 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 import {
 	StyledCard,
-	Description,
+	Content,
 	Date,
-	Body,
+	Description,
 	IconContainer,
 	CardContainer,
+	Box,
 } from './styles/Card.styled.js';
 import Flex from './styles/Flex.styled.js';
 import { CategoryMark } from '../components/styles/Card.styled';
@@ -28,7 +29,8 @@ import firebase from '../assets/img/firebase-icon.svg';
 import tailwindcss from '../assets/img/tailwindcss.svg';
 import programmer from '../assets/img/programmer.svg';
 import question from '../assets/img/question.svg';
-import { H3 } from '../components/styles/Title.styled.js';
+import { H2 } from '../components/styles/Title.styled.js';
+import { TagBox } from '../components/styles/TagSection.styled.js';
 
 export default function Card({ blogs, user, handleDelete }) {
 	const userId = user?.uid;
@@ -40,56 +42,57 @@ export default function Card({ blogs, user, handleDelete }) {
 				<CardContainer key={index}>
 					<Link to={`/detail/${item.id}`} style={{ textDecoration: 'none', color: { fontColor } }}>
 						<StyledCard>
-							<Description>
-								<CategoryMark>
-									{item.category === 'HTML' ? (
-										<img key={index} src={html} alt={item.category} />
-									) : item.category === 'JavaScript' ? (
-										<img key={index} src={javascript} alt={item.category} />
-									) : item.category === 'Angular' ? (
-										<img key={index} src={angular} alt={item.category} />
-									) : item.category === 'TypeScript' ? (
-										<img key={index} src={typescript} alt={item.category} />
-									) : item.category === 'React' ? (
-										<img key={index} src={react} alt={item.category} />
-									) : item.category === 'CSS' ? (
-										<img key={index} src={css} alt={item.category} />
-									) : item.category === 'SASS' ? (
-										<img key={index} src={sass} alt={item.category} />
-									) : item.category === 'Bootstrap' ? (
-										<img key={index} src={bootstrap} alt={item.category} />
-									) : item.category === 'Material UI' ? (
-										<img key={index} src={materialUi} alt={item.category} />
-									) : item.category === 'Wordpress' ? (
-										<img key={index} src={wordpress} alt={item.category} />
-									) : item.category === 'Styled Components' ? (
-										<img key={index} src={styledComponents} alt={item.category} />
-									) : item.category === 'Firebase' ? (
-										<img key={index} src={firebase} alt={item.category} />
-									) : item.category === 'Tailwind CSS' ? (
-										<img key={index} src={tailwindcss} alt={item.category} />
-									) : item.category === 'What I learned' ? (
-										<img key={index} src={programmer} alt={item.category} />
-									) : (
-										<img key={index} src={question} alt={item.category} />
-									)}
-								</CategoryMark>
-								<Flex justify={'space-between'} align={'center'} style={{ paddingLeft: '200px' }}>
-									<H3>{item.title}</H3>
+							{/* Category matching logo on each card */}
+							<CategoryMark>
+								{item.category === 'HTML' ? (
+									<img key={index} src={html} alt={item.category} />
+								) : item.category === 'JavaScript' ? (
+									<img key={index} src={javascript} alt={item.category} />
+								) : item.category === 'Angular' ? (
+									<img key={index} src={angular} alt={item.category} />
+								) : item.category === 'TypeScript' ? (
+									<img key={index} src={typescript} alt={item.category} />
+								) : item.category === 'React' ? (
+									<img key={index} src={react} alt={item.category} />
+								) : item.category === 'CSS' ? (
+									<img key={index} src={css} alt={item.category} />
+								) : item.category === 'SASS' ? (
+									<img key={index} src={sass} alt={item.category} />
+								) : item.category === 'Bootstrap' ? (
+									<img key={index} src={bootstrap} alt={item.category} />
+								) : item.category === 'Material UI' ? (
+									<img key={index} src={materialUi} alt={item.category} />
+								) : item.category === 'Wordpress' ? (
+									<img key={index} src={wordpress} alt={item.category} />
+								) : item.category === 'Styled Components' ? (
+									<img key={index} src={styledComponents} alt={item.category} />
+								) : item.category === 'Firebase' ? (
+									<img key={index} src={firebase} alt={item.category} />
+								) : item.category === 'Tailwind CSS' ? (
+									<img key={index} src={tailwindcss} alt={item.category} />
+								) : item.category === 'What I learned' ? (
+									<img key={index} src={programmer} alt={item.category} />
+								) : (
+									<img key={index} src={question} alt={item.category} />
+								)}
+							</CategoryMark>
+							{/* Category matching logo on each card END*/}
+							<Content>
+								<Box>
+									<H2>{item.title}</H2>
 									<Date>
 										<span>{item.timestamp.toDate().toDateString()}</span>
 									</Date>
-								</Flex>
-								<Body style={{ paddingLeft: '230px' }}>{excerpt(item.description, 120)}</Body>
-								<div style={{ paddingLeft: '260px' }}>
+								</Box>
+								<Description>{excerpt(item.description, 120)}</Description>
+								<TagBox>
 									<Tags tags={item.tags} />
-								</div>
-							</Description>
-							{/* <div>
-								<img src={item.imgUrl} alt={item.title} />
-							</div> */}
+								</TagBox>
+							</Content>
 						</StyledCard>
 					</Link>
+
+					{/* Delete & Edit button */}
 					{userId && item.userId === userId && (
 						<IconContainer style={{ float: 'right' }}>
 							<FontAwesomeIcon
@@ -103,13 +106,14 @@ export default function Card({ blogs, user, handleDelete }) {
 								<FontAwesomeIcon
 									icon={faEdit}
 									name='edit'
-									style={{ cursor: 'pointer' }}
+									style={{ cursor: 'pointer', paddingRight: '10px', textDecoration: 'none' }}
 									size='2x'
 									aria-label={item.id}
 								/>
 							</Link>
 						</IconContainer>
 					)}
+					{/* Delete & Edit button END*/}
 				</CardContainer>
 			))}
 		</>

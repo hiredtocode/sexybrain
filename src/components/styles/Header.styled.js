@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export const StyledHeader = styled.header`
 	/* background-color: ${({ theme }) => theme.colors.header}; */
@@ -7,7 +7,7 @@ export const StyledHeader = styled.header`
 	margin: 0 auto;
 	width: 100vw;
 	padding: 0 50px;
-	z-index: 100;
+	z-index: 10000;
 	height: 70px;
 	background-color: ${({ theme }) => theme.colors.header};
 	backdrop-filter: brightness(98%) blur(5px);

@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
-export const TagSection = styled.aside`
+export const TagSection = styled.div`
 	z-index: 10;
 	padding-bottom: 10px;
 
@@ -29,13 +29,53 @@ export const TagSection = styled.aside`
 		);
 		color: ${({ theme }) => theme.colors.font};
 	}
+
+	/* xs: '575.98px' */
+	@media (max-width: ${({ theme }) => theme.xs}) {
+	}
+	/* s: '767.98px'  */
+	@media (max-width: ${({ theme }) => theme.s}) {
+		padding: 5px;
+		padding-bottom: 0;
+
+		p {
+			font-size: 0.8rem;
+			z-index: 11;
+			color: white;
+		}
+	}
+	/* md: '991.98px'  */
+	@media (max-width: ${({ theme }) => theme.md}) {
+	}
+	/* lg: '1199.98px'  */
+	@media (max-width: ${({ theme }) => theme.lg}) {
+	} ;
 `;
 
 export const TagContainer = styled.div`
 	background-color: ${({ theme }) => theme.colors.card};
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-
+	display: flex;
+	flex: wrap;
 	transition: 0.5s;
 	padding: 15px;
 	border-radius: 10px;
+
+	/* xs: '575.98px' */
+	@media (max-width: ${({ theme }) => theme.xs}) {
+	}
+	/* s: '767.98px'  */
+	@media (max-width: ${({ theme }) => theme.s}) {
+		padding: 5px;
+	}
+	/* md: '991.98px'  */
+	@media (max-width: ${({ theme }) => theme.md}) {
+	}
+	/* lg: '1199.98px'  */
+	@media (max-width: ${({ theme }) => theme.lg}) {
+	} ;
+`;
+export const TagBox = styled.div`
+	display: flex;
+	flex: wrap;
 `;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 const CategoryButton = styled.button`
 	border-radius: 8px;
@@ -9,10 +9,15 @@ const CategoryButton = styled.button`
 	font-size: 1rem;
 	font-weight: 500;
 	margin: 3px;
-	padding: 10px 10px;
+	padding: 10px;
 	background-color: ${({ theme }) => theme.colors.button2};
 	color: ${({ theme }) => theme.colors.font};
 	transition: 0.5s;
+
+	img {
+		height: 20px;
+		width: 20px;
+	}
 
 	&:hover {
 		transition: 0.5s;
@@ -35,6 +40,28 @@ const CategoryButton = styled.button`
 	span {
 		padding-left: 10px;
 	}
+
+	/* xs: '575.98px' */
+	@media (max-width: ${({ theme }) => theme.xs}) {
+	}
+	/* s: '767.98px'  */
+	@media (max-width: ${({ theme }) => theme.s}) {
+		flex: wrap;
+		flex-direction: row;
+		img {
+			height: 25px;
+			width: 25px;
+		}
+	}
+	/* md: '991.98px'  */
+	@media (max-width: ${({ theme }) => theme.md}) {
+	}
+	/* lg: '1199.98px'  */
+	@media (max-width: ${({ theme }) => theme.lg}) {
+		span {
+			margin: 0 auto;
+		}
+	} ;
 `;
 
 export default CategoryButton;

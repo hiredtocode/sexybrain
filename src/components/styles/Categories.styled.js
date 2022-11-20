@@ -1,22 +1,17 @@
 import styled from 'styled-components/macro';
 
-export const Section = styled.section`
+export const Categories = styled.div`
 	display: flex;
-	flex-direction: column;
-	margin-top: 20px;
-	padding-left: 20px;
+	flex-wrap: wrap;
+	margin-bottom: 50px;
+	margin-top: 8px;
 
-	ul > li {
-		margin-left: 30px;
-		font-size: 1.2rem;
+	h3 {
+		font-weight: bold;
 	}
 
-	/* xs: '575.98px' */
+	/*	xs: '575.98px'*/
 	@media (max-width: ${({ theme }) => theme.xs}) {
-		ul > li {
-			margin-left: -20px;
-			font-size: 1.2rem;
-		}
 	}
 	/* s: '767.98px'  */
 	@media (max-width: ${({ theme }) => theme.s}) {
@@ -26,5 +21,6 @@ export const Section = styled.section`
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
+		flex-direction: column;
 	} ;
 `;
