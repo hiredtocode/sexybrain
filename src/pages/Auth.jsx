@@ -12,9 +12,9 @@ import {
 	FormInput,
 	FormLabel,
 	LoginForm,
-	FormButton,
+	LoginButton,
 } from '../components/styles/FormContainer.styled.js';
-import './Auth.scss';
+import { H1 } from '../components/styles/Title.styled.js';
 
 const initialState = {
 	email: '',
@@ -51,39 +51,29 @@ const Auth = ({ setActive, setUser }) => {
 	return (
 		<>
 			<FormContainer>
-				<div className='l-form'>
-					<LoginForm className='form' onSubmit={handleAuth}>
-						<h1 className='form__title'>{!signUp ? 'Sign-In' : 'Sign-Up'}</h1>
+				<LoginForm onSubmit={handleAuth}>
+					<H1>{!signUp ? 'Sign-In' : 'Sign-Up'}</H1>
 
-						<div className='form__div'>
-							<FormInput
-								type='email'
-								autoComplete='username'
-								className='form__input'
-								name='email'
-								value={email}
-								onChange={handleChange}
-							/>
-							<FormLabel htmlFor='email'>Email</FormLabel>
-						</div>
+					<FormLabel htmlFor='email'>Email</FormLabel>
+					<FormInput
+						type='email'
+						autoComplete='username'
+						name='email'
+						value={email}
+						onChange={handleChange}
+					/>
 
-						<div className='form__div'>
-							<FormInput
-								type='password'
-								autoComplete='current-password'
-								className='form__input'
-								name='password'
-								value={password}
-								onChange={handleChange}
-							/>
-							<FormLabel htmlFor='password'>Password</FormLabel>
-						</div>
+					<FormLabel htmlFor='password'>Password</FormLabel>
+					<FormInput
+						type='password'
+						autoComplete='current-password'
+						name='password'
+						value={password}
+						onChange={handleChange}
+					/>
 
-						<FormButton className={`btn ${!signUp ? 'btn-sign-in' : 'btn-sign-up'}`} type='submit'>
-							{!signUp ? 'Login' : 'Sign-up'}
-						</FormButton>
-					</LoginForm>
-				</div>
+					<LoginButton type='submit'>{!signUp ? 'Login' : 'Sign-up'}</LoginButton>
+				</LoginForm>
 			</FormContainer>
 		</>
 	);
