@@ -5,7 +5,7 @@ import Spinner from '../components/Spinner';
 import { db } from '../firebase.config';
 import { toast } from 'react-toastify';
 import Tags from '../components/Tags';
-import Flex from '../components/styles/Flex.styled.js';
+import { Categories } from '../components/styles/Categories.styled.js';
 import CategoryButton from '../components/styles/CategoryButton.styled';
 import { TagContainer } from '../components/styles/TagSection.styled.js';
 import javascript from '../assets/img/javascript.svg';
@@ -24,6 +24,9 @@ import tailwindcss from '../assets/img/tailwindcss.svg';
 import programmer from '../assets/img/programmer.svg';
 import question from '../assets/img/question.svg';
 import { H2 } from '../components/styles/Title.styled.js';
+import { Aside } from '../components/styles/CategoryContainer.styled';
+import { MainContainer } from '../components/styles/MainContainer.styled';
+import { BlogContainer } from '../components/styles/BlogContainer.styled';
 
 // import MostPopular from '../components/MostPopular';
 // import Trending from '../components/Trending';
@@ -95,133 +98,129 @@ const Home = ({ setActive, user }) => {
 	};
 
 	return (
-		<>
-			<Flex direction={'column'} grow={1}>
+		<MainContainer>
+			<BlogContainer>
 				<BlogSection blogs={blogs} user={user} handleDelete={handleDelete} />
-			</Flex>
-			<Flex direction={'column'} style={{ paddingLeft: '20px', maxWidth: '300px' }} grow={0.5}>
+			</BlogContainer>
+			<Aside>
 				<H2 style={{ textAlign: 'center' }}>Categories</H2>
-				<Flex wrap={'wrap'} style={{ marginBottom: '50px', marginTop: '8px' }}>
+				<Categories>
 					{category?.map((item, index) => {
 						switch (item) {
 							case 'JavaScript':
 								return (
 									<CategoryButton key={index}>
-										<img src={javascript} alt={item} style={{ height: '20px', width: '20px' }} />
+										<img src={javascript} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'TypeScript':
 								return (
 									<CategoryButton key={index}>
-										<img src={typescript} alt={item} style={{ height: '20px', width: '20px' }} />
+										<img src={typescript} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'React':
 								return (
 									<CategoryButton key={index}>
-										<img src={react} alt={item} style={{ height: '20px', width: '20px' }} />
+										<img src={react} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Angular':
 								return (
 									<CategoryButton key={index}>
-										<img src={angular} alt={item} style={{ height: '20px', width: '20px' }} />
+										<img src={angular} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'CSS':
 								return (
 									<CategoryButton key={index}>
-										<img src={css} alt={item} style={{ height: '20px', width: '20px' }} />
+										<img src={css} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'HTML':
 								return (
 									<CategoryButton key={index}>
-										<img src={html} alt={item} style={{ height: '20px', width: '20px' }} />
+										<img src={html} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'SASS':
 								return (
 									<CategoryButton key={index}>
-										<img src={sass} alt={item} style={{ height: '20px', width: '20px' }} />
+										<img src={sass} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Bootstrap':
 								return (
 									<CategoryButton key={index}>
-										<img src={bootstrap} alt={item} style={{ height: '20px', width: '20px' }} />
+										<img src={bootstrap} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Material UI':
 								return (
 									<CategoryButton key={index}>
-										<img src={materialUi} alt={item} style={{ height: '20px', width: '20px' }} />
+										<img src={materialUi} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Tailwind CSS':
 								return (
 									<CategoryButton key={index}>
-										<img src={tailwindcss} alt={item} style={{ height: '20px', width: '20px' }} />
+										<img src={tailwindcss} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Styled Components':
 								return (
 									<CategoryButton key={index}>
-										<img
-											src={styledComponents}
-											alt={item}
-											style={{ height: '20px', width: '20px' }}
-										/>
+										<img src={styledComponents} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'What I learned':
 								return (
 									<CategoryButton key={index}>
-										<img src={programmer} alt={item} style={{ height: '20px', width: '20px' }} />
+										<img src={programmer} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Firebase':
 								return (
 									<CategoryButton key={index}>
-										<img src={firebase} alt={item} style={{ height: '20px', width: '20px' }} />
+										<img src={firebase} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Wordpress':
 								return (
 									<CategoryButton key={index}>
-										<img src={wordpress} alt={item} style={{ height: '20px', width: '20px' }} />
+										<img src={wordpress} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							default:
 								return (
 									<CategoryButton key={index}>
-										<img src={question} alt={item} style={{ height: '20px', width: '20px' }} />
+										<img src={question} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 						}
 					})}
-				</Flex>
+				</Categories>
 				<H2 style={{ textAlign: 'center' }}>Tags</H2>
 				<TagContainer>
 					<Tags tags={tags} />
 				</TagContainer>
-			</Flex>
-		</>
+			</Aside>
+		</MainContainer>
 	);
 };
 
