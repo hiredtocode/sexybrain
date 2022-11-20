@@ -64,9 +64,7 @@ const Auth = ({ setActive, setUser }) => {
 								value={email}
 								onChange={handleChange}
 							/>
-							<FormLabel htmlFor='email' className=''>
-								Email
-							</FormLabel>
+							<FormLabel htmlFor='email'>Email</FormLabel>
 						</div>
 
 						<div className='form__div'>
@@ -78,9 +76,7 @@ const Auth = ({ setActive, setUser }) => {
 								value={password}
 								onChange={handleChange}
 							/>
-							<FormLabel htmlFor='password' className=''>
-								Password
-							</FormLabel>
+							<FormLabel htmlFor='password'>Password</FormLabel>
 						</div>
 
 						<FormButton className={`btn ${!signUp ? 'btn-sign-in' : 'btn-sign-up'}`} type='submit'>
