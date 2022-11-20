@@ -74,3 +74,4 @@ testem.log
 Thumbs.db
 .angular/cache/13.2.5/angular-webpack/1273cfe0d92de82cdbc04a229c96011f1f3d35f2/0.pack
 src/environments/*
+.vscode/launch.json
