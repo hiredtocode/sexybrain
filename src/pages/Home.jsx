@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { collection, deleteDoc, doc, getDocs, onSnapshot, query, where } from 'firebase/firestore';
+import { collection, deleteDoc, doc, orderBy, onSnapshot, query } from 'firebase/firestore';
 import BlogSection from '../components/BlogSection';
 import Spinner from '../components/Spinner';
 import { db } from '../firebase.config';
@@ -25,7 +25,6 @@ import programmer from '../assets/img/programmer.svg';
 import question from '../assets/img/question.svg';
 import { H2 } from '../components/styles/Title.styled.js';
 import { Aside } from '../components/styles/CategoryContainer.styled';
-import { MainContainer } from '../components/styles/MainContainer.styled';
 import { BlogContainer } from '../components/styles/BlogContainer.styled';
 
 // import MostPopular from '../components/MostPopular';
@@ -55,8 +54,8 @@ const Home = ({ setActive, user }) => {
 		const unsub = onSnapshot(
 			blogCollectionRef,
 			(snapshot) => {
-				let list = [];
 				let tags = [];
+				let list = [];
 				snapshot.docs.forEach((doc) => {
 					tags.push(...doc.get('tags'));
 					list.push({ id: doc.id, ...doc.data() });
@@ -65,7 +64,6 @@ const Home = ({ setActive, user }) => {
 				const uniqueCategories = [...new Set(list.map((item) => item.category))];
 				setCategory(uniqueCategories);
 				setTags(uniqueTags);
-				setBlogs(list);
 				setLoading(false);
 				setActive('home');
 			},
@@ -80,6 +78,26 @@ const Home = ({ setActive, user }) => {
 		};
 		// eslint-disable-next-line
 	}, [setActive]);
+
+	useEffect(() => {
+		const timestamp = query(blogCollectionRef, orderBy('timestamp', 'desc'));
+		const time = onSnapshot(
+			timestamp,
+			(snapshot) => {
+				let time = [];
+				snapshot.docs.forEach((doc) => {
+					time.push({ ...doc.data(), id: doc.id });
+				});
+				setBlogs(time);
+			},
+			(error) => {
+				toast.error(`There was an error ${error}`);
+			}
+		);
+		return () => {
+			time();
+		};
+	}, []);
 
 	if (loading) {
 		return <Spinner />;
@@ -98,7 +116,7 @@ const Home = ({ setActive, user }) => {
 	};
 
 	return (
-		<MainContainer>
+		<>
 			<BlogContainer>
 				<BlogSection blogs={blogs} user={user} handleDelete={handleDelete} />
 			</BlogContainer>
@@ -220,7 +238,7 @@ const Home = ({ setActive, user }) => {
 					<Tags tags={tags} />
 				</TagContainer>
 			</Aside>
-		</MainContainer>
+		</>
 	);
 };
 
