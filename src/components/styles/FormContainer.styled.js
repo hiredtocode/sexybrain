@@ -1,40 +1,37 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export const FormContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	margin: 0 auto;
-	background-color: ${({ theme }) => theme.colors.card};
+	justify-content: center;
+	align-items: center;
+	width: 30%;
 `;
 
 export const FormInput = styled.input`
-	position: absolute;
-	top: 0;
-	left: 0;
 	width: 100%;
-	height: 100%;
+	height: 40px;
 	font-size: 1.2rem;
 	border: 1px solid ${({ theme }) => theme.colors.accent};
-	border-radius: 0.5rem;
-	outline: none;
+	border-radius: 0.4rem;
 	background: none;
-	z-index: 1;
+	margin: 10px 0;
 	color: ${({ theme }) => theme.colors.font};
 
 	&:focus {
-		border: 1.5px solid ${({ theme }) => theme.colors.accent};
+		border: 1.5px solid ${({ theme }) => theme.colors.input};
+		background: ${({ theme }) => theme.colors.card};
 	}
 `;
 
-export const FormButton = styled.button`
+export const SubmitButton = styled.button`
 	border-radius: 0.5rem;
 	border: none;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-
 	cursor: pointer;
 	font-size: 1.2rem;
 	font-weight: 700;
-	margin: 0 10px;
 	width: 100%;
 	padding: 10px 15px;
 	background-color: ${({ theme }) => theme.colors.button};
@@ -44,7 +41,37 @@ export const FormButton = styled.button`
 		opacity: 0.9;
 		transform: scale(0.98);
 		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+		transition: 0.5s;
+		background: linear-gradient(
+			45deg,
+			${({ theme }) => theme.colors.hover},
+			${({ theme }) => theme.colors.hovered}
+		);
+		color: ${({ theme }) => theme.colors.font};
+	}
 
+	&:hover span {
+		color: ${({ theme }) => theme.colors.font};
+	}
+`;
+export const LoginButton = styled.button`
+	border-radius: 0.5rem;
+	border: none;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+	cursor: pointer;
+	font-size: 1.2rem;
+	font-weight: 700;
+	width: 100%;
+	margin-top: 20px;
+	padding: 10px 15px;
+	background-color: ${({ theme }) => theme.colors.button};
+	color: ${({ theme }) => theme.colors.font};
+
+	&:hover {
+		opacity: 0.9;
+		transform: scale(0.98);
+		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+		transition: 0.5s;
 		background: linear-gradient(
 			45deg,
 			${({ theme }) => theme.colors.hover},
@@ -61,12 +88,11 @@ export const FormCancelButton = styled.button`
 	border-radius: 0.5rem;
 	border: none;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-
 	cursor: pointer;
 	font-size: 1.2rem;
 	font-weight: 700;
-	margin: 0 10px;
 	width: 100%;
+	margin-right: 10px;
 	padding: 10px 15px;
 	background-color: ${({ theme }) => theme.colors.cancelButton};
 	color: ${({ theme }) => theme.colors.font};
@@ -90,62 +116,61 @@ export const FormCancelButton = styled.button`
 `;
 
 export const FormLabel = styled.label`
-	position: absolute;
-	left: 1rem;
-	top: 1rem;
-	padding: 0 0.25rem;
 	background-color: ${({ theme }) => theme.colors.card};
 	color: ${({ theme }) => theme.colors.font};
-	font-size: 1rem;
-
-	&:focus {
-		top: -0.5rem;
-		left: 0.8rem;
-		color: ${({ theme }) => theme.colors.font};
-		font-size: 0.75rem;
-		font-weight: 500;
-		z-index: 10;
-	}
+	font-size: 1.3rem;
+	top: -20px;
 `;
 
 export const Form = styled.form`
 	display: flex;
+	position: fixed;
+	top: 130px;
+	left: 20px;
 	flex-direction: column;
 	justify-content: space-around;
-	width: 800px;
-	padding: 4rem 2rem;
-	height: 800px;
+	padding: 20px;
+	height: 80vh;
 	border-radius: 1rem;
+	background-color: ${({ theme }) => theme.colors.card};
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+	width: 30%;
 `;
 
 export const LoginForm = styled.form`
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
-	max-width: 400px;
-	padding: 4rem 2rem;
-	max-height: 400px;
+	padding: 2rem 2rem;
 	border-radius: 1rem;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-
-	button {
-		margin: 0;
-	}
+	background-color: ${({ theme }) => theme.colors.card};
 `;
 
 export const FormSelect = styled.select`
-	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100%;
-	font-size: 1.2rem;
+	font-size: 1rem;
 	border: 1px solid #dadce0;
 	border-radius: 0.5rem;
 	outline: none;
+	margin: 10px 0;
 	background: none;
 	z-index: 1;
 	color: ${({ theme }) => theme.colors.font};
 	background-color: ${({ theme }) => theme.colors.card};
+`;
+export const Textarea = styled.textarea`
+	width: 100%;
+	height: 20vh;
+	margin: 10px 0;
+	font-size: 1rem;
+	color: ${({ theme }) => theme.colors.font};
+	background-color: ${({ theme }) => theme.colors.card};
+`;
+export const MarkdownArea = styled.div`
+	width: 50%;
+	height: 100vh;
+	padding: 20px;
+	color: ${({ theme }) => theme.colors.font};
 `;
