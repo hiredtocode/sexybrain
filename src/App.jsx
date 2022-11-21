@@ -1,7 +1,5 @@
 import { useState, useEffect, createContext } from 'react';
-// import './App.scss';
-// import './index.scss';
-// import './media-query.scss';
+
 import Home from './pages/Home';
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -49,6 +47,7 @@ function App() {
 			accent: '#395B64',
 			underline: '#A5C9CA',
 			active: '#befdff',
+			input: '#3150ff',
 		},
 
 		xs: '575.98px',
@@ -87,6 +86,7 @@ function App() {
 			accent: '#A5C9CA',
 			underline: '#A5C9CA',
 			active: '#2eb6bb',
+			input: '#3150ff',
 		},
 
 		xs: '575.98px',
