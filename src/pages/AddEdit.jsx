@@ -2,22 +2,24 @@ import { useState, useEffect } from 'react';
 import ReactTagInput from '@pathofdev/react-tag-input';
 import '@pathofdev/react-tag-input/build/index.css';
 import { db, storage } from '../firebase.config';
-import { useNavigate, useParams, Link } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { addDoc, collection, getDoc, serverTimestamp, doc, updateDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
-import './Auth.scss';
 import {
 	FormContainer,
 	Form,
-	FormButton,
+	SubmitButton,
 	FormLabel,
 	FormInput,
 	FormSelect,
 	FormCancelButton,
+	Textarea,
 } from '../components/styles/FormContainer.styled.js';
 import Flex from '../components/styles/Flex.styled.js';
-import { H1, H3 } from '../components/styles/Title.styled.js';
+import ReactMarkdown from 'react-markdown';
+import { MarkdownContainer } from '../components/styles/MarkdownContainer.styled.js';
+import Code from '../components/markdown_component/code.js';
 
 const AddEdit = ({ user, setActive }) => {
 	const categoryOption = [
@@ -145,85 +147,66 @@ const AddEdit = ({ user, setActive }) => {
 	// Submit handle end
 
 	return (
-		<FormContainer>
-			<div className='l-form'>
+		<>
+			<FormContainer>
 				<Form className='form' onSubmit={handleSubmit}>
-					<H1 className='form__title'>{id ? 'Update Blog' : 'Create Blog'}</H1>
 					{/* Title section  */}
-					<div className='form__div'>
+					<div>
+						<FormLabel htmlFor='title'>Title</FormLabel>
 						<FormInput
 							type='text'
-							className='form__input'
 							placeholder=''
 							name='title'
 							value={title}
 							onChange={onTitleChange}
 						/>
-						<FormLabel htmlFor='title' className='form__label'>
-							Title
-						</FormLabel>
 					</div>
 					{/* Title section end */}
 					{/* Tag section */}
-					<div className='form__div'>
-						Tags
+					<div>
+						<FormLabel htmlFor='tags'>Tags</FormLabel>
 						<ReactTagInput tags={tags} onChange={handleTags} removeOnBackspace={true} maxTags={5} />
 					</div>
 					{/* Tag section end */}
 					{/* category section */}
-					<div className='form__div'>
-						<FormSelect value={category} onChange={onCategoryChange}>
-							<option>Please select category</option>
-							{categoryOption.map((option, index) => (
-								<option value={option || ''} key={index}>
-									{option}
-								</option>
-							))}
-						</FormSelect>
-					</div>
+					<FormSelect value={category} onChange={onCategoryChange}>
+						<option>Select a category</option>
+						{categoryOption.map((option, index) => (
+							<option value={option || ''} key={index}>
+								{option}
+							</option>
+						))}
+					</FormSelect>
 					{/* category section end */} {/* body section */}
-					<div className='form__div'>
-						<textarea
-							className='form__input'
-							placeholder='body'
-							value={body}
-							name='body'
-							onChange={onBodyChange}
-						/>
-					</div>
-					<div className='form__div'>
+					<Textarea placeholder='body' value={body} name='body' onChange={onBodyChange} />
+					<div>
+						<FormLabel htmlFor='description'>Description</FormLabel>
 						<FormInput
 							type='text'
-							className='form__input'
 							placeholder=''
 							name='description'
 							value={description}
 							onChange={onDescriptionChange}
 						/>
-						<FormLabel htmlFor='description' className='form__label'>
-							Description
-						</FormLabel>
 					</div>
 					{/* body section end  */}
 					{/* file upload section */}
-					<div>
-						<input type='file' onChange={(e) => setFile(e.target.files[0])} />
-					</div>
-					<div>
-						<H3>Uploaded {progress}%</H3>
-						<Flex>
-							<FormCancelButton className='cancel' onClick={() => navigate('/')}>
-								Cancel
-							</FormCancelButton>
-							<FormButton type='submit' disabled={progress !== null && progress < 100}>
-								{id ? 'Update' : 'Submit'}
-							</FormButton>
-						</Flex>
-					</div>
+					<input type='file' onChange={(e) => setFile(e.target.files[0])} />
+					<Flex>
+						<FormCancelButton className='cancel' onClick={() => navigate('/')}>
+							Cancel
+						</FormCancelButton>
+						<SubmitButton type='submit' disabled={progress !== null && progress < 100}>
+							{id ? 'Update' : 'Submit'}
+						</SubmitButton>
+					</Flex>
 					{/* file upload section end  */}
 				</Form>
-			</div>
-		</FormContainer>
+			</FormContainer>
+			<MarkdownContainer>
+				<ReactMarkdown components={Code} children={body} />
+			</MarkdownContainer>
+		</>
 	);
 };
 
