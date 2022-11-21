@@ -9,10 +9,16 @@ const CategoryButton = styled.button`
 	font-size: 1rem;
 	font-weight: 500;
 	margin: 3px;
-	padding: 10px;
+	padding: 5px 0;
+	overflow: hidden;
 	background-color: ${({ theme }) => theme.colors.button2};
 	color: ${({ theme }) => theme.colors.font};
 	transition: 0.5s;
+	width: 45%;
+	max-width: 120px;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 
 	img {
 		height: 20px;
@@ -58,6 +64,11 @@ const CategoryButton = styled.button`
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
+		width: 100%;
+		max-width: none;
+		img {
+			margin-left: 10px;
+		}
 		span {
 			margin: 0 auto;
 		}
