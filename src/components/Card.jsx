@@ -11,7 +11,6 @@ import {
 	CardContainer,
 	Box,
 } from './styles/Card.styled.js';
-import Flex from './styles/Flex.styled.js';
 import { CategoryMark } from '../components/styles/Card.styled';
 import Tags from '../components/Tags';
 import javascript from '../assets/img/javascript.svg';

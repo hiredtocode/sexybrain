@@ -17,7 +17,7 @@ const Code = ({ children, language }) => {
 	}, [copied]);
 
 	return (
-		<div className='code'>
+		<div>
 			<CopyToClipboard text={children} onCopy={() => setCopied(true)}>
 				<button className='icon copy-icon'>{copied ? <PasteIcon /> : <CopyIcon />}</button>
 			</CopyToClipboard>
