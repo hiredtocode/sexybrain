@@ -12,8 +12,23 @@ export const StyledCard = styled.div`
 	border-radius: 15px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 	margin: 10px 0;
-	padding: 15px;
+	padding: 20px;
 	transition: 0.5s;
+
+	/* xs: '575.98px' */
+	@media (max-width: ${({ theme }) => theme.xs}) {
+		padding: 10px;
+	}
+	/* s: '767.98px'  */
+	@media (max-width: ${({ theme }) => theme.s}) {
+		padding: 15px;
+	}
+	/* md: '991.98px'  */
+	@media (max-width: ${({ theme }) => theme.md}) {
+	}
+	/* lg: '1199.98px'  */
+	@media (max-width: ${({ theme }) => theme.lg}) {
+	}
 
 	&:hover {
 		transform: translateY(-5px);
@@ -36,67 +51,12 @@ export const Content = styled.div`
 	color: ${({ theme }) => theme.colors.font};
 `;
 
-export const Date = styled.div`
-	display: flex;
-	padding-right: 25px;
-
-	/* xs: '575.98px' */
-	@media (max-width: ${({ theme }) => theme.xs}) {
-	}
-	/* s: '767.98px'  */
-	@media (max-width: ${({ theme }) => theme.s}) {
-		margin-left: auto;
-		font-size: 0.9rem;
-	}
-	/* md: '991.98px'  */
-	@media (max-width: ${({ theme }) => theme.md}) {
-		margin-left: auto;
-		padding-right: 0;
-	}
-	/* lg: '1199.98px'  */
-	@media (max-width: ${({ theme }) => theme.lg}) {
-		margin-left: auto;
-	} ;
-`;
-export const Description = styled.div`
-	display: flex;
-	padding-left: 220px;
-	padding-bottom: 20px;
-
-	/* xs: '575.98px' */
-	@media (max-width: ${({ theme }) => theme.xs}) {
-	}
-	/* s: '767.98px'  */
-	@media (max-width: ${({ theme }) => theme.s}) {
-		padding-left: 30px;
-		margine: 0 auto;
-		z-index: 10;
-		opacity: 1;
-		color: white;
-		transition: 0.8s;
-		font-size: 0.9rem;
-		padding-bottom: 10px;
-
-		div {
-			padding-left: 0;
-			margin: 0 auto;
-		}
-	}
-	/* md: '991.98px'  */
-	@media (max-width: ${({ theme }) => theme.md}) {
-		padding-right: 0;
-	}
-	/* lg: '1199.98px'  */
-	@media (max-width: ${({ theme }) => theme.lg}) {
-	} ;
-`;
-
 // Delete & Edit button when logged in
 export const IconContainer = styled.div`
 	display: flex;
 	position: absolute;
-	bottom: 25px;
-	right: 15px;
+	top: 20px;
+	left: 20px;
 	z-index: 5;
 `;
 // Delete & Edit button when logged in END
@@ -111,7 +71,7 @@ export const CategoryMark = styled.div`
 		min-height: 250px;
 		top: -150px;
 		left: -30px;
-		opacity: 0.4;
+		opacity: 0.3;
 		transform: rotate(-15deg);
 	}
 
@@ -120,24 +80,54 @@ export const CategoryMark = styled.div`
 	}
 	/* s: '767.98px'  */
 	@media (max-width: ${({ theme }) => theme.s}) {
-		opacity: 0.4;
-		transition: 1s;
 	}
 	/* md: '991.98px'  */
 	@media (max-width: ${({ theme }) => theme.md}) {
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
+		opacity: 0.4;
+		transition: 0.7s;
 	} ;
 `;
 // Language logo on the left hand side of the card END
 
+export const Date = styled.div`
+	display: flex;
+	flex: 1 1 30%;
+	justify-content: flex-end;
+	transition: 0.7s;
+	text-align: right;
+
+	/* xs: '575.98px' */
+	@media (max-width: ${({ theme }) => theme.xs}) {
+	}
+	/* s: '767.98px'  */
+	@media (max-width: ${({ theme }) => theme.s}) {
+		margin-left: auto;
+		transition: 0.7s;
+		font-size: 0.9rem;
+	}
+	/* md: '991.98px'  */
+	@media (max-width: ${({ theme }) => theme.md}) {
+		margin-left: auto;
+		padding-right: 0;
+	}
+	/* lg: '1199.98px'  */
+	@media (max-width: ${({ theme }) => theme.lg}) {
+		margin-left: auto;
+	} ;
+`;
+
 export const Box = styled.div`
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
-	padding-left: 200px;
+	transition: 0.7s;
 
+	h2 {
+		width: 100%;
+		text-align: center;
+	}
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
 	}
@@ -145,15 +135,58 @@ export const Box = styled.div`
 	@media (max-width: ${({ theme }) => theme.s}) {
 		padding-left: 0;
 		z-index: 5;
+		transition: 0.7s;
+		h2 {
+			width: 100%;
+			text-align: left;
+			transition: 0.7s;
+		}
 	}
 	/* md: '991.98px'  */
 	@media (max-width: ${({ theme }) => theme.md}) {
-		flex-direction: column-reverse;
 		align-items: flex-start;
+		transition: 0.7s;
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
-		flex-direction: column-reverse;
 		align-items: flex-start;
+	} ;
+`;
+
+export const Description = styled.div`
+	display: flex;
+	z-index: 10;
+	transition: 0.7s;
+
+	span {
+		width: 100%;
+		text-align: center;
+	}
+	/* xs: '575.98px' */
+	@media (max-width: ${({ theme }) => theme.xs}) {
+	}
+	/* s: '767.98px'  */
+	@media (max-width: ${({ theme }) => theme.s}) {
+		padding-left: 0;
+		margine: 0 auto;
+		z-index: 10;
+		opacity: 1;
+		color: white;
+		transition: 0.7s;
+
+		font-size: 0.9rem;
+
+		div {
+			padding-left: 0;
+			margin: 0 auto;
+		}
+	}
+	/* md: '991.98px'  */
+	@media (max-width: ${({ theme }) => theme.md}) {
+		padding-right: 0;
+		transition: 0.7s;
+	}
+	/* lg: '1199.98px'  */
+	@media (max-width: ${({ theme }) => theme.lg}) {
 	} ;
 `;

@@ -10,43 +10,23 @@ const CategoryButton = styled.button`
 	font-weight: 500;
 	margin: 3px;
 	padding: 5px 0;
-	overflow: hidden;
 	background-color: ${({ theme }) => theme.colors.button2};
 	color: ${({ theme }) => theme.colors.font};
 	transition: 0.5s;
-	width: 45%;
-	max-width: 120px;
+	width: 47%;
 	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
+	justify-content: flex-start;
 
 	img {
 		height: 20px;
 		width: 20px;
-	}
-
-	&:hover {
-		transition: 0.5s;
-		opacity: 0.9;
-		font-weight: 500;
-		font-size: 1rem;
-		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-		background: linear-gradient(
-			45deg,
-			${({ theme }) => theme.colors.hover},
-			${({ theme }) => theme.colors.hovered}
-		);
-		color: ${({ theme }) => theme.colors.font};
-	}
-
-	&:hover span {
-		color: ${({ theme }) => theme.colors.font};
+		flex: 1 1 30%;
 	}
 
 	span {
-		padding-left: 10px;
+		flex: 1 1 70%;
+		text-align: left;
 	}
-
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
 	}
@@ -66,13 +46,36 @@ const CategoryButton = styled.button`
 	@media (max-width: ${({ theme }) => theme.lg}) {
 		width: 100%;
 		max-width: none;
+
 		img {
-			margin-left: 10px;
+			height: 20px;
+			width: 20px;
+			flex: 1 1 50%;
 		}
+
 		span {
-			margin: 0 auto;
+			flex: 1 1 50%;
+			text-align: left;
 		}
-	} ;
+	}
+
+	&:hover {
+		transition: 0.5s;
+		opacity: 0.9;
+		font-weight: 500;
+		font-size: 1rem;
+		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+		background: linear-gradient(
+			45deg,
+			${({ theme }) => theme.colors.hover},
+			${({ theme }) => theme.colors.hovered}
+		);
+		color: ${({ theme }) => theme.colors.font};
+	}
+
+	&:hover span {
+		color: ${({ theme }) => theme.colors.font};
+	}
 `;
 
 export default CategoryButton;
