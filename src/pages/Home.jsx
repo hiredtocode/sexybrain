@@ -103,7 +103,7 @@ const Home = ({ setActive, user }) => {
 		return <Spinner />;
 	}
 	const handleDelete = async (id) => {
-		if (window.confirm('Are you sure wanted to delete that blog ?')) {
+		if (window.confirm('Are you sure?')) {
 			try {
 				setLoading(true);
 				await deleteDoc(doc(db, 'blogPosts', id));

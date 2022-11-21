@@ -2,8 +2,6 @@ import styled from 'styled-components/macro';
 
 export const TagSection = styled.div`
 	z-index: 10;
-	padding-bottom: 10px;
-
 	.tag {
 		cursor: pointer;
 	}
@@ -35,11 +33,9 @@ export const TagSection = styled.div`
 	}
 	/* s: '767.98px'  */
 	@media (max-width: ${({ theme }) => theme.s}) {
-		padding: 5px;
 		padding-bottom: 0;
 
 		p {
-			font-size: 0.8rem;
 			z-index: 11;
 			color: white;
 		}
@@ -49,7 +45,7 @@ export const TagSection = styled.div`
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
-	} ;
+	}
 `;
 
 export const TagContainer = styled.div`
@@ -78,4 +74,5 @@ export const TagContainer = styled.div`
 export const TagBox = styled.div`
 	display: flex;
 	flex: wrap;
+	justify-content: flex-end;
 `;

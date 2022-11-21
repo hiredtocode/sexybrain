@@ -3,7 +3,7 @@ import styled from 'styled-components/macro';
 export const Aside = styled.aside`
 	display: flex;
 	padding-left: 20px;
-	flex: 1 1 25%;
+	flex: 1 1 30%;
 	flex-direction: column;
 
 	/* xs: '575.98px' */

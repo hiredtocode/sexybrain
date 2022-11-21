@@ -3,7 +3,7 @@ import styled from 'styled-components/macro';
 export const BlogContainer = styled.main`
 	display: flex;
 	flex-direction: column;
-	flex: 1 1 75%;
+	flex: 1 1 70%;
 
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
