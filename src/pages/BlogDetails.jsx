@@ -1,5 +1,5 @@
-import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
 import React, { useState, useEffect } from 'react';
+import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 import Tags from '../components/Tags';
 import { db } from '../firebase.config';
@@ -7,6 +7,11 @@ import { BlogTitleBox, Author, BlogDetail } from '../components/styles/BlogDetai
 import Post from '../components/markdown_component/post.js';
 import Flex from '../components/styles/Flex.styled.js';
 import { H2 } from '../components/styles/Title.styled.js';
+import ReactMarkdown from 'react-markdown';
+import rehypeHighlight from 'rehype-highlight';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 const Detail = ({ setActive }) => {
 	const { id } = useParams();
@@ -55,6 +60,15 @@ const Detail = ({ setActive }) => {
 						{blog?.timestamp.toDate().toDateString()}
 					</div>
 					<Flex direction={'row'} align='center'>
+						<Link to={`/update/${id}`}>
+							<FontAwesomeIcon
+								icon={faEdit}
+								name='edit'
+								style={{ cursor: 'pointer', paddingRight: '10px', textDecoration: 'none' }}
+								size='2x'
+								aria-label={id}
+							/>
+						</Link>
 						<div style={{ paddingRight: '10px' }}>Tags:</div>
 						<div>
 							<Tags tags={blog?.tags} />
@@ -62,7 +76,8 @@ const Detail = ({ setActive }) => {
 					</Flex>
 				</div>
 				<p>{blog?.body}</p>
-				<Post />
+				<ReactMarkdown rehypePlugins={[rehypeHighlight]} children={blog?.body} />
+				<Post>{blog?.body}</Post>
 			</BlogDetail>
 		</div>
 	);
