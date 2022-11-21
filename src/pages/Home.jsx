@@ -36,6 +36,7 @@ const Home = ({ setActive, user }) => {
 	const [tags, setTags] = useState([]);
 	const [category, setCategory] = useState([]);
 	const blogCollectionRef = collection(db, 'blogPosts');
+
 	// const [trendBlogs, setTrendBlogs] = useState([]);
 
 	// const getTrendingBlogs = async () => {
@@ -49,6 +50,7 @@ const Home = ({ setActive, user }) => {
 	// 	setTrendBlogs(trendBlogs);
 	// };
 
+	//This block retrieves blog posts from firebase
 	useEffect(() => {
 		// getTrendingBlogs();
 		const unsub = onSnapshot(
@@ -79,6 +81,7 @@ const Home = ({ setActive, user }) => {
 		// eslint-disable-next-line
 	}, [setActive]);
 
+	// This block makes the blog posts display by latest posts
 	useEffect(() => {
 		const timestamp = query(blogCollectionRef, orderBy('timestamp', 'desc'));
 		const time = onSnapshot(
@@ -97,6 +100,8 @@ const Home = ({ setActive, user }) => {
 		return () => {
 			time();
 		};
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	if (loading) {
@@ -115,6 +120,12 @@ const Home = ({ setActive, user }) => {
 		}
 	};
 
+	// Show posts that are only related to the clicked category when clicked
+	const selectedCategory = (e) => {
+		const result = blogs.filter((cat) => cat.category === e.target.innerText);
+		setBlogs(result);
+	};
+
 	return (
 		<>
 			<BlogContainer>
@@ -127,105 +138,105 @@ const Home = ({ setActive, user }) => {
 						switch (item) {
 							case 'JavaScript':
 								return (
-									<CategoryButton key={index}>
+									<CategoryButton key={index} onClick={selectedCategory}>
 										<img src={javascript} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'TypeScript':
 								return (
-									<CategoryButton key={index}>
+									<CategoryButton key={index} onClick={selectedCategory}>
 										<img src={typescript} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'React':
 								return (
-									<CategoryButton key={index}>
+									<CategoryButton key={index} onClick={selectedCategory}>
 										<img src={react} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Angular':
 								return (
-									<CategoryButton key={index}>
+									<CategoryButton key={index} onClick={selectedCategory}>
 										<img src={angular} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'CSS':
 								return (
-									<CategoryButton key={index}>
+									<CategoryButton key={index} onClick={selectedCategory}>
 										<img src={css} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'HTML':
 								return (
-									<CategoryButton key={index}>
+									<CategoryButton key={index} onClick={selectedCategory}>
 										<img src={html} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'SASS':
 								return (
-									<CategoryButton key={index}>
+									<CategoryButton key={index} onClick={selectedCategory}>
 										<img src={sass} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Bootstrap':
 								return (
-									<CategoryButton key={index}>
+									<CategoryButton key={index} onClick={selectedCategory}>
 										<img src={bootstrap} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Material UI':
 								return (
-									<CategoryButton key={index}>
+									<CategoryButton key={index} onClick={selectedCategory}>
 										<img src={materialUi} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Tailwind CSS':
 								return (
-									<CategoryButton key={index}>
+									<CategoryButton key={index} onClick={selectedCategory}>
 										<img src={tailwindcss} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Styled Components':
 								return (
-									<CategoryButton key={index}>
+									<CategoryButton key={index} onClick={selectedCategory}>
 										<img src={styledComponents} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'What I learned':
 								return (
-									<CategoryButton key={index}>
+									<CategoryButton key={index} onClick={selectedCategory}>
 										<img src={programmer} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Firebase':
 								return (
-									<CategoryButton key={index}>
+									<CategoryButton key={index} onClick={selectedCategory}>
 										<img src={firebase} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Wordpress':
 								return (
-									<CategoryButton key={index}>
+									<CategoryButton key={index} onClick={selectedCategory}>
 										<img src={wordpress} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							default:
 								return (
-									<CategoryButton key={index}>
+									<CategoryButton key={index} onClick={selectedCategory}>
 										<img src={question} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
