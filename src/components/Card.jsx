@@ -83,7 +83,9 @@ export default function Card({ blogs, user, handleDelete }) {
 										<span>{item.timestamp.toDate().toDateString()}</span>
 									</Date>
 								</Box>
-								<Description>{excerpt(item.description, 120)}</Description>
+								<Description>
+									<span>{excerpt(item.description, 120)}</span>
+								</Description>
 								<TagBox>
 									<Tags tags={item.tags} />
 								</TagBox>
