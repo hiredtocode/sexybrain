@@ -28,5 +28,9 @@ svg {
   width: 1.5rem;
 }
 
+button{
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+
+}
 `;
 export default GlobalStyles;
