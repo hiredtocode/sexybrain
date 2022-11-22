@@ -26,15 +26,16 @@ import question from '../assets/img/question.svg';
 import { H2 } from '../components/styles/Title.styled.js';
 import { Aside } from '../components/styles/CategoryContainer.styled';
 import { BlogContainer } from '../components/styles/BlogContainer.styled';
-
 // import MostPopular from '../components/MostPopular';
 // import Trending from '../components/Trending';
 
 const Home = ({ setActive, user }) => {
 	const [loading, setLoading] = useState(true);
-	const [blogs, setBlogs] = useState([]);
+	const [backup, setBackup] = useState([]);
+	const [blogs, setBlogs] = useState(backup);
 	const [tags, setTags] = useState([]);
 	const [category, setCategory] = useState([]);
+	const [categoryReset, setCategoryReset] = useState(false);
 	const blogCollectionRef = collection(db, 'blogPosts');
 
 	// const [trendBlogs, setTrendBlogs] = useState([]);
@@ -50,17 +51,17 @@ const Home = ({ setActive, user }) => {
 	// 	setTrendBlogs(trendBlogs);
 	// };
 
-	//This block retrieves blog posts from firebase
+	//This block retrieves blog posts from firebase by latest timestamp
 	useEffect(() => {
-		// getTrendingBlogs();
-		const unsub = onSnapshot(
-			blogCollectionRef,
+		const timestamp = query(blogCollectionRef, orderBy('timestamp', 'desc'));
+		const list = onSnapshot(
+			timestamp,
 			(snapshot) => {
 				let tags = [];
 				let list = [];
 				snapshot.docs.forEach((doc) => {
 					tags.push(...doc.get('tags'));
-					list.push({ id: doc.id, ...doc.data() });
+					list.push({ ...doc.data(), id: doc.id });
 				});
 				const uniqueTags = [...new Set(tags)];
 				const uniqueCategories = [...new Set(list.map((item) => item.category))];
@@ -68,41 +69,18 @@ const Home = ({ setActive, user }) => {
 				setTags(uniqueTags);
 				setLoading(false);
 				setActive('home');
-			},
-			(error) => {
-				toast.error(`There was an error ${error}`);
-			}
-		);
-
-		return () => {
-			unsub();
-			// getTrendingBlogs();
-		};
-		// eslint-disable-next-line
-	}, [setActive]);
-
-	// This block makes the blog posts display by latest posts
-	useEffect(() => {
-		const timestamp = query(blogCollectionRef, orderBy('timestamp', 'desc'));
-		const time = onSnapshot(
-			timestamp,
-			(snapshot) => {
-				let time = [];
-				snapshot.docs.forEach((doc) => {
-					time.push({ ...doc.data(), id: doc.id });
-				});
-				setBlogs(time);
+				setBlogs(list);
+				setBackup(list);
 			},
 			(error) => {
 				toast.error(`There was an error ${error}`);
 			}
 		);
 		return () => {
-			time();
+			list();
 		};
-
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	}, [setActive]);
 
 	if (loading) {
 		return <Spinner />;
@@ -122,8 +100,17 @@ const Home = ({ setActive, user }) => {
 
 	// Show posts that are only related to the clicked category when clicked
 	const selectedCategory = (e) => {
-		const result = blogs.filter((cat) => cat.category === e.target.innerText);
-		setBlogs(result);
+		if (categoryReset) {
+			setBlogs(backup);
+			setCategoryReset(false);
+			e = 'cancel';
+		} else {
+			const result = backup.filter((cat) => {
+				return cat.category === e;
+			});
+			setBlogs(result);
+			setCategoryReset(true);
+		}
 	};
 
 	return (
@@ -138,105 +125,105 @@ const Home = ({ setActive, user }) => {
 						switch (item) {
 							case 'JavaScript':
 								return (
-									<CategoryButton key={index} onClick={selectedCategory}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
 										<img src={javascript} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'TypeScript':
 								return (
-									<CategoryButton key={index} onClick={selectedCategory}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
 										<img src={typescript} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'React':
 								return (
-									<CategoryButton key={index} onClick={selectedCategory}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
 										<img src={react} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Angular':
 								return (
-									<CategoryButton key={index} onClick={selectedCategory}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
 										<img src={angular} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'CSS':
 								return (
-									<CategoryButton key={index} onClick={selectedCategory}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
 										<img src={css} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'HTML':
 								return (
-									<CategoryButton key={index} onClick={selectedCategory}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
 										<img src={html} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'SASS':
 								return (
-									<CategoryButton key={index} onClick={selectedCategory}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
 										<img src={sass} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Bootstrap':
 								return (
-									<CategoryButton key={index} onClick={selectedCategory}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
 										<img src={bootstrap} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Material UI':
 								return (
-									<CategoryButton key={index} onClick={selectedCategory}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
 										<img src={materialUi} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Tailwind CSS':
 								return (
-									<CategoryButton key={index} onClick={selectedCategory}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
 										<img src={tailwindcss} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Styled Components':
 								return (
-									<CategoryButton key={index} onClick={selectedCategory}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
 										<img src={styledComponents} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'What I learned':
 								return (
-									<CategoryButton key={index} onClick={selectedCategory}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
 										<img src={programmer} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Firebase':
 								return (
-									<CategoryButton key={index} onClick={selectedCategory}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
 										<img src={firebase} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Wordpress':
 								return (
-									<CategoryButton key={index} onClick={selectedCategory}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
 										<img src={wordpress} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							default:
 								return (
-									<CategoryButton key={index} onClick={selectedCategory}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
 										<img src={question} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
