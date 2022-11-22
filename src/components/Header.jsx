@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { ThemeContext } from '../App';
 import { Link, useLocation } from 'react-router-dom';
 import { StyledHeader, Nav, Logo, LinkContainer } from './styles/Header.styled.js';
-import Button from './styles/Button.styled.js';
+import { Button } from './styles/Button.styled.js';
 import JHLogo from '../assets/img/jh-logo.png';
 import JHLogoWhite from '../assets/img/jh-logo-white.png';
 import { GithubBottom, GithubTop, GithubIconContainer } from './styles/Github.styled.js';
