@@ -49,12 +49,9 @@ export const TagSection = styled.div`
 `;
 
 export const TagContainer = styled.div`
-	background-color: ${({ theme }) => theme.colors.card};
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 	display: flex;
 	flex: wrap;
 	transition: 0.5s;
-	padding: 15px;
 	border-radius: 10px;
 
 	/* xs: '575.98px' */
@@ -80,7 +77,6 @@ export const TagBox = styled.div`
 export const TagButton = styled.button`
 	border-radius: 8px;
 	border: none;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 	transition: 0.5s;
 	cursor: pointer;
 	font-size: 1rem;
