@@ -211,6 +211,7 @@ const Resume = () => {
 						처음부터 끝까지 <Highlight>템플릿 없이</Highlight> 개발중
 					</li>
 					<ul>
+						<li>반응형 웹</li>
 						<li>이력서 - sexybrain.dev/resume</li>
 						<li>블로그 - sexybrain.dev</li>
 						<ul>
