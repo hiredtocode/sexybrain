@@ -76,3 +76,41 @@ export const TagBox = styled.div`
 	flex: wrap;
 	justify-content: flex-end;
 `;
+
+export const TagButton = styled.button`
+	border-radius: 8px;
+	border: none;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+	transition: 0.5s;
+	cursor: pointer;
+	font-size: 1rem;
+	margin: 3px;
+	padding: 3px 5px;
+	background-color: ${({ theme }) => theme.colors.button2};
+	color: ${({ theme }) => theme.colors.font};
+
+	.icon {
+		background: none;
+		outline: none;
+		border: none;
+		cursor: pointer;
+	}
+	&:hover {
+		opacity: 0.9;
+		transform: scale(0.98);
+		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+		background: linear-gradient(
+			45deg,
+			${({ theme }) => theme.colors.hover},
+			${({ theme }) => theme.colors.hovered}
+		);
+		color: ${({ theme }) => theme.colors.font};
+	}
+	&.active {
+		background: ${({ theme }) => theme.colors.active};
+	}
+
+	&:hover span {
+		color: ${({ theme }) => theme.colors.font};
+	}
+`;
