@@ -21,9 +21,11 @@ const CategoryButton = styled.button`
 		height: 20px;
 		width: 20px;
 		flex: 1 1 30%;
+		pointer-events: none;
 	}
 
 	span {
+		pointer-events: none;
 		flex: 1 1 70%;
 		text-align: left;
 	}
