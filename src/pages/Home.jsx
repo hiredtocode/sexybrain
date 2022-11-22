@@ -31,11 +31,15 @@ import { BlogContainer } from '../components/styles/BlogContainer.styled';
 
 const Home = ({ setActive, user }) => {
 	const [loading, setLoading] = useState(true);
-	const [backup, setBackup] = useState([]);
-	const [blogs, setBlogs] = useState(backup);
-	const [tags, setTags] = useState([]);
+	const [blogBackup, setBlogBackup] = useState([]);
+	const [blogs, setBlogs] = useState(blogBackup);
+
 	const [category, setCategory] = useState([]);
 	const [categoryReset, setCategoryReset] = useState(false);
+
+	const [tags, setTags] = useState([]);
+	const [pressed, setPressed] = useState(false);
+	const [tagReset, setTagReset] = useState(false);
 	const blogCollectionRef = collection(db, 'blogPosts');
 
 	// const [trendBlogs, setTrendBlogs] = useState([]);
@@ -70,7 +74,7 @@ const Home = ({ setActive, user }) => {
 				setLoading(false);
 				setActive('home');
 				setBlogs(list);
-				setBackup(list);
+				setBlogBackup(list);
 			},
 			(error) => {
 				toast.error(`There was an error ${error}`);
@@ -98,20 +102,36 @@ const Home = ({ setActive, user }) => {
 	};
 
 	// Show posts that are only related to the clicked category when clicked
-	const selectedCategory = (e) => {
+	const selectedCategory = (selectedCategory) => {
 		if (categoryReset) {
-			setBlogs(backup);
+			setBlogs(blogBackup);
 			setCategoryReset(false);
-			e = 'cancel';
+			setPressed(false);
 		} else {
-			const result = backup.filter((cat) => {
-				return cat.category === e;
+			const result = blogBackup.filter((blog) => {
+				return blog.category === selectedCategory;
 			});
 			setBlogs(result);
 			setCategoryReset(true);
+			setPressed(true);
 		}
 	};
 
+	// Show posts that are only related to the clicked tag when clicked
+	const selectedTag = (selectedTag) => {
+		if (tagReset) {
+			setBlogs(blogBackup);
+			setTagReset(false);
+			setPressed(false);
+		} else {
+			const result = blogBackup.filter((blog) => {
+				return blog.tags.includes(selectedTag);
+			});
+			setBlogs(result);
+			setPressed(true);
+			setTagReset(true);
+		}
+	};
 	return (
 		<>
 			<BlogContainer>
@@ -232,7 +252,7 @@ const Home = ({ setActive, user }) => {
 				</Categories>
 				<H2 style={{ textAlign: 'center' }}>Tags</H2>
 				<TagContainer>
-					<Tags tags={tags} />
+					<Tags tags={tags} handleTagClick={selectedTag} />
 				</TagContainer>
 			</Aside>
 		</>
