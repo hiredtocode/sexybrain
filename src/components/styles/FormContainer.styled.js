@@ -28,7 +28,6 @@ export const FormInput = styled.input`
 export const SubmitButton = styled.button`
 	border-radius: 0.5rem;
 	border: none;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 	cursor: pointer;
 	font-size: 1.2rem;
 	font-weight: 700;
@@ -57,7 +56,6 @@ export const SubmitButton = styled.button`
 export const LoginButton = styled.button`
 	border-radius: 0.5rem;
 	border: none;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 	cursor: pointer;
 	font-size: 1.2rem;
 	font-weight: 700;
@@ -87,7 +85,6 @@ export const LoginButton = styled.button`
 export const FormCancelButton = styled.button`
 	border-radius: 0.5rem;
 	border: none;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 	cursor: pointer;
 	font-size: 1.2rem;
 	font-weight: 700;
@@ -133,7 +130,7 @@ export const Form = styled.form`
 	height: 80vh;
 	border-radius: 1rem;
 	background-color: ${({ theme }) => theme.colors.card};
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 	width: 30%;
 `;
 
@@ -142,7 +139,7 @@ export const LoginForm = styled.form`
 	flex-direction: column;
 	padding: 2rem 2rem;
 	border-radius: 1rem;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 	background-color: ${({ theme }) => theme.colors.card};
 `;
 

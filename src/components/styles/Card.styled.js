@@ -10,7 +10,7 @@ export const StyledCard = styled.div`
 	align-items: center;
 	background-color: ${({ theme }) => theme.colors.card};
 	border-radius: 15px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 	margin: 10px 0;
 	padding: 20px;
 	transition: 0.5s;

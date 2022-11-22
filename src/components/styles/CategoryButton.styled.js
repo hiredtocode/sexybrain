@@ -4,7 +4,6 @@ const CategoryButton = styled.button`
 	border-radius: 8px;
 	border: none;
 	display: flex;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 	cursor: pointer;
 	font-size: 1rem;
 	font-weight: 500;

@@ -5,7 +5,7 @@ export const MarkdownContainer = styled.div`
 	padding: 20px;
 	background: ${({ theme }) => theme.colors.card};
 	border-radius: 1rem;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 	margin-left: 1em;
 	height: 80vh;
 `;

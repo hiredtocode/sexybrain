@@ -25,7 +25,7 @@ export const Card = styled.div`
 	right: 20px;
 	bottom: 20px;
 	background: ${({ theme }) => theme.colors.card};
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 
 	border-radius: 15px;
 	display: flex;
