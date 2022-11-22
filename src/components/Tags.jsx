@@ -1,13 +1,13 @@
 import React from 'react';
-import { TagSection } from './styles/TagSection.styled.js';
+import { TagSection, TagButton } from './styles/TagSection.styled.js';
 
-const Tags = ({ tags }) => {
+const Tags = ({ tags, handleTagClick }) => {
 	return (
 		<TagSection>
 			{tags?.map((tag, index) => (
-				<p className='tag' key={index}>
+				<TagButton className='tag' key={index} onClick={() => handleTagClick(tag)}>
 					{tag}
-				</p>
+				</TagButton>
 			))}
 		</TagSection>
 	);
