@@ -38,7 +38,6 @@ const Home = ({ setActive, user }) => {
 	const [categoryReset, setCategoryReset] = useState(false);
 
 	const [tags, setTags] = useState([]);
-	const [pressed, setPressed] = useState(false);
 	const [tagReset, setTagReset] = useState(false);
 	const blogCollectionRef = collection(db, 'blogPosts');
 
@@ -102,18 +101,16 @@ const Home = ({ setActive, user }) => {
 	};
 
 	// Show posts that are only related to the clicked category when clicked
-	const selectedCategory = (selectedCategory) => {
+	const selectedCategory = (selectedCategory, index) => {
 		if (categoryReset) {
 			setBlogs(blogBackup);
 			setCategoryReset(false);
-			setPressed(false);
 		} else {
 			const result = blogBackup.filter((blog) => {
 				return blog.category === selectedCategory;
 			});
 			setBlogs(result);
 			setCategoryReset(true);
-			setPressed(true);
 		}
 	};
 
@@ -122,13 +119,11 @@ const Home = ({ setActive, user }) => {
 		if (tagReset) {
 			setBlogs(blogBackup);
 			setTagReset(false);
-			setPressed(false);
 		} else {
 			const result = blogBackup.filter((blog) => {
 				return blog.tags.includes(selectedTag);
 			});
 			setBlogs(result);
-			setPressed(true);
 			setTagReset(true);
 		}
 	};
@@ -144,105 +139,110 @@ const Home = ({ setActive, user }) => {
 						switch (item) {
 							case 'JavaScript':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
+									<CategoryButton
+										key={index}
+										onClick={() => {
+											selectedCategory(item, index);
+										}}
+									>
 										<img src={javascript} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'TypeScript':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
 										<img src={typescript} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'React':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
 										<img src={react} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Angular':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
 										<img src={angular} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'CSS':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
 										<img src={css} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'HTML':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
 										<img src={html} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'SASS':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
 										<img src={sass} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Bootstrap':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
 										<img src={bootstrap} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Material UI':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
 										<img src={materialUi} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Tailwind CSS':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
 										<img src={tailwindcss} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Styled Components':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
 										<img src={styledComponents} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'What I learned':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
 										<img src={programmer} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Firebase':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
 										<img src={firebase} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Wordpress':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
 										<img src={wordpress} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							default:
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item)}>
+									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
 										<img src={question} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
