@@ -76,9 +76,8 @@ const Home = ({ setActive, user }) => {
 				toast.error(`There was an error ${error}`);
 			}
 		);
-		return () => {
-			list();
-		};
+		return () => list();
+
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [setActive]);
 
