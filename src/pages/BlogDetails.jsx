@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 import Tags from '../components/Tags';
 import { db } from '../firebase.config';
 import { BlogTitleBox, Author, BlogDetail } from '../components/styles/BlogDetails.styled.js';
-import Post from '../components/markdown_component/post.js';
 import Flex from '../components/styles/Flex.styled.js';
 import { H2 } from '../components/styles/Title.styled.js';
 import ReactMarkdown from 'react-markdown';
@@ -16,22 +15,6 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 const Detail = ({ setActive }) => {
 	const { id } = useParams();
 	const [blog, setBlog] = useState(null);
-	const [blogs, setBlogs] = useState([]);
-	const [tags, setTags] = useState([]);
-
-	useEffect(() => {
-		const getBlogsData = async () => {
-			const blogRef = collection(db, 'blogPosts');
-			const blogs = await getDocs(blogRef);
-			setBlogs(blogs.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
-			let tags = [];
-			blogs.docs.map((doc) => tags.push(...doc.get('tags')));
-			let uniqueTags = [...new Set(tags)];
-			setTags(uniqueTags);
-		};
-
-		getBlogsData();
-	}, []);
 
 	useEffect(() => {
 		id && getBlogDetail();
@@ -44,6 +27,7 @@ const Detail = ({ setActive }) => {
 		setBlog(blogDetail.data());
 		setActive(null);
 	};
+
 	return (
 		<div className='single' style={{ flexGrow: '1' }}>
 			<BlogTitleBox style={{ backgroundImage: `url('${blog?.imgUrl}')` }}>
@@ -77,7 +61,6 @@ const Detail = ({ setActive }) => {
 				</div>
 				<p>{blog?.body}</p>
 				<ReactMarkdown rehypePlugins={[rehypeHighlight]} children={blog?.body} />
-				<Post>{blog?.body}</Post>
 			</BlogDetail>
 		</div>
 	);
