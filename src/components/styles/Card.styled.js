@@ -8,9 +8,9 @@ export const CardContainer = styled.div`
 		h2 {
 			background: linear-gradient(
 				90deg,
-				rgba(255, 255, 255, 0.014425753211440795) 8%,
-				rgba(255, 255, 255, 1) 20%,
-				rgba(252, 176, 69, 0) 100%
+				${({ theme }) => theme.colors.titleBackgroundColor1} 8%,
+				${({ theme }) => theme.colors.titleBackgroundColor2} 20%,
+				${({ theme }) => theme.colors.titleBackgroundColor3} 100%
 			);
 		}
 	}
