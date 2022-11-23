@@ -3,6 +3,17 @@ import styled from 'styled-components/macro';
 export const CardContainer = styled.div`
 	position: relative;
 	min-width: 100%;
+
+	&:hover {
+		h2 {
+			background: linear-gradient(
+				90deg,
+				rgba(255, 255, 255, 0.014425753211440795) 8%,
+				rgba(255, 255, 255, 1) 20%,
+				rgba(252, 176, 69, 0) 100%
+			);
+		}
+	}
 `;
 export const StyledCard = styled.div`
 	overflow: hidden;
@@ -128,6 +139,7 @@ export const Box = styled.div`
 		width: 100%;
 		text-align: center;
 	}
+
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
 	}
