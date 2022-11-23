@@ -116,7 +116,7 @@ function App() {
 			<ThemeProvider theme={isDark ? darkTheme : lightTheme}>
 				<GlobalStyles />
 				<Header setActive={setActive} active={active} user={user} handleLogout={handleLogout} />
-				<ToastContainer />
+				<ToastContainer position='bottom-right' />
 				<RootContainer>
 					<Routes>
 						<Route path='/' element={<Home setActive={setActive} user={user} />} />
