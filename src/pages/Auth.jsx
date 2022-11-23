@@ -5,7 +5,7 @@ import {
 } from 'firebase/auth';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
-import { auth } from '../firebase.config';
+import { auth, functions } from '../firebase.config';
 import { useNavigate } from 'react-router-dom';
 import {
 	FormContainer,
@@ -47,9 +47,21 @@ const Auth = ({ setActive, setUser }) => {
 
 		navigate('/');
 	};
-
+	// add admin cloud function
+	// const adminForm = document.querySelector('.admin-actions');
+	// adminForm.addEventListener('submit', (e) => {
+	// 	e.preventDefault();
+	// 	const adminEmail = document.querySelector('#admin-email').value;
+	// 	const addAdminRole = functions.httpsCallable('addAdminRole');
+	// 	addAdminRole({ email: adminEmail });
+	// });
+	// 			<form className='admin-actions' style={{ margin: '40px auto', maxWidth: '300px' }}>
+	// 				<input type='email' placeholder='User email' id='admin-email' required />
+	// 				<button className='btn-small yellow darken-2 z-depth-0'>Make admin</button>
+	// 			</form>
 	return (
 		<>
+			{/* <!-- ADMIN ACTIONS --> */}
 			<FormContainer>
 				<LoginForm onSubmit={handleAuth}>
 					<H1>{!signUp ? 'Sign-In' : 'Sign-Up'}</H1>
