@@ -29,6 +29,19 @@ function App() {
 
 	const navigate = useNavigate();
 
+	// 		/* xs: '575.98px' */
+	// @media (max-width: ${({ theme }) => theme.xs}) {
+	// }
+	// /* s: '767.98px'  */
+	// @media (max-width: ${({ theme }) => theme.s}) {
+	// }
+	// /* md: '991.98px'  */
+	// @media (max-width: ${({ theme }) => theme.md}) {
+	// }
+	// /* lg: '1199.98px'  */
+	// @media (max-width: ${({ theme }) => theme.lg}) {
+	// } ;
+
 	const lightTheme = {
 		colors: {
 			header: 'transparent',
@@ -54,23 +67,10 @@ function App() {
 		s: '767.98px',
 		md: '991.98px',
 		lg: '1199.98px',
-
-		// 		/* xs: '575.98px' */
-		// @media (max-width: ${({ theme }) => theme.xs}) {
-		// }
-		// /* s: '767.98px'  */
-		// @media (max-width: ${({ theme }) => theme.s}) {
-		// }
-		// /* md: '991.98px'  */
-		// @media (max-width: ${({ theme }) => theme.md}) {
-		// }
-		// /* lg: '1199.98px'  */
-		// @media (max-width: ${({ theme }) => theme.lg}) {
-		// } ;
 	};
 	const darkTheme = {
 		colors: {
-			header: '',
+			header: 'transparent',
 			body: '#2C3333',
 			footer: '#2E3445',
 			button: '#347485',
