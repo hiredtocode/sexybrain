@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { collection, deleteDoc, doc, orderBy, onSnapshot, query } from 'firebase/firestore';
-import BlogSection from '../components/BlogSection';
 import Spinner from '../components/Spinner';
 import { db } from '../firebase.config';
 import { toast } from 'react-toastify';
@@ -25,11 +24,12 @@ import programmer from '../assets/img/programmer.svg';
 import question from '../assets/img/question.svg';
 import { H2 } from '../components/styles/Title.styled.js';
 import { Aside } from '../components/styles/CategoryContainer.styled';
+import Card from '../components/Card';
 import { BlogContainer } from '../components/styles/BlogContainer.styled';
 // import MostPopular from '../components/MostPopular';
 // import Trending from '../components/Trending';
 
-const Home = ({ setActive, user }) => {
+const Home = ({ setActive, user, handleUpdate }) => {
 	const [loading, setLoading] = useState(true);
 	const [blogBackup, setBlogBackup] = useState([]);
 	const [blogs, setBlogs] = useState(blogBackup);
@@ -130,7 +130,8 @@ const Home = ({ setActive, user }) => {
 	return (
 		<>
 			<BlogContainer>
-				<BlogSection blogs={blogs} user={user} handleDelete={handleDelete} />
+				<H2>Blogs</H2>
+				<Card blogs={blogs} user={user} handleDelete={handleDelete} handleUpdate={handleUpdate} />
 			</BlogContainer>
 			<Aside>
 				<H2 style={{ textAlign: 'center' }}>Categories</H2>
