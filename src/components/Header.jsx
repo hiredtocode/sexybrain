@@ -29,6 +29,8 @@ const Header = ({ active, setActive, user, handleLogout }) => {
 						/>
 					</Link>
 				</div>
+
+				{/* Navbar menu container */}
 				<LinkContainer>
 					{path !== '/resume' ? (
 						<>
