@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
 const Spinner = () => {
-  return (
-    <div className="spinner-border text-primary mt-5 spinner" role="status">
-      <span className="visually-hidden">Loading...</span>
-    </div>
-  );
+	return (
+		<div role='status'>
+			<span style={{ fontSize: '2rem' }}>Loading...</span>
+		</div>
+	);
 };
 
 export default Spinner;
