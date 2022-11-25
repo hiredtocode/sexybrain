@@ -17,9 +17,9 @@ import {
 	Textarea,
 } from '../components/styles/FormContainer.styled.js';
 import Flex from '../components/styles/Flex.styled.js';
+import rehypeHighlight from 'rehype-highlight';
 import ReactMarkdown from 'react-markdown';
 import { MarkdownContainer } from '../components/styles/MarkdownContainer.styled.js';
-import Code from '../components/markdown_component/code.js';
 
 const AddEdit = ({ user, setActive }) => {
 	const categoryOption = [
@@ -77,6 +77,7 @@ const AddEdit = ({ user, setActive }) => {
 			);
 		};
 		file && uploadFile();
+		return () => uploadFile();
 	}, [file]);
 	// Upload file end
 
@@ -204,7 +205,7 @@ const AddEdit = ({ user, setActive }) => {
 				</Form>
 			</FormContainer>
 			<MarkdownContainer>
-				<ReactMarkdown components={Code} children={body} />
+				<ReactMarkdown rehypePlugins={[rehypeHighlight]} children={body ?? ''} />
 			</MarkdownContainer>
 		</>
 	);
