@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { excerpt } from '../utility';
+import { excerpt } from '../utility/excerpt';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 import {
