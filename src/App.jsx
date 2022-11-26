@@ -5,6 +5,7 @@ import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import BlogDetails from './pages/BlogDetails';
+import Portfolio from './pages/Portfolio';
 import AddEdit from './pages/AddEdit';
 import NotFound from './pages/NotFound';
 import Auth from './pages/Auth';
@@ -127,6 +128,7 @@ function App() {
 					<Routes>
 						<Route path='/' element={<Home setActive={setActive} user={user} />} />
 						<Route path='/detail/:id' element={<BlogDetails setActive={setActive} />} />
+						<Route path='/portfolio/' element={<Portfolio setActive={setActive} />} />
 						<Route
 							path='/create'
 							element={user?.uid ? <AddEdit user={user} /> : <Navigate to='/auth' />}
