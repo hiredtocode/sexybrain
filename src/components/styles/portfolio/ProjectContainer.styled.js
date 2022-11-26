@@ -23,6 +23,7 @@ export const ProjectContainer = styled.section`
 export const ProjectCard = styled.div`
 	width: 50%;
 	height: 400px;
+	overflow: hidden;
 	padding: 15px;
 	background: ${({ theme }) => theme.colors.card};
 `;
