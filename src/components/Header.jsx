@@ -34,6 +34,14 @@ const Header = ({ active, setActive, user, handleLogout }) => {
 				<LinkContainer>
 					{path !== '/resume' ? (
 						<>
+							<Link to='/resume'>
+								<Button
+									onClick={() => setActive('resume')}
+									className={` ${active === 'resume' ? 'active' : ''}`}
+								>
+									Resume
+								</Button>
+							</Link>
 							{userId ? (
 								<>
 									{/* Create and Logout button appears if logged in */}
@@ -72,6 +80,11 @@ const Header = ({ active, setActive, user, handleLogout }) => {
 								</Button>
 							</Link>
 							{/* Set the "Home" button to display "Blog" instead when it's in the Resume page END */}
+							<Link to='/portfolio'>
+								<Button onClick={() => setActive('portfolio')}>
+									<span>Portfolio</span>
+								</Button>
+							</Link>
 						</>
 					)}
 
