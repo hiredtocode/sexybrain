@@ -11,6 +11,7 @@ import rehypeHighlight from 'rehype-highlight';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import DefaultImage from '../assets/img/default.jpg';
 
 const Detail = ({ setActive }) => {
 	const { id } = useParams();
@@ -30,13 +31,34 @@ const Detail = ({ setActive }) => {
 
 	return (
 		<div className='single' style={{ flexGrow: '1' }}>
-			<BlogTitleBox style={{ backgroundImage: `url('${blog?.imgUrl}')` }}>
-				<div className='overlay'></div>
-				<div className='blog-title'>
-					<span>{blog?.timestamp.toDate().toDateString()}</span>
-					<H2>{blog?.title}</H2>
-				</div>
-			</BlogTitleBox>
+			{/* Show default image if no image was uploaded */}
+			{blog?.imgUrl ? (
+				<BlogTitleBox
+					style={{
+						backgroundImage: `url('${blog?.imgUrl}')`,
+					}}
+				>
+					<div className='overlay'></div>
+					<div className='blog-title'>
+						<span>{blog?.timestamp.toDate().toDateString()}</span>
+						<H2>{blog?.title}</H2>
+					</div>
+				</BlogTitleBox>
+			) : (
+				<BlogTitleBox
+					style={{
+						backgroundImage: `url('${DefaultImage}')`,
+					}}
+				>
+					<div className='overlay'></div>
+					<div className='blog-title'>
+						<span>{blog?.timestamp.toDate().toDateString()}</span>
+						<H2>{blog?.title}</H2>
+					</div>
+				</BlogTitleBox>
+			)}
+			{/* Show default image if no image was uploaded END */}
+
 			<BlogDetail>
 				<div className='authorInfo'>
 					<div>
