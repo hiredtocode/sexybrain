@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Flex from '../components/styles/Flex.styled.js';
 import { H1 } from '../components/styles/Title.styled';
 import { Button } from '../components/styles/Button.styled.js';
+import { ProjectContainer } from '../components/styles/portfolio/ProjectContainer.styled.js';
 
 const Portfolio = () => {
 	return (
@@ -17,14 +18,14 @@ const Portfolio = () => {
 						<Button>Open Source</Button>
 					</Flex>
 				</nav>
-				<section>
+				<ProjectContainer>
 					<ul>
 						<li>Current Website</li>
 						<li>API - Angular</li>
 						<li>Nama Sushi</li>
 						<li>VS Code Theme</li>
 					</ul>
-				</section>
+				</ProjectContainer>
 			</Flex>
 		</main>
 	);
