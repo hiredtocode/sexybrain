@@ -5,6 +5,7 @@ import { Button } from '../components/styles/Button.styled.js';
 import {
 	ProjectContainer,
 	ProjectCard,
+	CardContainer,
 } from '../components/styles/portfolio/ProjectContainer.styled.js';
 import SamplePic from '../assets/img/default.jpg';
 import { Description } from '../components/styles/Card.styled.js';
@@ -24,46 +25,54 @@ const Portfolio = () => {
 					</Flex>
 				</nav>
 				<ProjectContainer>
-					<ProjectCard>
-						<H3>Current Website</H3>
-						<img src={SamplePic} alt='Current Website' />
-						<Description>
-							Amet cupidatat pariatur proident sunt cillum. Lorem aliquip et labore velit veniam
-							sunt cillum dolore. Eu anim officia exercitation dolore. Amet dolor ipsum aliquip
-							ullamco dolore laborum elit deserunt laborum excepteur aute consectetur ea anim. Nulla
-							ea non sunt nisi sint aute cupidatat fugiat exercitation.
-						</Description>
-					</ProjectCard>
-					<ProjectCard>
-						<H3>API - Angular</H3>
-						<img src={SamplePic} alt='Current Website' />
-						<Description>
-							Amet cupidatat pariatur proident sunt cillum. Lorem aliquip et labore velit veniam
-							sunt cillum dolore. Eu anim officia exercitation dolore. Amet dolor ipsum aliquip
-							ullamco dolore laborum elit deserunt laborum excepteur aute consectetur ea anim. Nulla
-							ea non sunt nisi sint aute cupidatat fugiat exercitation.
-						</Description>
-					</ProjectCard>
-					<ProjectCard>
-						<H3>Nama Sushi</H3>
-						<img src={SamplePic} alt='Current Website' />
-						<Description>
-							Amet cupidatat pariatur proident sunt cillum. Lorem aliquip et labore velit veniam
-							sunt cillum dolore. Eu anim officia exercitation dolore. Amet dolor ipsum aliquip
-							ullamco dolore laborum elit deserunt laborum excepteur aute consectetur ea anim. Nulla
-							ea non sunt nisi sint aute cupidatat fugiat exercitation.
-						</Description>
-					</ProjectCard>
-					<ProjectCard>
-						<H3>VS Code Theme</H3>
-						<img src={SamplePic} alt='Current Website' />
-						<Description>
-							Amet cupidatat pariatur proident sunt cillum. Lorem aliquip et labore velit veniam
-							sunt cillum dolore. Eu anim officia exercitation dolore. Amet dolor ipsum aliquip
-							ullamco dolore laborum elit deserunt laborum excepteur aute consectetur ea anim. Nulla
-							ea non sunt nisi sint aute cupidatat fugiat exercitation.
-						</Description>
-					</ProjectCard>
+					<CardContainer>
+						<ProjectCard>
+							<H3>Current Website</H3>
+							<img src={SamplePic} alt='Current Website' />
+							<Description>
+								Amet cupidatat pariatur proident sunt cillum. Lorem aliquip et labore velit veniam
+								sunt cillum dolore. Eu anim officia exercitation dolore. Amet dolor ipsum aliquip
+								ullamco dolore laborum elit deserunt laborum excepteur aute consectetur ea anim.
+								Nulla ea non sunt nisi sint aute cupidatat fugiat exercitation.
+							</Description>
+						</ProjectCard>
+					</CardContainer>
+					<CardContainer>
+						<ProjectCard>
+							<H3>API - Angular</H3>
+							<img src={SamplePic} alt='API - Angular' />
+							<Description>
+								Amet cupidatat pariatur proident sunt cillum. Lorem aliquip et labore velit veniam
+								sunt cillum dolore. Eu anim officia exercitation dolore. Amet dolor ipsum aliquip
+								ullamco dolore laborum elit deserunt laborum excepteur aute consectetur ea anim.
+								Nulla ea non sunt nisi sint aute cupidatat fugiat exercitation.
+							</Description>
+						</ProjectCard>
+					</CardContainer>
+					<CardContainer>
+						<ProjectCard>
+							<H3>Nama Sushi</H3>
+							<img src={SamplePic} alt='Nama Sushi' />
+							<Description>
+								Amet cupidatat pariatur proident sunt cillum. Lorem aliquip et labore velit veniam
+								sunt cillum dolore. Eu anim officia exercitation dolore. Amet dolor ipsum aliquip
+								ullamco dolore laborum elit deserunt laborum excepteur aute consectetur ea anim.
+								Nulla ea non sunt nisi sint aute cupidatat fugiat exercitation.
+							</Description>
+						</ProjectCard>
+					</CardContainer>
+					<CardContainer>
+						<ProjectCard>
+							<H3>VS Code Theme</H3>
+							<img src={SamplePic} alt='VS Code Theme' />
+							<Description>
+								Amet cupidatat pariatur proident sunt cillum. Lorem aliquip et labore velit veniam
+								sunt cillum dolore. Eu anim officia exercitation dolore. Amet dolor ipsum aliquip
+								ullamco dolore laborum elit deserunt laborum excepteur aute consectetur ea anim.
+								Nulla ea non sunt nisi sint aute cupidatat fugiat exercitation.
+							</Description>
+						</ProjectCard>
+					</CardContainer>
 				</ProjectContainer>
 			</Flex>
 		</main>
