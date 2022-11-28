@@ -32,5 +32,10 @@ button{
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 
 }
+
+::selection {
+		background: ${({ theme }) => theme.colors.highlight};
+
+}
 `;
 export default GlobalStyles;
