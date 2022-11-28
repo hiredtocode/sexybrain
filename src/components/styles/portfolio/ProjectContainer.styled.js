@@ -29,11 +29,11 @@ export const CardContainer = styled.div`
 
 export const ProjectCard = styled.div`
 	width: 550px;
-	height: 400px;
 	margin: 10px;
 	border-radius: 15px;
 	overflow: hidden;
 	background: ${({ theme }) => theme.colors.card};
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 
 	h3 {
 		position: absolute;
@@ -47,9 +47,13 @@ export const ProjectCard = styled.div`
 		h3 {
 			opacity: 1;
 			transition: 0.5s;
-			color: ${({ theme }) => theme.colors.accent2};
+			color: ${({ theme }) => theme.colors.font};
 			text-align: center;
 			background: ${({ theme }) => theme.colors.card};
 		}
 	}
+`;
+
+export const ProjectDescription = styled.div`
+	transition: 0.7s;
 `;
