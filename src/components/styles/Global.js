@@ -5,7 +5,33 @@ const GlobalStyles = createGlobalStyle`
 * {
   box-sizing: border-box;
 	font-family: 'Quicksand', 'sans-serif';
+
+	/* Firefox scrollbar */
+  scrollbar-color: ${({ theme }) => theme.colors.hover} ${({ theme }) => theme.colors.body};
+  scrollbar-width: thin;
+	/* Firefox scrollbar END */
 }
+
+/* Chrome, Edge, Safari */
+*::-webkit-scrollbar {
+	width: 12px; /* vertical scrollbar */
+	height: 12px; /* horizontal scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+	background:transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+	background: ${({ theme }) => theme.colors.hover};
+	border-radius: 12px;
+	border: calc(12px / 4) solid ${({ theme }) => theme.colors.body};
+}
+
+*::-webkit-scrollbar-thumb:hover {
+	background: ${({ theme }) => theme.colors.hovered};
+}
+/* Chrome, Edge, Safari */
 
 body{
 	margin: 0;

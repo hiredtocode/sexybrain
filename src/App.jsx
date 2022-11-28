@@ -53,7 +53,7 @@ function App() {
 			font: '#395B64',
 			card: '#fcfcfc',
 			hover: '#befdff',
-			hovered: '#ffffff',
+			hovered: '#90fbff',
 			cancelButton: '#f6e7e7',
 			cancelHover: '#ffbebe',
 			cancelHovered: '#ffffff',
