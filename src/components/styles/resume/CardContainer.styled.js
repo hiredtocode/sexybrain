@@ -26,7 +26,6 @@ export const Card = styled.div`
 	bottom: 20px;
 	background: ${({ theme }) => theme.colors.card};
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-
 	border-radius: 15px;
 	display: flex;
 	justify-content: center;
