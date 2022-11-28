@@ -1,0 +1,34 @@
+[
+	{
+		"id": 1,
+		"title": "SexyBrain.Dev (Current website)",
+		"image": "sexybrain-main-page-dark.jpg",
+		"description": "Incididunt qui pariatur ut commodo pariatur ex enim laboris. Sint veniam irure tempor minim reprehenderit proident aliqua consequat laborum excepteur amet id. Ea dolor laboris eu ea non ullamco esse velit do.",
+		"githubRepo": "https://github.com/hiredtocode",
+		"hyperlink": "https://sexybrain.dev"
+	},
+	{
+		"id": 2,
+		"title": "API - Angular",
+		"image": "sexybrain-main-page-dark.jpg",
+		"description": "Incididunt qui pariatur ut commodo pariatur ex enim laboris. Sint veniam irure tempor minim reprehenderit proident aliqua consequat laborum excepteur amet id. Ea dolor laboris eu ea non ullamco esse velit do.",
+		"githubRepo": "https://github.com/hiredtocode",
+		"hyperlink": "https://sexybrain.dev"
+	},
+	{
+		"id": 3,
+		"title": "Nama Sushi",
+		"image": "sexybrain-main-page-dark.jpg",
+		"description": "Incididunt qui pariatur ut commodo pariatur ex enim laboris. Sint veniam irure tempor minim reprehenderit proident aliqua consequat laborum excepteur amet id. Ea dolor laboris eu ea non ullamco esse velit do.",
+		"githubRepo": "https://github.com/hiredtocode",
+		"hyperlink": "https://sexybrain.dev"
+	},
+	{
+		"id": 4,
+		"title": "VS Code Theme",
+		"image": "sexybrain-main-page-dark.jpg",
+		"description": "Incididunt qui pariatur ut commodo pariatur ex enim laboris. Sint veniam irure tempor minim reprehenderit proident aliqua consequat laborum excepteur amet id. Ea dolor laboris eu ea non ullamco esse velit do.",
+		"githubRepo": "https://github.com/hiredtocode",
+		"hyperlink": "https://sexybrain.dev"
+	}
+]
