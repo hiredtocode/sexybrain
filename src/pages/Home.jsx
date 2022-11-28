@@ -24,6 +24,7 @@ import programmer from '../assets/img/programmer.svg';
 import question from '../assets/img/question.svg';
 import { H2 } from '../components/styles/Title.styled.js';
 import { Aside } from '../components/styles/CategoryContainer.styled';
+import { v4 as uuidv4 } from 'uuid';
 import Card from '../components/Card';
 import { BlogContainer } from '../components/styles/BlogContainer.styled';
 // import MostPopular from '../components/MostPopular';
@@ -101,7 +102,7 @@ const Home = ({ setActive, user, handleUpdate }) => {
 	};
 
 	// Show posts that are only related to the clicked category when clicked
-	const selectedCategory = (selectedCategory, index) => {
+	const selectedCategory = (selectedCategory) => {
 		if (categoryReset) {
 			setBlogs(blogBackup);
 			setCategoryReset(false);
@@ -136,14 +137,14 @@ const Home = ({ setActive, user, handleUpdate }) => {
 			<Aside>
 				<H2 style={{ textAlign: 'center' }}>Categories</H2>
 				<Categories>
-					{category?.map((item, index) => {
+					{category?.map((item) => {
 						switch (item) {
 							case 'JavaScript':
 								return (
 									<CategoryButton
-										key={index}
+										key={uuidv4()}
 										onClick={() => {
-											selectedCategory(item, index);
+											selectedCategory(item, uuidv4());
 										}}
 									>
 										<img src={javascript} alt={item} />
@@ -152,98 +153,98 @@ const Home = ({ setActive, user, handleUpdate }) => {
 								);
 							case 'TypeScript':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
+									<CategoryButton key={uuidv4()} onClick={() => selectedCategory(item, item)}>
 										<img src={typescript} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'React':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
+									<CategoryButton key={uuidv4()} onClick={() => selectedCategory(item, item)}>
 										<img src={react} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Angular':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
+									<CategoryButton key={uuidv4()} onClick={() => selectedCategory(item, item)}>
 										<img src={angular} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'CSS':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
+									<CategoryButton key={uuidv4()} onClick={() => selectedCategory(item, item)}>
 										<img src={css} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'HTML':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
+									<CategoryButton key={uuidv4()} onClick={() => selectedCategory(item, item)}>
 										<img src={html} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'SASS':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
+									<CategoryButton key={uuidv4()} onClick={() => selectedCategory(item, item)}>
 										<img src={sass} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Bootstrap':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
+									<CategoryButton key={uuidv4()} onClick={() => selectedCategory(item, item)}>
 										<img src={bootstrap} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Material UI':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
+									<CategoryButton key={uuidv4()} onClick={() => selectedCategory(item, item)}>
 										<img src={materialUi} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Tailwind CSS':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
+									<CategoryButton key={uuidv4()} onClick={() => selectedCategory(item, item)}>
 										<img src={tailwindcss} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Styled Components':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
+									<CategoryButton key={uuidv4()} onClick={() => selectedCategory(item, item)}>
 										<img src={styledComponents} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'What I learned':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
+									<CategoryButton key={uuidv4()} onClick={() => selectedCategory(item, item)}>
 										<img src={programmer} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Firebase':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
+									<CategoryButton key={uuidv4()} onClick={() => selectedCategory(item, item)}>
 										<img src={firebase} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							case 'Wordpress':
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
+									<CategoryButton key={uuidv4()} onClick={() => selectedCategory(item, item)}>
 										<img src={wordpress} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
 								);
 							default:
 								return (
-									<CategoryButton key={index} onClick={() => selectedCategory(item, item)}>
+									<CategoryButton key={uuidv4()} onClick={() => selectedCategory(item, item)}>
 										<img src={question} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>

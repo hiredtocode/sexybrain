@@ -30,6 +30,7 @@ import programmer from '../assets/img/programmer.svg';
 import question from '../assets/img/question.svg';
 import { H2 } from '../components/styles/Title.styled.js';
 import { TagBox } from '../components/styles/TagSection.styled.js';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Card({ blogs, user, handleDelete }) {
 	const userId = user?.uid;
@@ -37,42 +38,42 @@ export default function Card({ blogs, user, handleDelete }) {
 
 	return (
 		<>
-			{blogs?.map((item, index) => (
-				<CardContainer key={index}>
+			{blogs?.map((item) => (
+				<CardContainer key={uuidv4()}>
 					<Link to={`/detail/${item.id}`} style={{ textDecoration: 'none', color: { fontColor } }}>
 						<StyledCard>
 							{/* Category matching logo on each card */}
 							<CategoryMark>
 								{item.category === 'HTML' ? (
-									<img key={index} src={html} alt={item.category} />
+									<img key={uuidv4()} src={html} alt={item.category} />
 								) : item.category === 'JavaScript' ? (
-									<img key={index} src={javascript} alt={item.category} />
+									<img key={uuidv4()} src={javascript} alt={item.category} />
 								) : item.category === 'Angular' ? (
-									<img key={index} src={angular} alt={item.category} />
+									<img key={uuidv4()} src={angular} alt={item.category} />
 								) : item.category === 'TypeScript' ? (
-									<img key={index} src={typescript} alt={item.category} />
+									<img key={uuidv4()} src={typescript} alt={item.category} />
 								) : item.category === 'React' ? (
-									<img key={index} src={react} alt={item.category} />
+									<img key={uuidv4()} src={react} alt={item.category} />
 								) : item.category === 'CSS' ? (
-									<img key={index} src={css} alt={item.category} />
+									<img key={uuidv4()} src={css} alt={item.category} />
 								) : item.category === 'SASS' ? (
-									<img key={index} src={sass} alt={item.category} />
+									<img key={uuidv4()} src={sass} alt={item.category} />
 								) : item.category === 'Bootstrap' ? (
-									<img key={index} src={bootstrap} alt={item.category} />
+									<img key={uuidv4()} src={bootstrap} alt={item.category} />
 								) : item.category === 'Material UI' ? (
-									<img key={index} src={materialUi} alt={item.category} />
+									<img key={uuidv4()} src={materialUi} alt={item.category} />
 								) : item.category === 'Wordpress' ? (
-									<img key={index} src={wordpress} alt={item.category} />
+									<img key={uuidv4()} src={wordpress} alt={item.category} />
 								) : item.category === 'Styled Components' ? (
-									<img key={index} src={styledComponents} alt={item.category} />
+									<img key={uuidv4()} src={styledComponents} alt={item.category} />
 								) : item.category === 'Firebase' ? (
-									<img key={index} src={firebase} alt={item.category} />
+									<img key={uuidv4()} src={firebase} alt={item.category} />
 								) : item.category === 'Tailwind CSS' ? (
-									<img key={index} src={tailwindcss} alt={item.category} />
+									<img key={uuidv4()} src={tailwindcss} alt={item.category} />
 								) : item.category === 'What I learned' ? (
-									<img key={index} src={programmer} alt={item.category} />
+									<img key={uuidv4()} src={programmer} alt={item.category} />
 								) : (
-									<img key={index} src={question} alt={item.category} />
+									<img key={uuidv4()} src={question} alt={item.category} />
 								)}
 							</CategoryMark>
 							{/* Category matching logo on each card END*/}

@@ -1,11 +1,12 @@
 import React from 'react';
 import { TagSection, TagButton } from './styles/TagSection.styled.js';
+import { v4 as uuidv4 } from 'uuid';
 
 const Tags = ({ tags, handleTagClick }) => {
 	return (
 		<TagSection>
-			{tags?.map((tag, index) => (
-				<TagButton className='tag' key={index} onClick={() => handleTagClick(tag)}>
+			{tags?.map((tag) => (
+				<TagButton className='tag' key={uuidv4()} onClick={() => handleTagClick(tag)}>
 					{tag}
 				</TagButton>
 			))}

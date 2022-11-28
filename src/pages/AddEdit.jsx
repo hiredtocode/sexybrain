@@ -20,6 +20,7 @@ import Flex from '../components/styles/Flex.styled.js';
 import rehypeHighlight from 'rehype-highlight';
 import ReactMarkdown from 'react-markdown';
 import { MarkdownContainer } from '../components/styles/MarkdownContainer.styled.js';
+import { v4 as uuidv4 } from 'uuid';
 
 const AddEdit = ({ user, setActive }) => {
 	const categoryOption = [
@@ -172,8 +173,8 @@ const AddEdit = ({ user, setActive }) => {
 					{/* category section */}
 					<FormSelect value={category} onChange={onCategoryChange}>
 						<option>Select a category</option>
-						{categoryOption.map((option, index) => (
-							<option value={option || ''} key={index}>
+						{categoryOption.map((option) => (
+							<option value={option || ''} key={uuidv4()}>
 								{option}
 							</option>
 						))}
