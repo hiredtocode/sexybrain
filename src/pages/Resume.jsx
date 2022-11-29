@@ -62,7 +62,7 @@ const Resume = () => {
 						<Highlight> 긍정적이고 밝은 성격</Highlight>을 지닌 비전공자이며, 37살 때 코딩 매력에
 						빠져서 개발자가 되기로 마음을 먹고 독학을 했습니다. <br />
 						<Highlight>논리적</Highlight>인 사고방식과 <Highlight>UX</Highlight>를 항상 고민을 하며
-						레이아웃과 <Highlight>반응형 앱</Highlight>을 만들고 있습니다. <br />
+						레이아웃과 <Highlight>반응형 웹앱</Highlight>을 만들고 있습니다. <br />
 						<br />
 						비즈니스 성장에 기여하는 일을 최우선으로, 시간과 사람을 관리하는{' '}
 						<Highlight>리더십</Highlight>의 중요성을 알고 생각과 계획보다 Execution이 제일
