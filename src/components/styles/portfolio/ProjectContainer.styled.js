@@ -36,7 +36,7 @@ export const ProjectCard = styled.div`
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 
 	.image {
-		height: 400px;
+		height: 300px;
 	}
 	h3 {
 		width: 100%;
@@ -51,8 +51,9 @@ export const ProjectDescription = styled.div`
 
 export const Stack = styled.div`
 	transition: 0.7s;
-	padding: 15px;
 	display: flex;
+	flex-direction: column;
+	min-width: 50px;
 `;
 
 export const FilterContainer = styled.div`
@@ -60,4 +61,26 @@ export const FilterContainer = styled.div`
 	min-width: 150px;
 	margin: 10px;
 	font-size: 1.1rem;
+`;
+
+export const StackButton = styled.button`
+	cursor: pointer;
+	border: none;
+	margin: 3px;
+	height: 50px;
+	background: ${({ theme }) => theme.colors.font};
+	transition: 0.5s;
+
+	/* xs: '575.98px' */
+	@media (max-width: ${({ theme }) => theme.xs}) {
+	}
+	/* s: '767.98px'  */
+	@media (max-width: ${({ theme }) => theme.s}) {
+	}
+	/* md: '991.98px'  */
+	@media (max-width: ${({ theme }) => theme.md}) {
+	}
+	/* lg: '1199.98px'  */
+	@media (max-width: ${({ theme }) => theme.lg}) {
+	}
 `;
