@@ -52,90 +52,105 @@ const Project = () => {
 												return (
 													<StackButton key={uuidv4()}>
 														<img src={javascript} alt={stack} />
+														<span>{stack}</span>
 													</StackButton>
 												);
 											case 'TypeScript':
 												return (
 													<StackButton key={uuidv4()}>
 														<img src={typescript} alt={stack} />
+														<span>{stack}</span>
 													</StackButton>
 												);
 											case 'React':
 												return (
 													<StackButton key={uuidv4()}>
 														<img src={react} alt={stack} />
+														<span>{stack}</span>
 													</StackButton>
 												);
 											case 'Angular':
 												return (
 													<StackButton key={uuidv4()}>
 														<img src={angular} alt={stack} />
+														<span>{stack}</span>
 													</StackButton>
 												);
 											case 'CSS':
 												return (
 													<StackButton key={uuidv4()}>
 														<img src={css} alt={stack} />
+														<span>{stack}</span>
 													</StackButton>
 												);
 											case 'HTML':
 												return (
 													<StackButton key={uuidv4()}>
 														<img src={html} alt={stack} />
+														<span>{stack}</span>
 													</StackButton>
 												);
 											case 'SASS':
 												return (
 													<StackButton key={uuidv4()}>
 														<img src={sass} alt={stack} />
+														<span>{stack}</span>
 													</StackButton>
 												);
 											case 'Bootstrap':
 												return (
 													<StackButton key={uuidv4()}>
 														<img src={bootstrap} alt={stack} />
+														<span>{stack}</span>
 													</StackButton>
 												);
 											case 'Material UI':
 												return (
 													<StackButton key={uuidv4()}>
 														<img src={materialUi} alt={stack} />
+														<span>{stack}</span>
 													</StackButton>
 												);
 											case 'Tailwind CSS':
 												return (
 													<StackButton key={uuidv4()}>
 														<img src={tailwindcss} alt={stack} />
+														<span>{stack}</span>
 													</StackButton>
 												);
 											case 'Styled Components':
 												return (
 													<StackButton key={uuidv4()}>
 														<img src={styledComponents} alt={stack} />
+														<span>{stack}</span>
 													</StackButton>
 												);
 											case 'What I learned':
 												return (
 													<StackButton key={uuidv4()}>
 														<img src={programmer} alt={stack} />
+														<span>{stack}</span>
 													</StackButton>
 												);
 											case 'Firebase':
 												return (
 													<StackButton key={uuidv4()}>
 														<img src={firebase} alt={stack} />
+														<span>{stack}</span>
 													</StackButton>
 												);
 											case 'Wordpress':
 												return (
 													<StackButton key={uuidv4()}>
 														<img src={wordpress} alt={stack} />
+														<span>{stack}</span>
 													</StackButton>
 												);
 											default:
 												return (
 													<StackButton key={uuidv4()}>
 														<img src={question} alt={stack} />
+														<span>{stack}</span>
 													</StackButton>
 												);
 										}
