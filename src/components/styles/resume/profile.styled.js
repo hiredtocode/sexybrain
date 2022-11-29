@@ -9,7 +9,7 @@ export const ProfilePic = styled.section`
 		position: absolute;
 		inset: 2.5px;
 		border-radius: 16px;
-		z-index: 11313;
+		z-index: 9999;
 	}
 
 	.box {
