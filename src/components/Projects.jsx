@@ -24,7 +24,9 @@ import styledComponents from '../assets/img/styled-components.svg';
 import firebase from '../assets/img/firebase-icon.svg';
 import tailwindcss from '../assets/img/tailwindcss.svg';
 import programmer from '../assets/img/programmer.svg';
+import php from '../assets/img/php.svg';
 import question from '../assets/img/question.svg';
+import visualStudioCode from '../assets/img/visualStudioCode.svg';
 
 const Project = () => {
 	return (
@@ -143,6 +145,20 @@ const Project = () => {
 												return (
 													<StackButton key={uuidv4()}>
 														<img src={wordpress} alt={stack} />
+														<span>{stack}</span>
+													</StackButton>
+												);
+											case 'PHP':
+												return (
+													<StackButton key={uuidv4()}>
+														<img src={php} alt={stack} />
+														<span>{stack}</span>
+													</StackButton>
+												);
+											case 'VSCode':
+												return (
+													<StackButton key={uuidv4()}>
+														<img src={visualStudioCode} alt={stack} />
 														<span>{stack}</span>
 													</StackButton>
 												);

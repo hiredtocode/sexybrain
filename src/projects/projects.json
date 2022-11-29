@@ -24,7 +24,7 @@
 		"description": "Incididunt qui pariatur ut commodo pariatur ex enim laboris. Sint veniam irure tempor minim reprehenderit proident aliqua consequat laborum excepteur amet id. Ea dolor laboris eu ea non ullamco esse velit do.",
 		"githubRepo": "https://github.com/hiredtocode",
 		"hyperlink": "https://sexybrain.dev",
-		"stack": ["Wordpress", "CSS"]
+		"stack": ["Wordpress", "CSS", "PHP"]
 	},
 	{
 		"id": 4,
@@ -33,6 +33,6 @@
 		"description": "Incididunt qui pariatur ut commodo pariatur ex enim laboris. Sint veniam irure tempor minim reprehenderit proident aliqua consequat laborum excepteur amet id. Ea dolor laboris eu ea non ullamco esse velit do.",
 		"githubRepo": "https://github.com/hiredtocode",
 		"hyperlink": "https://sexybrain.dev",
-		"stack": ["JavaScript", "VS Code"]
+		"stack": ["JavaScript", "VSCode"]
 	}
 ]
