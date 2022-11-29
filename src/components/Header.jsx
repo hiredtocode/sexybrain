@@ -60,20 +60,20 @@ const Header = ({ active, setActive, user, handleLogout }) => {
 				{/* Navbar menu container */}
 				<LinkContainer>
 					<>
-						<Link to='/resume'>
-							<Button
-								onClick={() => setActive('resume')}
-								className={` ${active === 'resume' ? 'active' : ''}`}
-							>
-								Resume
-							</Button>
-						</Link>
 						<Link to='/'>
 							<Button
 								onClick={() => setActive('home')}
 								className={` ${active === 'home' ? 'active' : ''}`}
 							>
 								<span>Blog</span>
+							</Button>
+						</Link>
+						<Link to='/resume'>
+							<Button
+								onClick={() => setActive('resume')}
+								className={` ${active === 'resume' ? 'active' : ''}`}
+							>
+								Resume
 							</Button>
 						</Link>
 
