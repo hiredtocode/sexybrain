@@ -29,64 +29,64 @@ const Header = ({ active, setActive, user, handleLogout }) => {
 						/>
 					</Link>
 				</div>
-
+				{userId ? (
+					<>
+						{/* Create and Logout button appears if logged in */}
+						<Link to='/create'>
+							<Button
+								onClick={() => setActive('create')}
+								className={` ${active === 'create' ? 'active' : ''}`}
+							>
+								Create
+							</Button>
+						</Link>
+						<Link to='/'>
+							<Button onClick={handleLogout}>Logout</Button>
+						</Link>
+						{/* Create and Logout button appears if logged in END */}
+					</>
+				) : (
+					// if not logged in
+					<Link to='/auth'>
+						<Button
+							className={` ${active === 'login' ? 'active' : ''}`}
+							onClick={() => setActive('login')}
+						>
+							Login
+						</Button>
+					</Link>
+					// if not logged in END
+				)}
 				{/* Navbar menu container */}
 				<LinkContainer>
-					{path !== '/resume' ? (
-						<>
-							<Link to='/resume'>
-								<Button
-									onClick={() => setActive('resume')}
-									className={` ${active === 'resume' ? 'active' : ''}`}
-								>
-									Resume
-								</Button>
-							</Link>
-							{userId ? (
-								<>
-									{/* Create and Logout button appears if logged in */}
-									<Link to='/create'>
-										<Button
-											onClick={() => setActive('create')}
-											className={` ${active === 'create' ? 'active' : ''}`}
-										>
-											Create
-										</Button>
-									</Link>
-									<Link to='/'>
-										<Button onClick={handleLogout}>Logout</Button>
-									</Link>
-									{/* Create and Logout button appears if logged in END */}
-								</>
-							) : (
-								// if not logged in
-								<Link to='/auth'>
-									<Button
-										className={` ${active === 'login' ? 'active' : ''}`}
-										onClick={() => setActive('login')}
-									>
-										Login
-									</Button>
-								</Link>
-								// if not logged in END
-							)}
-						</>
-					) : (
-						<>
-							{/* Set the "Home" button to display "Blog" instead when it's in the Resume page */}
-							<Link to='/'>
-								<Button onClick={() => setActive('home')}>
-									<span>Blog</span>
-								</Button>
-							</Link>
-							{/* Set the "Home" button to display "Blog" instead when it's in the Resume page END */}
-							<Link to='/portfolio'>
-								<Button onClick={() => setActive('portfolio')}>
-									<span>Portfolio</span>
-								</Button>
-							</Link>
-						</>
-					)}
+					<>
+						<Link to='/resume'>
+							<Button
+								onClick={() => setActive('resume')}
+								className={` ${active === 'resume' ? 'active' : ''}`}
+							>
+								Resume
+							</Button>
+						</Link>
+						<Link to='/'>
+							<Button
+								onClick={() => setActive('home')}
+								className={` ${active === 'home' ? 'active' : ''}`}
+							>
+								<span>Blog</span>
+							</Button>
+						</Link>
+
+						<Link to='/portfolio'>
+							<Button
+								onClick={() => setActive('portfolio')}
+								className={` ${active === 'portfolio' ? 'active' : ''}`}
+							>
+								<span>Portfolio</span>
+							</Button>
+						</Link>
+						{/* Resume page menu END*/}
+					</>
 
 					{/* Dark / light mode toggle */}
 					<Button
