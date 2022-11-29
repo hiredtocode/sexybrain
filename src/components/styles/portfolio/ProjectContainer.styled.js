@@ -4,7 +4,6 @@ export const ProjectContainer = styled.section`
 	display: flex;
 	align-items: center;
 	max-width: 1200px;
-	padding: 40px 0;
 	justify-content: space-around;
 	flex-wrap: wrap;
 
@@ -28,32 +27,37 @@ export const CardContainer = styled.div`
 `;
 
 export const ProjectCard = styled.div`
-	width: 550px;
+	width: 100%;
+	height: 400px;
 	margin: 10px;
 	border-radius: 15px;
 	overflow: hidden;
 	background: ${({ theme }) => theme.colors.card};
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 
-	h3 {
-		position: absolute;
-		opacity: 0;
-		left: 0;
-		top: 0;
-		width: 100%;
+	.image {
+		height: 400px;
 	}
-
-	&:hover {
-		h3 {
-			opacity: 1;
-			transition: 0.5s;
-			color: ${({ theme }) => theme.colors.font};
-			text-align: center;
-			background: ${({ theme }) => theme.colors.card};
-		}
+	h3 {
+		width: 100%;
+		padding: 15px;
 	}
 `;
 
 export const ProjectDescription = styled.div`
 	transition: 0.7s;
+	padding: 15px;
+`;
+
+export const Stack = styled.div`
+	transition: 0.7s;
+	padding: 15px;
+	display: flex;
+`;
+
+export const FilterContainer = styled.div`
+	flex-direction: column;
+	min-width: 150px;
+	margin: 10px;
+	font-size: 1.1rem;
 `;
