@@ -28,7 +28,6 @@ export const CardContainer = styled.div`
 
 export const ProjectCard = styled.div`
 	width: 100%;
-	height: 400px;
 	margin: 10px;
 	border-radius: 15px;
 	overflow: hidden;
@@ -37,6 +36,7 @@ export const ProjectCard = styled.div`
 
 	.image {
 		height: 300px;
+		object-fit: cover;
 	}
 	h3 {
 		width: 100%;
@@ -53,7 +53,9 @@ export const Stack = styled.div`
 	transition: 0.7s;
 	display: flex;
 	flex-direction: column;
-	min-width: 50px;
+	min-width: 60px;
+	margin-right: 5px;
+	justify-content: center;
 `;
 
 export const FilterContainer = styled.div`
@@ -67,7 +69,7 @@ export const StackButton = styled.button`
 	cursor: pointer;
 	border: none;
 	margin: 3px;
-	height: 50px;
+	height: auto;
 	background: ${({ theme }) => theme.colors.font};
 	transition: 0.5s;
 
