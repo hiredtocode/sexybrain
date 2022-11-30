@@ -12,8 +12,7 @@ export const Border = styled.div`
 	position: relative;
 	min-width: 250px;
 	min-height: 350px;
-	box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05), inset -5px -5px 5px rgba(255, 255, 255, 0.5),
-		5px 5px 5px rgba(0, 0, 0, 0.05), -5px -5px 5px rgba(255, 255, 255, 0.5);
+	border: 1px solid ${({ theme }) => theme.colors.primary};
 	border-radius: 10px;
 	margin: 10px;
 `;

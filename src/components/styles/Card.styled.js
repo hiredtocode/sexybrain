@@ -47,6 +47,7 @@ export const StyledCard = styled.div`
 	}
 
 	&:hover {
+		border: 1px outset ${({ theme }) => theme.colors.primary};
 		transform: translateY(-5px);
 		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 		transition: 0.4s;
@@ -114,6 +115,9 @@ export const Date = styled.div`
 	justify-content: flex-end;
 	transition: 0.7s;
 	text-align: right;
+	span {
+		color: ${({ theme }) => theme.colors.primary};
+	}
 
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {

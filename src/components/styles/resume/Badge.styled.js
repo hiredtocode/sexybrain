@@ -7,12 +7,10 @@ export const Badge = styled.div`
 	align-items: center;
 	max-height: 40px;
 	justify-content: center;
-	background-color: ${({ theme }) => theme.colors.button};
 	border-radius: 10px;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 	font-size: 1rem;
-	color: ${({ theme }) => theme.colors.font};
-
+	border: 1px solid ${({ theme }) => theme.colors.primary};
 	img {
 		max-width: 35px;
 		padding: 0 5px;

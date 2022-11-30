@@ -77,13 +77,14 @@ export const TagBox = styled.div`
 export const TagButton = styled.button`
 	border-radius: 8px;
 	border: none;
-	transition: 0.5s;
 	cursor: pointer;
 	font-size: 1rem;
 	margin: 3px;
 	padding: 3px 5px;
 	background-color: ${({ theme }) => theme.colors.button};
+	border: 1px solid ${({ theme }) => theme.colors.primary};
 	color: ${({ theme }) => theme.colors.font};
+	opacity: 0.8;
 
 	.icon {
 		background: none;
@@ -92,15 +93,16 @@ export const TagButton = styled.button`
 		cursor: pointer;
 	}
 	&:hover {
-		opacity: 0.9;
+		opacity: 1;
 		transform: scale(0.98);
 		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+		border: 1px solid ${({ theme }) => theme.colors.secondary};
+		color: white;
 		background: linear-gradient(
 			45deg,
 			${({ theme }) => theme.colors.hover},
 			${({ theme }) => theme.colors.hovered}
 		);
-		color: ${({ theme }) => theme.colors.font};
 	}
 	&.active {
 		background: ${({ theme }) => theme.colors.active};

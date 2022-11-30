@@ -32,6 +32,7 @@ export const Button = styled.button`
 	}
 	&.active {
 		background: ${({ theme }) => theme.colors.active};
+		color: ${({ theme }) => theme.colors.primary};
 	}
 
 	&:hover span {
