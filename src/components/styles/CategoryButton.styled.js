@@ -15,8 +15,9 @@ const CategoryButton = styled.button`
 	width: 47%;
 	flex-wrap: wrap;
 	justify-content: flex-start;
-	border: 1px solid ${({ theme }) => theme.colors.primary};
+	border: 1px solid ${({ theme }) => theme.colors.strongAccentBackground};
 	opacity: 0.8;
+	box-shadow: 2px 2px 2px ${({ theme }) => theme.colors.primary};
 
 	img {
 		height: 20px;
@@ -74,6 +75,7 @@ const CategoryButton = styled.button`
 			${({ theme }) => theme.colors.hovered}
 		);
 		color: white;
+		box-shadow: 2px 1px 1px ${({ theme }) => theme.colors.primary};
 	}
 
 	&:hover span {
