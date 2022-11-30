@@ -15,16 +15,21 @@ export const CardContainer = styled.div`
 		}
 	}
 `;
+
 export const StyledCard = styled.div`
 	overflow: hidden;
 	display: flex;
 	align-items: center;
 	background-color: ${({ theme }) => theme.colors.card};
-	border-radius: 15px;
+	border-radius: 10px;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 	margin: 10px 0;
 	padding: 20px;
 	transition: 0.5s;
+
+	&:hover > &::after {
+		opacity: 1;
+	}
 
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {

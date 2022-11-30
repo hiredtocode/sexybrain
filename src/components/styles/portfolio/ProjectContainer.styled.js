@@ -29,7 +29,7 @@ export const CardContainer = styled.div`
 export const ProjectCard = styled.div`
 	width: 100%;
 	margin: 10px;
-	border-radius: 15px;
+	border-radius: 10px;
 	overflow: hidden;
 	background: ${({ theme }) => theme.colors.card};
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);

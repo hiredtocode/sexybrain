@@ -8,7 +8,7 @@ export const ProfilePic = styled.section`
 		margin-right: 1em;
 		position: absolute;
 		inset: 2.5px;
-		border-radius: 16px;
+		border-radius: 10px;
 		z-index: 9999;
 	}
 
@@ -17,7 +17,7 @@ export const ProfilePic = styled.section`
 		width: 105px;
 		height: 135px;
 		background: rgba(0, 0, 0, 0.007);
-		border-radius: 20px;
+		border-radius: 10px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -32,7 +32,7 @@ export const ProfilePic = styled.section`
 		position: absolute;
 		inset: 3px;
 		background-color: white;
-		border-radius: 16px;
+		border-radius: 10px;
 		z-index: 2;
 	}
 

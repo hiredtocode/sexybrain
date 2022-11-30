@@ -14,7 +14,7 @@ export const Border = styled.div`
 	min-height: 350px;
 	box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05), inset -5px -5px 5px rgba(255, 255, 255, 0.5),
 		5px 5px 5px rgba(0, 0, 0, 0.05), -5px -5px 5px rgba(255, 255, 255, 0.5);
-	border-radius: 15px;
+	border-radius: 10px;
 	margin: 10px;
 `;
 
@@ -26,7 +26,7 @@ export const Card = styled.div`
 	bottom: 20px;
 	background: ${({ theme }) => theme.colors.card};
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-	border-radius: 15px;
+	border-radius: 10px;
 	display: flex;
 	justify-content: center;
 	align-items: baseline;
