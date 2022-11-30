@@ -65,7 +65,7 @@ const Header = ({ active, setActive, user, handleLogout }) => {
 								onClick={() => setActive('home')}
 								className={` ${active === 'home' ? 'active' : ''}`}
 							>
-								<span>Blog</span>
+								<span>블로그</span>
 							</Button>
 						</Link>
 						<Link to='/resume'>
@@ -73,7 +73,7 @@ const Header = ({ active, setActive, user, handleLogout }) => {
 								onClick={() => setActive('resume')}
 								className={` ${active === 'resume' ? 'active' : ''}`}
 							>
-								Resume
+								이력서
 							</Button>
 						</Link>
 
@@ -82,7 +82,7 @@ const Header = ({ active, setActive, user, handleLogout }) => {
 								onClick={() => setActive('portfolio')}
 								className={` ${active === 'portfolio' ? 'active' : ''}`}
 							>
-								<span>Portfolio</span>
+								<span>포트폴리오</span>
 							</Button>
 						</Link>
 						{/* Resume page menu END*/}
