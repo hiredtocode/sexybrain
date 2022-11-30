@@ -94,7 +94,7 @@ function App() {
 			underline: '#A5C9CA',
 			active: '#2eb6bb',
 			input: '#3150ff',
-			highlight: '#2b584b',
+			highlight: '#0d3026',
 			titleBackgroundColor1: 'rgba(255, 255, 255, 0.014425753211440795)',
 			titleBackgroundColor2: '#395B64',
 			titleBackgroundColor3: 'rgba(252, 176, 69, 0)',
