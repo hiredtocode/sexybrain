@@ -46,11 +46,12 @@ function App() {
 	const lightTheme = {
 		colors: {
 			primary: '#087ea4',
+			primaryBackground: '#e6f7ff',
 			secondary: '#2b6e62',
 			secondaryBackground: '#f4fbf9',
 			accent: '#575fb7',
 			accentBackground: '#f3f4fd',
-			active: '#f3f4fd',
+			active: '#e6f7ff',
 			body: '#ffffff',
 			subText: '#9ca3af',
 			strongAccent: '#fabd62',
@@ -61,8 +62,8 @@ function App() {
 			button: '#ffffff',
 			font: '#404756',
 			card: '#faffff',
-			hover: '#ffffff',
-			hovered: '#90fbff',
+			hover: '#f6fdff',
+			hovered: '#b3ecff',
 			cancelButton: '#f6e7e7',
 			cancelHover: '#ffbebe',
 			cancelHovered: '#ffffff',
@@ -83,9 +84,10 @@ function App() {
 	const darkTheme = {
 		colors: {
 			primary: '#149eca',
+			primaryBackground: '#283541',
 			secondary: '#44ac99',
 			secondaryBackground: '#243539',
-			active: '#283541',
+			active: '#12495c',
 			accent: '#575fb7',
 			accentBackground: '#242943',
 			body: '#23272f',
