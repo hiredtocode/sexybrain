@@ -47,7 +47,6 @@ const Project = () => {
 									</ProjectDescription>
 								</Flex>
 								<Stack>
-									<p>스택:</p>
 									{project.stack.map((stack) => {
 										switch (stack) {
 											case 'JavaScript':
