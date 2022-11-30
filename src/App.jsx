@@ -50,9 +50,11 @@ function App() {
 			secondaryBackground: '#f4fbf9',
 			accent: '#575fb7',
 			accentBackground: '#f3f4fd',
-			active: '#087ea4',
-			body: '##ffffff',
+			active: '#f3f4fd',
+			body: '#ffffff',
 			subText: '#9ca3af',
+			strongAccent: '#fabd62',
+			strongAccentBackground: '#3e2c1e',
 
 			header: 'transparent',
 			footer: '#003333',
