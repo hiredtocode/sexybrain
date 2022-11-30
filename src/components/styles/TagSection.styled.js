@@ -97,7 +97,7 @@ export const TagButton = styled.button`
 		transform: scale(0.98);
 		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 		border: 1px solid ${({ theme }) => theme.colors.secondary};
-		color: white;
+		color: ${({ theme }) => theme.colors.font};
 		background: linear-gradient(
 			45deg,
 			${({ theme }) => theme.colors.hover},
