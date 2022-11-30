@@ -45,8 +45,16 @@ function App() {
 
 	const lightTheme = {
 		colors: {
+			primary: '#087ea4',
+			secondary: '#2b6e62',
+			secondaryBackground: '#f4fbf9',
+			accent: '#575fb7',
+			accentBackground: '#f3f4fd',
+			active: '#087ea4',
+			body: '##ffffff',
+			subText: '#9ca3af',
+
 			header: 'transparent',
-			body: '#f0f8f6',
 			footer: '#003333',
 			button: '#ffffff',
 			font: '#395B64',
@@ -56,11 +64,8 @@ function App() {
 			cancelButton: '#f6e7e7',
 			cancelHover: '#ffbebe',
 			cancelHovered: '#ffffff',
-			subText: '#9aa9aa',
 			lineBreak: '#d5e6eb',
-			accent: '#ffe600',
 			underline: '#A5C9CA',
-			active: '#befdff',
 			input: '#3150ff',
 			highlight: '#d4fff5',
 			titleBackgroundColor1: 'rgba(255, 255, 255, 0.014425753211440795)',
@@ -75,8 +80,16 @@ function App() {
 	};
 	const darkTheme = {
 		colors: {
+			primary: '#149eca',
+			secondary: '#44ac99',
+			secondaryBackground: '#243539',
+			active: '#149eca',
+			accent: '#575fb7',
+			accentBackground: '#242943',
+			body: '#23272f',
+			subText: '#6b7280',
+
 			header: 'transparent',
-			body: '#2C3333',
 			footer: '#2E3445',
 			button: '#2a5a68',
 			font: '#E7F6F2',
@@ -86,7 +99,6 @@ function App() {
 			cancelButton: '#853434',
 			cancelHover: '#643939',
 			cancelHovered: '#bb2e2e',
-			subText: '#A5C9CA',
 			lineBreak: '#536263ff',
 			accent: '#3f3f3f',
 			underline: '#A5C9CA',
