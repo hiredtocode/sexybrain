@@ -9,7 +9,7 @@ const CategoryButton = styled.button`
 	font-weight: 500;
 	margin: 3px;
 	padding: 5px 0;
-	background-color: ${({ theme }) => theme.colors.button2};
+	background-color: ${({ theme }) => theme.colors.button};
 	color: ${({ theme }) => theme.colors.font};
 	transition: 0.5s;
 	width: 47%;

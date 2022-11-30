@@ -82,7 +82,7 @@ export const TagButton = styled.button`
 	font-size: 1rem;
 	margin: 3px;
 	padding: 3px 5px;
-	background-color: ${({ theme }) => theme.colors.button2};
+	background-color: ${({ theme }) => theme.colors.button};
 	color: ${({ theme }) => theme.colors.font};
 
 	.icon {

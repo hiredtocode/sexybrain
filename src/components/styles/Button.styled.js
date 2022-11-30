@@ -10,7 +10,7 @@ export const Button = styled.button`
 	font-weight: 700;
 	margin: 0 5px;
 	padding: 10px 15px;
-	background-color: ${({ theme }) => theme.colors.button2};
+	background-color: ${({ theme }) => theme.colors.button};
 	color: ${({ theme }) => theme.colors.font};
 
 	.icon {
