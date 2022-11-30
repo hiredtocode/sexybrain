@@ -89,7 +89,7 @@ function App() {
 			accent: '#575fb7',
 			accentBackground: '#242943',
 			body: '#23272f',
-			subText: '#6b7280',
+			subText: '#88a2aa',
 			strongAccent: '#fabd62',
 			strongAccentBackground: '#3e2c1e',
 
