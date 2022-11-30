@@ -53,7 +53,7 @@ export const Stack = styled.div`
 	transition: 0.7s;
 	display: flex;
 	flex-direction: column;
-	min-width: 60px;
+	min-width: 95px;
 	margin-right: 5px;
 	justify-content: center;
 `;
@@ -69,9 +69,12 @@ export const StackButton = styled.button`
 	cursor: pointer;
 	border: none;
 	margin: 3px;
+	border-radius: 10px;
+	overflow: hidden;
 	height: auto;
-	background: ${({ theme }) => theme.colors.font};
+	background: ${({ theme }) => theme.colors.active};
 	transition: 0.5s;
+	color: ${({ theme }) => theme.colors.font};
 
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
