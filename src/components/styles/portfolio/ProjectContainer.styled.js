@@ -83,6 +83,8 @@ export const StackButton = styled.button`
 
 	span {
 		margin-left: 5px;
+		color: ${({ theme }) => theme.colors.font};
+		opacity: 0.5;
 	}
 
 	img {
@@ -95,7 +97,8 @@ export const StackButton = styled.button`
 			opacity: 1;
 		}
 		span {
-			color: ${({ theme }) => theme.colors.font};
+			color: ${({ theme }) => theme.colors.strongAccent};
+			opacity: 1;
 		}
 	}
 	/* xs: '575.98px' */
