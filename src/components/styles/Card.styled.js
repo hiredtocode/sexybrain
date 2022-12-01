@@ -47,9 +47,9 @@ export const StyledCard = styled.div`
 	}
 
 	&:hover {
-		border: 1px outset ${({ theme }) => theme.colors.primary};
+		box-shadow: 2px 2px 2px ${({ theme }) => theme.colors.primary};
+
 		transform: translateY(-5px);
-		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 		transition: 0.4s;
 
 		img {
