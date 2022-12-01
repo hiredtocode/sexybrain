@@ -53,9 +53,10 @@ export const Stack = styled.div`
 	transition: 0.7s;
 	display: flex;
 	flex-direction: column;
-	min-width: 55px;
+	min-width: 65px;
 	margin-right: 5px;
-	justify-content: center;
+	padding-top: 10px;
+	justify-content: flex-start;
 `;
 
 export const FilterContainer = styled.div`
@@ -69,21 +70,30 @@ export const StackButton = styled.button`
 	border: none;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-around;
 	margin: 3px;
 	border-radius: 10px;
 	overflow: hidden;
 	height: auto;
-	background: ${({ theme }) => theme.colors.active};
+	background: ${({ theme }) => theme.colors.card};
 	transition: 0.5s;
 	color: ${({ theme }) => theme.colors.subText};
 	writing-mode: vertical-rl;
 	text-orientation: mixed;
 
+	span {
+		margin-left: 5px;
+	}
+
 	img {
 		width: 30px;
+		opacity: 0.5;
 	}
 
 	&:hover {
+		img {
+			opacity: 1;
+		}
 		span {
 			color: ${({ theme }) => theme.colors.font};
 		}
