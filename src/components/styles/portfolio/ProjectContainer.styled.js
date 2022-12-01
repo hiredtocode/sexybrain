@@ -94,12 +94,15 @@ export const StackButton = styled.button`
 
 	&:hover {
 		img {
+			transition: 0.4s;
 			opacity: 1;
 		}
 		span {
 			color: ${({ theme }) => theme.colors.strongAccent};
+			transition: 0.4s;
 			opacity: 1;
 		}
+		border: ${({ theme }) => theme.colors.strongAccentBackground};
 	}
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
