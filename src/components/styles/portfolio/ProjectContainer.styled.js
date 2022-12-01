@@ -53,7 +53,7 @@ export const Stack = styled.div`
 	transition: 0.7s;
 	display: flex;
 	flex-direction: column;
-	min-width: 95px;
+	min-width: 55px;
 	margin-right: 5px;
 	justify-content: center;
 `;
@@ -66,16 +66,28 @@ export const FilterContainer = styled.div`
 `;
 
 export const StackButton = styled.button`
-	cursor: pointer;
 	border: none;
+	display: flex;
+	flex-direction: column;
 	margin: 3px;
 	border-radius: 10px;
 	overflow: hidden;
 	height: auto;
 	background: ${({ theme }) => theme.colors.active};
 	transition: 0.5s;
-	color: ${({ theme }) => theme.colors.font};
+	color: ${({ theme }) => theme.colors.subText};
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
 
+	img {
+		width: 30px;
+	}
+
+	&:hover {
+		span {
+			color: ${({ theme }) => theme.colors.font};
+		}
+	}
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
 	}
