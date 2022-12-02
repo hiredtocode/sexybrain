@@ -11,21 +11,17 @@ const Portfolio = () => {
 
 	return (
 		<main style={{ width: '100%' }}>
-			<Flex direction='column'>
-				<Flex direction='row' justify='center' alignItems='center' style={{ width: '100%' }}>
-					<nav>
-						<FilterContainer>
-							<div>All</div>
-							<div>React</div>
-							<div>Angular</div>
-							<div>Wordpress</div>
-							<div>Open Source</div>
-						</FilterContainer>
-					</nav>
-					<ProjectContainer>
-						<Project />
-					</ProjectContainer>
-				</Flex>
+			<Flex direction='row' justify='center' alignItems='center' style={{ width: '100%' }}>
+				<FilterContainer>
+					<div>All</div>
+					<div>React</div>
+					<div>Angular</div>
+					<div>Wordpress</div>
+					<div>Open Source</div>
+				</FilterContainer>
+				<ProjectContainer>
+					<Project />
+				</ProjectContainer>
 			</Flex>
 		</main>
 	);
