@@ -1,11 +1,7 @@
-import {
-	createUserWithEmailAndPassword,
-	signInWithEmailAndPassword,
-	updateProfile,
-} from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
-import { auth, functions } from '../firebase.config';
+import { auth } from '../firebase.config';
 import { useNavigate } from 'react-router-dom';
 import {
 	FormContainer,
@@ -21,7 +17,8 @@ const initialState = {
 	password: '',
 };
 
-const Auth = ({ setActive, setUser }) => {
+const Auth = (props) => {
+	const { setActive, setUser } = props;
 	const [state, setState] = useState(initialState);
 	const [signUp, setSignUp] = useState(false);
 

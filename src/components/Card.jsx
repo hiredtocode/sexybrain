@@ -33,7 +33,8 @@ import { H2 } from '../components/styles/Title.styled.js';
 import { TagBox } from '../components/styles/TagSection.styled.js';
 import { v4 as uuidv4 } from 'uuid';
 
-export default function Card({ blogs, user, handleDelete }) {
+export default function Card(props) {
+	const { blogs, user, handleDelete } = props;
 	const userId = user?.uid;
 	const fontColor = `${({ theme }) => theme.colors.font}`;
 

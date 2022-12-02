@@ -13,7 +13,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import DefaultImage from '../assets/img/default.jpg';
 
-const Detail = ({ setActive }) => {
+const Detail = (props) => {
+	const { setActive } = props;
 	const { id } = useParams();
 	const [blog, setBlog] = useState(null);
 

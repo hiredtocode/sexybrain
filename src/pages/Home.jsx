@@ -30,7 +30,8 @@ import { BlogContainer } from '../components/styles/BlogContainer.styled';
 // import MostPopular from '../components/MostPopular';
 // import Trending from '../components/Trending';
 
-const Home = ({ setActive, user, handleUpdate }) => {
+const Home = (props) => {
+	const { setActive, user, handleUpdate } = props;
 	const [loading, setLoading] = useState(true);
 	const [blogBackup, setBlogBackup] = useState([]);
 	const [blogs, setBlogs] = useState(blogBackup);

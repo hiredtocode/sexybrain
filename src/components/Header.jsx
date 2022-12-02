@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { StyledHeader, Nav, Logo, LinkContainer } from './styles/Header.styled.js';
 import { Button } from './styles/Button.styled.js';
 import JHLogo from '../assets/img/jh-logo.png';
@@ -11,10 +11,10 @@ import GithubBlack from '../assets/img/github-black.svg';
 import GithubWhite from '../assets/img/github-white.svg';
 import { MoonIcon, SunIcon } from '../assets/icons';
 
-const Header = ({ active, setActive, user, handleLogout }) => {
+const Header = (props) => {
+	const { active, setActive, user, handleLogout } = props;
 	const userId = user?.uid;
-	const location = useLocation();
-	const path = location.pathname;
+
 	const { isDark, setIsDark } = useContext(ThemeContext);
 
 	return (

@@ -22,7 +22,8 @@ import ReactMarkdown from 'react-markdown';
 import { MarkdownContainer } from '../components/styles/MarkdownContainer.styled.js';
 import { v4 as uuidv4 } from 'uuid';
 
-const AddEdit = ({ user, setActive }) => {
+const AddEdit = (props) => {
+	const { user, setActive } = props;
 	const categoryOption = [
 		'JavaScript',
 		'TypeScript',
