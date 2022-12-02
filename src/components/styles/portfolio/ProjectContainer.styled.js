@@ -42,6 +42,11 @@ export const ProjectCard = styled.div`
 		width: 100%;
 		padding: 15px;
 	}
+	&:hover {
+		box-shadow: 2px 2px 2px ${({ theme }) => theme.colors.primary};
+		transform: translateY(-5px);
+		transition: 0.4s;
+	}
 `;
 
 export const ProjectDescription = styled.div`
