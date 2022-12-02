@@ -33,6 +33,7 @@ export const ProjectCard = styled.div`
 	overflow: hidden;
 	background: ${({ theme }) => theme.colors.card};
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+	box-shadow: 1px 1px 1px ${({ theme }) => theme.colors.primary};
 
 	.image {
 		height: 300px;
