@@ -104,7 +104,7 @@ export default function Card(props) {
 								style={{ cursor: 'pointer', paddingRight: '10px', textDecoration: 'none' }}
 								size='2x'
 								aria-label={item.id}
-								onClick={() => handleDelete(item.id)}
+								onClick={handleDelete(item.id)}
 							/>
 							<Link to={`/update/${item.id}`}>
 								<FontAwesomeIcon

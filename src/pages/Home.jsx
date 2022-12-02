@@ -89,17 +89,19 @@ const Home = (props) => {
 	if (loading) {
 		return <Spinner />;
 	}
-	const handleDelete = async (id) => {
-		if (window.confirm('Are you sure?')) {
-			try {
-				setLoading(true);
-				await deleteDoc(doc(db, 'blogPosts', id));
-				toast.success('Blog deleted successfully');
-				setLoading(false);
-			} catch (err) {
-				toast.error(`Sorry there was an error ${err}`);
+	const handleDelete = (id) => {
+		return async () => {
+			if (window.confirm('Are you sure?')) {
+				try {
+					setLoading(true);
+					await deleteDoc(doc(db, 'blogPosts', id));
+					toast.success('Blog deleted successfully');
+					setLoading(false);
+				} catch (err) {
+					toast.error(`Sorry there was an error ${err}`);
+				}
 			}
-		}
+		};
 	};
 
 	// Show posts that are only related to the clicked category when clicked
