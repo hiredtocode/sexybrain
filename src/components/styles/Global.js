@@ -7,7 +7,8 @@ const GlobalStyles = createGlobalStyle`
 	font-family: 'Quicksand', 'sans-serif';
 
 	/* Firefox scrollbar */
-  scrollbar-color: ${({ theme }) => theme.colors.hover} ${({ theme }) => theme.colors.body};
+  scrollbar-color: ${({ theme }) => theme.colors.primaryBackground} ${({ theme }) =>
+	theme.colors.body};
   scrollbar-width: thin;
 	/* Firefox scrollbar END */
 }
@@ -23,13 +24,13 @@ const GlobalStyles = createGlobalStyle`
 }
 
 *::-webkit-scrollbar-thumb {
-	background: ${({ theme }) => theme.colors.hover};
+	background: ${({ theme }) => theme.colors.primaryBackground};
 	border-radius: 12px;
 	border: calc(12px / 4) solid ${({ theme }) => theme.colors.body};
 }
 
 *::-webkit-scrollbar-thumb:hover {
-	background: ${({ theme }) => theme.colors.hovered};
+	background: ${({ theme }) => theme.colors.underline};
 }
 /* Chrome, Edge, Safari */
 
