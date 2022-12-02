@@ -33,7 +33,7 @@ const Project = () => {
 		<>
 			{Projects &&
 				Projects.map((project) => (
-					<CardContainer key={project.id}>
+					<CardContainer key={uuidv4()}>
 						<ProjectCard>
 							<Flex>
 								<img className='image' src={project.image} alt={project.title} />
