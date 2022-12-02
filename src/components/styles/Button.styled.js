@@ -20,8 +20,7 @@ export const Button = styled.button`
 		cursor: pointer;
 	}
 	&:hover {
-		opacity: 0.9;
-		transform: scale(0.98);
+		transition: 0.8s;
 		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 		background: linear-gradient(
 			45deg,
@@ -31,11 +30,7 @@ export const Button = styled.button`
 		color: ${({ theme }) => theme.colors.font};
 	}
 	&.active {
-		background: ${({ theme }) => theme.colors.active};
+		background: ${({ theme }) => theme.colors.primaryBackground};
 		color: ${({ theme }) => theme.colors.primary};
-	}
-
-	&:hover span {
-		color: ${({ theme }) => theme.colors.font};
 	}
 `;
