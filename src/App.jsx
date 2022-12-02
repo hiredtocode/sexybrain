@@ -106,7 +106,7 @@ function App() {
 			cancelHover: '#643939',
 			cancelHovered: '#bb2e2e',
 			lineBreak: '#536263ff',
-			underline: '#149eca',
+			underline: '#107091',
 			input: '#3150ff',
 			highlight: '#575fb7',
 			titleBackgroundColor1: 'rgba(255, 255, 255, 0.014425753211440795)',
