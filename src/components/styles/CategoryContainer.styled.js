@@ -5,6 +5,9 @@ export const Aside = styled.aside`
 	padding-left: 20px;
 	flex: 1 1 30%;
 	flex-direction: column;
+	position: sticky;
+	position: -webkit-sticky;
+	top: 45px;
 
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
