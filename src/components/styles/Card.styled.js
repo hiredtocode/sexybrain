@@ -25,6 +25,7 @@ export const StyledCard = styled.div`
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 	margin: 10px 0;
 	padding: 20px;
+	box-shadow: 1px 1px 1px ${({ theme }) => theme.colors.primary};
 	transition: 0.5s;
 
 	&:hover > &::after {
@@ -50,7 +51,7 @@ export const StyledCard = styled.div`
 		box-shadow: 2px 2px 2px ${({ theme }) => theme.colors.primary};
 
 		transform: translateY(-5px);
-		transition: 0.4s;
+		transition: 0.5s;
 
 		img {
 			transition: 0.4s ease-in-out;

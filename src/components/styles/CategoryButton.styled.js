@@ -11,13 +11,13 @@ const CategoryButton = styled.button`
 	padding: 5px 0;
 	background-color: ${({ theme }) => theme.colors.button};
 	color: ${({ theme }) => theme.colors.font};
-	transition: 0.5s;
+	transition: 0.3s;
 	width: 47%;
 	flex-wrap: wrap;
 	justify-content: flex-start;
 	border: 1px solid ${({ theme }) => theme.colors.strongAccentBackground};
 	opacity: 0.8;
-	box-shadow: 2px 2px 2px ${({ theme }) => theme.colors.primary};
+	box-shadow: 1px 1px 1px ${({ theme }) => theme.colors.primary};
 
 	img {
 		height: 20px;
@@ -75,7 +75,7 @@ const CategoryButton = styled.button`
 			${({ theme }) => theme.colors.hovered}
 		);
 		color: white;
-		box-shadow: 2px 1px 1px ${({ theme }) => theme.colors.primary};
+		box-shadow: 2px 2px 2px ${({ theme }) => theme.colors.primary};
 	}
 
 	&:hover span {
