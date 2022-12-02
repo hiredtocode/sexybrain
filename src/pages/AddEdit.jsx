@@ -112,6 +112,9 @@ const AddEdit = (props) => {
 	const handleTags = (tags) => {
 		setForm({ ...form, tags });
 	};
+	const onFileChange = (e) => {
+		setFile(e.target.files[0]);
+	};
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -194,7 +197,7 @@ const AddEdit = (props) => {
 					</div>
 					{/* body section end  */}
 					{/* file upload section */}
-					<input type='file' onChange={(e) => setFile(e.target.files[0])} />
+					<input type='file' onChange={onFileChange} />
 					<Flex>
 						<FormCancelButton className='cancel' onClick={() => navigate('/')}>
 							Cancel
