@@ -60,6 +60,7 @@ export const Stack = styled.div`
 `;
 
 export const FilterContainer = styled.div`
+	display: flex;
 	flex-direction: column;
 	min-width: 150px;
 	margin: 10px;
