@@ -68,7 +68,7 @@ function App() {
 			cancelHover: '#ffbebe',
 			cancelHovered: '#ffffff',
 			lineBreak: '#d5e6eb',
-			underline: '#A5C9CA',
+			underline: '#7fdefd',
 			input: '#3150ff',
 			highlight: '#d4fff5',
 			titleBackgroundColor1: 'rgba(255, 255, 255, 0.014425753211440795)',
@@ -84,7 +84,7 @@ function App() {
 	const darkTheme = {
 		colors: {
 			primary: '#149eca',
-			primaryBackground: '#283541',
+			primaryBackground: '#536b81',
 			secondary: '#44ac99',
 			secondaryBackground: '#243539',
 			active: '#12495c',
@@ -106,7 +106,7 @@ function App() {
 			cancelHover: '#643939',
 			cancelHovered: '#bb2e2e',
 			lineBreak: '#536263ff',
-			underline: '#A5C9CA',
+			underline: '#149eca',
 			input: '#3150ff',
 			highlight: '#575fb7',
 			titleBackgroundColor1: 'rgba(255, 255, 255, 0.014425753211440795)',
