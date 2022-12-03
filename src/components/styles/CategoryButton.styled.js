@@ -9,13 +9,12 @@ const CategoryButton = styled.button`
 	font-weight: 500;
 	margin: 3px;
 	padding: 5px 0;
-	background-color: ${({ theme }) => theme.colors.button};
+	background-color: ${({ theme }) => theme.colors.card};
 	color: ${({ theme }) => theme.colors.font};
 	transition: 0.3s;
 	width: 47%;
 	flex-wrap: wrap;
 	justify-content: flex-start;
-	border: 1px solid ${({ theme }) => theme.colors.strongAccentBackground};
 	opacity: 0.8;
 	box-shadow: 1px 1px 1px ${({ theme }) => theme.colors.primary};
 
