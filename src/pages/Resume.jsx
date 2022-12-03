@@ -8,7 +8,7 @@ import sass from '../assets/img/sass.svg';
 import bootstrap from '../assets/img/bootstrap.svg';
 import materialUi from '../assets/img/material-ui.svg';
 import wordpress from '../assets/img/wordpress.svg';
-import styledComponents from '../assets/img/styled-components.svg';
+import styledComponents from '../assets/img/styledComponentsLogo.svg';
 import firebase from '../assets/img/firebase-icon.svg';
 import profilePicture from '../assets/resume/사진.jpg';
 import Flex from '../components/styles/Flex.styled.js';
