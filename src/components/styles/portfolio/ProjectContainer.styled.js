@@ -39,7 +39,9 @@ export const ProjectCard = styled.div`
 	.image {
 		height: 300px;
 		object-fit: cover;
+		opacity: 0.7;
 	}
+
 	h3 {
 		width: 100%;
 		padding: 15px;
@@ -53,6 +55,11 @@ export const ProjectCard = styled.div`
 		box-shadow: 2px 2px 2px ${({ theme }) => theme.colors.primary};
 		transform: translateY(-3px);
 		transition: 0.4s;
+		cursor: pointer;
+		img {
+			opacity: 1;
+			transition: 0.5s;
+		}
 	}
 `;
 
@@ -74,9 +81,13 @@ export const Stack = styled.div`
 export const FilterContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	min-width: 150px;
+	min-width: 200px;
 	margin: 10px;
 	font-size: 1.1rem;
+
+	ul {
+		padding-left: 0;
+	}
 
 	ul li {
 		list-style: none;
