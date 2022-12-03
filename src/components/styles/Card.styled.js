@@ -50,7 +50,7 @@ export const StyledCard = styled.div`
 	&:hover {
 		box-shadow: 2px 2px 2px ${({ theme }) => theme.colors.primary};
 
-		transform: translateY(-5px);
+		transform: translateY(-3px);
 		transition: 0.5s;
 
 		img {
@@ -104,8 +104,6 @@ export const CategoryMark = styled.div`
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
-		opacity: 0.4;
-		transition: 0.7s;
 	} ;
 `;
 // Language logo on the left hand side of the card END
