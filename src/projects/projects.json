@@ -14,7 +14,7 @@
 		"title": "API - Angular",
 		"date": "",
 		"image": "sexybrain-main-page-light.jpg",
-		"description": "Incididunt qui pariatur ut commodo pariatur ex enim laboris. Sint veniam irure tempor minim reprehenderit proident aliqua consequat laborum excepteur amet id. Ea dolor laboris eu ea non ullamco esse velit do.",
+		"description": "API 프로젝트 진행중",
 		"githubRepo": "https://github.com/hiredtocode",
 		"hyperlink": "https://sexybrain.dev",
 		"stack": ["Angular", "CSS", "HTML"]
@@ -24,7 +24,7 @@
 		"title": "Nama Sushi",
 		"date": "",
 		"image": "sexybrain-main-page-dark.jpg",
-		"description": "Incididunt qui pariatur ut commodo pariatur ex enim laboris. Sint veniam irure tempor minim reprehenderit proident aliqua consequat laborum excepteur amet id. Ea dolor laboris eu ea non ullamco esse velit do.",
+		"description": "일식집 홈페이지",
 		"githubRepo": "https://github.com/hiredtocode",
 		"hyperlink": "https://sexybrain.dev",
 		"stack": ["Wordpress", "CSS", "PHP"]
@@ -33,8 +33,8 @@
 		"id": 4,
 		"title": "VS Code Theme",
 		"date": "",
-		"image": "sexybrain-main-page-light.jpg",
-		"description": "Incididunt qui pariatur ut commodo pariatur ex enim laboris. Sint veniam irure tempor minim reprehenderit proident aliqua consequat laborum excepteur amet id. Ea dolor laboris eu ea non ullamco esse velit do.",
+		"image": "VSCode-theme.jpg",
+		"description": "VS Code theme을 제작.",
 		"githubRepo": "https://github.com/hiredtocode",
 		"hyperlink": "https://sexybrain.dev",
 		"stack": ["JavaScript", "VSCode"]
