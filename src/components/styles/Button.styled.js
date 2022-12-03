@@ -31,6 +31,6 @@ export const Button = styled.button`
 	}
 	&.active {
 		background: ${({ theme }) => theme.colors.primaryBackground};
-		color: ${({ theme }) => theme.colors.primary};
+		color: ${({ theme }) => theme.colors.font};
 	}
 `;
