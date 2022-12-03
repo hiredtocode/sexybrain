@@ -2,8 +2,9 @@
 	{
 		"id": 1,
 		"title": "SexyBrain.Dev (Current website)",
+		"date": "2022.09 ~ 진행중",
 		"image": "sexybrain-main-page-dark.jpg",
-		"description": "Incididunt qui pariatur ut commodo pariatur ex enim laboris. Sint veniam irure tempor minim reprehenderit proident aliqua consequat laborum excepteur amet id. Ea dolor laboris eu ea non ullamco esse velit do.",
+		"description": "공부할겸 템플릿 없이 개발중",
 		"githubRepo": "https://github.com/hiredtocode",
 		"hyperlink": "https://sexybrain.dev",
 		"stack": ["React", "Firebase", "Styled Components"]
@@ -11,6 +12,7 @@
 	{
 		"id": 2,
 		"title": "API - Angular",
+		"date": "",
 		"image": "sexybrain-main-page-dark.jpg",
 		"description": "Incididunt qui pariatur ut commodo pariatur ex enim laboris. Sint veniam irure tempor minim reprehenderit proident aliqua consequat laborum excepteur amet id. Ea dolor laboris eu ea non ullamco esse velit do.",
 		"githubRepo": "https://github.com/hiredtocode",
@@ -20,6 +22,7 @@
 	{
 		"id": 3,
 		"title": "Nama Sushi",
+		"date": "",
 		"image": "sexybrain-main-page-dark.jpg",
 		"description": "Incididunt qui pariatur ut commodo pariatur ex enim laboris. Sint veniam irure tempor minim reprehenderit proident aliqua consequat laborum excepteur amet id. Ea dolor laboris eu ea non ullamco esse velit do.",
 		"githubRepo": "https://github.com/hiredtocode",
@@ -29,6 +32,7 @@
 	{
 		"id": 4,
 		"title": "VS Code Theme",
+		"date": "",
 		"image": "sexybrain-main-page-dark.jpg",
 		"description": "Incididunt qui pariatur ut commodo pariatur ex enim laboris. Sint veniam irure tempor minim reprehenderit proident aliqua consequat laborum excepteur amet id. Ea dolor laboris eu ea non ullamco esse velit do.",
 		"githubRepo": "https://github.com/hiredtocode",
