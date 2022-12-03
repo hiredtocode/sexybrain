@@ -40,6 +40,7 @@ export const ProjectCard = styled.div`
 		height: 300px;
 		object-fit: cover;
 		opacity: 0.7;
+		max-width: 400px;
 	}
 
 	h3 {
