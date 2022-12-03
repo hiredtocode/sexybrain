@@ -111,4 +111,9 @@ export const TagButton = styled.button`
 	&:hover span {
 		color: ${({ theme }) => theme.colors.font};
 	}
+
+	span {
+		color: ${({ theme }) => theme.colors.secondary};
+		padding-right: 3px;
+	}
 `;
