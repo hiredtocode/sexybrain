@@ -17,7 +17,7 @@ import sass from '../assets/img/sass.svg';
 import bootstrap from '../assets/img/bootstrap.svg';
 import materialUi from '../assets/img/material-ui.svg';
 import wordpress from '../assets/img/wordpress.svg';
-import styledComponents from '../assets/img/styled-components.svg';
+import styledComponents from '../assets/img/styledComponentsLogo.svg';
 import firebase from '../assets/img/firebase-icon.svg';
 import tailwindcss from '../assets/img/tailwindcss.svg';
 import programmer from '../assets/img/programmer.svg';
@@ -146,7 +146,7 @@ const Home = (props) => {
 						switch (item) {
 							case 'JavaScript':
 								return (
-									<CategoryButton key={uuidv4()} onClick={selectedCategory(item, uuidv4())}>
+									<CategoryButton key={uuidv4()} onClick={selectedCategory(item)}>
 										<img src={javascript} alt={item} />
 										<span>{item}</span>
 									</CategoryButton>
