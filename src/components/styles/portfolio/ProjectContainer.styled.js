@@ -56,7 +56,7 @@ export const ProjectCard = styled.div`
 		transform: translateY(-3px);
 		transition: 0.4s;
 		cursor: pointer;
-		img {
+		.image {
 			opacity: 1;
 			transition: 0.5s;
 		}
