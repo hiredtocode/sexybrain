@@ -46,7 +46,7 @@ function App() {
 	const lightTheme = {
 		colors: {
 			primary: '#087ea4',
-			primaryBackground: '#e6f7ff',
+			primaryBackground: '#c6edff',
 			secondary: '#2b6e62',
 			secondaryBackground: '#f4fbf9',
 			accent: '#575fb7',
@@ -83,11 +83,11 @@ function App() {
 	};
 	const darkTheme = {
 		colors: {
-			primary: '#149eca',
+			primary: '#087ea4',
 			primaryBackground: '#536b81',
 			secondary: '#44ac99',
 			secondaryBackground: '#243539',
-			active: '#12495c',
+			active: '#243539',
 			accent: '#575fb7',
 			accentBackground: '#242943',
 			body: '#23272f',
