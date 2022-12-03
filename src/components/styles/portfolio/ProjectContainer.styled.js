@@ -23,6 +23,7 @@ export const ProjectContainer = styled.section`
 `;
 
 export const CardContainer = styled.div`
+	width: 100%;
 	position: relative;
 `;
 
@@ -42,21 +43,26 @@ export const ProjectCard = styled.div`
 	h3 {
 		width: 100%;
 		padding: 15px;
+		margin: 10px 0;
+	}
+
+	.subText {
+		padding-left: 15px;
 	}
 	&:hover {
 		box-shadow: 2px 2px 2px ${({ theme }) => theme.colors.primary};
-		transform: translateY(-5px);
+		transform: translateY(-3px);
 		transition: 0.4s;
 	}
 `;
 
 export const ProjectDescription = styled.div`
-	transition: 0.7s;
+	transition: 0.5s;
 	padding: 15px;
 `;
 
 export const Stack = styled.div`
-	transition: 0.7s;
+	transition: 0.5s;
 	display: flex;
 	flex-direction: column;
 	min-width: 65px;
@@ -71,15 +77,23 @@ export const FilterContainer = styled.div`
 	min-width: 150px;
 	margin: 10px;
 	font-size: 1.1rem;
+
+	ul li {
+		list-style: none;
+	}
+
+	ul li:hover {
+		color: ${({ theme }) => theme.colors.strongAccent};
+		cursor: pointer;
+	}
 `;
 
-export const StackButton = styled.button`
+export const StackButton = styled.div`
 	border: none;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	margin: 3px;
-	border-radius: 10px;
+	margin: 5px;
 	overflow: hidden;
 	height: auto;
 	background: ${({ theme }) => theme.colors.card};
@@ -89,9 +103,9 @@ export const StackButton = styled.button`
 	text-orientation: mixed;
 
 	span {
-		margin-left: 5px;
 		color: ${({ theme }) => theme.colors.font};
 		opacity: 0.5;
+		cursor: default;
 	}
 
 	img {
