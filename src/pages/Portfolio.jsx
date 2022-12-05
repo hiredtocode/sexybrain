@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Flex from '../components/styles/Flex.styled.js';
-import {
-	ProjectContainer,
-	FilterContainer,
-} from '../components/styles/portfolio/ProjectContainer.styled.js';
+import { ProjectContainer } from '../components/styles/portfolio/ProjectContainer.styled.js';
+import Spinner from '../components/Spinner';
 import javascript from '../assets/img/javascript.svg';
 import angular from '../assets/img/angular.svg';
 import html from '../assets/img/html.svg';
@@ -21,8 +19,9 @@ import programmer from '../assets/img/programmer.svg';
 import php from '../assets/img/php.svg';
 import { v4 as uuidv4 } from 'uuid';
 import question from '../assets/img/question.svg';
-import Projects from '../projects/projects.json';
 import { H3 } from '../components/styles/Title.styled';
+import Projects from '../projects/projects.json';
+
 import {
 	ProjectCard,
 	CardContainer,
@@ -31,53 +30,15 @@ import {
 	StackButton,
 } from '../components/styles/portfolio/ProjectContainer.styled.js';
 import visualStudioCode from '../assets/img/visualStudioCode.svg';
+import CategoryList from '../components/CategoryList';
 
 const Portfolio = () => {
-	const [category, setCategory] = useState();
-	const [projects, setProjects] = useState({ Projects });
-
-	useEffect(() => {
-		const categories = () => {
-			let category = [];
-			Projects.forEach((project) => {
-				category.push(...project.stack);
-			});
-			const uniqueCategories = [...new Set(category.map((stack) => stack))];
-			setCategory(uniqueCategories);
-		};
-		return () => categories();
-	}, [setCategory]);
-
-	// Show posts that are only related to the clicked category when clicked
-	const handleClick = (selectedCategory) => {
-		return () => {
-			// const result = projects.filter((project) => {
-			const stack = projects.map((project) => {
-				return console.log('project.stack:', project.stack);
-			});
-			console.log('stack:', stack);
-			console.log('selectedCategory:', selectedCategory);
-			return projects.stack === selectedCategory;
-			// });
-			// setProjects(result);
-		};
-	};
+	const [loading, setLoading] = useState(true);
 
 	return (
 		<main style={{ width: '100%' }}>
 			<Flex direction='row' justify='center' alignItems='center' style={{ width: '100%' }}>
-				<FilterContainer>
-					<ul>
-						{category &&
-							category.map((item) => {
-								return (
-									<li key={uuidv4()} onClick={handleClick(item)}>
-										{item}
-									</li>
-								);
-							})}
-					</ul>
-				</FilterContainer>
+				<CategoryList />
 				<ProjectContainer>
 					{Projects &&
 						Projects.map((project) => (
