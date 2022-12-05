@@ -16,9 +16,9 @@ const initialState = {
 	email: '',
 	password: '',
 };
-
+//TODO success / error message when logging in
 const Auth = (props) => {
-	const { setActive, setUser } = props;
+	const { setUser } = props;
 	const [state, setState] = useState(initialState);
 	const [signUp, setSignUp] = useState(false);
 
@@ -36,7 +36,6 @@ const Auth = (props) => {
 			if (email && password) {
 				const { user } = await signInWithEmailAndPassword(auth, email, password);
 				setUser(user);
-				setActive('home');
 			} else {
 				return toast.error('All fields are mandatory to fill');
 			}

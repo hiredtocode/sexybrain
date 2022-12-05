@@ -13,8 +13,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import DefaultImage from '../assets/img/default.jpg';
 
-const Detail = (props) => {
-	const { setActive } = props;
+const Detail = () => {
 	const { id } = useParams();
 	const [blog, setBlog] = useState(null);
 
@@ -27,7 +26,6 @@ const Detail = (props) => {
 		const docRef = doc(db, 'blogPosts', id);
 		const blogDetail = await getDoc(docRef);
 		setBlog(blogDetail.data());
-		setActive(null);
 	};
 
 	return (

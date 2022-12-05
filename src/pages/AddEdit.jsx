@@ -23,7 +23,7 @@ import { MarkdownContainer } from '../components/styles/MarkdownContainer.styled
 import { v4 as uuidv4 } from 'uuid';
 
 const AddEdit = (props) => {
-	const { user, setActive } = props;
+	const { user } = props;
 	const categoryOption = [
 		'JavaScript',
 		'TypeScript',
@@ -94,7 +94,6 @@ const AddEdit = (props) => {
 		if (snapshot.exists()) {
 			setForm({ ...snapshot.data() });
 		}
-		setActive(null);
 	};
 
 	const onCategoryChange = (e) => {

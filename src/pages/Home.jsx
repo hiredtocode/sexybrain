@@ -31,7 +31,7 @@ import { BlogContainer } from '../components/styles/BlogContainer.styled';
 // import Trending from '../components/Trending';
 
 const Home = (props) => {
-	const { setActive, user, handleUpdate } = props;
+	const { user, handleUpdate } = props;
 	const [loading, setLoading] = useState(true);
 	const [blogBackup, setBlogBackup] = useState([]);
 	const [blogs, setBlogs] = useState(blogBackup);
@@ -73,7 +73,7 @@ const Home = (props) => {
 				setCategory(uniqueCategories);
 				setTags(uniqueTags);
 				setLoading(false);
-				setActive('home');
+
 				setBlogs(list);
 				setBlogBackup(list);
 			},
@@ -84,7 +84,7 @@ const Home = (props) => {
 		return () => list();
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [setActive]);
+	}, []);
 
 	if (loading) {
 		return <Spinner />;

@@ -26,7 +26,6 @@ function App() {
 		isDark,
 		setIsDark,
 	};
-	const [active, setActive] = useState('home');
 	const [user, setUser] = useState(null);
 
 	const navigate = useNavigate();
@@ -143,25 +142,23 @@ function App() {
 				<UnderConstruction />
 
 				<GlobalStyles />
-				<Header setActive={setActive} active={active} user={user} handleLogout={handleLogout} />
+				<Header user={user} handleLogout={handleLogout} />
 				<ToastContainer position='bottom-right' />
 
 				<RootContainer>
 					<Routes>
-						<Route path='/' element={<Home setActive={setActive} user={user} />} />
-						<Route path='/detail/:id' element={<BlogDetails setActive={setActive} />} />
-						<Route path='/portfolio/' element={<Portfolio setActive={setActive} />} />
+						<Route path='/blog' element={<Home user={user} />} />
+						<Route path='/detail/:id' element={<BlogDetails />} />
+						<Route path='/portfolio/' element={<Portfolio />} />
 						<Route
 							path='/create'
 							element={user?.uid ? <AddEdit user={user} /> : <Navigate to='/auth' />}
 						/>
 						<Route
 							path='/update/:id'
-							element={
-								user?.uid ? <AddEdit user={user} setActive={setActive} /> : <Navigate to='/auth' />
-							}
+							element={user?.uid ? <AddEdit user={user} /> : <Navigate to='/auth' />}
 						/>
-						<Route path='/auth' element={<Auth setActive={setActive} setUser={setUser} />} />
+						<Route path='/auth' element={<Auth setUser={setUser} />} />
 						<Route path='/resume' element={<Resume />} />
 						<Route path='*' element={<NotFound />} />
 					</Routes>
