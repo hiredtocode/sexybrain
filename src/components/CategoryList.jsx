@@ -4,7 +4,7 @@ import Projects from '../projects/projects.json';
 
 const CategoryList = () => {
 	const [projects, setProjects] = useState(Projects);
-	const [category, setCategory] = useState();
+	const [categories, setCategories] = useState();
 	const [loading, setLoading] = useState(true);
 
 	// Show posts that are only related to the clicked category when clicked
@@ -21,25 +21,30 @@ const CategoryList = () => {
 	// 		// setProjects(result);
 	// 	};
 	// };
-	console.log('projects:', projects);
 	useEffect(() => {
 		const categories = () => {
-			console.log('UseEffect started:');
 			let array = [];
 			projects.forEach((project) => {
 				array.push(...project.stack);
 			});
 			const uniqueCategories = [...new Set(array.map((stack) => stack))];
-			setCategory(uniqueCategories);
+			setCategories(uniqueCategories);
 			setLoading(false);
-			console.log('Ending useEffect');
 		};
 
 		return () => categories();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-	console.log('projects.stack:', projects.stack);
-	return <FilterContainer>{projects.map((project) => project.stack)}</FilterContainer>;
+	return (
+		<FilterContainer>
+			<ul>
+				{categories &&
+					categories.map((category) => {
+						return <li>{category}</li>;
+					})}
+			</ul>
+		</FilterContainer>
+	);
 };
 
 export default CategoryList;
