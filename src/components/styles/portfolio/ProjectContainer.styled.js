@@ -41,6 +41,7 @@ export const ProjectCard = styled.div`
 		object-fit: cover;
 		opacity: 0.7;
 		max-width: 400px;
+		min-width: 400px;
 	}
 
 	h3 {
@@ -83,7 +84,6 @@ export const FilterContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	min-width: 200px;
-	margin: 10px;
 	font-size: 1.1rem;
 	ul {
 		padding-left: 0;
