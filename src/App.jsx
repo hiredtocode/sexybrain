@@ -16,6 +16,7 @@ import Resume from './pages/Resume';
 import { RootContainer } from './components/styles/RootContainer.styled.js';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './components/styles/Global';
+import UnderConstruction from './components/UnderConstruction';
 
 export const ThemeContext = createContext();
 
@@ -139,9 +140,12 @@ function App() {
 	return (
 		<ThemeContext.Provider value={value}>
 			<ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+				<UnderConstruction />
+
 				<GlobalStyles />
 				<Header setActive={setActive} active={active} user={user} handleLogout={handleLogout} />
 				<ToastContainer position='bottom-right' />
+
 				<RootContainer>
 					<Routes>
 						<Route path='/' element={<Home setActive={setActive} user={user} />} />
