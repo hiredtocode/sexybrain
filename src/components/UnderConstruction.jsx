@@ -13,7 +13,7 @@ const UnderConstruction = () => {
 				textAlign: 'center',
 			}}
 		>
-			아직 개발중입다...
+			개발중입다
 		</H1>
 	);
 };
