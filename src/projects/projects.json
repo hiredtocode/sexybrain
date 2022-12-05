@@ -4,7 +4,7 @@
 		"title": "SexyBrain.Dev (Current website)",
 		"date": "2022.09 ~ 진행중",
 		"image": "sexybrain-main-page-dark.jpg",
-		"description": "공부할겸 템플릿 없이 개발중",
+		"description": "템플릿 없이 처음부터 끝까지 개발중",
 		"githubRepo": "https://github.com/hiredtocode",
 		"hyperlink": "https://sexybrain.dev",
 		"stack": ["React", "Firebase", "Styled Components"]
@@ -13,7 +13,7 @@
 		"id": 2,
 		"title": "API - Angular",
 		"date": "",
-		"image": "sexybrain-main-page-light.jpg",
+		"image": "api.svg",
 		"description": "API 프로젝트 진행중",
 		"githubRepo": "https://github.com/hiredtocode",
 		"hyperlink": "https://sexybrain.dev",
@@ -21,22 +21,22 @@
 	},
 	{
 		"id": 3,
-		"title": "Nama Sushi",
-		"date": "",
-		"image": "sexybrain-main-page-dark.jpg",
-		"description": "일식집 홈페이지",
-		"githubRepo": "https://github.com/hiredtocode",
-		"hyperlink": "https://sexybrain.dev",
-		"stack": ["Wordpress", "CSS", "PHP"]
-	},
-	{
-		"id": 4,
 		"title": "VS Code Theme",
-		"date": "",
+		"date": "2020 ~ 진행중",
 		"image": "VSCode-theme.jpg",
 		"description": "VS Code theme을 제작.",
 		"githubRepo": "https://github.com/hiredtocode",
 		"hyperlink": "https://sexybrain.dev",
 		"stack": ["JavaScript", "VSCode"]
+	},
+	{
+		"id": 4,
+		"title": "Nama Sushi",
+		"date": "2016",
+		"image": "sexybrain-main-page-dark.jpg",
+		"description": "일식집 홈페이지",
+		"githubRepo": "https://github.com/hiredtocode",
+		"hyperlink": "https://sexybrain.dev",
+		"stack": ["Wordpress", "CSS", "PHP"]
 	}
 ]
