@@ -28,15 +28,5 @@
 		"githubRepo": "https://github.com/hiredtocode",
 		"hyperlink": "https://sexybrain.dev",
 		"stack": ["JavaScript", "VSCode"]
-	},
-	{
-		"id": 4,
-		"title": "Nama Sushi",
-		"date": "2016",
-		"image": "sexybrain-main-page-dark.jpg",
-		"description": "일식집 홈페이지",
-		"githubRepo": "https://github.com/hiredtocode",
-		"hyperlink": "https://sexybrain.dev",
-		"stack": ["Wordpress", "CSS", "PHP"]
 	}
 ]
