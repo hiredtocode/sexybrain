@@ -66,7 +66,11 @@ button{
 	}
 
 	.active button{
-		background-color: ${({ theme }) => theme.colors.primaryBackground};
+		background: linear-gradient(
+		45deg,
+		${({ theme }) => theme.colors.hover},
+		${({ theme }) => theme.colors.hovered}
+	);
 		color: ${({ theme }) => theme.colors.font};
 	}
 `;
