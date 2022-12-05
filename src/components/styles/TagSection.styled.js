@@ -104,9 +104,6 @@ export const TagButton = styled.button`
 			${({ theme }) => theme.colors.hovered}
 		);
 	}
-	&.active {
-		background: ${({ theme }) => theme.colors.active};
-	}
 
 	&:hover span {
 		color: ${({ theme }) => theme.colors.font};
