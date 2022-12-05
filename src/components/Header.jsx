@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { StyledHeader, Nav, Logo, LinkContainer } from './styles/Header.styled.js';
 import { Button } from './styles/Button.styled.js';
 import JHLogo from '../assets/img/jh-logo.png';
@@ -12,7 +12,7 @@ import GithubWhite from '../assets/img/github-white.svg';
 import { MoonIcon, SunIcon } from '../assets/icons';
 
 const Header = (props) => {
-	const { active, setActive, user, handleLogout } = props;
+	const { user, handleLogout } = props;
 	const userId = user?.uid;
 
 	const { isDark, setIsDark } = useContext(ThemeContext);
@@ -21,70 +21,45 @@ const Header = (props) => {
 		<StyledHeader>
 			<Nav>
 				<div>
-					<Link to='/'>
+					<NavLink to='/blog'>
 						<Logo
 							src={isDark ? JHLogoWhite : JHLogo}
 							alt='logo'
 							aria-label='Click to go to the home page'
 						/>
-					</Link>
+					</NavLink>
 				</div>
 				{userId ? (
 					<>
 						{/* Create and Logout button appears if logged in */}
-						<Link to='/create'>
-							<Button
-								onClick={() => setActive('create')}
-								className={` ${active === 'create' ? 'active' : ''}`}
-							>
-								Create
-							</Button>
-						</Link>
-						<Link to='/'>
+						<NavLink to='/create'>
+							<Button>Create</Button>
+						</NavLink>
+						<Link to='/blog'>
 							<Button onClick={handleLogout}>Logout</Button>
 						</Link>
 						{/* Create and Logout button appears if logged in END */}
 					</>
 				) : (
 					// if not logged in
-					<Link to='/auth'>
-						<Button
-							className={` ${active === 'login' ? 'active' : ''}`}
-							onClick={() => setActive('login')}
-						>
-							Login
-						</Button>
-					</Link>
+					<NavLink to='/auth'>
+						<Button>Login</Button>
+					</NavLink>
 					// if not logged in END
 				)}
 				{/* Navbar menu container */}
 				<LinkContainer>
 					<>
-						<Link to='/'>
-							<Button
-								onClick={() => setActive('home')}
-								className={` ${active === 'home' ? 'active' : ''}`}
-							>
-								<span>블로그</span>
-							</Button>
-						</Link>
-						<Link to='/resume'>
-							<Button
-								onClick={() => setActive('resume')}
-								className={` ${active === 'resume' ? 'active' : ''}`}
-							>
-								이력서
-							</Button>
-						</Link>
+						<NavLink to='/blog'>
+							<Button>블로그</Button>
+						</NavLink>
+						<NavLink to='/resume'>
+							<Button>이력서</Button>
+						</NavLink>
 
-						<Link to='/portfolio'>
-							<Button
-								onClick={() => setActive('portfolio')}
-								className={` ${active === 'portfolio' ? 'active' : ''}`}
-							>
-								<span>포트폴리오</span>
-							</Button>
-						</Link>
+						<NavLink to='/portfolio'>
+							<Button>포트폴리오</Button>
+						</NavLink>
 						{/* Resume page menu END*/}
 					</>
 

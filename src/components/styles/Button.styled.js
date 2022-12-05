@@ -29,8 +29,4 @@ export const Button = styled.button`
 		);
 		color: ${({ theme }) => theme.colors.font};
 	}
-	&.active {
-		background: ${({ theme }) => theme.colors.primaryBackground};
-		color: ${({ theme }) => theme.colors.font};
-	}
 `;

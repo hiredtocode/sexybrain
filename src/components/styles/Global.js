@@ -63,6 +63,12 @@ button{
 ::selection {
 		background: ${({ theme }) => theme.colors.highlight};
 
-}
+	}
+
+	.active button{
+		background-color: ${({ theme }) => theme.colors.primaryBackground};
+		color: ${({ theme }) => theme.colors.font};
+	}
 `;
+
 export default GlobalStyles;
