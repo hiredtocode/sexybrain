@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FilterContainer } from './styles/portfolio/ProjectContainer.styled';
 import Projects from '../projects/projects.json';
+import { v4 as uuidv4 } from 'uuid';
 
 const CategoryList = () => {
 	const [projects, setProjects] = useState(Projects);
@@ -32,17 +33,12 @@ const CategoryList = () => {
 			setLoading(false);
 		};
 
-		return () => categories();
+		categories();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	return (
 		<FilterContainer>
-			<ul>
-				{categories &&
-					categories.map((category) => {
-						return <li>{category}</li>;
-					})}
-			</ul>
+			<ul>{categories && categories.map((category) => <li key={uuidv4()}>{category}</li>)}</ul>
 		</FilterContainer>
 	);
 };
