@@ -86,15 +86,7 @@ export const FilterContainer = styled.div`
 	margin: 10px;
 	font-size: 1.1rem;
 
-	ul {
-		padding-left: 0;
-	}
-
-	ul li {
-		list-style: none;
-	}
-
-	ul li:hover {
+	&:hover {
 		color: ${({ theme }) => theme.colors.strongAccent};
 		cursor: pointer;
 	}
