@@ -147,7 +147,7 @@ function App() {
 
 				<RootContainer>
 					<Routes>
-						<Route path='/blog' element={<Home user={user} />} />
+						<Route path='/' element={<Home user={user} />} />
 						<Route path='/detail/:id' element={<BlogDetails />} />
 						<Route path='/portfolio/' element={<Portfolio />} />
 						<Route
