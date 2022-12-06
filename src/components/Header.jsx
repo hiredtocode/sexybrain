@@ -5,14 +5,14 @@ import { StyledHeader, Nav, Logo, LinkContainer } from './styles/Header.styled.j
 import { Button } from './styles/Button.styled.js';
 import JHLogo from '../assets/img/jh-logo.png';
 import JHLogoWhite from '../assets/img/jh-logo-white.png';
-import { MoonIcon, SunIcon } from '../assets/icons';
 import GithubButton from './GithubButton';
+import DarkLightMode from './DarkLightMode';
 
 const Header = (props) => {
 	const { user, handleLogout } = props;
 	const userId = user?.uid;
 
-	const { isDark, setIsDark } = useContext(ThemeContext);
+	const { isDark } = useContext(ThemeContext);
 
 	return (
 		<StyledHeader>
@@ -53,28 +53,13 @@ const Header = (props) => {
 						<NavLink to='/resume'>
 							<Button>이력서</Button>
 						</NavLink>
-
 						<NavLink to='/portfolio'>
 							<Button>포트폴리오</Button>
 						</NavLink>
 						{/* Resume page menu END*/}
 					</>
 					{/* Dark / light mode toggle */}
-					<Button
-						onClick={() => setIsDark(!isDark)}
-						style={{
-							border: 'none',
-							cursor: 'pointer',
-							height: '42px',
-							width: '65px',
-							display: 'flex',
-							alignItems: 'center',
-							justifyContent: 'center',
-						}}
-						aria-label='Light dark mode'
-					>
-						{isDark ? <MoonIcon /> : <SunIcon />}
-					</Button>
+					<DarkLightMode />
 					{/* Dark / light mode toggle END */}
 					{/* Github icon */}
 					<GithubButton />
