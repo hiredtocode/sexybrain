@@ -1,5 +1,9 @@
 import { useContext } from 'react';
-import { GithubBottom, GithubIconContainer, GithubTop } from './styles/Github.styled';
+import {
+	GithubBottom,
+	GithubIconContainer,
+	GithubTop,
+} from './styles/portfolio/ProjectContainer.styled.js';
 import { ThemeContext } from '../App';
 import Github from '../assets/img/github.svg';
 import GithubBlack from '../assets/img/github-black.svg';
