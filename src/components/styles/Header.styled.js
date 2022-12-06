@@ -40,6 +40,7 @@ export const Logo = styled.img`
 	max-width: 60px;
 	object-fit: cover;
 `;
+
 export const LinkContainer = styled.header`
 	display: flex;
 	justify-content: center;

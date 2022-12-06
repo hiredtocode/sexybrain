@@ -1,29 +1,20 @@
-import { useContext } from 'react';
-import { ThemeContext } from '../App';
 import { NavLink, Link } from 'react-router-dom';
-import { StyledHeader, Nav, Logo, LinkContainer } from './styles/Header.styled.js';
+import { StyledHeader, Nav, LinkContainer } from './styles/Header.styled.js';
 import { Button } from './styles/Button.styled.js';
-import JHLogo from '../assets/img/jh-logo.png';
-import JHLogoWhite from '../assets/img/jh-logo-white.png';
 import GithubButton from './GithubButton';
 import DarkLightMode from './DarkLightMode';
+import Logo from './Logo';
 
 const Header = (props) => {
 	const { user, handleLogout } = props;
 	const userId = user?.uid;
-
-	const { isDark } = useContext(ThemeContext);
 
 	return (
 		<StyledHeader>
 			<Nav>
 				<div>
 					<NavLink to='/'>
-						<Logo
-							src={isDark ? JHLogoWhite : JHLogo}
-							alt='logo'
-							aria-label='Click to go to the home page'
-						/>
+						<Logo />
 					</NavLink>
 				</div>
 				{userId ? (
