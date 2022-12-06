@@ -1,7 +1,5 @@
-import { useState, useEffect } from 'react';
 import Flex from '../components/styles/Flex.styled.js';
 import { ProjectContainer } from '../components/styles/portfolio/ProjectContainer.styled.js';
-import Spinner from '../components/Spinner';
 import javascript from '../assets/img/javascript.svg';
 import angular from '../assets/img/angular.svg';
 import html from '../assets/img/html.svg';
@@ -21,6 +19,7 @@ import { v4 as uuidv4 } from 'uuid';
 import question from '../assets/img/question.svg';
 import { H3 } from '../components/styles/Title.styled';
 import Projects from '../projects/projects.json';
+import GithubButtonForPortfolio from '../components/GithubButtonForPortfolio';
 
 import {
 	ProjectCard,
@@ -33,8 +32,6 @@ import visualStudioCode from '../assets/img/visualStudioCode.svg';
 import CategoryList from '../components/CategoryList';
 
 const Portfolio = () => {
-	const [loading, setLoading] = useState(true);
-
 	return (
 		<main style={{ width: '100%' }}>
 			<Flex direction='row' justify='center' alignItems='center' style={{ width: '100%' }}>
@@ -48,7 +45,12 @@ const Portfolio = () => {
 										<img className='image' src={project.image} alt={project.title} />
 										<Flex direction='column' grow='1'>
 											<Flex direction='column' style={{ Width: '100%' }}>
-												<H3>{project.title}</H3>
+												<H3>
+													{project.title} |{' '}
+													<GithubButtonForPortfolio
+														link={'https://github.com/hiredtocode/sexybrain'}
+													/>
+												</H3>
 												<span className='subText'> {project.date} </span>
 											</Flex>
 
