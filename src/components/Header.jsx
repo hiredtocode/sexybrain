@@ -37,18 +37,16 @@ const Header = (props) => {
 				)}
 				{/* Navbar menu container */}
 				<LinkContainer>
-					<>
-						<NavLink to='/'>
-							<Button>블로그</Button>
-						</NavLink>
-						<NavLink to='/resume'>
-							<Button>이력서</Button>
-						</NavLink>
-						<NavLink to='/portfolio'>
-							<Button>포트폴리오</Button>
-						</NavLink>
-						{/* Resume page menu END*/}
-					</>
+					<NavLink to='/'>
+						<Button>블로그</Button>
+					</NavLink>
+					<NavLink to='/resume'>
+						<Button>이력서</Button>
+					</NavLink>
+					<NavLink to='/portfolio'>
+						<Button>포트폴리오</Button>
+					</NavLink>
+					{/* Resume page menu END*/}
 					{/* Dark / light mode toggle */}
 					<DarkLightMode />
 					{/* Dark / light mode toggle END */}
