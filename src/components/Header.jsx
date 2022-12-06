@@ -5,10 +5,6 @@ import { StyledHeader, Nav, Logo, LinkContainer } from './styles/Header.styled.j
 import { Button } from './styles/Button.styled.js';
 import JHLogo from '../assets/img/jh-logo.png';
 import JHLogoWhite from '../assets/img/jh-logo-white.png';
-import { GithubBottom, GithubTop, GithubIconContainer } from './styles/Github.styled.js';
-import Github from '../assets/img/github.svg';
-import GithubBlack from '../assets/img/github-black.svg';
-import GithubWhite from '../assets/img/github-white.svg';
 import { MoonIcon, SunIcon } from '../assets/icons';
 import GithubButton from './GithubButton';
 
