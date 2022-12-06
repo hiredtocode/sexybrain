@@ -5,7 +5,7 @@
 		"date": "2022.09 ~ 진행중",
 		"image": "sexybrain-main-page-dark.jpg",
 		"description": "템플릿 없이 처음부터 끝까지 개발중",
-		"githubRepo": "https://github.com/hiredtocode",
+		"githubRepo": "https://github.com/hiredtocode/sexybrain",
 		"hyperlink": "https://sexybrain.dev",
 		"stack": ["React", "Firebase", "Styled Components"]
 	},
@@ -15,8 +15,8 @@
 		"date": "",
 		"image": "api.svg",
 		"description": "API 프로젝트 진행중",
-		"githubRepo": "https://github.com/hiredtocode",
-		"hyperlink": "https://sexybrain.dev",
+		"githubRepo": "#",
+		"hyperlink": "#",
 		"stack": ["Angular", "CSS", "HTML"]
 	},
 	{
@@ -25,8 +25,8 @@
 		"date": "2020 ~ 진행중",
 		"image": "VSCode-theme.jpg",
 		"description": "VS Code theme을 제작.",
-		"githubRepo": "https://github.com/hiredtocode",
-		"hyperlink": "https://sexybrain.dev",
+		"githubRepo": "#",
+		"hyperlink": "#",
 		"stack": ["JavaScript", "VSCode"]
 	}
 ]
