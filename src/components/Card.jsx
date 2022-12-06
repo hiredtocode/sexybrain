@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { excerpt } from '../utility/excerpt';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
