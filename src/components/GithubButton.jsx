@@ -19,15 +19,13 @@ const GithubButton = () => {
 				<>
 					<GithubTop
 						src={Github}
-						alt='Github Icon'
+						alt='Github top Icon'
 						aria-label='Click to go to my github page'
-						style={{ outlineWidth: '1px', outlineStyle: 'groove', outlineColor: 'black' }}
 					/>
 					<GithubBottom
 						src={GithubWhite}
 						alt='Github bottom icon'
 						aria-label='Click to go to my github page'
-						style={{ outlineWidth: '1px', outlineStyle: 'groove', outlineColor: 'black' }}
 					/>
 				</>
 			) : (
