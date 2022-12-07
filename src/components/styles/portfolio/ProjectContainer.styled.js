@@ -158,14 +158,14 @@ export const GithubIconContainer = styled.a`
 	position: relative;
 	align-items: center;
 	transition: 0.5s;
-	margin: 15px 15px;
+	margin: 0 10px;
 `;
 
 export const GithubTop = styled.img`
 	border-radius: 50px;
 	position: absolute;
 	opacity: 0;
-	top: -8px;
+	top: -14px;
 	min-width: 30px;
 	min-height: 30px;
 	object-fit: cover;
