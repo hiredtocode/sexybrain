@@ -20,7 +20,6 @@ import question from '../assets/img/question.svg';
 import { H3 } from '../components/styles/Title.styled';
 import Projects from '../projects/projects.json';
 import GithubButtonForPortfolio from '../components/GithubButtonForPortfolio';
-import SquareArrowIcon from '../assets/img/square-arrow-primary.svg';
 import {
 	ProjectCard,
 	CardContainer,
@@ -30,6 +29,7 @@ import {
 } from '../components/styles/portfolio/ProjectContainer.styled.js';
 import visualStudioCode from '../assets/img/visualStudioCode.svg';
 import CategoryList from '../components/CategoryList';
+import LinkButton from '../components/LinkButton.jsx';
 
 const Portfolio = () => {
 	return (
@@ -44,18 +44,21 @@ const Portfolio = () => {
 									<Flex>
 										<img className='image' src={project.image} alt={project.title} />
 										<Flex direction='column' grow='1'>
-											<Flex direction='row' style={{ Width: '100%' }} align='center'>
-												<H3>
-													{project.title}
+											<Flex
+												direction='row'
+												style={{ Width: '100%' }}
+												align='center'
+												justfiy='center'
+											>
+												<div>
+													<H3>{project.title}</H3>
+												</div>
+												<div>
 													<GithubButtonForPortfolio link={project.githubRepo} />
-													<a href={project.hyperlink} aria-label='{project.title}'>
-														<img
-															src={SquareArrowIcon}
-															alt='{project.title}'
-															style={{ maxWidth: '35px' }}
-														/>
-													</a>
-												</H3>
+												</div>
+												<div>
+													<LinkButton link={project.hyperlink} title={project.title} />
+												</div>
 											</Flex>
 											<span className='subText'> {project.date} </span>
 
