@@ -36,7 +36,6 @@ const Portfolio = () => {
 	const [projects, setProjects] = useState(Projects);
 	const [categories, setCategories] = useState();
 	const [loading, setLoading] = useState(true);
-	const [filteredCategory, setFilteredCategory] = useState();
 
 	useEffect(() => {
 		const categories = () => {
@@ -51,26 +50,27 @@ const Portfolio = () => {
 
 		categories();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	}, [projects]);
 
 	// Show posts that are only related to the clicked category when clicked
 	const handleCategory = (selectedCategory) => {
 		const filtered = projects.filter((project) => project.stack.includes(selectedCategory));
 		return () => {
 			setProjects(filtered);
-			console.log('projects:', projects);
-			console.log('filtered:', filtered);
-			console.log('selectedCategory:', selectedCategory);
 		};
 	};
 	// Show posts that are only related to the clicked category when clicked END
+	const onAllClick = () => {
+		setProjects(Projects);
+	};
 	return (
 		<main style={{ width: '100%' }}>
 			<Flex direction='row' justify='center' alignItems='center' style={{ width: '100%' }}>
 				<FilterContainer>
 					<ul>
-						<li onClick={() => setProjects(Projects)}>All</li>
+						<li onClick={onAllClick}>All / Reset</li>
 						{categories &&
+							categories.length > 6 &&
 							categories.map((category) => {
 								return (
 									<li key={uuidv4()} onClick={handleCategory(category)}>
