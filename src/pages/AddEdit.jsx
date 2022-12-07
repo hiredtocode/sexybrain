@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 import {
 	FormContainer,
 	Form,
-	SubmitButton,
+	FormSubmitButton,
 	FormLabel,
 	FormInput,
 	FormSelect,
@@ -201,9 +201,9 @@ const AddEdit = (props) => {
 						<FormCancelButton className='cancel' onClick={() => navigate('/')}>
 							Cancel
 						</FormCancelButton>
-						<SubmitButton type='submit' disabled={progress !== null && progress < 100}>
+						<FormSubmitButton type='submit' disabled={progress !== null && progress < 100}>
 							{id ? 'Update' : 'Submit'}
-						</SubmitButton>
+						</FormSubmitButton>
 					</Flex>
 					{/* file upload section end  */}
 				</Form>
