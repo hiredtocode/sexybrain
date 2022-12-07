@@ -1,19 +1,9 @@
 import styled from 'styled-components/macro';
 
-export const GithubBottom = styled.img`
-	min-width: 50px;
-	min-height: 50px;
-	background: linear-gradient(
-		45deg,
-		${({ theme }) => theme.colors.hover},
-		${({ theme }) => theme.colors.hovered}
-	);
-	border-radius: 50px;
-	object-fit: cover;
+export const GithubIconContainer = styled.a`
+	position: relative;
+	align-items: center;
 	transition: 0.5s;
-	outline-width: 1px;
-	outline-style: groove;
-	outline-color: black;
 `;
 
 export const GithubTop = styled.img`
@@ -39,10 +29,20 @@ export const GithubTop = styled.img`
 	}
 `;
 
-export const GithubIconContainer = styled.a`
-	position: relative;
-	align-items: center;
+export const GithubBottom = styled.img`
+	min-width: 50px;
+	min-height: 50px;
+	background: linear-gradient(
+		45deg,
+		${({ theme }) => theme.colors.hover},
+		${({ theme }) => theme.colors.hovered}
+	);
+	border-radius: 50px;
+	object-fit: cover;
 	transition: 0.5s;
+	outline-width: 1px;
+	outline-style: groove;
+	outline-color: black;
 `;
 
 export const GithubLink = styled.img`
