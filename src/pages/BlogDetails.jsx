@@ -80,7 +80,6 @@ const Detail = () => {
 						</div>
 					</Flex>
 				</div>
-				<p>{blog?.body}</p>
 				<ReactMarkdown rehypePlugins={[rehypeHighlight]} children={blog?.body} />
 			</BlogDetail>
 		</div>
