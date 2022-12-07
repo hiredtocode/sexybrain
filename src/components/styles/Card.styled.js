@@ -115,7 +115,7 @@ export const Date = styled.div`
 	transition: 0.7s;
 	text-align: right;
 	span {
-		color: ${({ theme }) => theme.colors.primary};
+		color: ${({ theme }) => theme.colors.secondary};
 	}
 
 	/* xs: '575.98px' */
