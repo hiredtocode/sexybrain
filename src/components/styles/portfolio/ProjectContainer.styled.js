@@ -6,6 +6,7 @@ export const ProjectContainer = styled.section`
 	max-width: 1200px;
 	justify-content: space-around;
 	flex-wrap: wrap;
+	flex-grow: 1;
 
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
