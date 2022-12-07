@@ -64,13 +64,13 @@ const Portfolio = () => {
 		};
 	};
 	// Show posts that are only related to the clicked category when clicked END
-
+	console.log('projects:', projects);
 	return (
 		<main style={{ width: '100%' }}>
 			<Flex direction='row' justify='center' alignItems='center' style={{ width: '100%' }}>
 				<FilterContainer>
 					<ul>
-						<li onClick={() => setCategories(categories)}>All</li>
+						<li onClick={() => setProjects(Projects)}>All</li>
 						{categories &&
 							categories.map((category) => {
 								return (
@@ -82,8 +82,8 @@ const Portfolio = () => {
 					</ul>
 				</FilterContainer>
 				<ProjectContainer>
-					{Projects &&
-						Projects.map((project) => (
+					{projects &&
+						projects.map((project) => (
 							<CardContainer key={uuidv4()}>
 								<ProjectCard>
 									<Flex>
