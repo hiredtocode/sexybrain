@@ -25,7 +25,7 @@ export const FormInput = styled.input`
 	}
 `;
 
-export const SubmitButton = styled.button`
+export const FormSubmitButton = styled.button`
 	border-radius: 0.5rem;
 	border: none;
 	cursor: pointer;
@@ -33,7 +33,7 @@ export const SubmitButton = styled.button`
 	font-weight: 700;
 	width: 100%;
 	padding: 10px 15px;
-	background-color: ${({ theme }) => theme.colors.button};
+	background-color: ${({ theme }) => theme.colors.primary};
 	color: ${({ theme }) => theme.colors.font};
 
 	&:hover {
@@ -45,6 +45,36 @@ export const SubmitButton = styled.button`
 			135deg,
 			${({ theme }) => theme.colors.hover},
 			${({ theme }) => theme.colors.hovered}
+		);
+		color: ${({ theme }) => theme.colors.font};
+	}
+
+	&:hover span {
+		color: ${({ theme }) => theme.colors.font};
+	}
+`;
+
+export const FormCancelButton = styled.button`
+	border-radius: 0.5rem;
+	border: none;
+	cursor: pointer;
+	font-size: 1.2rem;
+	font-weight: 700;
+	width: 100%;
+	margin-right: 10px;
+	padding: 10px 15px;
+	background-color: ${({ theme }) => theme.colors.cancelButton};
+	color: ${({ theme }) => theme.colors.font};
+
+	&:hover {
+		opacity: 0.9;
+		transform: scale(0.98);
+		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+		background: linear-gradient(
+			135deg,
+			${({ theme }) => theme.colors.cancelHover},
+			${({ theme }) => theme.colors.cancelHovered}
 		);
 		color: ${({ theme }) => theme.colors.font};
 	}
@@ -82,36 +112,6 @@ export const LoginButton = styled.button`
 		color: ${({ theme }) => theme.colors.font};
 	}
 `;
-export const FormCancelButton = styled.button`
-	border-radius: 0.5rem;
-	border: none;
-	cursor: pointer;
-	font-size: 1.2rem;
-	font-weight: 700;
-	width: 100%;
-	margin-right: 10px;
-	padding: 10px 15px;
-	background-color: ${({ theme }) => theme.colors.cancelButton};
-	color: ${({ theme }) => theme.colors.font};
-
-	&:hover {
-		opacity: 0.9;
-		transform: scale(0.98);
-		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-
-		background: linear-gradient(
-			135deg,
-			${({ theme }) => theme.colors.cancelHover},
-			${({ theme }) => theme.colors.cancelHovered}
-		);
-		color: ${({ theme }) => theme.colors.font};
-	}
-
-	&:hover span {
-		color: ${({ theme }) => theme.colors.font};
-	}
-`;
-
 export const FormLabel = styled.label`
 	background-color: ${({ theme }) => theme.colors.card};
 	color: ${({ theme }) => theme.colors.font};
