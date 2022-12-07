@@ -53,12 +53,8 @@ const Portfolio = () => {
 												<div>
 													<H3>{project.title}</H3>
 												</div>
-												<div>
-													<GithubButtonForPortfolio link={project.githubRepo} />
-												</div>
-												<div>
-													<LinkButton link={project.hyperlink} title={project.title} />
-												</div>
+												<GithubButtonForPortfolio link={project.githubRepo} />
+												<LinkButton link={project.hyperlink} title={project.title} />
 											</Flex>
 											<span className='subText'> {project.date} </span>
 
