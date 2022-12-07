@@ -6,7 +6,7 @@ import GithubBlack from '../assets/img/github-black.svg';
 import GithubWhite from '../assets/img/github-white.svg';
 
 const GithubButton = () => {
-	const { isDark, setIsDark } = useContext(ThemeContext);
+	const { isDark } = useContext(ThemeContext);
 
 	return (
 		<GithubIconContainer
