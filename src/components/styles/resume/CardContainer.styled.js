@@ -36,7 +36,7 @@ export const Card = styled.div`
 		transition: 0.5s;
 
 		background: linear-gradient(
-			45deg,
+			135deg,
 			${({ theme }) => theme.colors.hover},
 			${({ theme }) => theme.colors.hovered}
 		);

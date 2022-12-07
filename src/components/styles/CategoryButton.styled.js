@@ -69,7 +69,7 @@ const CategoryButton = styled.button`
 		font-size: 1rem;
 		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 		background: linear-gradient(
-			45deg,
+			135deg,
 			${({ theme }) => theme.colors.hover},
 			${({ theme }) => theme.colors.hovered}
 		);

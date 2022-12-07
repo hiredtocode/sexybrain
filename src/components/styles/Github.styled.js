@@ -19,7 +19,7 @@ export const GithubTop = styled.img`
 	outline-color: black;
 
 	background: linear-gradient(
-		45deg,
+		135deg,
 		${({ theme }) => theme.colors.hover},
 		${({ theme }) => theme.colors.hovered}
 	);
@@ -33,7 +33,7 @@ export const GithubBottom = styled.img`
 	min-width: 50px;
 	min-height: 50px;
 	background: linear-gradient(
-		45deg,
+		135deg,
 		${({ theme }) => theme.colors.hover},
 		${({ theme }) => theme.colors.hovered}
 	);
@@ -55,7 +55,7 @@ export const GithubLink = styled.img`
 	transition: 0.5s;
 
 	background: linear-gradient(
-		45deg,
+		135deg,
 		${({ theme }) => theme.colors.hover},
 		${({ theme }) => theme.colors.hovered}
 	);

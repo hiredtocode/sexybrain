@@ -23,7 +23,7 @@ export const Button = styled.button`
 		transition: 0.8s;
 		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 		background: linear-gradient(
-			45deg,
+			135deg,
 			${({ theme }) => theme.colors.hover},
 			${({ theme }) => theme.colors.hovered}
 		);
