@@ -1,5 +1,8 @@
 import Flex from '../components/styles/Flex.styled.js';
-import { ProjectContainer } from '../components/styles/portfolio/ProjectContainer.styled.js';
+import {
+	CategoryFilter,
+	ProjectContainer,
+} from '../components/styles/portfolio/ProjectContainer.styled.js';
 import javascript from '../assets/img/javascript.svg';
 import angular from '../assets/img/angular.svg';
 import html from '../assets/img/html.svg';
@@ -73,9 +76,9 @@ const Portfolio = () => {
 							categories.length > 6 &&
 							categories.map((category) => {
 								return (
-									<li key={uuidv4()} onClick={handleCategory(category)}>
+									<CategoryFilter key={uuidv4()} onClick={handleCategory(category)}>
 										{category}
-									</li>
+									</CategoryFilter>
 								);
 							})}
 					</ul>

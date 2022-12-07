@@ -58,7 +58,6 @@ export const ProjectCard = styled.div`
 		box-shadow: 2px 2px 2px ${({ theme }) => theme.colors.primary};
 		transform: translateY(-3px);
 		transition: 0.4s;
-		cursor: pointer;
 		.image {
 			opacity: 1;
 			transition: 0.5s;
@@ -176,7 +175,7 @@ export const GithubTop = styled.img`
 	outline-color: black;
 
 	background: linear-gradient(
-		45deg,
+		135deg,
 		${({ theme }) => theme.colors.hover},
 		${({ theme }) => theme.colors.hovered}
 	);
@@ -190,7 +189,7 @@ export const GithubBottom = styled.img`
 	min-width: 30px;
 	min-height: 30px;
 	background: linear-gradient(
-		45deg,
+		135deg,
 		${({ theme }) => theme.colors.hover},
 		${({ theme }) => theme.colors.hovered}
 	);
@@ -212,7 +211,7 @@ export const GithubLink = styled.img`
 	transition: 0.5s;
 
 	background: linear-gradient(
-		45deg,
+		135deg,
 		${({ theme }) => theme.colors.hover},
 		${({ theme }) => theme.colors.hovered}
 	);
@@ -223,3 +222,29 @@ export const GithubLink = styled.img`
 `;
 
 // Github button styling
+
+export const CategoryFilter = styled.div`
+	margin: 3px 3px;
+	display: flex;
+	padding: 0 10px;
+	align-items: center;
+	max-height: 40px;
+	justify-content: center;
+	border-radius: 10px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+	font-size: 1rem;
+	border: 1px solid ${({ theme }) => theme.colors.primary};
+	img {
+		max-width: 35px;
+		padding: 0 5px;
+	}
+	p {
+		color: ${({ theme }) => theme.colors.font};
+
+		padding: 0 4px;
+	}
+	&:hover {
+		color: ${({ theme }) => theme.colors.strongAccent};
+		cursor: pointer;
+	}
+`;
