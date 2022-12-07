@@ -64,7 +64,6 @@ const Portfolio = () => {
 		};
 	};
 	// Show posts that are only related to the clicked category when clicked END
-	console.log('projects:', projects);
 	return (
 		<main style={{ width: '100%' }}>
 			<Flex direction='row' justify='center' alignItems='center' style={{ width: '100%' }}>
