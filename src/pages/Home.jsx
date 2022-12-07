@@ -31,7 +31,7 @@ import { BlogContainer } from '../components/styles/BlogContainer.styled';
 // import Trending from '../components/Trending';
 
 const Home = (props) => {
-	const { user, handleUpdate } = props;
+	const { user } = props;
 	const [loading, setLoading] = useState(true);
 	const [blogBackup, setBlogBackup] = useState([]);
 	const [blogs, setBlogs] = useState(blogBackup);
@@ -133,11 +133,12 @@ const Home = (props) => {
 			setTagReset(true);
 		}
 	};
+
 	return (
 		<>
 			<BlogContainer>
 				<H2>Blogs</H2>
-				<Card blogs={blogs} user={user} handleDelete={handleDelete} handleUpdate={handleUpdate} />
+				<Card blogs={blogs} user={user} handleDelete={handleDelete} />
 			</BlogContainer>
 			<Aside>
 				<H2 style={{ textAlign: 'center' }}>Categories</H2>
