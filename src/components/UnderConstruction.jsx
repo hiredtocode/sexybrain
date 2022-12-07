@@ -13,7 +13,7 @@ const UnderConstruction = () => {
 				textAlign: 'center',
 			}}
 		>
-			개발중입다
+			블로그와 포트폴리오는 개발중입다.
 		</H1>
 	);
 };
