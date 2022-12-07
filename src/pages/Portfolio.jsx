@@ -28,14 +28,59 @@ import {
 	StackButton,
 } from '../components/styles/portfolio/ProjectContainer.styled.js';
 import visualStudioCode from '../assets/img/visualStudioCode.svg';
-import CategoryList from '../components/CategoryList';
 import LinkButton from '../components/LinkButton.jsx';
+import { useState, useEffect } from 'react';
+import { FilterContainer } from '../components/styles/portfolio/ProjectContainer.styled';
 
 const Portfolio = () => {
+	const [projects, setProjects] = useState(Projects);
+	const [categories, setCategories] = useState();
+	const [loading, setLoading] = useState(true);
+	const [filteredCategory, setFilteredCategory] = useState();
+
+	useEffect(() => {
+		const categories = () => {
+			let array = [];
+			projects.forEach((project) => {
+				array.push(...project.stack);
+			});
+			const uniqueCategories = [...new Set(array.map((stack) => stack))];
+			setCategories(uniqueCategories);
+			setLoading(false);
+		};
+
+		categories();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+
+	// Show posts that are only related to the clicked category when clicked
+	const handleCategory = (selectedCategory) => {
+		const filtered = projects.filter((project) => project.stack.includes(selectedCategory));
+		return () => {
+			setProjects(filtered);
+			console.log('projects:', projects);
+			console.log('filtered:', filtered);
+			console.log('selectedCategory:', selectedCategory);
+		};
+	};
+	// Show posts that are only related to the clicked category when clicked END
+
 	return (
 		<main style={{ width: '100%' }}>
 			<Flex direction='row' justify='center' alignItems='center' style={{ width: '100%' }}>
-				<CategoryList />
+				<FilterContainer>
+					<ul>
+						<li onClick={() => setCategories(categories)}>All</li>
+						{categories &&
+							categories.map((category) => {
+								return (
+									<li key={uuidv4()} onClick={handleCategory(category)}>
+										{category}
+									</li>
+								);
+							})}
+					</ul>
+				</FilterContainer>
 				<ProjectContainer>
 					{Projects &&
 						Projects.map((project) => (
