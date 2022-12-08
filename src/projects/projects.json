@@ -1,9 +1,9 @@
 [
 	{
 		"id": 1,
-		"title": "SexyBrain.Dev (Current website)",
+		"title": "SexyBrain.Dev (현재 웹사이트)",
 		"date": "2022.09 ~ 진행중",
-		"image": "sexybrain-main-page-dark.jpg",
+		"image": "first-blog.jpg",
 		"description": "템플릿 없이 처음부터 끝까지 개발중",
 		"githubRepo": "https://github.com/hiredtocode/sexybrain",
 		"hyperlink": "https://sexybrain.dev",
