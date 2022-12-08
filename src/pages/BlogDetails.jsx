@@ -6,12 +6,13 @@ import { db } from '../firebase.config';
 import { BlogTitleBox, Author, BlogDetail } from '../components/styles/BlogDetails.styled.js';
 import Flex from '../components/styles/Flex.styled.js';
 import { H2 } from '../components/styles/Title.styled.js';
-import ReactMarkdown from 'react-markdown';
-import rehypeHighlight from 'rehype-highlight';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import DefaultImage from '../assets/img/default.jpg';
+import ReactMarkdown from 'react-markdown';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const Detail = () => {
 	const { id } = useParams();
@@ -21,13 +22,11 @@ const Detail = () => {
 		id && getBlogDetail();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [id]);
-
 	const getBlogDetail = async () => {
 		const docRef = doc(db, 'blogPosts', id);
 		const blogDetail = await getDoc(docRef);
 		setBlog(blogDetail.data());
 	};
-
 	return (
 		<div className='single' style={{ flexGrow: '1' }}>
 			{/* Show default image if no image was uploaded */}
@@ -80,7 +79,26 @@ const Detail = () => {
 						</div>
 					</Flex>
 				</div>
-				<ReactMarkdown rehypePlugins={[rehypeHighlight]} children={blog?.body} />
+				<ReactMarkdown
+					children={blog?.body}
+					components={{
+						code({ node, inline, className, children, ...props }) {
+							const match = /language-(\w+)/.exec(className || '');
+							return !inline && match ? (
+								<SyntaxHighlighter
+									children={String(children).replace(/\n$/, '')}
+									style={dark}
+									language={match[1]}
+									{...props}
+								/>
+							) : (
+								<code className={className} {...props}>
+									{children}
+								</code>
+							);
+						},
+					}}
+				/>
 			</BlogDetail>
 		</div>
 	);

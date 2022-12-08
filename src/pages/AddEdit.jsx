@@ -17,10 +17,9 @@ import {
 	Textarea,
 } from '../components/styles/FormContainer.styled.js';
 import Flex from '../components/styles/Flex.styled.js';
-import rehypeHighlight from 'rehype-highlight';
-import ReactMarkdown from 'react-markdown';
 import { MarkdownContainer } from '../components/styles/MarkdownContainer.styled.js';
 import { v4 as uuidv4 } from 'uuid';
+import ReactMarkdown from 'react-markdown';
 
 const AddEdit = (props) => {
 	const { user } = props;
@@ -209,7 +208,10 @@ const AddEdit = (props) => {
 				</Form>
 			</FormContainer>
 			<MarkdownContainer>
-				<ReactMarkdown rehypePlugins={[rehypeHighlight]} children={body ?? ''} />
+				<ReactMarkdown
+					// rehypePlugins={[rehypeHighlight]}
+					children={body ?? ''}
+				/>
 			</MarkdownContainer>
 		</>
 	);
