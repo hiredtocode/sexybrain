@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { doc, getDoc } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 import Tags from '../components/Tags';
@@ -12,10 +12,14 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import DefaultImage from '../assets/img/default.jpg';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { ThemeContext } from '../App';
 
 const Detail = () => {
 	const { id } = useParams();
 	const [blog, setBlog] = useState(null);
+	const { isDark } = useContext(ThemeContext);
 
 	useEffect(() => {
 		id && getBlogDetail();
@@ -78,25 +82,49 @@ const Detail = () => {
 						</div>
 					</Flex>
 				</div>
-				<ReactMarkdown
-					children={blog?.body}
-					components={{
-						code({ node, inline, className, children, ...props }) {
-							const match = /language-(\w+)/.exec(className || '');
-							return !inline && match ? (
-								<SyntaxHighlighter
-									children={String(children).replace(/\n$/, '')}
-									language={match[1]}
-									{...props}
-								/>
-							) : (
-								<code className={className} {...props}>
-									{children}
-								</code>
-							);
-						},
-					}}
-				/>
+				{isDark ? (
+					<ReactMarkdown
+						children={blog?.body}
+						components={{
+							code({ node, inline, className, children, ...props }) {
+								const match = /language-(\w+)/.exec(className || '');
+								return !inline && match ? (
+									<SyntaxHighlighter
+										children={String(children).replace(/\n$/, '')}
+										language={match[1]}
+										style={oneDark}
+										{...props}
+									/>
+								) : (
+									<code className={className} {...props}>
+										{children}
+									</code>
+								);
+							},
+						}}
+					/>
+				) : (
+					<ReactMarkdown
+						children={blog?.body}
+						components={{
+							code({ node, inline, className, children, ...props }) {
+								const match = /language-(\w+)/.exec(className || '');
+								return !inline && match ? (
+									<SyntaxHighlighter
+										children={String(children).replace(/\n$/, '')}
+										language={match[1]}
+										style={oneLight}
+										{...props}
+									/>
+								) : (
+									<code className={className} {...props}>
+										{children}
+									</code>
+								);
+							},
+						}}
+					/>
+				)}
 			</BlogDetail>
 		</div>
 	);
