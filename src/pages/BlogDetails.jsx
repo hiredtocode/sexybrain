@@ -11,8 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import DefaultImage from '../assets/img/default.jpg';
 import ReactMarkdown from 'react-markdown';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 
 const Detail = () => {
 	const { id } = useParams();
@@ -87,7 +86,6 @@ const Detail = () => {
 							return !inline && match ? (
 								<SyntaxHighlighter
 									children={String(children).replace(/\n$/, '')}
-									style={dark}
 									language={match[1]}
 									{...props}
 								/>
