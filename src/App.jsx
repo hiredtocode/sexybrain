@@ -46,16 +46,16 @@ function App() {
 	const lightTheme = {
 		colors: {
 			primary: '#087ea4',
-			primaryBackground: '#c6edff',
-			secondary: '#2b6e62',
+			primaryBackground: '#e1f5ff',
+			secondary: '#44ac99',
 			secondaryBackground: '#f4fbf9',
 			accent: '#575fb7',
 			accentBackground: '#f3f4fd',
 			active: '#e6f7ff',
 			body: '#ffffff',
 			subText: '#9ca3af',
-			strongAccent: '#fabd62',
-			strongAccentBackground: '#3e2c1e',
+			strongAccent: '#332316',
+			strongAccentBackground: '#ffc773',
 
 			header: 'transparent',
 			footer: '#003333',
@@ -83,8 +83,8 @@ function App() {
 	};
 	const darkTheme = {
 		colors: {
-			primary: '#087ea4',
-			primaryBackground: '#536b81',
+			primary: '#0a91be',
+			primaryBackground: '#023444',
 			secondary: '#44ac99',
 			secondaryBackground: '#243539',
 			active: '#243539',
@@ -108,7 +108,7 @@ function App() {
 			lineBreak: '#536263ff',
 			underline: '#107091',
 			input: '#3150ff',
-			highlight: '#575fb7',
+			highlight: '#023444',
 			titleBackgroundColor1: 'rgba(255, 255, 255, 0.014425753211440795)',
 			titleBackgroundColor2: '#343a46',
 			titleBackgroundColor3: 'rgba(252, 176, 69, 0)',
