@@ -82,53 +82,53 @@ const Detail = () => {
 						</div>
 					</Flex>
 				</div>
-
-				<ReactMarkdown
-					remarkPlugins={[remarkGfm]}
-					linkTarget='_blank'
-					children={blog?.body}
-					components={{
-						code({ node, inline, className, children, includeElementIndex, ...props }) {
-							const match = /language-(\w+)/.exec(className || '');
-
-							return !inline && match ? (
-								<SyntaxHighlighter
-									children={String(children).replace(/\n$/, '')}
-									language={match[1]}
-									style={oneDark}
-									{...props}
-								/>
-							) : (
-								<code className={className} {...props}>
-									{children}
-								</code>
-							);
-						},
-					}}
-				/>
-
-				<ReactMarkdown
-					remarkPlugins={[remarkGfm]}
-					linkTarget='_blank'
-					children={blog?.body}
-					components={{
-						code({ node, inline, className, children, includeElementIndex, ...props }) {
-							const match = /language-(\w+)/.exec(className || '');
-							return !inline && match ? (
-								<SyntaxHighlighter
-									children={String(children).replace(/\n$/, '')}
-									language={match[1]}
-									style={oneLight}
-									{...props}
-								/>
-							) : (
-								<code className={className} {...props}>
-									{children}
-								</code>
-							);
-						},
-					}}
-				/>
+				{isDark ? (
+					<ReactMarkdown
+						remarkPlugins={[remarkGfm]}
+						linkTarget='_blank'
+						children={blog?.body}
+						components={{
+							code({ node, inline, className, children, includeElementIndex, ...props }) {
+								const match = /language-(\w+)/.exec(className || '');
+								return !inline && match ? (
+									<SyntaxHighlighter
+										children={String(children).replace(/\n$/, '')}
+										language={match[1]}
+										style={oneDark}
+										{...props}
+									/>
+								) : (
+									<code className={className} {...props}>
+										{children}
+									</code>
+								);
+							},
+						}}
+					/>
+				) : (
+					<ReactMarkdown
+						remarkPlugins={[remarkGfm]}
+						linkTarget='_blank'
+						children={blog?.body}
+						components={{
+							code({ node, inline, className, children, includeElementIndex, ...props }) {
+								const match = /language-(\w+)/.exec(className || '');
+								return !inline && match ? (
+									<SyntaxHighlighter
+										children={String(children).replace(/\n$/, '')}
+										language={match[1]}
+										style={oneLight}
+										{...props}
+									/>
+								) : (
+									<code className={className} {...props}>
+										{children}
+									</code>
+								);
+							},
+						}}
+					/>
+				)}
 			</BlogDetail>
 		</div>
 	);
