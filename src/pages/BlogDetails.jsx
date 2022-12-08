@@ -12,9 +12,9 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import DefaultImage from '../assets/img/default.jpg';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { oneDark, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { ThemeContext } from '../App';
+import remarkGfm from 'remark-gfm';
 
 const Detail = () => {
 	const { id } = useParams();
@@ -82,49 +82,53 @@ const Detail = () => {
 						</div>
 					</Flex>
 				</div>
-				{isDark ? (
-					<ReactMarkdown
-						children={blog?.body}
-						components={{
-							code({ node, inline, className, children, ...props }) {
-								const match = /language-(\w+)/.exec(className || '');
-								return !inline && match ? (
-									<SyntaxHighlighter
-										children={String(children).replace(/\n$/, '')}
-										language={match[1]}
-										style={oneDark}
-										{...props}
-									/>
-								) : (
-									<code className={className} {...props}>
-										{children}
-									</code>
-								);
-							},
-						}}
-					/>
-				) : (
-					<ReactMarkdown
-						children={blog?.body}
-						components={{
-							code({ node, inline, className, children, ...props }) {
-								const match = /language-(\w+)/.exec(className || '');
-								return !inline && match ? (
-									<SyntaxHighlighter
-										children={String(children).replace(/\n$/, '')}
-										language={match[1]}
-										style={oneLight}
-										{...props}
-									/>
-								) : (
-									<code className={className} {...props}>
-										{children}
-									</code>
-								);
-							},
-						}}
-					/>
-				)}
+
+				<ReactMarkdown
+					remarkPlugins={[remarkGfm]}
+					linkTarget='_blank'
+					children={blog?.body}
+					components={{
+						code({ node, inline, className, children, includeElementIndex, ...props }) {
+							const match = /language-(\w+)/.exec(className || '');
+
+							return !inline && match ? (
+								<SyntaxHighlighter
+									children={String(children).replace(/\n$/, '')}
+									language={match[1]}
+									style={oneDark}
+									{...props}
+								/>
+							) : (
+								<code className={className} {...props}>
+									{children}
+								</code>
+							);
+						},
+					}}
+				/>
+
+				<ReactMarkdown
+					remarkPlugins={[remarkGfm]}
+					linkTarget='_blank'
+					children={blog?.body}
+					components={{
+						code({ node, inline, className, children, includeElementIndex, ...props }) {
+							const match = /language-(\w+)/.exec(className || '');
+							return !inline && match ? (
+								<SyntaxHighlighter
+									children={String(children).replace(/\n$/, '')}
+									language={match[1]}
+									style={oneLight}
+									{...props}
+								/>
+							) : (
+								<code className={className} {...props}>
+									{children}
+								</code>
+							);
+						},
+					}}
+				/>
 			</BlogDetail>
 		</div>
 	);
