@@ -83,3 +83,87 @@ export const Author = styled.p`
 	font-weight: 500;
 	font-size: 1.2rem;
 `;
+
+export const MarkdownContainer = styled.div`
+	h2 {
+		font-size: 1.7rem;
+	}
+	h3 {
+		font-size: 1.4rem;
+	}
+	// Line breaks
+	hr {
+		border: none;
+		border-top: 3px double ${({ theme }) => theme.colors.lineBreak};
+		color: ${({ theme }) => theme.colors.primary};
+		overflow: visible;
+		text-align: center;
+		height: 5px;
+		width: 100%;
+	}
+
+	hr:after {
+		background: ${({ theme }) => theme.colors.body};
+		content: '§';
+		padding: 0 4px;
+		position: relative;
+		top: -13px;
+		transition: 1s;
+	}
+	// Line breaks END
+	// Codeblock
+	code {
+		padding: 2px 4px;
+		color: ${({ theme }) => theme.colors.secondary};
+		background-color: ${({ theme }) => theme.colors.secondaryBackground};
+		border-radius: 4px;
+	}
+	// Codeblock END
+
+	p img {
+		max-width: 35%;
+	}
+
+	blockquote {
+		border-left: 5px solid ${({ theme }) => theme.colors.lineBreak};
+		margin: 0 0 20px;
+		padding: 10px 20px;
+		font-weight: 600;
+	}
+
+	pre {
+		padding: 9.5px;
+		border-radius: 4px;
+		line-height: 1.42857143;
+		color: ${({ theme }) => theme.colors.secondary};
+		border: 1px solid ${({ theme }) => theme.colors.lineBreak};
+		background-color: ${({ theme }) => theme.colors.card};
+		word-wrap: break-word;
+	}
+
+	a:link,
+	a:active {
+		color: ${({ theme }) => theme.colors.secondary};
+		background-color: transparent;
+		text-decoration: none;
+	}
+
+	a:visited,
+	a:hover {
+		color: ${({ theme }) => theme.colors.primary};
+		background-color: transparent;
+		text-decoration: none;
+	}
+
+	thead {
+		background-color: ${({ theme }) => theme.colors.card};
+	}
+	th {
+		border-bottom: 2px solid ${({ theme }) => theme.colors.subText};
+	}
+
+	tr td {
+		border-top: 1px solid ${({ theme }) => theme.colors.subText};
+		padding: 8px;
+	}
+`;
