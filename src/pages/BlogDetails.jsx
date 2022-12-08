@@ -15,6 +15,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { ThemeContext } from '../App';
 import remarkGfm from 'remark-gfm';
+import '../components/test.scss';
 
 const Detail = () => {
 	const { id } = useParams();
