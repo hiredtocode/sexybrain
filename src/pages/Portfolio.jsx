@@ -100,8 +100,12 @@ const Portfolio = () => {
 												<div>
 													<H3>{project.title}</H3>
 												</div>
-												<GithubButtonForPortfolio link={project.githubRepo} />
-												<LinkButton link={project.hyperlink} title={project.title} />
+												{project.githubRepo ? (
+													<GithubButtonForPortfolio link={project.githubRepo} />
+												) : null}
+												{project.hyperlink ? (
+													<LinkButton link={project.hyperlink} title={project.title} />
+												) : null}
 											</Flex>
 											<span className='subText'> {project.date} </span>
 

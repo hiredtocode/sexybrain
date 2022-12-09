@@ -15,8 +15,8 @@
 		"date": "",
 		"image": "api.svg",
 		"description": "API 프로젝트 진행중",
-		"githubRepo": "#",
-		"hyperlink": "#",
+		"githubRepo": "",
+		"hyperlink": "",
 		"stack": ["Angular", "CSS", "HTML"]
 	},
 	{
@@ -25,8 +25,8 @@
 		"date": "2020 ~ 진행중",
 		"image": "VSCode-theme.jpg",
 		"description": "VS Code theme을 제작.",
-		"githubRepo": "#",
-		"hyperlink": "#",
+		"githubRepo": "",
+		"hyperlink": "",
 		"stack": ["JavaScript", "VSCode"]
 	}
 ]
