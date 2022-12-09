@@ -17,10 +17,14 @@ import { ThemeContext } from '../App';
 import remarkGfm from 'remark-gfm';
 import { MarkdownContainer } from '../components/styles/BlogDetails.styled.js';
 
-const Detail = () => {
+const PostDetailPage = (props) => {
 	const { id } = useParams();
 	const [blog, setBlog] = useState(null);
 	const { isDark } = useContext(ThemeContext);
+	const { user } = props;
+	const userId = user?.uid;
+
+	console.log('userId:', userId);
 
 	useEffect(() => {
 		id && getBlogDetail();
@@ -68,15 +72,17 @@ const Detail = () => {
 						{blog?.timestamp.toDate().toDateString()}
 					</div>
 					<Flex direction={'row'} align='center'>
-						<Link to={`/update/${id}`}>
-							<FontAwesomeIcon
-								icon={faEdit}
-								name='edit'
-								style={{ cursor: 'pointer', paddingRight: '10px', textDecoration: 'none' }}
-								size='2x'
-								aria-label={id}
-							/>
-						</Link>
+						{userId ? (
+							<Link to={`/update/${id}`}>
+								<FontAwesomeIcon
+									icon={faEdit}
+									name='edit'
+									style={{ cursor: 'pointer', paddingRight: '10px', textDecoration: 'none' }}
+									size='2x'
+									aria-label={id}
+								/>
+							</Link>
+						) : null}
 						<div style={{ paddingRight: '10px' }}>Tags:</div>
 						<div>
 							<Tags tags={blog?.tags} />
@@ -135,4 +141,4 @@ const Detail = () => {
 	);
 };
 
-export default Detail;
+export default PostDetailPage;
