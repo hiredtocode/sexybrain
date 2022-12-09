@@ -92,7 +92,8 @@ export const LoginButton = styled.button`
 	width: 100%;
 	margin-top: 20px;
 	padding: 10px 15px;
-	background-color: ${({ theme }) => theme.colors.button};
+	background-color: ${({ theme }) => theme.colors.primary};
+
 	color: ${({ theme }) => theme.colors.font};
 
 	&:hover {
