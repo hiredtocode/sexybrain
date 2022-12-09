@@ -6,6 +6,12 @@ export const BlogTitleBox = styled.div`
 	background-repeat: no-repeat;
 	background-position: center center;
 
+	h2 {
+		color: white;
+		font-weight: 300;
+		font-size: 3.5rem;
+	}
+
 	.single & {
 		position: relative;
 		height: 350px;
@@ -32,13 +38,6 @@ export const BlogTitleBox = styled.div`
 			text-align: center;
 		}
 
-		h2 {
-			color: white;
-			font-weight: 300;
-			.single & {
-				font-size: 72px;
-			}
-		}
 		> span {
 			display: block;
 			color: rgba(255, 255, 255, 0.5);
@@ -47,6 +46,29 @@ export const BlogTitleBox = styled.div`
 			letter-spacing: 0.05em;
 			margin-bottom: 10px;
 		}
+	}
+
+	/* xs: '575.98px' */
+	@media (max-width: ${({ theme }) => theme.xs}) {
+		h2 {
+			color: white;
+			font-weight: 300;
+			font-size: 2rem;
+		}
+	}
+	/* s: '767.98px'  */
+	@media (max-width: ${({ theme }) => theme.s}) {
+		h2 {
+			color: white;
+			font-weight: 300;
+			font-size: 2.5rem;
+		}
+	}
+	/* md: '991.98px'  */
+	@media (max-width: ${({ theme }) => theme.md}) {
+	}
+	/* lg: '1199.98px'  */
+	@media (max-width: ${({ theme }) => theme.lg}) {
 	}
 `;
 
@@ -76,6 +98,23 @@ export const BlogDetail = styled.div`
 		padding: 0 20px;
 		padding-bottom: 15px;
 		color: ${({ theme }) => theme.colors.font};
+	}
+
+	/* xs: '575.98px' */
+	@media (max-width: ${({ theme }) => theme.xs}) {
+	}
+	/* s: '767.98px'  */
+	@media (max-width: ${({ theme }) => theme.s}) {
+		.authorInfo {
+			font-size: 1rem;
+			flex-direction: column;
+		}
+	}
+	/* md: '991.98px'  */
+	@media (max-width: ${({ theme }) => theme.md}) {
+	}
+	/* lg: '1199.98px'  */
+	@media (max-width: ${({ theme }) => theme.lg}) {
 	}
 `;
 export const Author = styled.p`
