@@ -110,7 +110,8 @@ export const CategoryMark = styled.div`
 
 export const Date = styled.div`
 	display: flex;
-	flex: 1 1 35%;
+	flex: 1 1;
+	min-width: 190px;
 	flex-direction: column;
 	justify-content: flex-start;
 	transition: 0.7s;
@@ -126,13 +127,19 @@ export const Date = styled.div`
 	/* s: '767.98px'  */
 	@media (max-width: ${({ theme }) => theme.s}) {
 		margin-left: auto;
-		transition: 0.7s;
 		font-size: 0.9rem;
+		flex-direction: column;
+		span {
+			font-size: 0.9rem;
+		}
 	}
 	/* md: '991.98px'  */
 	@media (max-width: ${({ theme }) => theme.md}) {
 		margin-left: auto;
 		padding-right: 0;
+		flex-direction: row;
+		justify-content: space-around;
+		width: 100%;
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
@@ -157,17 +164,15 @@ export const Box = styled.div`
 	@media (max-width: ${({ theme }) => theme.s}) {
 		padding-left: 0;
 		z-index: 5;
-		transition: 0.7s;
 		h2 {
 			width: 100%;
-			text-align: left;
 			transition: 0.7s;
 		}
 	}
 	/* md: '991.98px'  */
 	@media (max-width: ${({ theme }) => theme.md}) {
 		align-items: flex-start;
-		transition: 0.7s;
+		flex-direction: column-reverse;
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
@@ -193,8 +198,6 @@ export const Description = styled.div`
 		margine: 0 auto;
 		z-index: 10;
 		opacity: 1;
-		color: white;
-		transition: 0.7s;
 
 		font-size: 0.9rem;
 
@@ -206,7 +209,6 @@ export const Description = styled.div`
 	/* md: '991.98px'  */
 	@media (max-width: ${({ theme }) => theme.md}) {
 		padding-right: 0;
-		transition: 0.7s;
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {

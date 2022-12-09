@@ -82,10 +82,14 @@ export default function Card(props) {
 								<Box>
 									<H2>{item.title}</H2>
 									<Date>
-										<span>Created: {item.createdTimestamp.toDate().toDateString()}</span>
-										{item.lastUpdatedTimestamp ? (
-											<span>Edited: {item.lastUpdatedTimestamp?.toDate().toDateString()}</span>
-										) : null}
+										<div>
+											<span>Created: {item.createdTimestamp.toDate().toDateString()}</span>
+										</div>
+										<div>
+											{item.lastUpdatedTimestamp ? (
+												<span>Edited: {item.lastUpdatedTimestamp?.toDate().toDateString()}</span>
+											) : null}
+										</div>
 									</Date>
 								</Box>
 								<Description>
