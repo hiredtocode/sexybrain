@@ -11,6 +11,24 @@ const GlobalStyles = createGlobalStyle`
 	theme.colors.body};
   scrollbar-width: thin;
 	/* Firefox scrollbar END */
+
+
+			/* xs: '575.98px' */
+		@media (max-width: ${({ theme }) => theme.xs}) {
+			transition: 0.5s;
+		}
+		/* s: '767.98px'  */
+		@media (max-width: ${({ theme }) => theme.s}) {
+			transition: 0.5s;
+		}
+		/* md: '991.98px'  */
+		@media (max-width: ${({ theme }) => theme.md}) {
+			transition: 0.5s;
+		}
+		/* lg: '1199.98px'  */
+		@media (max-width: ${({ theme }) => theme.lg}) {
+			transition: 0.5s;
+		}
 }
 
 /* Chrome, Edge, Safari */
