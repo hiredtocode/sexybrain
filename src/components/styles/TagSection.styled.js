@@ -37,7 +37,6 @@ export const TagSection = styled.div`
 
 		p {
 			z-index: 11;
-			color: white;
 		}
 	}
 	/* md: '991.98px'  */

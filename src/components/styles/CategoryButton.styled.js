@@ -73,7 +73,6 @@ const CategoryButton = styled.button`
 			${({ theme }) => theme.colors.hover},
 			${({ theme }) => theme.colors.hovered}
 		);
-		color: white;
 		box-shadow: 2px 2px 2px ${({ theme }) => theme.colors.primary};
 	}
 

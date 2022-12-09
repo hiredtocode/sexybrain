@@ -9,6 +9,7 @@ export const H2 = styled.h2`
 	font-size: 1.8rem;
 	transition: 0.7s;
 	z-index: 2000;
+
 	color: ${({ theme }) => theme.colors.font};
 
 	/* xs: '575.98px' */
@@ -18,9 +19,7 @@ export const H2 = styled.h2`
 	@media (max-width: ${({ theme }) => theme.s}) {
 		z-index: 10;
 		opacity: 1;
-		color: white;
 		font-size: 1.4rem;
-		transition: 0.7s;
 	}
 	/* md: '991.98px'  */
 	@media (max-width: ${({ theme }) => theme.md}) {
