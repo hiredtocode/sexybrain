@@ -110,12 +110,14 @@ export const CategoryMark = styled.div`
 
 export const Date = styled.div`
 	display: flex;
-	flex: 1 1 30%;
-	justify-content: flex-end;
+	flex: 1 1 35%;
+	flex-direction: column;
+	justify-content: flex-start;
 	transition: 0.7s;
 	text-align: right;
 	span {
 		color: ${({ theme }) => theme.colors.primary};
+		font-size: 1rem;
 	}
 
 	/* xs: '575.98px' */
