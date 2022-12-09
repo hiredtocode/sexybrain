@@ -1,5 +1,9 @@
 import styled from 'styled-components/macro';
 
+export const PortFolioContainer = styled.main`
+	display: flex;
+`;
+
 export const ProjectContainer = styled.section`
 	display: flex;
 	align-items: center;
@@ -78,27 +82,6 @@ export const Stack = styled.div`
 	margin-right: 5px;
 	padding-top: 10px;
 	justify-content: flex-start;
-`;
-
-export const FilterContainer = styled.div`
-	display: flex;
-	flex-direction: column;
-	min-width: 200px;
-	font-size: 1.1rem;
-	ul {
-		padding-left: 0;
-		margin-top: 0;
-	}
-	ul li {
-		list-style: none;
-	}
-
-	ul li:hover {
-		&:hover {
-			color: ${({ theme }) => theme.colors.strongAccent};
-			cursor: pointer;
-		}
-	}
 `;
 
 export const StackButton = styled.div`
@@ -222,12 +205,47 @@ export const GithubLink = styled.img`
 `;
 
 // Github button styling
+export const FilterContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	min-width: 200px;
+	font-size: 1.1rem;
+	ul {
+		padding-left: 0;
+		margin-top: 0;
+	}
+	ul li {
+		list-style: none;
+	}
+
+	ul li:hover {
+		&:hover {
+			color: ${({ theme }) => theme.colors.strongAccent};
+			cursor: pointer;
+		}
+	}
+
+	/* xs: '575.98px' */
+	@media (max-width: ${({ theme }) => theme.xs}) {
+	}
+	/* s: '767.98px'  */
+	@media (max-width: ${({ theme }) => theme.s}) {
+	}
+	/* md: '991.98px'  */
+	@media (max-width: ${({ theme }) => theme.md}) {
+		min-width: 150px;
+	}
+	/* lg: '1199.98px'  */
+	@media (max-width: ${({ theme }) => theme.lg}) {
+	}
+`;
 
 export const CategoryFilter = styled.div`
 	margin: 3px 3px;
 	display: flex;
 	padding: 5px 10px;
 	align-items: center;
+	height: 30px;
 	max-height: 40px;
 	justify-content: center;
 	border-radius: 10px;
@@ -235,17 +253,25 @@ export const CategoryFilter = styled.div`
 	font-size: 1.1rem;
 	border: 1px solid ${({ theme }) => theme.colors.primary};
 
-	img {
-		max-width: 35px;
-		padding: 0 5px;
-	}
-	p {
-		color: ${({ theme }) => theme.colors.font};
+	color: ${({ theme }) => theme.colors.font};
+	padding: 0 4px;
 
-		padding: 0 4px;
-	}
 	&:hover {
 		color: ${({ theme }) => theme.colors.strongAccent};
 		cursor: pointer;
+	}
+
+	/* xs: '575.98px' */
+	@media (max-width: ${({ theme }) => theme.xs}) {
+	}
+	/* s: '767.98px'  */
+	@media (max-width: ${({ theme }) => theme.s}) {
+	}
+	/* md: '991.98px'  */
+	@media (max-width: ${({ theme }) => theme.md}) {
+		font-size: 0.9rem;
+	}
+	/* lg: '1199.98px'  */
+	@media (max-width: ${({ theme }) => theme.lg}) {
 	}
 `;
