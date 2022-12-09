@@ -67,9 +67,11 @@ const PostDetailPage = (props) => {
 
 			<BlogDetail>
 				<div className='authorInfo'>
+					<div>Written on: {blog?.createdTimestamp.toDate().toDateString()}</div>
 					<div>
-						By <Author>{blog?.author}</Author> -&nbsp;
-						{blog?.createdTimestamp.toDate().toDateString()}
+						{blog.lastUpdatedTimestamp ? (
+							<span>Last edited: {blog.lastUpdatedTimestamp?.toDate().toDateString()}</span>
+						) : null}
 					</div>
 					<Flex direction={'row'} align='center'>
 						{userId ? (
