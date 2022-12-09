@@ -3,7 +3,7 @@ import { doc, getDoc } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 import Tags from '../components/Tags';
 import { db } from '../firebase.config';
-import { BlogTitleBox, Author, BlogDetail } from '../components/styles/BlogDetails.styled.js';
+import { BlogTitleBox, BlogDetail } from '../components/styles/BlogDetails.styled.js';
 import Flex from '../components/styles/Flex.styled.js';
 import { H2 } from '../components/styles/Title.styled.js';
 import { Link } from 'react-router-dom';
@@ -24,53 +24,41 @@ const PostDetailPage = (props) => {
 	const { user } = props;
 	const userId = user?.uid;
 
-	console.log('userId:', userId);
-
 	useEffect(() => {
 		id && getBlogDetail();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [id]);
+
 	const getBlogDetail = async () => {
 		const docRef = doc(db, 'blogPosts', id);
 		const blogDetail = await getDoc(docRef);
 		setBlog(blogDetail.data());
 	};
+
 	return (
 		<div className='single' style={{ flexGrow: '1' }}>
 			{/* Show default image if no image was uploaded */}
-			{blog?.imgUrl ? (
-				<BlogTitleBox
-					style={{
-						backgroundImage: `url('${blog?.imgUrl}')`,
-					}}
-				>
-					<div className='overlay'></div>
-					<div className='blog-title'>
-						<span>{blog?.createdTimestamp.toDate().toDateString()}</span>
-						<H2>{blog?.title}</H2>
-					</div>
-				</BlogTitleBox>
-			) : (
-				<BlogTitleBox
-					style={{
-						backgroundImage: `url('${DefaultImage}')`,
-					}}
-				>
-					<div className='overlay'></div>
-					<div className='blog-title'>
-						<span>{blog?.createdTimestamp.toDate().toDateString()}</span>
-						<H2>{blog?.title}</H2>
-					</div>
-				</BlogTitleBox>
-			)}
-			{/* Show default image if no image was uploaded END */}
+			<BlogTitleBox
+				style={
+					blog?.imgUrl
+						? { backgroundImage: `url('${blog?.imgUrl}')` }
+						: { backgroundImage: `url('${DefaultImage}')` }
+				}
+			>
+				<div className='overlay'></div>
+				<div className='blog-title'>
+					<span>{blog?.createdTimestamp.toDate().toDateString()}</span>
+					<H2>{blog?.title}</H2>
+				</div>
+			</BlogTitleBox>
 
+			{/* Show default image if no image was uploaded END */}
 			<BlogDetail>
 				<div className='authorInfo'>
 					<div>Written on: {blog?.createdTimestamp.toDate().toDateString()}</div>
 					<div>
-						{blog.lastUpdatedTimestamp ? (
-							<span>Last edited: {blog.lastUpdatedTimestamp?.toDate().toDateString()}</span>
+						{blog?.lastUpdatedTimestamp ? (
+							<span>Last edited: {blog?.lastUpdatedTimestamp?.toDate().toDateString()}</span>
 						) : null}
 					</div>
 					<Flex direction={'row'} align='center'>
