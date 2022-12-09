@@ -208,10 +208,7 @@ const AddEdit = (props) => {
 				</Form>
 			</FormContainer>
 			<MarkdownContainer>
-				<ReactMarkdown
-					// rehypePlugins={[rehypeHighlight]}
-					children={body ?? ''}
-				/>
+				<ReactMarkdown children={body} />
 			</MarkdownContainer>
 		</>
 	);
