@@ -15,33 +15,16 @@ const GithubButton = () => {
 			target='_blank'
 			rel='noreferrer'
 		>
-			{isDark ? (
-				<>
-					<GithubTop
-						src={Github}
-						alt='Github top Icon'
-						aria-label='Click to go to my github page'
-					/>
-					<GithubBottom
-						src={GithubWhite}
-						alt='Github bottom icon'
-						aria-label='Click to go to my github page'
-					/>
-				</>
-			) : (
-				<>
-					<GithubTop
-						src={GithubWhite}
-						alt='Github top icon'
-						aria-label='Click to go to my github page'
-					/>
-					<GithubBottom
-						src={GithubBlack}
-						alt='Github bottom icon'
-						aria-label='Click to go to my github page'
-					/>
-				</>
-			)}
+			<GithubTop
+				src={isDark ? Github : GithubWhite}
+				alt='Github top Icon'
+				aria-label='Click to go to my github page'
+			/>
+			<GithubBottom
+				src={isDark ? GithubWhite : GithubBlack}
+				alt='Github bottom icon'
+				aria-label='Click to go to my github page'
+			/>
 		</GithubIconContainer>
 	);
 };
