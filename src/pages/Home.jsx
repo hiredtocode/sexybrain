@@ -58,9 +58,9 @@ const Home = (props) => {
 
 	//This block retrieves blog posts from firebase by latest timestamp
 	useEffect(() => {
-		const timestamp = query(blogCollectionRef, orderBy('timestamp', 'desc'));
+		const createdTimestamp = query(blogCollectionRef, orderBy('createdTimestamp', 'desc'));
 		const list = onSnapshot(
-			timestamp,
+			createdTimestamp,
 			(snapshot) => {
 				let tags = [];
 				let list = [];

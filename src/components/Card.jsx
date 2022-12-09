@@ -82,7 +82,8 @@ export default function Card(props) {
 								<Box>
 									<H2>{item.title}</H2>
 									<Date>
-										<span>{item.timestamp.toDate().toDateString()}</span>
+										<span>작성:{item.createdTimestamp.toDate().toDateString()}</span>
+										<span>업데이트:{item.lastUpdatedTimestamp?.toDate().toDateString()}</span>
 									</Date>
 								</Box>
 								<Description>

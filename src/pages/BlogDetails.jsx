@@ -46,7 +46,7 @@ const PostDetailPage = (props) => {
 				>
 					<div className='overlay'></div>
 					<div className='blog-title'>
-						<span>{blog?.timestamp.toDate().toDateString()}</span>
+						<span>{blog?.createdTimestamp.toDate().toDateString()}</span>
 						<H2>{blog?.title}</H2>
 					</div>
 				</BlogTitleBox>
@@ -58,7 +58,7 @@ const PostDetailPage = (props) => {
 				>
 					<div className='overlay'></div>
 					<div className='blog-title'>
-						<span>{blog?.timestamp.toDate().toDateString()}</span>
+						<span>{blog?.createdTimestamp.toDate().toDateString()}</span>
 						<H2>{blog?.title}</H2>
 					</div>
 				</BlogTitleBox>
@@ -69,7 +69,7 @@ const PostDetailPage = (props) => {
 				<div className='authorInfo'>
 					<div>
 						By <Author>{blog?.author}</Author> -&nbsp;
-						{blog?.timestamp.toDate().toDateString()}
+						{blog?.createdTimestamp.toDate().toDateString()}
 					</div>
 					<Flex direction={'row'} align='center'>
 						{userId ? (

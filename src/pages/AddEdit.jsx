@@ -122,7 +122,7 @@ const AddEdit = (props) => {
 				try {
 					await addDoc(blogCollectionRef, {
 						...form,
-						timestamp: serverTimestamp(),
+						createdTimestamp: serverTimestamp(),
 						author: user.displayName,
 						userId: user.uid,
 					});
@@ -134,7 +134,7 @@ const AddEdit = (props) => {
 				try {
 					await updateDoc(doc(db, 'blogPosts', id), {
 						...form,
-						timestamp: serverTimestamp(),
+						lastUpdatedTimestamp: serverTimestamp(),
 						author: user.displayName,
 						userId: user.uid,
 					});
