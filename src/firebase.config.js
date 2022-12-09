@@ -4,6 +4,7 @@ import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 import { getAuth } from 'firebase/auth';
 import { getFunctions } from 'firebase/functions';
+import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
 
 const firebaseConfig = {
 	apiKey: process.env.REACT_APP_FIREBASE_KEY,
@@ -18,9 +19,14 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const appCheck = initializeAppCheck(app, {
+	provider: new ReCaptchaV3Provider(process.env.REACT_APP_CAPTCHA_APPCHECK),
+	isTokenAutoRefreshEnabled: true,
+});
 const auth = getAuth(app);
 const storage = getStorage(app);
 const db = getFirestore(app);
 const functions = getFunctions(app);
+
 // const analytics = getAnalytics(app);
 export { auth, db, storage, functions };
