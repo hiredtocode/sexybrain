@@ -76,3 +76,4 @@ Thumbs.db
 src/environments/*
 .vscode/launch.json
 firebase-debug.log
+src/markdown/article.md
