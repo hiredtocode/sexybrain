@@ -81,7 +81,7 @@ const AddEdit = (props) => {
 		return () => uploadFile();
 	}, [file]);
 	// Upload file end
-
+	// Get blog post
 	useEffect(() => {
 		id && getBlogDetail();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -94,6 +94,7 @@ const AddEdit = (props) => {
 			setForm({ ...snapshot.data() });
 		}
 	};
+	// Get blog post END
 
 	const onCategoryChange = (e) => {
 		setForm({ ...form, category: e.target.value });
@@ -146,7 +147,7 @@ const AddEdit = (props) => {
 		} else {
 			return toast.error('All fields are mandatory to fill');
 		}
-		navigate('/');
+		navigate(`/`);
 	};
 	// Submit handle end
 
