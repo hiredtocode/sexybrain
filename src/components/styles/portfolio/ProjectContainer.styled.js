@@ -83,21 +83,11 @@ export const ProjectCard = styled.div`
 			transition: 0.5s;
 		}
 	}
-	.responsive {
-		display: flex;
-		flex-grow: 1;
-
-		flex-direction: row;
-	}
 
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
 		.image {
 			display: none;
-		}
-		.responsive {
-			display: flex;
-			flex-direction: column;
 		}
 	}
 	/* s: '767.98px'  */
@@ -119,27 +109,17 @@ export const ProjectCard = styled.div`
 			max-width: 100%;
 			min-width: 400px;
 		}
-		.responsive {
-			display: flex;
-			flex-direction: column;
-		}
-		.order {
-			order: 1;
-		}
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
+		flex-direction: column;
 		.image {
 			height: 300px;
 			object-fit: cover;
 			opacity: 0.7;
 			min-width: 100%;
 		}
-		.responsive {
-			display: flex;
-			flex-direction: column;
-		}
-	} ;
+	}
 `;
 
 export const ProjectDescription = styled.div`
@@ -161,16 +141,16 @@ export const Stack = styled.div`
 	}
 	/* s: '767.98px'  */
 	@media (max-width: ${({ theme }) => theme.s}) {
-		flex-direction: row;
-		justify-content: space-evenly;
-		margin-bottom: 10px;
 	}
 	/* md: '991.98px'  */
 	@media (max-width: ${({ theme }) => theme.md}) {
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
-	} ;
+		flex-direction: row;
+		justify-content: space-evenly;
+		margin-bottom: 10px;
+	}
 `;
 
 export const StackButton = styled.div`
@@ -215,16 +195,16 @@ export const StackButton = styled.div`
 	}
 	/* s: '767.98px'  */
 	@media (max-width: ${({ theme }) => theme.s}) {
-		writing-mode: inherit;
-		text-orientation: inherit;
-		align-items: center;
-		flex-direction: column-reverse;
 	}
 	/* md: '991.98px'  */
 	@media (max-width: ${({ theme }) => theme.md}) {
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
+		writing-mode: inherit;
+		text-orientation: inherit;
+		align-items: center;
+		flex-direction: column-reverse;
 	}
 `;
 
@@ -309,6 +289,7 @@ export const FilterContainer = styled.div`
 	}
 	ul li {
 		list-style: none;
+		align-items: flex-start;
 	}
 
 	ul li:hover {
@@ -324,10 +305,10 @@ export const FilterContainer = styled.div`
 	/* s: '767.98px'  */
 	@media (max-width: ${({ theme }) => theme.s}) {
 		flex-direction: row;
-
 		ul {
 			display: flex;
 			flex-wrap: wrap;
+			align-items: center;
 		}
 	}
 	/* md: '991.98px'  */
