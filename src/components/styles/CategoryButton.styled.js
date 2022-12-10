@@ -1,9 +1,9 @@
 import styled from 'styled-components/macro';
 
 const CategoryButton = styled.button`
+	display: flex;
 	border-radius: 8px;
 	border: none;
-	display: flex;
 	cursor: pointer;
 	font-size: 1rem;
 	font-weight: 500;
@@ -15,6 +15,7 @@ const CategoryButton = styled.button`
 	width: 47%;
 	flex-wrap: wrap;
 	justify-content: flex-start;
+	align-items: center;
 	opacity: 0.8;
 	box-shadow: 1px 1px 1px ${({ theme }) => theme.colors.primary};
 
