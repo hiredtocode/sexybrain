@@ -71,6 +71,11 @@ const Header = (props) => {
 					<span></span>
 					<span></span>
 				</HamburgerMenu>
+				<MobileNav className={isActive ? 'isActive' : ''}>
+					<NavLink to='/'>블로그</NavLink>
+					<NavLink to='/resume'>이력서</NavLink>
+					<NavLink to='/portfolio'>포트폴리오</NavLink>
+				</MobileNav>
 			</Nav>
 		</StyledHeader>
 	);

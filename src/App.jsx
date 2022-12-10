@@ -98,7 +98,7 @@ function App() {
 			header: 'transparent',
 			footer: '#2E3445',
 			button: '#343a46',
-			font: '#f6f7f9',
+			font: '#d4d4d4',
 			card: '#343a46',
 			hover: '#4b6269',
 			hovered: '#149eca',

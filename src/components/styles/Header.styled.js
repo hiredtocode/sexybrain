@@ -46,8 +46,7 @@ export const LinkContainer = styled.header`
 	justify-content: center;
 	align-items: center;
 
-	/* md: '991.98px'  */
-	@media (max-width: ${({ theme }) => theme.md}) {
+	@media (max-width: ${({ theme }) => theme.s}) {
 		display: none;
 	}
 `;
@@ -100,8 +99,51 @@ export const HamburgerMenu = styled.button`
 		background-color: ${({ theme }) => theme.colors.primary};
 	}
 
+	@media (min-width: ${({ theme }) => theme.s}) {
+		display: none;
+	}
+`;
+
+export const MobileNav = styled.button`
+	position: fixed;
+	top: 0;
+	right: -100%;
+	width: 150px;
+	min-height: 100vh;
+	display: block;
+	background-color: ${({ theme }) => theme.colors.primaryBackground};
+	font-size: 1.2rem;
+	font-weight: 700;
+	transition: 0.3s;
+
+	a {
+		display: block;
+		min-width: 50%;
+		margin: 15px auto;
+		text-align: center;
+		padding: 12px 16px;
+		background-color: ${({ theme }) => theme.colors.button};
+		color: ${({ theme }) => theme.colors.font};
+		text-decoration: none;
+
+		&:hover {
+			transition: 0.8s;
+			box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+			background: linear-gradient(
+				135deg,
+				${({ theme }) => theme.colors.hover},
+				${({ theme }) => theme.colors.hovered}
+			);
+			color: white;
+		}
+	}
+
+	&.isActive {
+		right: 0;
+	}
+
 	/* md: '991.98px'  */
-	@media (min-width: ${({ theme }) => theme.md}) {
+	@media (min-width: ${({ theme }) => theme.s}) {
 		display: none;
 	}
 `;
