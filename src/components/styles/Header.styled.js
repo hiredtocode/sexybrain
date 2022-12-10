@@ -55,6 +55,7 @@ export const HamburgerMenu = styled.button`
 	display: block;
 	position: relative;
 	z-index: 1;
+	margin-left: 15px;
 
 	user-select: none;
 
@@ -104,10 +105,11 @@ export const HamburgerMenu = styled.button`
 	}
 `;
 
-export const MobileNav = styled.button`
+export const MobileNav = styled.div`
 	position: fixed;
 	top: 0;
 	right: -100%;
+	margin-top: 70px;
 	width: 250px;
 	min-height: 100vh;
 	display: block;
