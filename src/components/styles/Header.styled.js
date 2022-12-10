@@ -143,6 +143,10 @@ export const MobileNav = styled.div`
 	&.isActive {
 		right: 0;
 	}
+	// Hide mobile menu if window size is greater than theme.s
+	@media (min-width: ${({ theme }) => theme.s}) {
+		display: none;
+	}
 `;
 
 export const ShowOnWebContainer = styled.div`
@@ -154,6 +158,7 @@ export const ShowOnWebContainer = styled.div`
 		display: none;
 	}
 `;
+
 export const ShowOnMobileContainer = styled.div`
 	display: flex;
 	align-items: center;
