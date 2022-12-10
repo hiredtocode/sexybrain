@@ -139,8 +139,6 @@ function App() {
 	return (
 		<ThemeContext.Provider value={value}>
 			<ThemeProvider theme={isDark ? darkTheme : lightTheme}>
-				<UnderConstruction />
-
 				<GlobalStyles />
 				<Header user={user} handleLogout={handleLogout} />
 				<ToastContainer position='bottom-right' />
