@@ -6,7 +6,7 @@ export const FormContainer = styled.div`
 	margin: 0 auto;
 	justify-content: center;
 	align-items: center;
-	width: 30%;
+	min-width: 400px;
 `;
 
 export const FormInput = styled.input`
