@@ -8,7 +8,17 @@ export const CardContainer = styled.div`
 		h2 {
 			background: linear-gradient(
 				90deg,
-				${({ theme }) => theme.colors.titleBackgroundColor1} 8%,
+				${({ theme }) => theme.colors.titleBackgroundColor1} 0%,
+				${({ theme }) => theme.colors.titleBackgroundColor2} 20%,
+				${({ theme }) => theme.colors.titleBackgroundColor3} 100%
+			);
+		}
+	}
+	&:hover {
+		span {
+			background: linear-gradient(
+				90deg,
+				${({ theme }) => theme.colors.titleBackgroundColor1} 0%,
 				${({ theme }) => theme.colors.titleBackgroundColor2} 20%,
 				${({ theme }) => theme.colors.titleBackgroundColor3} 100%
 			);
@@ -184,6 +194,7 @@ export const Description = styled.div`
 	display: flex;
 	z-index: 10;
 	transition: 0.7s;
+	margin-bottom: 25px;
 
 	span {
 		width: 100%;

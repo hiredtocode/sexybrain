@@ -71,7 +71,6 @@ export const TagBox = styled.div`
 	display: flex;
 	flex: wrap;
 	justify-content: flex-end;
-	margin-top: 10px;
 `;
 
 export const TagButton = styled.button`
