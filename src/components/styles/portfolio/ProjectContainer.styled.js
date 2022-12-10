@@ -2,6 +2,21 @@ import styled from 'styled-components/macro';
 
 export const PortFolioContainer = styled.main`
 	display: flex;
+
+	/* xs: '575.98px' */
+	@media (max-width: ${({ theme }) => theme.xs}) {
+		width: 100%;
+	}
+	/* s: '767.98px'  */
+	@media (max-width: ${({ theme }) => theme.s}) {
+		flex-direction: column;
+	}
+	/* md: '991.98px'  */
+	@media (max-width: ${({ theme }) => theme.md}) {
+	}
+	/* lg: '1199.98px'  */
+	@media (max-width: ${({ theme }) => theme.lg}) {
+	} ;
 `;
 
 export const ProjectContainer = styled.section`
@@ -33,6 +48,7 @@ export const CardContainer = styled.div`
 `;
 
 export const ProjectCard = styled.div`
+	display: flex;
 	width: 100%;
 	margin: 10px;
 	border-radius: 10px;
@@ -67,6 +83,63 @@ export const ProjectCard = styled.div`
 			transition: 0.5s;
 		}
 	}
+	.responsive {
+		display: flex;
+		flex-grow: 1;
+
+		flex-direction: row;
+	}
+
+	/* xs: '575.98px' */
+	@media (max-width: ${({ theme }) => theme.xs}) {
+		.image {
+			display: none;
+		}
+		.responsive {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+	/* s: '767.98px'  */
+	@media (max-width: ${({ theme }) => theme.s}) {
+		flex-direction: column;
+		.image {
+			height: 300px;
+			object-fit: cover;
+			opacity: 0.7;
+			max-width: 100%;
+		}
+	}
+	/* md: '991.98px'  */
+	@media (max-width: ${({ theme }) => theme.md}) {
+		.image {
+			height: 300px;
+			object-fit: cover;
+			opacity: 0.7;
+			max-width: 100%;
+			min-width: 400px;
+		}
+		.responsive {
+			display: flex;
+			flex-direction: column;
+		}
+		.order {
+			order: 1;
+		}
+	}
+	/* lg: '1199.98px'  */
+	@media (max-width: ${({ theme }) => theme.lg}) {
+		.image {
+			height: 300px;
+			object-fit: cover;
+			opacity: 0.7;
+			min-width: 100%;
+		}
+		.responsive {
+			display: flex;
+			flex-direction: column;
+		}
+	} ;
 `;
 
 export const ProjectDescription = styled.div`
@@ -82,6 +155,22 @@ export const Stack = styled.div`
 	margin-right: 5px;
 	padding-top: 10px;
 	justify-content: flex-start;
+
+	/* xs: '575.98px' */
+	@media (max-width: ${({ theme }) => theme.xs}) {
+	}
+	/* s: '767.98px'  */
+	@media (max-width: ${({ theme }) => theme.s}) {
+		flex-direction: row;
+		justify-content: space-evenly;
+		margin-bottom: 10px;
+	}
+	/* md: '991.98px'  */
+	@media (max-width: ${({ theme }) => theme.md}) {
+	}
+	/* lg: '1199.98px'  */
+	@media (max-width: ${({ theme }) => theme.lg}) {
+	} ;
 `;
 
 export const StackButton = styled.div`
@@ -126,6 +215,10 @@ export const StackButton = styled.div`
 	}
 	/* s: '767.98px'  */
 	@media (max-width: ${({ theme }) => theme.s}) {
+		writing-mode: inherit;
+		text-orientation: inherit;
+		align-items: center;
+		flex-direction: column-reverse;
 	}
 	/* md: '991.98px'  */
 	@media (max-width: ${({ theme }) => theme.md}) {
@@ -230,6 +323,12 @@ export const FilterContainer = styled.div`
 	}
 	/* s: '767.98px'  */
 	@media (max-width: ${({ theme }) => theme.s}) {
+		flex-direction: row;
+
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+		}
 	}
 	/* md: '991.98px'  */
 	@media (max-width: ${({ theme }) => theme.md}) {
