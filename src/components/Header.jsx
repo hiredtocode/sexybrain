@@ -6,6 +6,8 @@ import {
 	LinkContainer,
 	HamburgerMenu,
 	MobileNav,
+	ShowOnWebContainer,
+	ShowOnMobileContainer,
 } from './styles/Header.styled.js';
 import { Button } from './styles/Button.styled.js';
 import GithubButton from './GithubButton';
@@ -59,18 +61,28 @@ const Header = (props) => {
 						<Button>포트폴리오</Button>
 					</NavLink>
 					{/* Resume page menu END*/}
+					<ShowOnWebContainer>
+						{/* Dark / light mode toggle */}
+						<DarkLightMode />
+						{/* Dark / light mode toggle END */}
+						{/* Github icon */}
+						<GithubButton />
+						{/* Github icon END */}
+					</ShowOnWebContainer>
+				</LinkContainer>
+				<ShowOnMobileContainer>
 					{/* Dark / light mode toggle */}
 					<DarkLightMode />
 					{/* Dark / light mode toggle END */}
 					{/* Github icon */}
 					<GithubButton />
 					{/* Github icon END */}
-				</LinkContainer>
-				<HamburgerMenu className={isActive ? 'isActive' : ''} onClick={toggleHamburgerMenu}>
-					<span></span>
-					<span></span>
-					<span></span>
-				</HamburgerMenu>
+					<HamburgerMenu className={isActive ? 'isActive' : ''} onClick={toggleHamburgerMenu}>
+						<span></span>
+						<span></span>
+						<span></span>
+					</HamburgerMenu>
+				</ShowOnMobileContainer>
 				<MobileNav className={isActive ? 'isActive' : ''}>
 					<NavLink to='/'>블로그</NavLink>
 					<NavLink to='/resume'>이력서</NavLink>

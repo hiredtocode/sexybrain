@@ -108,7 +108,7 @@ export const MobileNav = styled.button`
 	position: fixed;
 	top: 0;
 	right: -100%;
-	width: 150px;
+	width: 250px;
 	min-height: 100vh;
 	display: block;
 	background-color: ${({ theme }) => theme.colors.primaryBackground};
@@ -141,8 +141,21 @@ export const MobileNav = styled.button`
 	&.isActive {
 		right: 0;
 	}
+`;
 
-	/* md: '991.98px'  */
+export const ShowOnWebContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	@media (max-width: ${({ theme }) => theme.s}) {
+		display: none;
+	}
+`;
+export const ShowOnMobileContainer = styled.div`
+	display: flex;
+	align-items: center;
+
 	@media (min-width: ${({ theme }) => theme.s}) {
 		display: none;
 	}
