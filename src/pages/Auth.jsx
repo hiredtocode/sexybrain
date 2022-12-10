@@ -36,6 +36,7 @@ const Auth = (props) => {
 			if (email && password) {
 				const { user } = await signInWithEmailAndPassword(auth, email, password);
 				setUser(user);
+				toast.success(`Login Success. Welcome Jason!`);
 			} else {
 				return toast.error('All fields are mandatory to fill');
 			}

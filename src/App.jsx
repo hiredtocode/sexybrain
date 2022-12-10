@@ -16,7 +16,7 @@ import Resume from './pages/Resume';
 import { RootContainer } from './components/styles/RootContainer.styled.js';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './components/styles/Global';
-import UnderConstruction from './components/UnderConstruction';
+import { toast } from 'react-toastify';
 
 export const ThemeContext = createContext();
 
@@ -133,6 +133,7 @@ function App() {
 		signOut(auth).then(() => {
 			setUser(null);
 			navigate('/');
+			toast.info(`You've been logged out.`);
 		});
 	};
 
