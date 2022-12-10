@@ -45,4 +45,63 @@ export const LinkContainer = styled.header`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	/* md: '991.98px'  */
+	@media (max-width: ${({ theme }) => theme.md}) {
+		display: none;
+	}
+`;
+
+export const HamburgerMenu = styled.button`
+	display: block;
+	position: relative;
+	z-index: 1;
+
+	user-select: none;
+
+	appearance: none;
+	border: none;
+	outline: none;
+	background: none;
+	cursor: pointer;
+
+	span {
+		display: block;
+		width: 33px;
+		height: 4px;
+		margin-bottom: 5px;
+		position: relative;
+
+		background-color: lightgrey;
+		border-radius: 6px;
+		z-index: 1;
+
+		transform-origin: 0 0;
+		transition: 0.4s;
+	}
+
+	&:hover span:nth-child(2) {
+		transform: translateX(10px);
+		background-color: ${({ theme }) => theme.colors.primary};
+	}
+
+	&.isActive span:nth-child(1) {
+		transform: translate(0px, -2px) rotate(45deg);
+	}
+	&.isActive span:nth-child(3) {
+		transform: translate(-3px, 3px) rotate(-45deg);
+	}
+	&.isActive span:nth-child(2) {
+		opacity: 0;
+		transform: translate(15px);
+	}
+
+	&.isActive:hover span {
+		background-color: ${({ theme }) => theme.colors.primary};
+	}
+
+	/* md: '991.98px'  */
+	@media (min-width: ${({ theme }) => theme.md}) {
+		display: none;
+	}
 `;

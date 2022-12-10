@@ -1,5 +1,12 @@
+import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { StyledHeader, Nav, LinkContainer } from './styles/Header.styled.js';
+import {
+	StyledHeader,
+	Nav,
+	LinkContainer,
+	HamburgerMenu,
+	MobileNav,
+} from './styles/Header.styled.js';
 import { Button } from './styles/Button.styled.js';
 import GithubButton from './GithubButton';
 import DarkLightMode from './DarkLightMode';
@@ -8,6 +15,11 @@ import Logo from './Logo';
 const Header = (props) => {
 	const { user, handleLogout } = props;
 	const userId = user?.uid;
+	const [isActive, setActive] = useState(false);
+
+	const toggleHamburgerMenu = () => {
+		setActive(!isActive);
+	};
 
 	return (
 		<StyledHeader>
@@ -54,6 +66,11 @@ const Header = (props) => {
 					<GithubButton />
 					{/* Github icon END */}
 				</LinkContainer>
+				<HamburgerMenu className={isActive ? 'isActive' : ''} onClick={toggleHamburgerMenu}>
+					<span></span>
+					<span></span>
+					<span></span>
+				</HamburgerMenu>
 			</Nav>
 		</StyledHeader>
 	);
