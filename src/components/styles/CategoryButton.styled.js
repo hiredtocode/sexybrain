@@ -22,7 +22,7 @@ const CategoryButton = styled.button`
 	img {
 		height: 20px;
 		width: 20px;
-		flex: 1 1 30%;
+		flex: 30%;
 		pointer-events: none;
 	}
 
@@ -31,21 +31,7 @@ const CategoryButton = styled.button`
 		flex: 1 1 70%;
 		text-align: left;
 	}
-	/* xs: '575.98px' */
-	@media (max-width: ${({ theme }) => theme.xs}) {
-	}
-	/* s: '767.98px'  */
-	@media (max-width: ${({ theme }) => theme.s}) {
-		flex: wrap;
-		flex-direction: row;
-		img {
-			height: 25px;
-			width: 25px;
-		}
-	}
-	/* md: '991.98px'  */
-	@media (max-width: ${({ theme }) => theme.md}) {
-	}
+
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
 		width: 100%;
@@ -61,6 +47,31 @@ const CategoryButton = styled.button`
 			flex: 1 1 50%;
 			text-align: left;
 		}
+	}
+	/* md: '991.98px'  */
+	@media (max-width: ${({ theme }) => theme.md}) {
+		img {
+			height: 20px;
+			width: 20px;
+			flex: 1 1 30%;
+		}
+		span {
+			flex: 1 1 70%;
+			text-align: left;
+		}
+	}
+
+	/* s: '767.98px'  */
+	@media (max-width: ${({ theme }) => theme.s}) {
+		flex: wrap;
+		flex-direction: row;
+		img {
+			height: 25px;
+			width: 25px;
+		}
+	}
+	/* xs: '575.98px' */
+	@media (max-width: ${({ theme }) => theme.xs}) {
 	}
 
 	&:hover {
