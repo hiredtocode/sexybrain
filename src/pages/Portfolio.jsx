@@ -91,27 +91,25 @@ const Portfolio = () => {
 					projects.map((project) => (
 						<CardContainer key={uuidv4()}>
 							<ProjectCard>
-								<div className='responsive'>
-									<img className='image' src={project.image} alt={project.title} />
-									<Flex className='order' direction='column' grow='1'>
-										<Flex direction='row' style={{ Width: '100%' }} align='center' justfiy='center'>
-											<div>
-												<H3>{project.title}</H3>
-											</div>
-											{project.githubRepo ? (
-												<GithubButtonForPortfolio link={project.githubRepo} />
-											) : null}
-											{project.hyperlink ? (
-												<LinkButton link={project.hyperlink} title={project.title} />
-											) : null}
-										</Flex>
-										<span className='subText'> {project.date} </span>
-
-										<ProjectDescription>
-											<p>{project.description}</p>
-										</ProjectDescription>
+								<img className='image' src={project.image} alt={project.title} />
+								<Flex direction='column' grow='1'>
+									<Flex direction='row' style={{ Width: '100%' }} align='center' justfiy='center'>
+										<div>
+											<H3>{project.title}</H3>
+										</div>
+										{project.githubRepo ? (
+											<GithubButtonForPortfolio link={project.githubRepo} />
+										) : null}
+										{project.hyperlink ? (
+											<LinkButton link={project.hyperlink} title={project.title} />
+										) : null}
 									</Flex>
-								</div>
+									<span className='subText'> {project.date} </span>
+
+									<ProjectDescription>
+										<p>{project.description}</p>
+									</ProjectDescription>
+								</Flex>
 								<Stack>
 									{project.stack.map((stack) => {
 										switch (stack) {
