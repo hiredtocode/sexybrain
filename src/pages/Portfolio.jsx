@@ -85,18 +85,18 @@ const Portfolio = () => {
 				</ul>
 			</FilterContainer>
 			{/* Left sidebar filter section start END*/}
-			<input type='radio' name='buttons' id='r1' checked />
+			<input type='radio' name='buttons' id='r1' defaultChecked />
 			<input type='radio' name='buttons' id='r2' />
 			<input type='radio' name='buttons' id='r3' />
 			<div className='controls'>
-				<label htmlFor='r1'>Tab1</label>
-				<label htmlFor='r2'>Tab2</label>
-				<label htmlFor='r3'>Tab3</label>
+				<label htmlFor='r1'>SexyBrain.Dev</label>
+				<label htmlFor='r2'>Project 2</label>
+				<label htmlFor='r3'>Project 3</label>
 			</div>
 			<div className='slides'>
 				<section>
 					<div className='content'>
-						<h2>Title 1</h2>
+						<h2>Sexy Brain Developer</h2>
 						<h3>Sub title</h3>
 						<p>
 							Ut eu dolore id veniam cupidatat labore fugiat ex ad. Ex deserunt labore voluptate
@@ -109,7 +109,7 @@ const Portfolio = () => {
 				</section>
 				<section>
 					<div className='content'>
-						<h2>Title 2</h2>
+						<h2>Project 2</h2>
 						<h3>Sub title 2</h3>
 						<p>
 							Ut eu dolore id veniam cupidatat labore fugiat ex ad. Ex deserunt labore voluptate
@@ -122,7 +122,7 @@ const Portfolio = () => {
 				</section>
 				<section>
 					<div className='content'>
-						<h2>Title 3</h2>
+						<h2>Project 3</h2>
 						<h3>Sub title 3</h3>
 						<p>
 							Ut eu dolore id veniam cupidatat labore fugiat ex ad. Ex deserunt labore voluptate

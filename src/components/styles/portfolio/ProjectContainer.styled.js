@@ -3,10 +3,14 @@ import styled from 'styled-components/macro';
 export const PortFolioContainer = styled.main`
 	display: flex;
 	overflow: hidden;
+	position: relative;
 
 	.slides {
 		display: flex;
 		height: 100%;
+		margin-top: 60px;
+		margin-left: 50px;
+		padding: 20px;
 		min-width: 300%;
 		background: ${({ theme }) => theme.colors.card};
 	}
@@ -60,21 +64,23 @@ export const PortFolioContainer = styled.main`
 	input {
 		display: none;
 	}
+	body {
+		position: relative;
+	}
 	.controls {
 		position: absolute;
-		top: 5.6%;
-		left: 30%;
+		top: 25px;
+		left: 250px;
+		min-width: 80%;
 		display: flex;
 		align-items: center;
 	}
 	.controls label {
-		height: 5rem;
-		width: 10rem;
-		background: ${({ theme }) => theme.colors.card};
-		font-size: 2rem;
-		line-height: 5rem;
+		width: 32.55%;
+		font-size: 1.8rem;
 		text-align: center;
-		border-top-right-radius: 2rem;
+
+		border-top-right-radius: 10px;
 		cursor: pointer;
 	}
 	.controls label:hover {
