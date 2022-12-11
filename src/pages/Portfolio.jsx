@@ -85,13 +85,51 @@ const Portfolio = () => {
 				</ul>
 			</FilterContainer>
 			{/* Left sidebar filter section start END*/}
+			<input type='radio' name='buttons' id='r1' checked />
+			<input type='radio' name='buttons' id='r2' checked />
+			<div className='controls'>
+				<label htmlFor='r1'>Tab1</label>
+				<label htmlFor='r2'>Tab2</label>
+			</div>
+			<div className='slides'>
+				<section>
+					<div className='content'>
+						<h2>Title 1</h2>
+						<h3>Sub title</h3>
+						<p>
+							Ut eu dolore id veniam cupidatat labore fugiat ex ad. Ex deserunt labore voluptate
+							culpa pariatur fugiat ea incididunt. Voluptate anim velit ut ex qui sunt dolor ullamco
+							do adipisicing culpa qui non commodo. Voluptate cillum nisi ea laborum id. Commodo
+							consequat exercitation deserunt Lorem Lorem. Elit nulla non anim ullamco dolore sit ad
+							Lorem culpa cillum labore adipisicing est non.
+						</p>
+						<button>Read more</button>
+					</div>
+					<div className='image'></div>
+				</section>
+				<section>
+					<div className='content'>
+						<h2>Title 2</h2>
+						<h3>Sub title 2</h3>
+						<p>
+							Ut eu dolore id veniam cupidatat labore fugiat ex ad. Ex deserunt labore voluptate
+							culpa pariatur fugiat ea incididunt. Voluptate anim velit ut ex qui sunt dolor ullamco
+							do adipisicing culpa qui non commodo. Voluptate cillum nisi ea laborum id. Commodo
+							consequat exercitation deserunt Lorem Lorem. Elit nulla non anim ullamco dolore sit ad
+							Lorem culpa cillum labore adipisicing est non.
+						</p>
+						<button>Read more</button>
+					</div>
+					<div className='image'></div>
+				</section>
+			</div>
+
 			{/* Project card collection row section start */}
-			<ProjectContainer>
+			{/* <ProjectContainer>
 				{projects &&
 					projects.map((project) => (
 						<CardContainer key={uuidv4()}>
 							<ProjectCard>
-								<img className='image' src={project.image} alt={project.title} />
 								<Flex direction='column' grow='1'>
 									<Flex direction='row' style={{ Width: '100%' }} align='center' justfiy='center'>
 										<div>
@@ -238,7 +276,7 @@ const Portfolio = () => {
 							</ProjectCard>
 						</CardContainer>
 					))}
-			</ProjectContainer>
+			</ProjectContainer> */}
 			{/* Project card collection row section END */}
 		</PortFolioContainer>
 	);

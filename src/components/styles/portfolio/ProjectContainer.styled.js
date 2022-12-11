@@ -2,7 +2,93 @@ import styled from 'styled-components/macro';
 
 export const PortFolioContainer = styled.main`
 	display: flex;
+	overflow: hidden;
 
+	.slides {
+		display: flex;
+		height: 100%;
+		min-width: 200%;
+		background: ${({ theme }) => theme.colors.card};
+	}
+	.slides section {
+		display: flex;
+		width: 50%;
+		align-items: center;
+		justify-content: space-around;
+		transition: 0.2s linear;
+	}
+	.slides section .content {
+		display: grid;
+		text-transform: uppercase;
+	}
+	.slides section .content h2 {
+		font-size: 6rem;
+	}
+	.slides section .content h3 {
+		font-size: 3rem;
+		color: orange;
+	}
+	.slides section .content button {
+		outline: none;
+		border: none;
+		height: 4rem;
+		width: 15rem;
+		background: ${({ theme }) => theme.colors.strongAccent};
+		text-decoration: none;
+	}
+	.slides section .image {
+		height: 40rem;
+		width: 50rem;
+		background-blend-mode: screen;
+		filter: contrast(1.3);
+	}
+	.slides section:nth-child(1) .image {
+		background: url(a.jpg), url(mask1.png) no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	.slides section:nth-child(2) .image {
+		background: url(b.jpg), url(mask2.png) no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	input {
+		display: none;
+	}
+	.controls {
+		position: absolute;
+		top: 5.6%;
+		left: 30%;
+		display: flex;
+		align-items: center;
+	}
+	.controls label {
+		height: 5rem;
+		width: 10rem;
+		background: ${({ theme }) => theme.colors.card};
+		font-size: 2rem;
+		line-height: 5rem;
+		text-align: center;
+		border-top-right-radius: 2rem;
+		cursor: pointer;
+	}
+	.controls label:hover {
+		background: ${({ theme }) => theme.colors.strongAccent};
+		color: white;
+	}
+
+	#r1:checked ~ .slides > section:nth-child(1) {
+		margin-left: 0%;
+	}
+	#r1:checked ~ .slides > section:nth-child(2) {
+		margin-left: -50%;
+	}
+
+	#r1:checked ~ .controls > label:nth-child(1),
+	#r2:checked ~ .controls > label:nth-child(2) {
+		background: ${({ theme }) => theme.colors.strongAccent};
+		color: white;
+	}
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
 		width: 100%;
