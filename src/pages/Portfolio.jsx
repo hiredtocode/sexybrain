@@ -86,10 +86,12 @@ const Portfolio = () => {
 			</FilterContainer>
 			{/* Left sidebar filter section start END*/}
 			<input type='radio' name='buttons' id='r1' checked />
-			<input type='radio' name='buttons' id='r2' checked />
+			<input type='radio' name='buttons' id='r2' />
+			<input type='radio' name='buttons' id='r3' />
 			<div className='controls'>
 				<label htmlFor='r1'>Tab1</label>
 				<label htmlFor='r2'>Tab2</label>
+				<label htmlFor='r3'>Tab3</label>
 			</div>
 			<div className='slides'>
 				<section>
@@ -99,9 +101,7 @@ const Portfolio = () => {
 						<p>
 							Ut eu dolore id veniam cupidatat labore fugiat ex ad. Ex deserunt labore voluptate
 							culpa pariatur fugiat ea incididunt. Voluptate anim velit ut ex qui sunt dolor ullamco
-							do adipisicing culpa qui non commodo. Voluptate cillum nisi ea laborum id. Commodo
-							consequat exercitation deserunt Lorem Lorem. Elit nulla non anim ullamco dolore sit ad
-							Lorem culpa cillum labore adipisicing est non.
+							do adipisicing culpa qui non commodo.
 						</p>
 						<button>Read more</button>
 					</div>
@@ -114,9 +114,20 @@ const Portfolio = () => {
 						<p>
 							Ut eu dolore id veniam cupidatat labore fugiat ex ad. Ex deserunt labore voluptate
 							culpa pariatur fugiat ea incididunt. Voluptate anim velit ut ex qui sunt dolor ullamco
-							do adipisicing culpa qui non commodo. Voluptate cillum nisi ea laborum id. Commodo
-							consequat exercitation deserunt Lorem Lorem. Elit nulla non anim ullamco dolore sit ad
-							Lorem culpa cillum labore adipisicing est non.
+							do adipisicing culpa qui non commodo.
+						</p>
+						<button>Read more</button>
+					</div>
+					<div className='image'></div>
+				</section>
+				<section>
+					<div className='content'>
+						<h2>Title 3</h2>
+						<h3>Sub title 3</h3>
+						<p>
+							Ut eu dolore id veniam cupidatat labore fugiat ex ad. Ex deserunt labore voluptate
+							culpa pariatur fugiat ea incididunt. Voluptate anim velit ut ex qui sunt dolor ullamco
+							do adipisicing culpa qui non commodo.
 						</p>
 						<button>Read more</button>
 					</div>

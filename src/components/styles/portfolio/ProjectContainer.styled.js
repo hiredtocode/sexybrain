@@ -7,12 +7,12 @@ export const PortFolioContainer = styled.main`
 	.slides {
 		display: flex;
 		height: 100%;
-		min-width: 200%;
+		min-width: 300%;
 		background: ${({ theme }) => theme.colors.card};
 	}
 	.slides section {
+		width: 33%;
 		display: flex;
-		width: 50%;
 		align-items: center;
 		justify-content: space-around;
 		transition: 0.2s linear;
@@ -52,6 +52,11 @@ export const PortFolioContainer = styled.main`
 		background-size: cover;
 		background-position: center;
 	}
+	.slides section:nth-child(3) .image {
+		background: url(c.jpg), url(mask3.png) no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
 	input {
 		display: none;
 	}
@@ -80,12 +85,16 @@ export const PortFolioContainer = styled.main`
 	#r1:checked ~ .slides > section:nth-child(1) {
 		margin-left: 0%;
 	}
-	#r1:checked ~ .slides > section:nth-child(2) {
-		margin-left: -50%;
+	#r2:checked ~ .slides > section:nth-child(1) {
+		margin-left: -33%;
+	}
+	#r3:checked ~ .slides > section:nth-child(1) {
+		margin-left: -66%;
 	}
 
 	#r1:checked ~ .controls > label:nth-child(1),
-	#r2:checked ~ .controls > label:nth-child(2) {
+	#r2:checked ~ .controls > label:nth-child(2),
+	#r3:checked ~ .controls > label:nth-child(3) {
 		background: ${({ theme }) => theme.colors.strongAccent};
 		color: white;
 	}
