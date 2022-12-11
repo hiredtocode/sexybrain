@@ -11,7 +11,6 @@ export const PortFolioContainer = styled.main`
 		margin-top: 60px;
 		margin-left: 50px;
 		padding: 20px;
-		min-width: 300%;
 		background: ${({ theme }) => theme.colors.card};
 	}
 	.slides section {
@@ -23,13 +22,14 @@ export const PortFolioContainer = styled.main`
 	}
 	.slides section .content {
 		display: grid;
+		max-width: 500px;
 		text-transform: uppercase;
 	}
 	.slides section .content h2 {
-		font-size: 6rem;
+		font-size: 2rem;
 	}
 	.slides section .content h3 {
-		font-size: 3rem;
+		font-size: 1.5rem;
 		color: orange;
 	}
 	.slides section .content button {
@@ -41,8 +41,9 @@ export const PortFolioContainer = styled.main`
 		text-decoration: none;
 	}
 	.slides section .image {
-		height: 40rem;
-		width: 50rem;
+		height: 30rem;
+		width: 38rem;
+		margin: 0 16px;
 		background-blend-mode: screen;
 		filter: contrast(1.3);
 	}
