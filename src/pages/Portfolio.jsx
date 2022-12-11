@@ -97,7 +97,7 @@ const Portfolio = () => {
 				<section>
 					<div className='content'>
 						<h2>Sexy Brain Developer</h2>
-						<h3>Sub title</h3>
+						<h3>Current website</h3>
 						<p>
 							Ut eu dolore id veniam cupidatat labore fugiat ex ad. Ex deserunt labore voluptate
 							culpa pariatur fugiat ea incididunt. Voluptate anim velit ut ex qui sunt dolor ullamco

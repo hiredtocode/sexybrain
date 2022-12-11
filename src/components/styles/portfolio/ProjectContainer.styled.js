@@ -48,17 +48,17 @@ export const PortFolioContainer = styled.main`
 		filter: contrast(1.3);
 	}
 	.slides section:nth-child(1) .image {
-		background: url(a.jpg), url(mask1.png) no-repeat;
+		background: url(first-blog.jpg), url(mask1.png) no-repeat;
 		background-size: cover;
 		background-position: center;
 	}
 	.slides section:nth-child(2) .image {
-		background: url(b.jpg), url(mask2.png) no-repeat;
+		background: url(VSCode-theme.jpg), url(mask2.png) no-repeat;
 		background-size: cover;
 		background-position: center;
 	}
 	.slides section:nth-child(3) .image {
-		background: url(c.jpg), url(mask3.png) no-repeat;
+		background: url(sexybrain-main-page-dark.jpg), url(mask3.png) no-repeat;
 		background-size: cover;
 		background-position: center;
 	}
