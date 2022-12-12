@@ -43,7 +43,7 @@ const Portfolio = () => {
 	const [projects, setProjects] = useState(Projects);
 	const [categories, setCategories] = useState();
 	const [loading, setLoading] = useState(true);
-	const [toggleState, setToggleState] = useState(1);
+	const [isActive, setActive] = useState(1);
 
 	useEffect(() => {
 		const categories = () => {
@@ -72,8 +72,8 @@ const Portfolio = () => {
 		setProjects(Projects);
 	};
 
-	const toggleTab = (index) => {
-		setToggleState(index);
+	const toggleActive = (index) => {
+		setActive(index);
 	};
 	return (
 		<PortFolioContainer>
@@ -95,28 +95,19 @@ const Portfolio = () => {
 			{/* Left sidebar filter section start END*/}
 			<ProjectContainer>
 				<Tabs>
-					<Tab
-						className={toggleState === 1 ? 'tabs active-tabs' : 'tabs'}
-						onClick={() => toggleTab(1)}
-					>
+					<Tab className={isActive === 1 ? 'active' : ''} onClick={() => toggleActive(1)}>
 						Project 1
 					</Tab>
-					<Tab
-						className={toggleState === 2 ? 'tabs active-tabs' : 'tabs'}
-						onClick={() => toggleTab(2)}
-					>
+					<Tab className={isActive === 2 ? 'active' : ''} onClick={() => toggleActive(2)}>
 						Project 2
 					</Tab>
-					<Tab
-						className={toggleState === 3 ? 'tabs active-tabs' : 'tabs'}
-						onClick={() => toggleTab(3)}
-					>
+					<Tab className={isActive === 3 ? 'active' : ''} onClick={() => toggleActive(3)}>
 						Project 3
 					</Tab>
 				</Tabs>
 
 				<ContentContainer>
-					<Content className={toggleState === 1 ? 'content  active-content' : 'content'}>
+					<Content className={isActive === 1 ? 'active' : ''}>
 						<h2>Content 1</h2>
 						<hr />
 						<p>
@@ -125,7 +116,7 @@ const Portfolio = () => {
 						</p>
 					</Content>
 
-					<Content className={toggleState === 2 ? 'content  active-content' : 'content'}>
+					<Content className={isActive === 2 ? 'active' : ''}>
 						<h2>Content 2</h2>
 						<hr />
 						<p>
@@ -134,7 +125,7 @@ const Portfolio = () => {
 						</p>
 					</Content>
 
-					<Content className={toggleState === 3 ? 'content  active-content' : 'content'}>
+					<Content className={isActive === 3 ? 'active' : ''}>
 						<h2>Content 3</h2>
 						<hr />
 						<p>

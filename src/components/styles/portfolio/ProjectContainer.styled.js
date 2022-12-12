@@ -63,19 +63,15 @@ export const Tab = styled.button`
 	text-align: center;
 	width: 100%;
 	cursor: pointer;
-	box-sizing: content-box;
+	box-sizing: border-box;
 	position: relative;
 
-	&.tabs:not(:last-child) {
-		border-right: 1px solid rgba(0, 0, 0, 0.274);
-	}
-
-	&.active-tabs {
+	&.active {
 		background: ${({ theme }) => theme.colors.primary};
 		border-bottom: 1px solid transparent;
 	}
 
-	&.active-tabs::before {
+	&.active::before {
 		content: '';
 		display: block;
 		position: absolute;
@@ -98,20 +94,20 @@ export const Content = styled.div`
 	height: 100%;
 	display: none;
 
-	&.content h2 {
+	h2 {
 		padding: 0px 0 5px 0px;
 	}
-	&.content hr {
+	hr {
 		width: 100px;
 		height: 2px;
 		background: ${({ theme }) => theme.colors.lineBreak};
 		margin-bottom: 5px;
 	}
-	&.content p {
+	p {
 		width: 100%;
 		height: 100%;
 	}
-	&.active-content {
+	&.active {
 		display: block;
 	}
 `;
