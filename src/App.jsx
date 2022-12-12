@@ -17,6 +17,7 @@ import { RootContainer } from './components/styles/RootContainer.styled.js';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './components/styles/Global';
 import { toast } from 'react-toastify';
+import Footer from './components/Footer';
 
 export const ThemeContext = createContext();
 
@@ -47,7 +48,7 @@ function App() {
 		colors: {
 			primary: '#087ea4',
 			primaryBackground: '#e1f5ff',
-			secondary: '#44ac99',
+			secondary: '#474e5c',
 			secondaryBackground: '#f4fbf9',
 			accent: '#575fb7',
 			accentBackground: '#f3f4fd',
@@ -83,14 +84,15 @@ function App() {
 	};
 	const darkTheme = {
 		colors: {
-			primary: '#0a91be',
+			primary: '#64ffda',
 			primaryBackground: '#023444',
-			secondary: '#44ac99',
+			secondary: '#ccd6f6',
+			heading: '#ccd6f6',
 			secondaryBackground: '#243539',
 			active: '#243539',
 			accent: '#575fb7',
 			accentBackground: '#242943',
-			body: '#23272f',
+			body: '#0a192f',
 			subText: '#88a2aa',
 			strongAccent: '#fabd62',
 			strongAccentBackground: '#3e2c1e',
@@ -98,10 +100,10 @@ function App() {
 			header: 'transparent',
 			footer: '#2E3445',
 			button: '#343a46',
-			font: '#d4d4d4',
-			card: '#343a46',
-			hover: '#4b6269',
-			hovered: '#149eca',
+			font: '#a8b2d1',
+			card: '#112240',
+			hover: '#243539',
+			hovered: '#00b187',
 			cancelButton: '#853434',
 			cancelHover: '#643939',
 			cancelHovered: '#bb2e2e',
@@ -110,7 +112,7 @@ function App() {
 			input: '#3150ff',
 			highlight: '#023444',
 			titleBackgroundColor1: 'rgba(255, 255, 255, 0.014425753211440795)',
-			titleBackgroundColor2: '#343a46',
+			titleBackgroundColor2: '#112240',
 			titleBackgroundColor3: 'rgba(252, 176, 69, 0)',
 		},
 
@@ -162,6 +164,7 @@ function App() {
 						<Route path='*' element={<NotFound />} />
 					</Routes>
 				</RootContainer>
+				<Footer />
 			</ThemeProvider>
 		</ThemeContext.Provider>
 	);
