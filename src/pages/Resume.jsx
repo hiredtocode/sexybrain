@@ -212,16 +212,13 @@ const Resume = () => {
 					</li>
 					<ul>
 						<li>반응형 웹</li>
-						<li>이력서 - sexybrain.dev/resume</li>
-						<li>블로그 - sexybrain.dev</li>
+						<li>블로그 (마크다운)</li>
 						<ul>
 							<li>로그인 / 로그아웃</li>
-							<li>로그인시 포스팅 페이지 활성화 + 이미지 업로딩</li>
-							<li>마크다운</li>
-							<li>태그 + 카테고리</li>
-							<li>검색 (개발중)</li>
+							<li>로그인시 포스팅 페이지, 수정/지우기 활성화</li>
+							<li>태그 + 카테고리로 정렬</li>
 						</ul>
-						<li>포트폴리오 - sexybrain.dev/portfolio (개발중)</li>
+						<li>포트폴리오</li>
 					</ul>
 				</ul>
 			</Section>
