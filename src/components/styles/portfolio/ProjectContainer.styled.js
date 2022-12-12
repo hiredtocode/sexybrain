@@ -357,9 +357,23 @@ export const FilterContainer = styled.div`
 		padding-left: 0;
 		margin-top: 0;
 	}
+	div {
+		padding: 10px 0;
+	}
+
 	ul li {
+		margin-top: 20px;
 		list-style: none;
-		align-items: flex-start;
+		display: none;
+		padding: 5px 10px;
+		align-items: center;
+		height: 30px;
+		max-height: 40px;
+		justify-content: center;
+		border-radius: 10px;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+		font-size: 1.1rem;
+		border: 1px solid ${({ theme }) => theme.colors.primary};
 	}
 
 	ul li:hover {
@@ -369,6 +383,10 @@ export const FilterContainer = styled.div`
 		}
 	}
 
+	ul li.pressed {
+		display: flex;
+		color: red;
+	}
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
 	}
@@ -411,6 +429,9 @@ export const CategoryFilter = styled.div`
 		cursor: pointer;
 	}
 
+	&.pressed {
+		display: none;
+	}
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
 	}

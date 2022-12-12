@@ -44,6 +44,7 @@ const Portfolio = () => {
 	const [categories, setCategories] = useState();
 	const [loading, setLoading] = useState(true);
 	const [isActive, setActive] = useState(1);
+	const [isPressed, setPressed] = useState(false);
 
 	useEffect(() => {
 		const categories = () => {
@@ -60,18 +61,21 @@ const Portfolio = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [projects]);
 
+	console.log('isPressed:', isPressed);
+
+	const onReset = () => {
+		setProjects(Projects);
+		setPressed(false);
+	};
 	// Show posts that are only related to the clicked category when clicked
 	const handleCategory = (selectedCategory) => {
 		const filtered = projects.filter((project) => project.stack.includes(selectedCategory));
 		return () => {
 			setProjects(filtered);
+			setPressed(true);
 		};
 	};
 	// Show posts that are only related to the clicked category when clicked END
-	const onAllClick = () => {
-		setProjects(Projects);
-	};
-
 	const toggleActive = (index) => {
 		setActive(index);
 	};
@@ -80,12 +84,19 @@ const Portfolio = () => {
 			{/* Left sidebar filter section start */}
 			<FilterContainer>
 				<ul>
-					<li onClick={onAllClick}>All / Reset</li>
+					<div>Filter by category:</div>
+					<li className={isPressed ? 'pressed' : ''} onClick={onReset}>
+						All / Reset
+					</li>
 					{categories &&
 						categories.length > 6 &&
 						categories.map((category) => {
 							return (
-								<CategoryFilter key={uuidv4()} onClick={handleCategory(category)}>
+								<CategoryFilter
+									key={uuidv4()}
+									onClick={handleCategory(category)}
+									className={isPressed ? 'pressed' : ''}
+								>
 									{category}
 								</CategoryFilter>
 							);
