@@ -23,7 +23,7 @@ export const ProfilePic = styled.section`
 		align-items: center;
 		overflow: hidden;
 	}
-	.box-cover::after {
+	/* .box-cover::after {
 		content: '';
 		position: absolute;
 		width: 99px;
@@ -61,5 +61,5 @@ export const ProfilePic = styled.section`
 		100% {
 			transform: rotate(360deg);
 		}
-	}
+	} */
 `;
