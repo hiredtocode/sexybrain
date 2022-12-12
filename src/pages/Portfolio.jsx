@@ -1,9 +1,5 @@
 import Flex from '../components/styles/Flex.styled.js';
-import {
-	CategoryFilter,
-	PortFolioContainer,
-	ProjectContainer,
-} from '../components/styles/portfolio/ProjectContainer.styled.js';
+
 import javascript from '../assets/img/javascript.svg';
 import angular from '../assets/img/angular.svg';
 import html from '../assets/img/html.svg';
@@ -30,16 +26,24 @@ import {
 	ProjectDescription,
 	Stack,
 	StackButton,
+	CategoryFilter,
+	ContentContainer,
+	Content,
+	PortFolioContainer,
+	ProjectContainer,
+	FilterContainer,
+	Tab,
+	Tabs,
 } from '../components/styles/portfolio/ProjectContainer.styled.js';
 import visualStudioCode from '../assets/img/visualStudioCode.svg';
 import LinkButton from '../components/LinkButton.jsx';
 import { useState, useEffect } from 'react';
-import { FilterContainer } from '../components/styles/portfolio/ProjectContainer.styled';
 
 const Portfolio = () => {
 	const [projects, setProjects] = useState(Projects);
 	const [categories, setCategories] = useState();
 	const [loading, setLoading] = useState(true);
+	const [toggleState, setToggleState] = useState(1);
 
 	useEffect(() => {
 		const categories = () => {
@@ -67,6 +71,10 @@ const Portfolio = () => {
 	const onAllClick = () => {
 		setProjects(Projects);
 	};
+
+	const toggleTab = (index) => {
+		setToggleState(index);
+	};
 	return (
 		<PortFolioContainer>
 			{/* Left sidebar filter section start */}
@@ -85,6 +93,60 @@ const Portfolio = () => {
 				</ul>
 			</FilterContainer>
 			{/* Left sidebar filter section start END*/}
+			<ProjectContainer>
+				<Tabs>
+					<Tab
+						className={toggleState === 1 ? 'tabs active-tabs' : 'tabs'}
+						onClick={() => toggleTab(1)}
+					>
+						Project 1
+					</Tab>
+					<Tab
+						className={toggleState === 2 ? 'tabs active-tabs' : 'tabs'}
+						onClick={() => toggleTab(2)}
+					>
+						Project 2
+					</Tab>
+					<Tab
+						className={toggleState === 3 ? 'tabs active-tabs' : 'tabs'}
+						onClick={() => toggleTab(3)}
+					>
+						Project 3
+					</Tab>
+				</Tabs>
+
+				<ContentContainer>
+					<Content className={toggleState === 1 ? 'content  active-content' : 'content'}>
+						<h2>Content 1</h2>
+						<hr />
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati praesentium
+							incidunt quia aspernatur quasi quidem facilis quo nihil vel voluptatum?
+						</p>
+					</Content>
+
+					<Content className={toggleState === 2 ? 'content  active-content' : 'content'}>
+						<h2>Content 2</h2>
+						<hr />
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente voluptatum qui
+							adipisci.
+						</p>
+					</Content>
+
+					<Content className={toggleState === 3 ? 'content  active-content' : 'content'}>
+						<h2>Content 3</h2>
+						<hr />
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos sed nostrum rerum
+							laudantium totam unde adipisci incidunt modi alias! Accusamus in quia odit aspernatur
+							provident et ad vel distinctio recusandae totam quidem repudiandae omnis veritatis
+							nostrum laboriosam architecto optio rem, dignissimos voluptatum beatae aperiam
+							voluptatem atque. Beatae rerum dolores sunt.
+						</p>
+					</Content>
+				</ContentContainer>
+			</ProjectContainer>
 
 			{/* Project card collection row section start */}
 			{/* <ProjectContainer>

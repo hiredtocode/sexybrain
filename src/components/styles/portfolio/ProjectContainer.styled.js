@@ -18,16 +18,19 @@ export const PortFolioContainer = styled.main`
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
-	} ;
+	}
 `;
 
 export const ProjectContainer = styled.section`
 	display: flex;
 	align-items: center;
 	max-width: 1200px;
-	justify-content: space-around;
-	flex-wrap: wrap;
-	flex-grow: 1;
+
+	flex-direction: column;
+	position: relative;
+	width: calc(1200px - 200px);
+	height: 600px;
+	word-break: break-all;
 
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
@@ -41,7 +44,74 @@ export const ProjectContainer = styled.section`
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
-	} ;
+	}
+`;
+
+export const Tabs = styled.div`
+	display: flex;
+`;
+
+export const Tab = styled.button`
+	box-shadow: none;
+	color: ${({ theme }) => theme.colors.font};
+	background-color: ${({ theme }) => theme.colors.body};
+	border: none;
+
+	.tabs {
+		padding: 15px;
+		text-align: center;
+		width: 100%;
+		cursor: pointer;
+		box-sizing: content-box;
+		position: relative;
+	}
+	.tabs:not(:last-child) {
+		border-right: 1px solid rgba(0, 0, 0, 0.274);
+	}
+
+	.active-tabs {
+		background: ${({ theme }) => theme.colors.primary};
+		border-bottom: 1px solid transparent;
+	}
+
+	.active-tabs::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: -5px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: calc(100% + 2px);
+		height: 5px;
+		background: ${({ theme }) => theme.colors.strongAccent};
+	}
+`;
+
+export const ContentContainer = styled.div`
+	flex-grow: 1;
+`;
+export const Content = styled.div`
+	padding: 20px;
+	width: 100%;
+	height: 100%;
+	display: none;
+
+	.content h2 {
+		padding: 0px 0 5px 0px;
+	}
+	.content hr {
+		width: 100px;
+		height: 2px;
+		background: ${({ theme }) => theme.colors.lineBreak};
+		margin-bottom: 5px;
+	}
+	.content p {
+		width: 100%;
+		height: 100%;
+	}
+	.active-content {
+		display: block;
+	}
 `;
 
 export const CardContainer = styled.div`
