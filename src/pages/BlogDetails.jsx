@@ -47,7 +47,7 @@ const PostDetailPage = (props) => {
 			>
 				<div className='overlay'></div>
 				<div className='blog-title'>
-					<span>{blog?.createdTimestamp.toDate().toDateString()}</span>
+					<span>{blog?.createdTimestamp?.toDate().toDateString()}</span>
 					<H2>{blog?.title}</H2>
 				</div>
 			</BlogTitleBox>
@@ -55,10 +55,10 @@ const PostDetailPage = (props) => {
 			{/* Show default image if no image was uploaded END */}
 			<BlogDetail>
 				<div className='authorInfo'>
-					<div>Written on: {blog?.createdTimestamp.toDate().toDateString()}</div>
+					<div>Written on: {blog?.createdTimestamp?.toDate().toDateString()}</div>
 					<div>
-						{blog?.lastUpdatedTimestamp.toDate().toDateString() !==
-						blog?.createdTimestamp.toDate().toDateString() ? (
+						{blog?.lastUpdatedTimestamp?.toDate().toDateString() !==
+						blog?.createdTimestamp?.toDate().toDateString() ? (
 							<span>Edited/Updated: {blog?.lastUpdatedTimestamp?.toDate().toDateString()}</span>
 						) : null}
 					</div>

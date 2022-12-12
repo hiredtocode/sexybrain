@@ -83,11 +83,11 @@ export default function Card(props) {
 									<H2>{item.title}</H2>
 									<Date>
 										<div>
-											<span>Created: {item.createdTimestamp.toDate().toDateString()}</span>
+											<span>Created: {item.createdTimestamp?.toDate().toDateString()}</span>
 										</div>
 										<div>
-											{item.lastUpdatedTimestamp.toDate().toDateString() !==
-											item.createdTimestamp.toDate().toDateString() ? (
+											{item.lastUpdatedTimestamp?.toDate().toDateString() !==
+											item.createdTimestamp?.toDate().toDateString() ? (
 												<span>Edited: {item.lastUpdatedTimestamp?.toDate().toDateString()}</span>
 											) : null}
 										</div>
