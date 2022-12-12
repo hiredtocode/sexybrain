@@ -3,14 +3,14 @@ import styled from 'styled-components/macro';
 export const H1 = styled.h1`
 	font-size: 2.1rem;
 	z-index: 2000;
-	color: ${({ theme }) => theme.colors.font};
+	color: ${({ theme }) => theme.colors.heading};
 `;
 export const H2 = styled.h2`
 	font-size: 1.8rem;
 	transition: 0.7s;
 	z-index: 2000;
 
-	color: ${({ theme }) => theme.colors.font};
+	color: ${({ theme }) => theme.colors.heading};
 
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
@@ -32,5 +32,5 @@ export const H3 = styled.h3`
 	font-size: 1.3rem;
 	z-index: 2000;
 
-	color: ${({ theme }) => theme.colors.font};
+	color: ${({ theme }) => theme.colors.heading};
 `;

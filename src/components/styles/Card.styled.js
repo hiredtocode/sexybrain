@@ -35,12 +35,6 @@ export const StyledCard = styled.div`
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 	margin: 10px 0;
 	padding: 10px;
-	box-shadow: 1px 1px 1px ${({ theme }) => theme.colors.primary};
-	transition: 0.5s;
-
-	&:hover > &::after {
-		opacity: 1;
-	}
 
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
@@ -57,14 +51,14 @@ export const StyledCard = styled.div`
 	@media (max-width: ${({ theme }) => theme.lg}) {
 	}
 
-	&:hover {
-		box-shadow: 2px 2px 2px ${({ theme }) => theme.colors.primary};
+	&:hover > &::after {
+		opacity: 1;
+	}
 
-		transform: translateY(-3px);
-		transition: 0.5s;
+	&:hover {
+		box-shadow: 1px 1px 1px ${({ theme }) => theme.colors.primary};
 
 		img {
-			transition: 0.4s ease-in-out;
 			opacity: 0.6;
 		}
 	}
@@ -127,7 +121,7 @@ export const Date = styled.div`
 	transition: 0.7s;
 	text-align: right;
 	span {
-		color: ${({ theme }) => theme.colors.primary};
+		color: ${({ theme }) => theme.colors.font};
 		font-size: 1rem;
 	}
 

@@ -80,10 +80,9 @@ export const TagButton = styled.button`
 	font-size: 1rem;
 	margin: 3px;
 	padding: 3px 5px;
-	background-color: ${({ theme }) => theme.colors.button};
-	border: 1px solid ${({ theme }) => theme.colors.primary};
-	color: ${({ theme }) => theme.colors.font};
 	opacity: 0.8;
+	background-color: ${({ theme }) => theme.colors.card};
+	color: ${({ theme }) => theme.colors.font};
 
 	.icon {
 		background: none;
@@ -93,23 +92,17 @@ export const TagButton = styled.button`
 	}
 	&:hover {
 		opacity: 1;
-		transform: scale(0.98);
 		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-		border: 1px solid ${({ theme }) => theme.colors.secondary};
-		color: ${({ theme }) => theme.colors.font};
-		background: linear-gradient(
-			135deg,
-			${({ theme }) => theme.colors.hover},
-			${({ theme }) => theme.colors.hovered}
-		);
+		color: ${({ theme }) => theme.colors.secondary};
+		box-shadow: 1px 1px 1px ${({ theme }) => theme.colors.primary};
 	}
 
 	&:hover span {
-		color: ${({ theme }) => theme.colors.font};
+		color: ${({ theme }) => theme.colors.primary};
 	}
 
 	span {
-		color: ${({ theme }) => theme.colors.secondary};
+		color: ${({ theme }) => theme.colors.font};
 		padding-right: 3px;
 	}
 `;

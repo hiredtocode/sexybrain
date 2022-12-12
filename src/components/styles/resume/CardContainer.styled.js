@@ -12,9 +12,14 @@ export const Border = styled.div`
 	position: relative;
 	min-width: 250px;
 	min-height: 350px;
-	border: 1px solid ${({ theme }) => theme.colors.primary};
+	border: 1px solid ${({ theme }) => theme.colors.lineBreak};
 	border-radius: 10px;
 	margin: 10px;
+
+	&:hover {
+		transition: 0.4s;
+		border: 1px solid ${({ theme }) => theme.colors.subText};
+	}
 `;
 
 export const Card = styled.div`
@@ -31,15 +36,11 @@ export const Card = styled.div`
 	align-items: baseline;
 
 	&:hover {
-		transform: translateY(-30px);
-		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-		transition: 0.5s;
+		transition: 0.4s;
 
-		background: linear-gradient(
-			135deg,
-			${({ theme }) => theme.colors.hover},
-			${({ theme }) => theme.colors.hovered}
-		);
+		transform: translateY(-10px);
+		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+		color: ${({ theme }) => theme.colors.heading};
 	}
 `;
 export const Content1 = styled.div`

@@ -89,7 +89,7 @@ button{
 		${({ theme }) => theme.colors.hover},
 		${({ theme }) => theme.colors.hovered}
 	);
-		color: ${({ theme }) => theme.colors.font};
+		color: ${({ theme }) => theme.colors.heading};
 	}
 `;
 
