@@ -7,7 +7,7 @@ export const BlogTitleBox = styled.div`
 	background-position: center center;
 
 	h2 {
-		color: white;
+		color: ${({ theme }) => theme.colors.heading};
 		font-weight: 300;
 		font-size: 3.5rem;
 	}
@@ -154,7 +154,7 @@ export const MarkdownContainer = styled.div`
 	code {
 		padding: 2px 4px;
 		color: ${({ theme }) => theme.colors.secondary};
-		background-color: ${({ theme }) => theme.colors.secondaryBackground};
+		background-color: ${({ theme }) => theme.colors.card};
 		border-radius: 4px;
 	}
 	// Codeblock END
@@ -176,7 +176,7 @@ export const MarkdownContainer = styled.div`
 		line-height: 1.42857143;
 		color: ${({ theme }) => theme.colors.secondary};
 		border: 1px solid ${({ theme }) => theme.colors.lineBreak};
-		background-color: ${({ theme }) => theme.colors.card};
+		background-color: ${({ theme }) => theme.colors.body};
 		word-wrap: break-word;
 	}
 
