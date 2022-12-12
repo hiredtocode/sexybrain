@@ -49,6 +49,7 @@ export const ProjectContainer = styled.section`
 
 export const Tabs = styled.div`
 	display: flex;
+	min-width: 90%;
 `;
 
 export const Tab = styled.button`
@@ -56,25 +57,25 @@ export const Tab = styled.button`
 	color: ${({ theme }) => theme.colors.font};
 	background-color: ${({ theme }) => theme.colors.body};
 	border: none;
+	min-width: 30%;
 
-	.tabs {
-		padding: 15px;
-		text-align: center;
-		width: 100%;
-		cursor: pointer;
-		box-sizing: content-box;
-		position: relative;
-	}
-	.tabs:not(:last-child) {
+	padding: 15px;
+	text-align: center;
+	width: 100%;
+	cursor: pointer;
+	box-sizing: content-box;
+	position: relative;
+
+	&.tabs:not(:last-child) {
 		border-right: 1px solid rgba(0, 0, 0, 0.274);
 	}
 
-	.active-tabs {
+	&.active-tabs {
 		background: ${({ theme }) => theme.colors.primary};
 		border-bottom: 1px solid transparent;
 	}
 
-	.active-tabs::before {
+	&.active-tabs::before {
 		content: '';
 		display: block;
 		position: absolute;
@@ -89,6 +90,7 @@ export const Tab = styled.button`
 
 export const ContentContainer = styled.div`
 	flex-grow: 1;
+	width: 100%;
 `;
 export const Content = styled.div`
 	padding: 20px;
@@ -96,20 +98,20 @@ export const Content = styled.div`
 	height: 100%;
 	display: none;
 
-	.content h2 {
+	&.content h2 {
 		padding: 0px 0 5px 0px;
 	}
-	.content hr {
+	&.content hr {
 		width: 100px;
 		height: 2px;
 		background: ${({ theme }) => theme.colors.lineBreak};
 		margin-bottom: 5px;
 	}
-	.content p {
+	&.content p {
 		width: 100%;
 		height: 100%;
 	}
-	.active-content {
+	&.active-content {
 		display: block;
 	}
 `;
