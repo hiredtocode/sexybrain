@@ -80,7 +80,8 @@ const AddEdit = (props) => {
 		file && uploadFile();
 		return () => uploadFile();
 	}, [file]);
-	// Upload file end
+	// Upload file END
+
 	// Get blog post
 	useEffect(() => {
 		id && getBlogDetail();
