@@ -10,13 +10,14 @@ export const FooterContainer = styled.div`
 	padding: 15px;
 	text-align: center;
 	color: ${({ theme }) => theme.colors.heading};
-	a {
+
+	a span {
 		display: inline-block;
 		text-decoration: none;
 		text-decoration-skip-ink: auto;
 		color: ${({ theme }) => theme.colors.font};
 	}
-	a:hover {
+	a span:hover {
 		color: ${({ theme }) => theme.colors.primary};
 		position: relative;
 		transition: 0.3s;
