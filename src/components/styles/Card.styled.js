@@ -77,9 +77,18 @@ export const Content = styled.div`
 export const IconContainer = styled.div`
 	display: flex;
 	position: absolute;
-	top: 20px;
+	bottom: 20px;
 	left: 20px;
 	z-index: 5;
+
+	#edit {
+		opacity: 0.7;
+		color: ${({ theme }) => theme.colors.primary};
+	}
+	#trash {
+		opacity: 0.7;
+		color: ${({ theme }) => theme.colors.cancelHovered};
+	}
 `;
 // Delete & Edit button when logged in END
 
@@ -155,7 +164,7 @@ export const Box = styled.div`
 	display: flex;
 	justify-content: space-between;
 	transition: 0.7s;
-
+	z-index: 1;
 	h2 {
 		width: 100%;
 		text-align: center;
