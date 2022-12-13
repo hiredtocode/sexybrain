@@ -9,7 +9,7 @@ export const FooterContainer = styled.div`
 	min-height: 150px;
 	padding: 15px;
 	text-align: center;
-
+	color: ${({ theme }) => theme.colors.heading};
 	a {
 		display: inline-block;
 		text-decoration: none;
