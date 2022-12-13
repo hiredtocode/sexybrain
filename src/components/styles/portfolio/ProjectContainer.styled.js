@@ -84,9 +84,6 @@ export const Content = styled.div`
 	width: 100%;
 	display: none;
 
-	h2 {
-		padding: 0px 0 5px 0px;
-	}
 	hr {
 		width: 100px;
 		height: 2px;
@@ -95,9 +92,9 @@ export const Content = styled.div`
 	}
 
 	&.active {
-		height: 500px;
 		display: grid;
-		grid-template-columns: repeat(9, 1fr);
+		grid-template-columns: repeat(12, 1fr);
+		grid-column-gap: 15px;
 	}
 
 	.featured {
@@ -113,8 +110,9 @@ export const CardContainer = styled.div`
 
 export const Description = styled.div`
 	background: ${({ theme }) => theme.colors.card};
-	padding: 0.45em;
+	padding: 2em;
 	margin: 20px 0;
+	word-break: keep-all;
 	height: 150px;
 	border-radius: 5px;
 	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
@@ -122,17 +120,25 @@ export const Description = styled.div`
 `;
 
 export const ProjectContent = styled.div`
-	grid-column: 4 / -1;
+	grid-column: 6 / -1;
 	max-height: 400px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	grid-row: 1;
-	z-index: 3;
 	position: relative;
 	text-align: right;
 
+	p {
+		font-size: 1.1rem;
+	}
+
+	h2 {
+		margin-top: -10px;
+	}
+
 	h2 a {
+		width: auto;
 		color: ${({ theme }) => theme.colors.heading};
 	}
 	h2 a:hover {
@@ -142,15 +148,44 @@ export const ProjectContent = styled.div`
 `;
 
 export const ProjectImage = styled.div`
-	grid-column: 1 / 5;
+	grid-column: 1 / 7;
 	grid-row: 1;
 	height: 400px;
+	z-index: 1;
+	vertical-align: middle;
 	position: relative;
+
 	a img {
 		width: 100%;
 		height: 100%;
 		vertical-align: middle;
-		border-radius: 5px;
+		border-radius: 10px;
+		object-fit: cover;
+		object-position: top;
+	}
+
+	a::before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		border-radius: 11px;
+		height: 100%;
+		inset: 0px;
+		background-color: ${({ theme }) => theme.colors.primary};
+		mix-blend-mode: screen;
+	}
+
+	a:hover::before,
+	.image:hover {
+		mix-blend-mode: none;
+		filter: none;
+		background-color: transparent;
+		transition: 0.5s;
+	}
+	.image {
+		mix-blend-mode: multiply;
+
+		filter: grayscale(100%) contrast(1) brightness(90%);
 	}
 `;
 
@@ -284,7 +319,7 @@ export const StackButton = styled.div`
 
 	img {
 		width: 30px;
-		opacity: 0.7;
+		opacity: 0.6;
 	}
 
 	&:hover {
@@ -311,6 +346,9 @@ export const StackButton = styled.div`
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
 		align-items: center;
+		span {
+			display: none;
+		}
 	}
 `;
 
