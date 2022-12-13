@@ -17,14 +17,10 @@ import programmer from '../assets/img/programmer.svg';
 import php from '../assets/img/php.svg';
 import { v4 as uuidv4 } from 'uuid';
 import question from '../assets/img/question.svg';
-import { H3 } from '../components/styles/Title.styled';
+import { H2 } from '../components/styles/Title.styled';
 import Projects from '../projects/projects.json';
 import GithubButtonForPortfolio from '../components/GithubButtonForPortfolio';
 import {
-	ProjectCard,
-	CardContainer,
-	ProjectDescription,
-	Stack,
 	StackButton,
 	CategoryFilter,
 	ContentContainer,
@@ -34,6 +30,11 @@ import {
 	FilterContainer,
 	Tab,
 	Tabs,
+	ProjectContent,
+	ProjectImage,
+	Description,
+	ProjectLink,
+	ProjectStack,
 } from '../components/styles/portfolio/ProjectContainer.styled.js';
 import visualStudioCode from '../assets/img/visualStudioCode.svg';
 import LinkButton from '../components/LinkButton.jsx';
@@ -61,7 +62,7 @@ const Portfolio = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [projects]);
 
-	console.log('isPressed:', isPressed);
+	console.log('categories:', categories);
 
 	const onReset = () => {
 		setProjects(Projects);
@@ -86,10 +87,10 @@ const Portfolio = () => {
 				<ul>
 					<div>Filter by category:</div>
 					<li className={isPressed ? 'pressed' : ''} onClick={onReset}>
-						All / Reset
+						Reset
 					</li>
 					{categories &&
-						categories.length > 6 &&
+						categories.length > 2 &&
 						categories.map((category) => {
 							return (
 								<CategoryFilter
@@ -107,203 +108,177 @@ const Portfolio = () => {
 			<ProjectContainer>
 				<Tabs>
 					<Tab className={isActive === 1 ? 'active' : ''} onClick={() => toggleActive(1)}>
-						Project 1
+						SexyBrain.Dev
 					</Tab>
 					<Tab className={isActive === 2 ? 'active' : ''} onClick={() => toggleActive(2)}>
 						Project 2
 					</Tab>
-					<Tab className={isActive === 3 ? 'active' : ''} onClick={() => toggleActive(3)}>
-						Project 3
-					</Tab>
 				</Tabs>
 
 				<ContentContainer>
-					<Content className={isActive === 1 ? 'active' : ''}>
-						<h2>Content 1</h2>
-						<hr />
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati praesentium
-							incidunt quia aspernatur quasi quidem facilis quo nihil vel voluptatum?
-						</p>
-					</Content>
+					{projects &&
+						projects.map((project) => (
+							<Content className={isActive === 1 ? 'active' : ''} key={uuidv4()}>
+								<ProjectContent>
+									<p className='featured'>Featured Project</p>
+									<H2>
+										<a href='http://sexybrain.dev'>Sexy Brain Developer</a>
+									</H2>
+									<Description>
+										This is a website I am currently working on which is also my featured project
+										since it's built from ground and up by me to be able to learn the React
+										framework and also Javascript.
+									</Description>
 
-					<Content className={isActive === 2 ? 'active' : ''}>
-						<h2>Content 2</h2>
-						<hr />
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente voluptatum qui
-							adipisci.
-						</p>
-					</Content>
-
-					<Content className={isActive === 3 ? 'active' : ''}>
-						<h2>Content 3</h2>
-						<hr />
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos sed nostrum rerum
-							laudantium totam unde adipisci incidunt modi alias! Accusamus in quia odit aspernatur
-							provident et ad vel distinctio recusandae totam quidem repudiandae omnis veritatis
-							nostrum laboriosam architecto optio rem, dignissimos voluptatum beatae aperiam
-							voluptatem atque. Beatae rerum dolores sunt.
-						</p>
-					</Content>
+									<ProjectStack>
+										{project.stack.map((stack) => {
+											switch (stack) {
+												case 'JavaScript':
+													return (
+														<StackButton key={uuidv4()}>
+															<img src={javascript} alt={stack} />
+															<span>{stack}</span>
+														</StackButton>
+													);
+												case 'TypeScript':
+													return (
+														<StackButton key={uuidv4()}>
+															<img src={typescript} alt={stack} />
+															<span>{stack}</span>
+														</StackButton>
+													);
+												case 'React':
+													return (
+														<StackButton key={uuidv4()}>
+															<img src={react} alt={stack} />
+															<span>{stack}</span>
+														</StackButton>
+													);
+												case 'Angular':
+													return (
+														<StackButton key={uuidv4()}>
+															<img src={angular} alt={stack} />
+															<span>{stack}</span>
+														</StackButton>
+													);
+												case 'CSS':
+													return (
+														<StackButton key={uuidv4()}>
+															<img src={css} alt={stack} />
+															<span>{stack}</span>
+														</StackButton>
+													);
+												case 'HTML':
+													return (
+														<StackButton key={uuidv4()}>
+															<img src={html} alt={stack} />
+															<span>{stack}</span>
+														</StackButton>
+													);
+												case 'SASS':
+													return (
+														<StackButton key={uuidv4()}>
+															<img src={sass} alt={stack} />
+															<span>{stack}</span>
+														</StackButton>
+													);
+												case 'Bootstrap':
+													return (
+														<StackButton key={uuidv4()}>
+															<img src={bootstrap} alt={stack} />
+															<span>{stack}</span>
+														</StackButton>
+													);
+												case 'Material UI':
+													return (
+														<StackButton key={uuidv4()}>
+															<img src={materialUi} alt={stack} />
+															<span>{stack}</span>
+														</StackButton>
+													);
+												case 'Tailwind CSS':
+													return (
+														<StackButton key={uuidv4()}>
+															<img src={tailwindcss} alt={stack} />
+															<span>{stack}</span>
+														</StackButton>
+													);
+												case 'Styled Components':
+													return (
+														<StackButton key={uuidv4()}>
+															<img src={styledComponents} alt={stack} />
+															<span>{stack}</span>
+														</StackButton>
+													);
+												case 'What I learned':
+													return (
+														<StackButton key={uuidv4()}>
+															<img src={programmer} alt={stack} />
+															<span>{stack}</span>
+														</StackButton>
+													);
+												case 'Firebase':
+													return (
+														<StackButton key={uuidv4()}>
+															<img src={firebase} alt={stack} />
+															<span>{stack}</span>
+														</StackButton>
+													);
+												case 'Wordpress':
+													return (
+														<StackButton key={uuidv4()}>
+															<img src={wordpress} alt={stack} />
+															<span>{stack}</span>
+														</StackButton>
+													);
+												case 'PHP':
+													return (
+														<StackButton key={uuidv4()}>
+															<img src={php} alt={stack} />
+															<span>{stack}</span>
+														</StackButton>
+													);
+												case 'VSCode':
+													return (
+														<StackButton key={uuidv4()}>
+															<img src={visualStudioCode} alt={stack} />
+															<span>{stack}</span>
+														</StackButton>
+													);
+												default:
+													return (
+														<StackButton key={uuidv4()}>
+															<img src={question} alt={stack} />
+															<span>{stack}</span>
+														</StackButton>
+													);
+											}
+										})}
+									</ProjectStack>
+									<ProjectLink>
+										{project && project.githubRepo ? (
+											<GithubButtonForPortfolio link='https://github.com/hiredtocode/sexybrain' />
+										) : null}
+										{project && project.hyperlink ? (
+											<LinkButton link='https://sexybrain.dev' title='sexybrain website' />
+										) : null}
+									</ProjectLink>
+								</ProjectContent>
+								<ProjectImage>
+									<a
+										href='https://sexybrain.dev'
+										rel='author noreferrer'
+										target='_blank'
+										aria-label='sexybrain main page'
+									>
+										<img src='https://unsplash.it/300/500' alt='' className='image' />
+									</a>
+								</ProjectImage>
+							</Content>
+						))}
+					<Content className={isActive === 2 ? 'active' : ''}></Content>
 				</ContentContainer>
 			</ProjectContainer>
-
-			{/* Project card collection row section start */}
-			{/* <ProjectContainer>
-				{projects &&
-					projects.map((project) => (
-						<CardContainer key={uuidv4()}>
-							<ProjectCard>
-								<Flex direction='column' grow='1'>
-									<Flex direction='row' style={{ Width: '100%' }} align='center' justfiy='center'>
-										<div>
-											<H3>{project.title}</H3>
-										</div>
-										{project.githubRepo ? (
-											<GithubButtonForPortfolio link={project.githubRepo} />
-										) : null}
-										{project.hyperlink ? (
-											<LinkButton link={project.hyperlink} title={project.title} />
-										) : null}
-									</Flex>
-									<span className='subText'> {project.date} </span>
-
-									<ProjectDescription>
-										<p>{project.description}</p>
-									</ProjectDescription>
-								</Flex>
-								<Stack>
-									{project.stack.map((stack) => {
-										switch (stack) {
-											case 'JavaScript':
-												return (
-													<StackButton key={uuidv4()}>
-														<span>{stack}</span>
-														<img src={javascript} alt={stack} />
-													</StackButton>
-												);
-											case 'TypeScript':
-												return (
-													<StackButton key={uuidv4()}>
-														<span>{stack}</span>
-														<img src={typescript} alt={stack} />
-													</StackButton>
-												);
-											case 'React':
-												return (
-													<StackButton key={uuidv4()}>
-														<span>{stack}</span>
-														<img src={react} alt={stack} />
-													</StackButton>
-												);
-											case 'Angular':
-												return (
-													<StackButton key={uuidv4()}>
-														<span>{stack}</span>
-														<img src={angular} alt={stack} />
-													</StackButton>
-												);
-											case 'CSS':
-												return (
-													<StackButton key={uuidv4()}>
-														<span>{stack}</span>
-														<img src={css} alt={stack} />
-													</StackButton>
-												);
-											case 'HTML':
-												return (
-													<StackButton key={uuidv4()}>
-														<span>{stack}</span>
-														<img src={html} alt={stack} />
-													</StackButton>
-												);
-											case 'SASS':
-												return (
-													<StackButton key={uuidv4()}>
-														<span>{stack}</span>
-														<img src={sass} alt={stack} />
-													</StackButton>
-												);
-											case 'Bootstrap':
-												return (
-													<StackButton key={uuidv4()}>
-														<span>{stack}</span>
-														<img src={bootstrap} alt={stack} />
-													</StackButton>
-												);
-											case 'Material UI':
-												return (
-													<StackButton key={uuidv4()}>
-														<span>{stack}</span>
-														<img src={materialUi} alt={stack} />
-													</StackButton>
-												);
-											case 'Tailwind CSS':
-												return (
-													<StackButton key={uuidv4()}>
-														<span>{stack}</span>
-														<img src={tailwindcss} alt={stack} />
-													</StackButton>
-												);
-											case 'Styled Components':
-												return (
-													<StackButton key={uuidv4()}>
-														<span>{stack}</span>
-														<img src={styledComponents} alt={stack} />
-													</StackButton>
-												);
-											case 'What I learned':
-												return (
-													<StackButton key={uuidv4()}>
-														<span>{stack}</span>
-														<img src={programmer} alt={stack} />
-													</StackButton>
-												);
-											case 'Firebase':
-												return (
-													<StackButton key={uuidv4()}>
-														<span>{stack}</span>
-														<img src={firebase} alt={stack} />
-													</StackButton>
-												);
-											case 'Wordpress':
-												return (
-													<StackButton key={uuidv4()}>
-														<span>{stack}</span>
-														<img src={wordpress} alt={stack} />
-													</StackButton>
-												);
-											case 'PHP':
-												return (
-													<StackButton key={uuidv4()}>
-														<span>{stack}</span>
-														<img src={php} alt={stack} />
-													</StackButton>
-												);
-											case 'VSCode':
-												return (
-													<StackButton key={uuidv4()}>
-														<span>{stack}</span>
-														<img src={visualStudioCode} alt={stack} />
-													</StackButton>
-												);
-											default:
-												return (
-													<StackButton key={uuidv4()}>
-														<span>{stack}</span>
-														<img src={question} alt={stack} />
-													</StackButton>
-												);
-										}
-									})}
-								</Stack>
-							</ProjectCard>
-						</CardContainer>
-					))}
-			</ProjectContainer> */}
-			{/* Project card collection row section END */}
 		</PortFolioContainer>
 	);
 };
