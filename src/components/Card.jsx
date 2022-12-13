@@ -108,16 +108,24 @@ export default function Card(props) {
 						<IconContainer style={{ float: 'right' }}>
 							<FontAwesomeIcon
 								icon={faTrash}
-								style={{ cursor: 'pointer', paddingRight: '10px', textDecoration: 'none' }}
+								id='trash'
+								style={{
+									cursor: 'pointer',
+									paddingRight: '10px',
+									textDecoration: 'none',
+								}}
 								size='2x'
 								aria-label={item.id}
 								onClick={handleDelete(item.id)}
 							/>
-							<Link to={`/update/${item.id}`}>
+							<Link
+								to={`/update/${item.id}`}
+								style={{ cursor: 'pointer', paddingRight: '10px', textDecoration: 'none' }}
+							>
 								<FontAwesomeIcon
 									icon={faEdit}
+									id='edit'
 									name='edit'
-									style={{ cursor: 'pointer', paddingRight: '10px', textDecoration: 'none' }}
 									size='2x'
 									aria-label={item.id}
 								/>
