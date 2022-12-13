@@ -29,7 +29,7 @@ export const ProjectContainer = styled.section`
 	flex-direction: column;
 	position: relative;
 	width: calc(1200px - 200px);
-	height: 600px;
+	height: 500px;
 	word-break: break-all;
 
 	/* xs: '575.98px' */
@@ -56,9 +56,9 @@ export const Tab = styled.button`
 	box-shadow: none;
 	color: ${({ theme }) => theme.colors.font};
 	background-color: ${({ theme }) => theme.colors.body};
-	border: none;
 	min-width: 30%;
-
+	font-size: 1.5rem;
+	border: none;
 	padding: 15px;
 	text-align: center;
 	width: 100%;
@@ -66,21 +66,12 @@ export const Tab = styled.button`
 	box-sizing: border-box;
 	position: relative;
 
-	&.active {
-		background: ${({ theme }) => theme.colors.primary};
-		border-bottom: 1px solid transparent;
+	&:hover {
+		color: ${({ theme }) => theme.colors.heading};
+		transition: 0.3s;
 	}
-
-	&.active::before {
-		content: '';
-		display: block;
-		position: absolute;
-		top: -5px;
-		left: 50%;
-		transform: translateX(-50%);
-		width: calc(100% + 2px);
-		height: 5px;
-		background: ${({ theme }) => theme.colors.strongAccent};
+	&.active {
+		color: ${({ theme }) => theme.colors.primary};
 	}
 `;
 
@@ -91,7 +82,6 @@ export const ContentContainer = styled.div`
 export const Content = styled.div`
 	padding: 20px;
 	width: 100%;
-	height: 100%;
 	display: none;
 
 	h2 {
@@ -103,18 +93,65 @@ export const Content = styled.div`
 		background: ${({ theme }) => theme.colors.lineBreak};
 		margin-bottom: 5px;
 	}
-	p {
-		width: 100%;
-		height: 100%;
-	}
+
 	&.active {
-		display: block;
+		height: 500px;
+		display: grid;
+		grid-template-columns: repeat(9, 1fr);
+	}
+
+	.featured {
+		margin: 10px 0px;
+		color: ${({ theme }) => theme.colors.primary};
 	}
 `;
 
 export const CardContainer = styled.div`
 	width: 100%;
 	position: relative;
+`;
+
+export const Description = styled.div`
+	background: ${({ theme }) => theme.colors.card};
+	padding: 0.45em;
+	margin: 20px 0;
+	height: 150px;
+	border-radius: 5px;
+	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+	z-index: 2;
+`;
+
+export const ProjectContent = styled.div`
+	grid-column: 4 / -1;
+	max-height: 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	grid-row: 1;
+	z-index: 3;
+	position: relative;
+	text-align: right;
+
+	h2 a {
+		color: ${({ theme }) => theme.colors.heading};
+	}
+	h2 a:hover {
+		color: ${({ theme }) => theme.colors.primary};
+		transition: 0.3s;
+	}
+`;
+
+export const ProjectImage = styled.div`
+	grid-column: 1 / 5;
+	grid-row: 1;
+	height: 400px;
+	position: relative;
+	a img {
+		width: 100%;
+		height: 100%;
+		vertical-align: middle;
+		border-radius: 5px;
+	}
 `;
 
 export const ProjectCard = styled.div`
@@ -197,14 +234,20 @@ export const ProjectDescription = styled.div`
 	padding: 15px;
 `;
 
-export const Stack = styled.div`
+export const ProjectLink = styled.div`
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-top: 20px;
+`;
+
+export const ProjectStack = styled.div`
 	transition: 0.5s;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	min-width: 65px;
 	margin-right: 5px;
-	padding-top: 10px;
-	justify-content: flex-start;
+	justify-content: flex-end;
 
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
@@ -218,7 +261,6 @@ export const Stack = styled.div`
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
 		flex-direction: row;
-		justify-content: space-evenly;
 		margin-bottom: 10px;
 	}
 `;
@@ -230,22 +272,19 @@ export const StackButton = styled.div`
 	justify-content: space-around;
 	margin: 5px;
 	overflow: hidden;
+	align-items: center;
 	height: auto;
-	background: ${({ theme }) => theme.colors.card};
 	transition: 0.5s;
 	color: ${({ theme }) => theme.colors.subText};
-	writing-mode: vertical-rl;
-	text-orientation: mixed;
 
 	span {
 		color: ${({ theme }) => theme.colors.font};
-		opacity: 0.5;
 		cursor: default;
 	}
 
 	img {
 		width: 30px;
-		opacity: 0.5;
+		opacity: 0.7;
 	}
 
 	&:hover {
@@ -271,10 +310,7 @@ export const StackButton = styled.div`
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
-		writing-mode: inherit;
-		text-orientation: inherit;
 		align-items: center;
-		flex-direction: column-reverse;
 	}
 `;
 
@@ -362,7 +398,7 @@ export const FilterContainer = styled.div`
 	}
 
 	ul li {
-		margin-top: 20px;
+		margin: 20px;
 		list-style: none;
 		display: none;
 		padding: 5px 10px;
@@ -373,19 +409,35 @@ export const FilterContainer = styled.div`
 		border-radius: 10px;
 		box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 		font-size: 1.1rem;
-		border: 1px solid ${({ theme }) => theme.colors.primary};
+		background-color: ${({ theme }) => theme.colors.card};
+		animation: pulse 1.5s infinite;
+	}
+
+	@keyframes pulse {
+		0% {
+			box-shadow: 0 0 0 0 rgba(100, 255, 218, 0.9);
+		}
+		70% {
+			box-shadow: 0 0 0 10px rgba(100, 255, 218, 0);
+		}
+		100% {
+			box-shadow: 0 0 0 0 rgba(100, 255, 218, 0);
+		}
 	}
 
 	ul li:hover {
 		&:hover {
-			color: ${({ theme }) => theme.colors.strongAccent};
+			color: ${({ theme }) => theme.colors.heading};
+			border: 1px solid ${({ theme }) => theme.colors.primary};
+
 			cursor: pointer;
 		}
 	}
 
 	ul li.pressed {
 		display: flex;
-		color: red;
+		color: ${({ theme }) => theme.colors.font};
+		height: 100px;
 	}
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
@@ -419,13 +471,13 @@ export const CategoryFilter = styled.div`
 	border-radius: 10px;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 	font-size: 1.1rem;
-	border: 1px solid ${({ theme }) => theme.colors.primary};
-
+	background-color: ${({ theme }) => theme.colors.card};
 	color: ${({ theme }) => theme.colors.font};
 	padding: 0 4px;
 
 	&:hover {
-		color: ${({ theme }) => theme.colors.strongAccent};
+		color: ${({ theme }) => theme.colors.heading};
+		box-shadow: 1px 1px 1px ${({ theme }) => theme.colors.primary};
 		cursor: pointer;
 	}
 
