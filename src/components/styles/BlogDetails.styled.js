@@ -180,20 +180,6 @@ export const MarkdownContainer = styled.div`
 		word-wrap: break-word;
 	}
 
-	a:link,
-	a:active {
-		color: ${({ theme }) => theme.colors.secondary};
-		background-color: transparent;
-		text-decoration: none;
-	}
-
-	a:visited,
-	a:hover {
-		color: ${({ theme }) => theme.colors.primary};
-		background-color: transparent;
-		text-decoration: none;
-	}
-
 	thead {
 		background-color: ${({ theme }) => theme.colors.card};
 	}

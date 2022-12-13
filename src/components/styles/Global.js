@@ -61,7 +61,19 @@ body{
 	color: ${({ theme }) => theme.colors.font};
 	transition-duration: 1s;
 }
+a:link,
+	a:active {
+		color: ${({ theme }) => theme.colors.secondary};
+		background-color: transparent;
+		text-decoration: none;
+	}
 
+	a:visited,
+	a:hover {
+		color: ${({ theme }) => theme.colors.primary};
+		background-color: transparent;
+		text-decoration: none;
+	}
 p{
 	font-size: 1.2em;
 }
@@ -91,6 +103,7 @@ button{
 	);
 		color: ${({ theme }) => theme.colors.heading};
 	}
+
 `;
 
 export default GlobalStyles;
