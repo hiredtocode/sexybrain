@@ -4,7 +4,7 @@ export const Button = styled.button`
 	border-radius: 50px;
 	border: none;
 	transition: 0.5s;
-
+	word-break: keep-all;
 	cursor: pointer;
 	font-size: 1.2rem;
 	font-weight: 700;
