@@ -33,14 +33,13 @@ export const FormSubmitButton = styled.button`
 	font-weight: 700;
 	width: 100%;
 	padding: 10px 15px;
-	background-color: ${({ theme }) => theme.colors.primary};
+	background-color: ${({ theme }) => theme.colors.hovered};
 	color: ${({ theme }) => theme.colors.font};
 
 	&:hover {
 		opacity: 0.9;
 		transform: scale(0.98);
 		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-		transition: 0.5s;
 		background: linear-gradient(
 			135deg,
 			${({ theme }) => theme.colors.hover},
@@ -64,7 +63,7 @@ export const FormCancelButton = styled.button`
 	margin-right: 10px;
 	padding: 10px 15px;
 	background-color: ${({ theme }) => theme.colors.cancelButton};
-	color: ${({ theme }) => theme.colors.font};
+	color: ${({ theme }) => theme.colors.heading};
 
 	&:hover {
 		opacity: 0.9;
@@ -76,11 +75,11 @@ export const FormCancelButton = styled.button`
 			${({ theme }) => theme.colors.cancelHover},
 			${({ theme }) => theme.colors.cancelHovered}
 		);
-		color: ${({ theme }) => theme.colors.font};
+		color: ${({ theme }) => theme.colors.heading};
 	}
 
 	&:hover span {
-		color: ${({ theme }) => theme.colors.font};
+		color: ${({ theme }) => theme.colors.heading};
 	}
 `;
 export const LoginButton = styled.button`
