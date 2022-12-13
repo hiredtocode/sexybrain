@@ -49,6 +49,7 @@ function App() {
 			primary: '#087ea4',
 			primaryBackground: '#e1f5ff',
 			secondary: '#474e5c',
+			heading: '#474e5c',
 			secondaryBackground: '#f4fbf9',
 			accent: '#575fb7',
 			accentBackground: '#f3f4fd',
@@ -112,8 +113,8 @@ function App() {
 			input: '#3150ff',
 			highlight: '#023444',
 			titleBackgroundColor1: 'rgba(255, 255, 255, 0.014425753211440795)',
-			titleBackgroundColor2: '#112240',
 			titleBackgroundColor3: 'rgba(252, 176, 69, 0)',
+			titleBackgroundColor2: '#112240',
 		},
 
 		xs: '575.98px',
