@@ -80,7 +80,7 @@ button{
 
 ::selection {
 		background: ${({ theme }) => theme.colors.highlight};
-
+	color: ${({ theme }) => theme.colors.heading}
 	}
 
 	.active button{
