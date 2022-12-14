@@ -39,74 +39,77 @@ export default function Card(props) {
 
 	return (
 		<>
-			{blogs?.map((item) => (
+			{blogs?.map((post) => (
 				<CardContainer key={uuidv4()}>
-					<Link to={`/detail/${item.id}`} style={{ textDecoration: 'none', color: { fontColor } }}>
+					<Link to={`/detail/${post.id}`} style={{ textDecoration: 'none', color: { fontColor } }}>
 						<StyledCard>
 							{/* Category matching logo on each card */}
 							<CategoryMark>
-								{item.category === 'HTML' ? (
-									<img key={uuidv4()} src={html} alt={item.category} />
-								) : item.category === 'JavaScript' ? (
-									<img key={uuidv4()} src={javascript} alt={item.category} />
-								) : item.category === 'Angular' ? (
-									<img key={uuidv4()} src={angular} alt={item.category} />
-								) : item.category === 'TypeScript' ? (
-									<img key={uuidv4()} src={typescript} alt={item.category} />
-								) : item.category === 'React' ? (
-									<img key={uuidv4()} src={react} alt={item.category} />
-								) : item.category === 'CSS' ? (
-									<img key={uuidv4()} src={css} alt={item.category} />
-								) : item.category === 'SASS' ? (
-									<img key={uuidv4()} src={sass} alt={item.category} />
-								) : item.category === 'Bootstrap' ? (
-									<img key={uuidv4()} src={bootstrap} alt={item.category} />
-								) : item.category === 'Material UI' ? (
-									<img key={uuidv4()} src={materialUi} alt={item.category} />
-								) : item.category === 'Wordpress' ? (
-									<img key={uuidv4()} src={wordpress} alt={item.category} />
-								) : item.category === 'Styled Components' ? (
-									<img key={uuidv4()} src={styledComponents} alt={item.category} />
-								) : item.category === 'Firebase' ? (
-									<img key={uuidv4()} src={firebase} alt={item.category} />
-								) : item.category === 'Tailwind CSS' ? (
-									<img key={uuidv4()} src={tailwindcss} alt={item.category} />
-								) : item.category === 'What I learned' ? (
-									<img key={uuidv4()} src={programmer} alt={item.category} />
+								{post.category === 'HTML' ? (
+									<img key={uuidv4()} src={html} alt={post.category} />
+								) : post.category === 'JavaScript' ? (
+									<img key={uuidv4()} src={javascript} alt={post.category} />
+								) : post.category === 'Angular' ? (
+									<img key={uuidv4()} src={angular} alt={post.category} />
+								) : post.category === 'TypeScript' ? (
+									<img key={uuidv4()} src={typescript} alt={post.category} />
+								) : post.category === 'React' ? (
+									<img key={uuidv4()} src={react} alt={post.category} />
+								) : post.category === 'CSS' ? (
+									<img key={uuidv4()} src={css} alt={post.category} />
+								) : post.category === 'SASS' ? (
+									<img key={uuidv4()} src={sass} alt={post.category} />
+								) : post.category === 'Bootstrap' ? (
+									<img key={uuidv4()} src={bootstrap} alt={post.category} />
+								) : post.category === 'Material UI' ? (
+									<img key={uuidv4()} src={materialUi} alt={post.category} />
+								) : post.category === 'Wordpress' ? (
+									<img key={uuidv4()} src={wordpress} alt={post.category} />
+								) : post.category === 'Styled Components' ? (
+									<img key={uuidv4()} src={styledComponents} alt={post.category} />
+								) : post.category === 'Firebase' ? (
+									<img key={uuidv4()} src={firebase} alt={post.category} />
+								) : post.category === 'Tailwind CSS' ? (
+									<img key={uuidv4()} src={tailwindcss} alt={post.category} />
+								) : post.category === 'What I learned' ? (
+									<img key={uuidv4()} src={programmer} alt={post.category} />
 								) : (
-									<img key={uuidv4()} src={question} alt={item.category} />
+									<img key={uuidv4()} src={question} alt={post.category} />
 								)}
 							</CategoryMark>
 							{/* Category matching logo on each card END*/}
 							<Content>
 								<Box>
 									<H2>
-										<mark>{item.title}</mark>
+										<mark>{post.title}</mark>
 									</H2>
 									<Date>
 										<div>
-											<mark>Created: {item.createdTimestamp?.toDate().toDateString()}</mark>
+											<mark>Created: {post.createdTimestamp?.toDate().toDateString()}</mark>
 										</div>
 										<div>
-											{item.lastUpdatedTimestamp?.toDate().toDateString() !==
-											item.createdTimestamp?.toDate().toDateString() ? (
-												<mark>Edited: {item.lastUpdatedTimestamp?.toDate().toDateString()}</mark>
+											{/* This checks if the created date === edited date. If so it won't display the edited date */}
+											{post.lastUpdatedTimestamp ? (
+												post.createdTimestamp.toDate().toDateString() ===
+												post.lastUpdatedTimestamp.toDate().toDateString() ? null : (
+													<mark>Edited: {post.lastUpdatedTimestamp.toDate().toDateString()}</mark>
+												)
 											) : null}
 										</div>
 									</Date>
 								</Box>
 								<Description>
-									<mark>{excerpt(item.description, 120)}</mark>
+									<mark>{excerpt(post.description, 120)}</mark>
 								</Description>
 								<TagBox>
-									<Tags tags={item.tags} />
+									<Tags tags={post.tags} />
 								</TagBox>
 							</Content>
 						</StyledCard>
 					</Link>
 
 					{/* Delete & Edit button */}
-					{userId && item.userId === userId && (
+					{userId && post.userId === userId && (
 						<IconContainer style={{ float: 'right' }}>
 							<FontAwesomeIcon
 								icon={faTrash}
@@ -117,11 +120,11 @@ export default function Card(props) {
 									textDecoration: 'none',
 								}}
 								size='2x'
-								aria-label={item.id}
-								onClick={handleDelete(item.id)}
+								aria-label={post.id}
+								onClick={handleDelete(post.id)}
 							/>
 							<Link
-								to={`/update/${item.id}`}
+								to={`/update/${post.id}`}
 								style={{ cursor: 'pointer', paddingRight: '10px', textDecoration: 'none' }}
 							>
 								<FontAwesomeIcon
@@ -129,7 +132,7 @@ export default function Card(props) {
 									id='edit'
 									name='edit'
 									size='2x'
-									aria-label={item.id}
+									aria-label={post.id}
 								/>
 							</Link>
 						</IconContainer>
