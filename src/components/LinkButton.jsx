@@ -1,18 +1,11 @@
 import React from 'react';
-import styled from 'styled-components/macro';
+import { LinkButtonDiv } from './styles/portfolio/ProjectContainer.styled';
 
 function LinkButton(props) {
 	const { link, title } = props;
-	const Div = styled.div`
-		.icon {
-			opacity: 0.6;
-		}
-		.icon:hover {
-			opacity: 1;
-		}
-	`;
+
 	return (
-		<Div>
+		<LinkButtonDiv>
 			<a href={link} aria-label={title} target='_blank' rel='noreferrer'>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
@@ -24,9 +17,9 @@ function LinkButton(props) {
 					<polyline
 						fill='none'
 						stroke='#64ffda'
-						stroke-linecap='round'
-						stroke-linejoin='round'
-						stroke-width='16'
+						strokeLinecap='round'
+						strokeLinejoin='round'
+						strokeWidth='16'
 						points='216 100 215.992 40.008 156 40'
 					/>
 					<line
@@ -36,21 +29,21 @@ function LinkButton(props) {
 						y2='40.029'
 						fill='none'
 						stroke='#64ffda'
-						stroke-linecap='round'
-						stroke-linejoin='round'
-						stroke-width='16'
+						strokeLinecap='round'
+						strokeLinejoin='round'
+						strokeWidth='16'
 					/>
 					<path
 						fill='none'
 						stroke='#64ffda'
-						stroke-linecap='round'
-						stroke-linejoin='round'
-						stroke-width='16'
+						strokeLinecap='round'
+						strokeLinejoin='round'
+						strokeWidth='16'
 						d='M184,144v64a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8h64'
 					/>
 				</svg>
 			</a>
-		</Div>
+		</LinkButtonDiv>
 	);
 }
 
