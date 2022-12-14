@@ -1,4 +1,3 @@
-import React from 'react';
 import JHLogo from '../assets/img/jh-logo.png';
 import JHLogoWhite from '../assets/img/jh-logo-white.png';
 import { useContext } from 'react';

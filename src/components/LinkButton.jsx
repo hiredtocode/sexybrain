@@ -1,4 +1,3 @@
-import React from 'react';
 import { LinkButtonDiv } from './styles/portfolio/ProjectContainer.styled';
 
 function LinkButton(props) {
