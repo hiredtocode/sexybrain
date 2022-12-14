@@ -3,27 +3,6 @@ import styled from 'styled-components/macro';
 export const CardContainer = styled.div`
 	position: relative;
 	min-width: 100%;
-
-	&:hover {
-		h2 {
-			background: linear-gradient(
-				90deg,
-				${({ theme }) => theme.colors.titleBackgroundColor1} 0%,
-				${({ theme }) => theme.colors.titleBackgroundColor2} 20%,
-				${({ theme }) => theme.colors.titleBackgroundColor3} 100%
-			);
-		}
-	}
-	&:hover {
-		span {
-			background: linear-gradient(
-				90deg,
-				${({ theme }) => theme.colors.titleBackgroundColor1} 0%,
-				${({ theme }) => theme.colors.titleBackgroundColor2} 20%,
-				${({ theme }) => theme.colors.titleBackgroundColor3} 100%
-			);
-		}
-	}
 `;
 
 export const StyledCard = styled.div`
@@ -124,14 +103,17 @@ export const CategoryMark = styled.div`
 export const Date = styled.div`
 	display: flex;
 	flex: 1 1;
-	min-width: 190px;
+	min-width: 210px;
 	flex-direction: column;
 	justify-content: flex-start;
 	transition: 0.7s;
 	text-align: right;
-	span {
+
+	mark {
+		opacity: 1;
 		color: ${({ theme }) => theme.colors.font};
-		font-size: 1rem;
+		background-color: ${({ theme }) => theme.colors.card};
+		font-size: 0.9rem;
 	}
 
 	/* xs: '575.98px' */
@@ -140,19 +122,15 @@ export const Date = styled.div`
 	/* s: '767.98px'  */
 	@media (max-width: ${({ theme }) => theme.s}) {
 		margin-left: auto;
-		font-size: 0.9rem;
+		font-size: 0.7rem;
 		flex-direction: column;
-		span {
-			font-size: 0.9rem;
-		}
 	}
 	/* md: '991.98px'  */
 	@media (max-width: ${({ theme }) => theme.md}) {
 		margin-left: auto;
 		padding-right: 0;
-		flex-direction: row;
-		justify-content: space-around;
 		width: 100%;
+		font-size: 0.8rem;
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
@@ -169,7 +147,10 @@ export const Box = styled.div`
 		width: 100%;
 		text-align: center;
 	}
-
+	mark {
+		background-color: ${({ theme }) => theme.colors.card};
+		color: ${({ theme }) => theme.colors.heading};
+	}
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
 	}
@@ -199,9 +180,10 @@ export const Description = styled.div`
 	transition: 0.7s;
 	margin-bottom: 25px;
 
-	span {
-		width: 100%;
-		text-align: center;
+	mark {
+		background-color: ${({ theme }) => theme.colors.card};
+		color: ${({ theme }) => theme.colors.font};
+		margin: 0 auto;
 	}
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
@@ -209,10 +191,10 @@ export const Description = styled.div`
 	/* s: '767.98px'  */
 	@media (max-width: ${({ theme }) => theme.s}) {
 		padding-left: 0;
-		margine: 0 auto;
+		margin: 0 auto;
 		z-index: 10;
 		opacity: 1;
-
+		margin-bottom: 15px;
 		font-size: 0.9rem;
 
 		div {

@@ -80,21 +80,23 @@ export default function Card(props) {
 							{/* Category matching logo on each card END*/}
 							<Content>
 								<Box>
-									<H2>{item.title}</H2>
+									<H2>
+										<mark>{item.title}</mark>
+									</H2>
 									<Date>
 										<div>
-											<span>Created: {item.createdTimestamp?.toDate().toDateString()}</span>
+											<mark>Created: {item.createdTimestamp?.toDate().toDateString()}</mark>
 										</div>
 										<div>
 											{item.lastUpdatedTimestamp?.toDate().toDateString() !==
 											item.createdTimestamp?.toDate().toDateString() ? (
-												<span>Edited: {item.lastUpdatedTimestamp?.toDate().toDateString()}</span>
+												<mark>Edited: {item.lastUpdatedTimestamp?.toDate().toDateString()}</mark>
 											) : null}
 										</div>
 									</Date>
 								</Box>
 								<Description>
-									<span>{excerpt(item.description, 120)}</span>
+									<mark>{excerpt(item.description, 120)}</mark>
 								</Description>
 								<TagBox>
 									<Tags tags={item.tags} />
