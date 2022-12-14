@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
 import { MoonIcon, SunIcon } from '../assets/icons';
-import { DarkLightContainer } from '../components/styles/portfolio/ProjectContainer.styled.js';
+import { DarkLightContainer } from './styles/Header.styled';
 
 const DarkLightMode = () => {
 	const { isDark, setIsDark } = useContext(ThemeContext);
