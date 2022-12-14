@@ -12,6 +12,9 @@ import {
 import GithubButton from './GithubButton';
 import DarkLightMode from './DarkLightMode';
 import Logo from './Logo';
+import Login from './LoginButton';
+import Logout from './LogOutButton';
+import Write from './CreatePostButton';
 
 const Header = (props) => {
 	const { user, handleLogout } = props;
@@ -34,17 +37,23 @@ const Header = (props) => {
 					<>
 						{/* Create and Logout button appears if logged in */}
 						<NavLink to='/create'>
-							<span>Create</span>
+							<span>
+								<Write />
+							</span>
 						</NavLink>
 						<Link to='/'>
-							<span onClick={handleLogout}>Logout</span>
+							<span onClick={handleLogout}>
+								<Logout />
+							</span>
 						</Link>
 						{/* Create and Logout button appears if logged in END */}
 					</>
 				) : (
 					// if not logged in
 					<NavLink to='/auth'>
-						<span>Login</span>
+						<span>
+							<Login />
+						</span>
 					</NavLink>
 					// if not logged in END
 				)}
@@ -83,9 +92,15 @@ const Header = (props) => {
 					</HamburgerMenu>
 				</ShowOnMobileContainer>
 				<MobileNav className={isActive ? 'isActive' : ''}>
-					<NavLink to='/'>블로그</NavLink>
-					<NavLink to='/resume'>이력서</NavLink>
-					<NavLink to='/portfolio'>포트폴리오</NavLink>
+					<NavLink to='/' onClick={toggleHamburgerMenu}>
+						블로그
+					</NavLink>
+					<NavLink to='/resume' onClick={toggleHamburgerMenu}>
+						이력서
+					</NavLink>
+					<NavLink to='/portfolio' onClick={toggleHamburgerMenu}>
+						포트폴리오
+					</NavLink>
 				</MobileNav>
 			</Nav>
 		</StyledHeader>
