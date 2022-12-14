@@ -165,6 +165,10 @@ export const ProjectContent = styled.div`
 	position: relative;
 	text-align: right;
 
+	mark {
+		background-color: ${({ theme }) => theme.colors.body};
+	}
+
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
 	}
@@ -181,7 +185,7 @@ export const ProjectContent = styled.div`
 			font-size: 1rem;
 		}
 		h2 {
-			font-size: 1.5rem;
+			font-size: 1.7rem;
 			z-index: 2;
 		}
 	}
@@ -189,11 +193,13 @@ export const ProjectContent = styled.div`
 	@media (max-width: ${({ theme }) => theme.xs}) {
 	}
 	p {
-		font-size: 1.1rem;
+		font-size: 1rem;
 	}
 
 	h2 {
 		margin-top: -10px;
+		word-break: keep-all;
+		font-size: 1.5rem;
 		z-index: 2;
 	}
 
