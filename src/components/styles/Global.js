@@ -31,6 +31,12 @@ const GlobalStyles = createGlobalStyle`
 		}
 }
 
+/* @media (prefers-color-scheme: dark){
+	body{
+		${({ theme }) => theme.colors.body}
+	}
+} */
+
 /* Chrome, Edge, Safari */
 *::-webkit-scrollbar {
 	width: 12px; /* vertical scrollbar */
@@ -95,14 +101,6 @@ button{
 	color: ${({ theme }) => theme.colors.heading}
 	}
 
-	.active button{
-		background: linear-gradient(
-		135deg,
-		${({ theme }) => theme.colors.hover},
-		${({ theme }) => theme.colors.hovered}
-	);
-		color: ${({ theme }) => theme.colors.heading};
-	}
 
 `;
 

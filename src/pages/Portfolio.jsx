@@ -28,8 +28,6 @@ import {
 	PortFolioContainer,
 	ProjectContainer,
 	FilterContainer,
-	Tab,
-	Tabs,
 	ProjectContent,
 	ProjectImage,
 	Description,
@@ -39,6 +37,9 @@ import {
 import visualStudioCode from '../assets/img/visualStudioCode.svg';
 import LinkButton from '../components/LinkButton.jsx';
 import { useState, useEffect } from 'react';
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
+import darkScreenShot from '../assets/img/sexybrain-main-page-dark.jpg';
 
 const Portfolio = () => {
 	const [projects, setProjects] = useState(Projects);
@@ -61,8 +62,6 @@ const Portfolio = () => {
 		categories();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [projects]);
-
-	console.log('categories:', categories);
 
 	const onReset = () => {
 		setProjects(Projects);
@@ -98,7 +97,7 @@ const Portfolio = () => {
 									onClick={handleCategory(category)}
 									className={isPressed ? 'pressed' : ''}
 								>
-									{category}
+									<span>{category}</span>
 								</CategoryFilter>
 							);
 						})}
@@ -106,19 +105,18 @@ const Portfolio = () => {
 			</FilterContainer>
 			{/* Left sidebar filter section start END*/}
 			<ProjectContainer>
-				<Tabs>
+				{/* <Tabs>
 					<Tab className={isActive === 1 ? 'active' : ''} onClick={() => toggleActive(1)}>
 						SexyBrain.Dev
 					</Tab>
 					<Tab className={isActive === 2 ? 'active' : ''} onClick={() => toggleActive(2)}>
 						Project 2
 					</Tab>
-				</Tabs>
-
+				</Tabs> */}
 				<ContentContainer>
 					{projects &&
 						projects.map((project) => (
-							<Content className={isActive === 1 ? 'active' : ''} key={uuidv4()}>
+							<Content className={isActive === 1 ? 'isActive' : ''} key={uuidv4()}>
 								<ProjectContent>
 									<p className='featured'>Featured Project</p>
 									<H2>
@@ -271,7 +269,7 @@ const Portfolio = () => {
 										target='_blank'
 										aria-label='sexybrain main page'
 									>
-										<img src='https://unsplash.it/300/500' alt='' className='image' />
+										<img src={darkScreenShot} alt='' className='image' />
 									</a>
 								</ProjectImage>
 							</Content>
