@@ -61,7 +61,9 @@ const Resume = () => {
 					<p>
 						sexybrain.dev를 운영하는 한형석입니다. <br />
 						<br />
-						처음부터 끝까지 디자인과 기능들을 구축하면서 직접 학습을 진행하고 있습니다. <br />
+						처음부터 끝까지 <Highlight>JavaScript</Highlight>와 <Highlight>React</Highlight>
+						프레임워크 그리고 <Highlight>Styled Components</Highlight>를 통해 디자인과 기능들을
+						구축하면서 직접 학습을 진행하고 있습니다. <br />
 						UX/UI 디자인을 고민하며 레이아웃과 반응형 앱을 구현하고 개선을 통해 사용자가 즐기는 앱을
 						만드는 것이 목적입니다. <br />
 						<br />
