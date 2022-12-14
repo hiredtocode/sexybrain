@@ -93,7 +93,6 @@ svg {
 mark {
 	border-radius: 5px;
 	padding: 0 10px;
-	background-color: ${({ theme }) => theme.colors.body}
 }
 button{
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
