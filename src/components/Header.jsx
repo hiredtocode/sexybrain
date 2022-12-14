@@ -9,7 +9,6 @@ import {
 	ShowOnWebContainer,
 	ShowOnMobileContainer,
 } from './styles/Header.styled.js';
-import { Button } from './styles/Button.styled.js';
 import GithubButton from './GithubButton';
 import DarkLightMode from './DarkLightMode';
 import Logo from './Logo';
@@ -35,30 +34,30 @@ const Header = (props) => {
 					<>
 						{/* Create and Logout button appears if logged in */}
 						<NavLink to='/create'>
-							<Button>Create</Button>
+							<span>Create</span>
 						</NavLink>
 						<Link to='/'>
-							<Button onClick={handleLogout}>Logout</Button>
+							<span onClick={handleLogout}>Logout</span>
 						</Link>
 						{/* Create and Logout button appears if logged in END */}
 					</>
 				) : (
 					// if not logged in
 					<NavLink to='/auth'>
-						<Button>Login</Button>
+						<span>Login</span>
 					</NavLink>
 					// if not logged in END
 				)}
 				{/* Navbar menu container */}
 				<LinkContainer>
 					<NavLink to='/'>
-						<Button>블로그</Button>
+						<span>블로그</span>
 					</NavLink>
 					<NavLink to='/resume'>
-						<Button>이력서</Button>
+						<span>이력서</span>
 					</NavLink>
 					<NavLink to='/portfolio'>
-						<Button>포트폴리오</Button>
+						<span>포트폴리오</span>
 					</NavLink>
 					{/* Resume page menu END*/}
 					<ShowOnWebContainer>

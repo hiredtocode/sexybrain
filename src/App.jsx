@@ -56,7 +56,7 @@ function App() {
 			active: '#e6f7ff',
 			body: '#ffffff',
 			subText: '#9ca3af',
-			strongAccent: '#332316',
+			strongAccent: '#fabd62',
 			strongAccentBackground: '#ffc773',
 
 			header: 'transparent',

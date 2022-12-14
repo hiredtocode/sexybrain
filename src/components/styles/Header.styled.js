@@ -24,7 +24,23 @@ export const StyledHeader = styled.header`
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
-	} ;
+	}
+
+	a span {
+		display: inline-block;
+		padding: 10px;
+		margin: 0 5px;
+		font-size: 1.2rem;
+		color: ${({ theme }) => theme.colors.font};
+	}
+	a span:hover {
+		transition: 0.3s;
+		color: ${({ theme }) => theme.colors.primary};
+	}
+
+	.active span {
+		color: ${({ theme }) => theme.colors.primary};
+	}
 `;
 
 export const Nav = styled.nav`
