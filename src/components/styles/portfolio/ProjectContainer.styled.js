@@ -99,9 +99,12 @@ export const Content = styled.div`
 		grid-column-gap: 15px;
 	}
 
-	.featured {
+	.featured mark {
 		margin: 10px 0px;
 		color: ${({ theme }) => theme.colors.primary};
+	}
+	.featured mark {
+		background-color: ${({ theme }) => theme.colors.body};
 	}
 	/* s: '767.98px'  */
 	@media (max-width: ${({ theme }) => theme.s}) {
@@ -111,6 +114,15 @@ export const Content = styled.div`
 			margin: 10px 0px;
 			color: ${({ theme }) => theme.colors.primary};
 			z-index: 2;
+		}
+		.featured mark {
+			background-color: ${({ theme }) => theme.colors.body};
+		}
+	}
+	/* xs: '575.98px' */
+	@media (max-width: ${({ theme }) => theme.xs}) {
+		.featured mark {
+			background-color: ${({ theme }) => theme.colors.body};
 		}
 	}
 `;
@@ -163,6 +175,7 @@ export const ProjectContent = styled.div`
 	/* s: '767.98px'  */
 	@media (max-width: ${({ theme }) => theme.s}) {
 		grid-column: 2 / -1;
+		padding-right: 10px;
 
 		.featured {
 			font-size: 1rem;
@@ -338,6 +351,7 @@ export const ProjectLink = styled.div`
 	justify-content: flex-end;
 	align-items: center;
 	margin-top: 20px;
+
 	@media (max-width: ${({ theme }) => theme.xs}) {
 		z-index: 2; /* xs: '575.98px' */
 		.image {
@@ -375,13 +389,16 @@ export const StackButton = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	margin: 5px 10px;
 	overflow: hidden;
+	margin: 0 5px;
 	align-items: center;
 	height: auto;
 	transition: 0.5s;
 	color: ${({ theme }) => theme.colors.subText};
 	z-index: 2;
+	background-color: ${({ theme }) => theme.colors.body};
+	border-radius: 5px;
+	padding: 5px;
 
 	span {
 		color: ${({ theme }) => theme.colors.font};

@@ -118,9 +118,13 @@ const Portfolio = () => {
 						projects.map((project) => (
 							<Content className={isActive === 1 ? 'isActive' : ''} key={uuidv4()}>
 								<ProjectContent>
-									<p className='featured'>Featured Project</p>
+									<p className='featured'>
+										<mark>Featured Project</mark>
+									</p>
 									<H2>
-										<a href='http://sexybrain.dev'>Sexy Brain Developer</a>
+										<mark>
+											<a href='http://sexybrain.dev'>Sexy Brain Developer</a>
+										</mark>
 									</H2>
 									<Description>
 										This is a website I am currently working on which is also my featured project
