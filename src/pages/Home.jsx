@@ -27,8 +27,7 @@ import { Aside } from '../components/styles/CategoryContainer.styled';
 import { v4 as uuidv4 } from 'uuid';
 import Card from '../components/Card';
 import { BlogContainer } from '../components/styles/BlogContainer.styled';
-// import MostPopular from '../components/MostPopular';
-// import Trending from '../components/Trending';
+import ResetButton from '../features/buttonState/ResetButton';
 
 const Home = (props) => {
 	const { user } = props;
@@ -36,30 +35,20 @@ const Home = (props) => {
 	const [blogBackup, setBlogBackup] = useState([]);
 	const [blogs, setBlogs] = useState(blogBackup);
 
-	const [category, setCategory] = useState([]);
-	const [categoryReset, setCategoryReset] = useState(false);
+	const [categories, setCategory] = useState([]);
 
 	const [tags, setTags] = useState([]);
 	const [tagReset, setTagReset] = useState(false);
 	const blogCollectionRef = collection(db, 'blogPosts');
 
-	// const [trendBlogs, setTrendBlogs] = useState([]);
+	const [selectedCategory, setSelectedCategory] = useState(null);
 
-	// const getTrendingBlogs = async () => {
-	// 	const blogRef = collection(db, 'blogs');
-	// 	const trendQuery = query(blogRef, where('trending', '==', 'yes'));
-	// 	const querySnapshot = await getDocs(trendQuery);
-	// 	let trendBlogs = [];
-	// 	querySnapshot.forEach((doc) => {
-	// 		trendBlogs.push({ id: doc.id, ...doc.data() });
-	// 	});
-	// 	setTrendBlogs(trendBlogs);
-	// };
+	const [isPressed, setPressed] = useState(false);
 
 	//This block retrieves blog posts from firebase by latest timestamp
 	useEffect(() => {
 		const createdTimestamp = query(blogCollectionRef, orderBy('createdTimestamp', 'desc'));
-		const list = onSnapshot(
+		const fetchBlogPosts = onSnapshot(
 			createdTimestamp,
 			(snapshot) => {
 				let tags = [];
@@ -81,7 +70,7 @@ const Home = (props) => {
 				toast.error(`There was an error ${error}`);
 			}
 		);
-		return () => list();
+		return () => fetchBlogPosts();
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
@@ -105,149 +94,150 @@ const Home = (props) => {
 	};
 
 	// Show posts that are only related to the clicked category when clicked
-	const selectedCategory = (selectedCategory) => {
+	const handleSelectCategory = (category) => {
 		return () => {
-			if (categoryReset) {
-				setBlogs(blogBackup);
-				setCategoryReset(false);
-			} else {
-				const result = blogBackup.filter((blog) => {
-					return blog.category === selectedCategory;
-				});
-				setBlogs(result);
-				setCategoryReset(true);
-			}
+			setSelectedCategory(category);
+			const result = blogBackup.filter((blog) => {
+				return blog.category === category;
+			});
+			setBlogs(result);
+			setPressed(true);
 		};
 	};
 
 	// Show posts that are only related to the clicked tag when clicked
-	const selectedTag = (selectedTag) => {
+	const handleSelectTag = (tag) => {
 		if (tagReset) {
 			setBlogs(blogBackup);
 			setTagReset(false);
 		} else {
 			const result = blogBackup.filter((blog) => {
-				return blog.tags.includes(selectedTag);
+				return blog.tags.includes(tag);
 			});
 			setBlogs(result);
 			setTagReset(true);
 		}
 	};
-
+	const onReset = () => {
+		setPressed(false);
+	};
 	return (
 		<>
 			<BlogContainer>
 				<H2>Blogs</H2>
+				{selectedCategory && <p>Selected category: {selectedCategory}</p>}
+
 				<Card blogs={blogs} user={user} handleDelete={handleDelete} />
 			</BlogContainer>
 			<Aside>
 				<H2 style={{ textAlign: 'center' }}>Categories</H2>
 				<Categories>
-					{category?.map((item) => {
-						switch (item) {
+					<ResetButton isPressed={isPressed} onReset={onReset} />
+					{categories?.map((category) => {
+						switch (category) {
 							case 'JavaScript':
 								return (
-									<CategoryButton key={uuidv4()} onClick={selectedCategory(item)}>
-										<img src={javascript} alt={item} />
-										<span>{item}</span>
+									<CategoryButton key={uuidv4()} onClick={handleSelectCategory(category)}>
+										<img src={javascript} alt={category} />
+										<span>{category}</span>
 									</CategoryButton>
 								);
 							case 'TypeScript':
 								return (
-									<CategoryButton key={uuidv4()} onClick={selectedCategory(item)}>
-										<img src={typescript} alt={item} />
-										<span>{item}</span>
+									<CategoryButton key={uuidv4()} onClick={handleSelectCategory(category)}>
+										<img src={typescript} alt={category} />
+										<span>{category}</span>
 									</CategoryButton>
 								);
 							case 'React':
 								return (
-									<CategoryButton key={uuidv4()} onClick={selectedCategory(item)}>
-										<img src={react} alt={item} />
-										<span>{item}</span>
+									<CategoryButton key={uuidv4()} onClick={handleSelectCategory(category)}>
+										<img src={react} alt={category} />
+										<span>{category}</span>
 									</CategoryButton>
 								);
 							case 'Angular':
 								return (
-									<CategoryButton key={uuidv4()} onClick={selectedCategory(item)}>
-										<img src={angular} alt={item} />
-										<span>{item}</span>
+									<CategoryButton key={uuidv4()} onClick={handleSelectCategory(category)}>
+										<img src={angular} alt={category} />
+										<span>{category}</span>
 									</CategoryButton>
 								);
 							case 'CSS':
 								return (
-									<CategoryButton key={uuidv4()} onClick={selectedCategory(item)}>
-										<img src={css} alt={item} />
-										<span>{item}</span>
+									<CategoryButton key={uuidv4()} onClick={handleSelectCategory(category)}>
+										<img src={css} alt={category} />
+										<span>{category}</span>
 									</CategoryButton>
 								);
 							case 'HTML':
 								return (
-									<CategoryButton key={uuidv4()} onClick={selectedCategory(item)}>
-										<img src={html} alt={item} />
-										<span>{item}</span>
+									<CategoryButton key={uuidv4()} onClick={handleSelectCategory(category)}>
+										<img src={html} alt={category} />
+										<span>{category}</span>
 									</CategoryButton>
 								);
 							case 'SASS':
 								return (
-									<CategoryButton key={uuidv4()} onClick={selectedCategory(item)}>
-										<img src={sass} alt={item} />
-										<span>{item}</span>
+									<CategoryButton key={uuidv4()} onClick={handleSelectCategory(category)}>
+										<img src={sass} alt={category} />
+										<span>{category}</span>
 									</CategoryButton>
 								);
 							case 'Bootstrap':
 								return (
-									<CategoryButton key={uuidv4()} onClick={selectedCategory(item)}>
-										<img src={bootstrap} alt={item} />
-										<span>{item}</span>
+									<CategoryButton key={uuidv4()} onClick={handleSelectCategory(category)}>
+										<img src={bootstrap} alt={category} />
+										<span>{category}</span>
 									</CategoryButton>
 								);
 							case 'Material UI':
 								return (
-									<CategoryButton key={uuidv4()} onClick={selectedCategory(item)}>
-										<img src={materialUi} alt={item} />
-										<span>{item}</span>
+									<CategoryButton key={uuidv4()} onClick={handleSelectCategory(category)}>
+										<img src={materialUi} alt={category} />
+										<span>{category}</span>
 									</CategoryButton>
 								);
 							case 'Tailwind CSS':
 								return (
-									<CategoryButton key={uuidv4()} onClick={selectedCategory(item)}>
-										<img src={tailwindcss} alt={item} />
-										<span>{item}</span>
+									<CategoryButton key={uuidv4()} onClick={handleSelectCategory(category)}>
+										<img src={tailwindcss} alt={category} />
+										<span>{category}</span>
 									</CategoryButton>
 								);
 							case 'Styled Components':
 								return (
-									<CategoryButton key={uuidv4()} onClick={selectedCategory(item)}>
-										<img src={styledComponents} alt={item} />
-										<span>{item}</span>
+									<CategoryButton key={uuidv4()} onClick={handleSelectCategory(category)}>
+										<img src={styledComponents} alt={category} />
+										<span>{category}</span>
 									</CategoryButton>
 								);
-							case 'What I learned':
+							case 'Today I learned':
 								return (
-									<CategoryButton key={uuidv4()} onClick={selectedCategory(item)}>
-										<img src={programmer} alt={item} />
-										<span>{item}</span>
+									<CategoryButton key={uuidv4()} onClick={handleSelectCategory(category)}>
+										<img src={programmer} alt={category} />
+										<span>{category}</span>
 									</CategoryButton>
 								);
 							case 'Firebase':
 								return (
-									<CategoryButton key={uuidv4()} onClick={selectedCategory(item)}>
-										<img src={firebase} alt={item} />
-										<span>{item}</span>
+									<CategoryButton key={uuidv4()} onClick={handleSelectCategory(category)}>
+										<img src={firebase} alt={category} />
+										<span>{category}</span>
 									</CategoryButton>
 								);
 							case 'Wordpress':
 								return (
-									<CategoryButton key={uuidv4()} onClick={selectedCategory(item)}>
-										<img src={wordpress} alt={item} />
-										<span>{item}</span>
+									<CategoryButton key={uuidv4()} onClick={handleSelectCategory(category)}>
+										<img src={wordpress} alt={category} />
+										<span>{category}</span>
 									</CategoryButton>
 								);
 							default:
 								return (
-									<CategoryButton key={uuidv4()} onClick={selectedCategory(item)}>
-										<img src={question} alt={item} />
-										<span>{item}</span>
+									<CategoryButton key={uuidv4()} onClick={handleSelectCategory(category)}>
+										<img src={question} alt={category} />
+										<span>{category}</span>
 									</CategoryButton>
 								);
 						}
@@ -255,7 +245,7 @@ const Home = (props) => {
 				</Categories>
 				<H2 style={{ textAlign: 'center' }}>Tags</H2>
 				<TagContainer>
-					<Tags tags={tags} handleTagClick={selectedTag} />
+					<Tags tags={tags} handleSelectTag={handleSelectTag} />
 				</TagContainer>
 			</Aside>
 		</>

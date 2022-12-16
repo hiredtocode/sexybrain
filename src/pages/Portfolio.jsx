@@ -41,7 +41,7 @@ import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import darkScreenShot from '../assets/img/sexybrain-main-page-dark.jpg';
 import { toast } from 'react-toastify';
-import ResetButton from '../components/ResetButton.jsx';
+import ResetButton from '../features/buttonState/ResetButton.js';
 
 const Portfolio = (props) => {
 	const { resetClickHandler } = props;
