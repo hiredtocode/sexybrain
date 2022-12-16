@@ -13,7 +13,7 @@ const ResetButton = ({ buttonPressed, pressButton, releaseButton }) => {
 	return (
 		<DivContainer onClick={handleClick(buttonPressed, pressButton, releaseButton)}>
 			<ul>
-				<li>Reset</li>
+				<li className={isPressed ? 'pressed' : ''}>Reset</li>
 			</ul>
 		</DivContainer>
 	);

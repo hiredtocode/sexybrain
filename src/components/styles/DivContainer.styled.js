@@ -1,9 +1,9 @@
 import styled from 'styled-components/macro';
 
 export const DivContainer = styled.div`
-	/* li {
+	ul {
 		display: none;
-	} */
+	}
 
 	@keyframes pulse {
 		0% {
