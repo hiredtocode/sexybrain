@@ -18,15 +18,19 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './components/styles/Global';
 import { toast } from 'react-toastify';
 import Footer from './components/Footer';
+import { useSelector } from 'react-redux';
 
 export const ThemeContext = createContext();
 
-function App({ mode }) {
+function App() {
 	const [isDark, setIsDark] = useState(true);
 
 	const [user, setUser] = useState(null);
 
 	const navigate = useNavigate();
+
+	const config = useSelector((state) => state.darkmode.mode);
+	console.log('config:', config);
 
 	// 		/* xs: '575.98px' */
 	// @media (max-width: ${({ theme }) => theme.xs}) {
@@ -138,7 +142,7 @@ function App({ mode }) {
 	};
 
 	return (
-		<ThemeProvider theme={mode === 'dark' ? darkTheme : lightTheme}>
+		<ThemeProvider theme={config === 'dark' ? darkTheme : lightTheme}>
 			<GlobalStyles />
 			<Header user={user} handleLogout={handleLogout} />
 			<ToastContainer position='bottom-right' />

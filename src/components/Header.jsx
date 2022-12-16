@@ -10,7 +10,7 @@ import {
 	ShowOnMobileContainer,
 } from './styles/Header.styled.js';
 import GithubButton from './GithubButton';
-import DarkLightMode from './DarkLightMode';
+import DarkLightMode from '../features/darkMode/DarkLightMode';
 import Logo from './Logo';
 import Login from './LoginButton';
 import Logout from './LogOutButton';
