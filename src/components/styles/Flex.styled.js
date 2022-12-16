@@ -11,6 +11,7 @@ const Flex = styled.div`
 	margin-bottom: ${({ margin }) => margin};
 	margin-left: ${({ margin }) => margin};
 	flex-wrap: ${({ wrap }) => wrap};
+	text-align: ${({ text }) => text};
 
 	h3 {
 		font-weight: bold;
