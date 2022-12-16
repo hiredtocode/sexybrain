@@ -5,6 +5,11 @@ export const BlogContainer = styled.main`
 	flex-direction: column;
 	flex: 1 1 70%;
 
+	p span {
+		border-radius: 5px;
+		color: ${({ theme }) => theme.colors.primary};
+	}
+
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
 		flex: 1 1 100%;

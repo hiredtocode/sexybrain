@@ -1,10 +1,6 @@
 import styled from 'styled-components/macro';
 
 export const DivContainer = styled.div`
-	ul {
-		display: none;
-	}
-
 	@keyframes pulse {
 		0% {
 			box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.primary};
