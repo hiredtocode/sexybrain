@@ -71,7 +71,7 @@ export default function Card(props) {
 									<img key={uuidv4()} src={firebase} alt={post.category} />
 								) : post.category === 'Tailwind CSS' ? (
 									<img key={uuidv4()} src={tailwindcss} alt={post.category} />
-								) : post.category === 'What I learned' ? (
+								) : post.category === 'Today I learned' ? (
 									<img key={uuidv4()} src={programmer} alt={post.category} />
 								) : (
 									<img key={uuidv4()} src={question} alt={post.category} />

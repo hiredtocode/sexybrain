@@ -37,7 +37,7 @@ const AddEdit = (props) => {
 		'Styled Components',
 		'Firebase',
 		'Wordpress',
-		'What I learned',
+		'Today I learned',
 	];
 	const [form, setForm] = useState({
 		title: '',
