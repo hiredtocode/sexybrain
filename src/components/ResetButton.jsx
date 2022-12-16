@@ -1,23 +1,26 @@
-import { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 import { DivContainer } from './styles/DivContainer.styled';
+import { connect } from 'react-redux';
 
-const ResetButton = () => {
-	const { isPressed, setPressed } = useContext(ThemeContext);
-
-	const resetClickHandler = () => {
-		setPressed(false);
-		console.log('isPressed:', isPressed);
-	};
+const ResetButton = ({ buttonPressed, pressButton, releaseButton }) => {
+	console.log('buttonPressed:', buttonPressed);
+	console.log('releaseButton:', releaseButton);
+	console.log('pressButton:', pressButton);
 	return (
-		<DivContainer>
+		<DivContainer onClick={buttonPressed ? releaseButton : pressButton}>
 			<ul>
-				<li className={isPressed ? 'pressed' : ''} onClick={resetClickHandler}>
-					Reset
-				</li>
+				<li>Reset</li>
 			</ul>
 		</DivContainer>
 	);
 };
 
-export default ResetButton;
+const mapStateToProps = (state) => ({
+	buttonPressed: state.buttonPressed,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+	pressButton: () => dispatch({ type: 'BUTTON_PRESSED' }),
+	releaseButton: () => dispatch({ type: 'BUTTON_RELEASED' }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ResetButton);
