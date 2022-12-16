@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 
 const GithubButtonForPortfolio = (props) => {
 	const { link } = props;
-	const config = useSelector((state) => state.darkmode.mode);
+	const mode = useSelector((state) => state.darkmode.mode);
 
 	return (
 		<div>
@@ -21,12 +21,12 @@ const GithubButtonForPortfolio = (props) => {
 				rel='noreferrer'
 			>
 				<GithubTop
-					src={config === 'dark' ? Github : GithubWhite}
+					src={mode === 'dark' ? Github : GithubWhite}
 					alt='Github top Icon'
 					aria-label='Click to go to my github page'
 				/>
 				<GithubBottom
-					src={config === 'dark' ? GithubWhite : GithubBlack}
+					src={mode === 'dark' ? GithubWhite : GithubBlack}
 					alt='Github bottom icon'
 					aria-label='Click to go to my github page'
 				/>

@@ -23,15 +23,11 @@ import { useSelector } from 'react-redux';
 export const ThemeContext = createContext();
 
 function App() {
-	const [isDark, setIsDark] = useState(true);
-
 	const [user, setUser] = useState(null);
 
 	const navigate = useNavigate();
 
-	const config = useSelector((state) => state.darkmode.mode);
-	console.log('config:', config);
-
+	const mode = useSelector((state) => state.darkmode.mode);
 	// 		/* xs: '575.98px' */
 	// @media (max-width: ${({ theme }) => theme.xs}) {
 	// }
@@ -142,7 +138,7 @@ function App() {
 	};
 
 	return (
-		<ThemeProvider theme={config === 'dark' ? darkTheme : lightTheme}>
+		<ThemeProvider theme={mode === 'dark' ? darkTheme : lightTheme}>
 			<GlobalStyles />
 			<Header user={user} handleLogout={handleLogout} />
 			<ToastContainer position='bottom-right' />
