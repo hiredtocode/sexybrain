@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { doc, getDoc } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 import Tags from '../components/Tags';
@@ -13,16 +13,16 @@ import DefaultImage from '../assets/img/default.jpg';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { ThemeContext } from '../App';
 import remarkGfm from 'remark-gfm';
 import { MarkdownContainer } from '../components/styles/BlogDetails.styled.js';
+import { useSelector } from 'react-redux';
 
 const PostDetailPage = (props) => {
 	const { id } = useParams();
 	const [blog, setBlog] = useState(null);
-	const { isDark } = useContext(ThemeContext);
 	const { user } = props;
 	const userId = user?.uid;
+	const mode = useSelector((state) => state.darkmode.mode);
 
 	useEffect(() => {
 		id && getBlogDetail();
@@ -91,7 +91,7 @@ const PostDetailPage = (props) => {
 									<SyntaxHighlighter
 										children={String(children).replace(/\n$/, '')}
 										language={match[1]}
-										style={isDark ? oneDark : oneLight}
+										style={mode === 'dark' ? oneDark : oneLight}
 										{...props}
 									/>
 								) : (
