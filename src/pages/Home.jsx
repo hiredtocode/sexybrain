@@ -28,6 +28,8 @@ import { v4 as uuidv4 } from 'uuid';
 import Card from '../components/Card';
 import { BlogContainer } from '../components/styles/BlogContainer.styled';
 import ResetButton from '../features/buttonState/ResetButton';
+import { CancelButton } from '../components/CancelButton';
+import Flex from '../components/styles/Flex.styled';
 
 const Home = (props) => {
 	const { user } = props;
@@ -42,8 +44,6 @@ const Home = (props) => {
 	const blogCollectionRef = collection(db, 'blogPosts');
 
 	const [selectedCategory, setSelectedCategory] = useState(null);
-
-	const [isPressed, setPressed] = useState(false);
 
 	//This block retrieves blog posts from firebase by latest timestamp
 	useEffect(() => {
@@ -101,7 +101,6 @@ const Home = (props) => {
 				return blog.category === category;
 			});
 			setBlogs(result);
-			setPressed(true);
 		};
 	};
 
@@ -118,21 +117,25 @@ const Home = (props) => {
 			setTagReset(true);
 		}
 	};
-	const onReset = () => {
-		setPressed(false);
-	};
+
 	return (
 		<>
 			<BlogContainer>
 				<H2>Blogs</H2>
-				{selectedCategory && <p>Selected category: {selectedCategory}</p>}
+				{selectedCategory && (
+					<Flex align='center' text='center'>
+						<p>
+							Selected category: <span>{selectedCategory}</span>
+						</p>
+						<CancelButton />
+					</Flex>
+				)}
 
 				<Card blogs={blogs} user={user} handleDelete={handleDelete} />
 			</BlogContainer>
 			<Aside>
 				<H2 style={{ textAlign: 'center' }}>Categories</H2>
 				<Categories>
-					<ResetButton isPressed={isPressed} onReset={onReset} />
 					{categories?.map((category) => {
 						switch (category) {
 							case 'JavaScript':
