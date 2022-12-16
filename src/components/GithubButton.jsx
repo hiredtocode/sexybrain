@@ -1,13 +1,9 @@
-import { useContext } from 'react';
 import { GithubBottom, GithubIconContainer, GithubTop } from './styles/Github.styled';
-import { ThemeContext } from '../App';
 import Github from '../assets/img/github.svg';
 import GithubBlack from '../assets/img/github-black.svg';
 import GithubWhite from '../assets/img/github-white.svg';
 
-const GithubButton = () => {
-	const { isDark } = useContext(ThemeContext);
-
+const GithubButton = ({ mode }) => {
 	return (
 		<GithubIconContainer
 			//TODO Make this a component and reuse it in portfolio
@@ -16,12 +12,12 @@ const GithubButton = () => {
 			rel='noreferrer'
 		>
 			<GithubTop
-				src={isDark ? Github : GithubWhite}
+				src={mode === 'dark' ? Github : GithubWhite}
 				alt='Github top Icon'
 				aria-label='Click to go to my github page'
 			/>
 			<GithubBottom
-				src={isDark ? GithubWhite : GithubBlack}
+				src={mode === 'dark' ? GithubWhite : GithubBlack}
 				alt='Github bottom icon'
 				aria-label='Click to go to my github page'
 			/>

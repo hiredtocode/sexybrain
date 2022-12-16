@@ -18,15 +18,14 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './components/styles/Global';
 import { toast } from 'react-toastify';
 import Footer from './components/Footer';
+import store from './store';
+import { Provider } from 'react-redux';
 
 export const ThemeContext = createContext();
 
-function App() {
+function App({ mode }) {
 	const [isDark, setIsDark] = useState(true);
-	const value = {
-		isDark,
-		setIsDark,
-	};
+
 	const [user, setUser] = useState(null);
 
 	const navigate = useNavigate();
@@ -141,8 +140,8 @@ function App() {
 	};
 
 	return (
-		<ThemeContext.Provider value={value}>
-			<ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+		<Provider store={store}>
+			<ThemeProvider theme={mode === 'dark' ? darkTheme : lightTheme}>
 				<GlobalStyles />
 				<Header user={user} handleLogout={handleLogout} />
 				<ToastContainer position='bottom-right' />
@@ -167,7 +166,7 @@ function App() {
 				</RootContainer>
 				<Footer />
 			</ThemeProvider>
-		</ThemeContext.Provider>
+		</Provider>
 	);
 }
 
