@@ -33,7 +33,30 @@ export const BlogContainer = styled.main`
 	img {
 		height: 20px;
 	}
-	button {
+	.cancel {
 		margin-left: 10px;
+		background-color: transparent;
+		border: none;
+		padding-top: 3px;
+		border-radius: 3px;
+
+		animation: pulse 1s infinite;
+
+		@keyframes pulse {
+			0% {
+				box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.primary};
+			}
+			70% {
+				box-shadow: 0 0 0 10px rgba(100, 255, 218, 0);
+			}
+			100% {
+				box-shadow: 0 0 0 0 rgba(100, 255, 218, 0);
+			}
+		}
+	}
+	button:hover {
+		border: 1px solid ${({ theme }) => theme.colors.primary};
+
+		cursor: pointer;
 	}
 `;

@@ -130,7 +130,7 @@ const Home = (props) => {
 						<p>
 							Selected category: <span>{selectedCategory}</span>
 						</p>
-						<button onClick={handleClose}>
+						<button className='cancel' onClick={handleClose}>
 							<CancelButton />
 						</button>
 					</div>
