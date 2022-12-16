@@ -1,17 +1,16 @@
-import { useContext } from 'react';
 import {
 	GithubBottom,
 	GithubIconContainer,
 	GithubTop,
 } from './styles/portfolio/ProjectContainer.styled.js';
-import { ThemeContext } from '../App';
 import Github from '../assets/img/github.svg';
 import GithubBlack from '../assets/img/github-black.svg';
 import GithubWhite from '../assets/img/github-white.svg';
+import { useSelector } from 'react-redux';
 
 const GithubButtonForPortfolio = (props) => {
 	const { link } = props;
-	const { isDark } = useContext(ThemeContext);
+	const config = useSelector((state) => state.darkmode.mode);
 
 	return (
 		<div>
@@ -22,12 +21,12 @@ const GithubButtonForPortfolio = (props) => {
 				rel='noreferrer'
 			>
 				<GithubTop
-					src={isDark ? Github : GithubWhite}
+					src={config === 'dark' ? Github : GithubWhite}
 					alt='Github top Icon'
 					aria-label='Click to go to my github page'
 				/>
 				<GithubBottom
-					src={isDark ? GithubWhite : GithubBlack}
+					src={config === 'dark' ? GithubWhite : GithubBlack}
 					alt='Github bottom icon'
 					aria-label='Click to go to my github page'
 				/>
