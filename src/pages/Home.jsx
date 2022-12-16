@@ -117,18 +117,23 @@ const Home = (props) => {
 			setTagReset(true);
 		}
 	};
-
+	const handleClose = () => {
+		setBlogs(blogBackup);
+		setSelectedCategory(null);
+	};
 	return (
 		<>
 			<BlogContainer>
 				<H2>Blogs</H2>
 				{selectedCategory && (
-					<Flex align='center' text='center'>
+					<div className='selected'>
 						<p>
 							Selected category: <span>{selectedCategory}</span>
 						</p>
-						<CancelButton />
-					</Flex>
+						<button onClick={handleClose}>
+							<CancelButton />
+						</button>
+					</div>
 				)}
 
 				<Card blogs={blogs} user={user} handleDelete={handleDelete} />

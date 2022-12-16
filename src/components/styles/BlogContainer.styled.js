@@ -6,6 +6,7 @@ export const BlogContainer = styled.main`
 	flex: 1 1 70%;
 
 	p span {
+		margin-left: 20px;
 		border-radius: 5px;
 		color: ${({ theme }) => theme.colors.primary};
 	}
@@ -23,5 +24,16 @@ export const BlogContainer = styled.main`
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
-	} ;
+	}
+
+	.selected {
+		display: flex;
+		align-items: center;
+	}
+	img {
+		height: 20px;
+	}
+	button {
+		margin-left: 10px;
+	}
 `;
