@@ -40,13 +40,17 @@ import { useState, useEffect } from 'react';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import darkScreenShot from '../assets/img/sexybrain-main-page-dark.jpg';
+import { toast } from 'react-toastify';
+import ResetButton from '../components/ResetButton.jsx';
 
-const Portfolio = () => {
+const Portfolio = (props) => {
+	const { resetClickHandler } = props;
+	const { isPressed } = useContext(ThemeContext);
+
 	const [projects, setProjects] = useState(Projects);
 	const [categories, setCategories] = useState();
 	const [loading, setLoading] = useState(true);
 	const [isActive, setActive] = useState(1);
-	const [isPressed, setPressed] = useState(false);
 
 	useEffect(() => {
 		const categories = () => {
@@ -63,16 +67,15 @@ const Portfolio = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [projects]);
 
-	const onReset = () => {
-		setProjects(Projects);
-		setPressed(false);
-	};
 	// Show posts that are only related to the clicked category when clicked
 	const handleCategory = (selectedCategory) => {
 		const filtered = projects.filter((project) => project.stack.includes(selectedCategory));
 		return () => {
 			setProjects(filtered);
-			setPressed(true);
+
+			toast.info(
+				`카테고리는 자동으로 채워집니다. ${selectedCategory} 카테고리를 선택 하였지만 아직 포트폴리오에 올라온 프로젝트가 하나이기 때문에 필터링 되는게 않보일 것입니다.`
+			);
 		};
 	};
 	// Show posts that are only related to the clicked category when clicked END
@@ -83,25 +86,21 @@ const Portfolio = () => {
 		<PortFolioContainer>
 			{/* Left sidebar filter section start */}
 			<FilterContainer>
-				<ul>
-					<div>Filter by category:</div>
-					<li className={isPressed ? 'pressed' : ''} onClick={onReset}>
-						Reset
-					</li>
-					{categories &&
-						categories.length > 2 &&
-						categories.map((category) => {
-							return (
-								<CategoryFilter
-									key={uuidv4()}
-									onClick={handleCategory(category)}
-									className={isPressed ? 'pressed' : ''}
-								>
-									<span>{category}</span>
-								</CategoryFilter>
-							);
-						})}
-				</ul>
+				<div>Filter by category:</div>
+				<ResetButton onClick={resetClickHandler} />
+				{categories &&
+					categories.length > 2 &&
+					categories.map((category) => {
+						return (
+							<CategoryFilter
+								key={uuidv4()}
+								onClick={handleCategory(category)}
+								className={isPressed ? 'pressed' : ''}
+							>
+								<span>{category}</span>
+							</CategoryFilter>
+						);
+					})}
 			</FilterContainer>
 			{/* Left sidebar filter section start END*/}
 			<ProjectContainer>
