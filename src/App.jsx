@@ -18,8 +18,6 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './components/styles/Global';
 import { toast } from 'react-toastify';
 import Footer from './components/Footer';
-import store from './store';
-import { Provider } from 'react-redux';
 
 export const ThemeContext = createContext();
 
@@ -140,33 +138,31 @@ function App({ mode }) {
 	};
 
 	return (
-		<Provider store={store}>
-			<ThemeProvider theme={mode === 'dark' ? darkTheme : lightTheme}>
-				<GlobalStyles />
-				<Header user={user} handleLogout={handleLogout} />
-				<ToastContainer position='bottom-right' />
+		<ThemeProvider theme={mode === 'dark' ? darkTheme : lightTheme}>
+			<GlobalStyles />
+			<Header user={user} handleLogout={handleLogout} />
+			<ToastContainer position='bottom-right' />
 
-				<RootContainer>
-					<Routes>
-						<Route path='/' element={<Home user={user} />} />
-						<Route path='/detail/:id' element={<BlogDetails user={user} />} />
-						<Route path='/portfolio/' element={<Portfolio />} />
-						<Route
-							path='/create'
-							element={user?.uid ? <AddEdit user={user} /> : <Navigate to='/auth' />}
-						/>
-						<Route
-							path='/update/:id'
-							element={user?.uid ? <AddEdit user={user} /> : <Navigate to='/auth' />}
-						/>
-						<Route path='/auth' element={<Auth setUser={setUser} />} />
-						<Route path='/resume' element={<Resume />} />
-						<Route path='*' element={<NotFound />} />
-					</Routes>
-				</RootContainer>
-				<Footer />
-			</ThemeProvider>
-		</Provider>
+			<RootContainer>
+				<Routes>
+					<Route path='/' element={<Home user={user} />} />
+					<Route path='/detail/:id' element={<BlogDetails user={user} />} />
+					<Route path='/portfolio/' element={<Portfolio />} />
+					<Route
+						path='/create'
+						element={user?.uid ? <AddEdit user={user} /> : <Navigate to='/auth' />}
+					/>
+					<Route
+						path='/update/:id'
+						element={user?.uid ? <AddEdit user={user} /> : <Navigate to='/auth' />}
+					/>
+					<Route path='/auth' element={<Auth setUser={setUser} />} />
+					<Route path='/resume' element={<Resume />} />
+					<Route path='*' element={<NotFound />} />
+				</Routes>
+			</RootContainer>
+			<Footer />
+		</ThemeProvider>
 	);
 }
 
