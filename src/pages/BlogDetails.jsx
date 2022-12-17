@@ -6,7 +6,10 @@ import ReactMarkdown from 'react-markdown';
 import { useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { oneDark, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import {
+	oneDark,
+	oneLight,
+} from 'react-syntax-highlighter/dist/esm/styles/prism';
 import remarkGfm from 'remark-gfm';
 import DefaultImage from '../assets/img/default.jpg';
 import {
@@ -19,12 +22,12 @@ import { H2 } from '../components/styles/Title.styled.js';
 import Tags from '../components/Tags';
 import { db } from '../firebase.config';
 
-const PostDetailPage = (props) => {
+const PostDetailPage = props => {
 	const { id } = useParams();
 	const [blog, setBlog] = useState(null);
 	const { user } = props;
 	const userId = user?.uid;
-	const mode = useSelector((state) => state.darkmode.mode);
+	const mode = useSelector(state => state.darkmode.mode);
 
 	useEffect(() => {
 		id && getBlogDetail();
@@ -57,29 +60,36 @@ const PostDetailPage = (props) => {
 			{/* Show default image if no image was uploaded END */}
 			<BlogDetail>
 				<div className='authorInfo'>
-					<div>Written on: {blog?.createdTimestamp?.toDate().toDateString()}</div>
-					<div>
+					<>Written on: {blog?.createdTimestamp?.toDate().toDateString()}</>
+					<>
 						{blog?.lastUpdatedTimestamp?.toDate().toDateString() !==
 						blog?.createdTimestamp?.toDate().toDateString() ? (
-							<span>Edited/Updated: {blog?.lastUpdatedTimestamp?.toDate().toDateString()}</span>
+							<span>
+								Edited/Updated:{' '}
+								{blog?.lastUpdatedTimestamp?.toDate().toDateString()}
+							</span>
 						) : null}
-					</div>
+					</>
 					<Flex direction={'row'} align='center'>
 						{userId ? (
 							<Link to={`/update/${id}`}>
 								<FontAwesomeIcon
 									icon={faEdit}
 									name='edit'
-									style={{ cursor: 'pointer', paddingRight: '10px', textDecoration: 'none' }}
+									style={{
+										cursor: 'pointer',
+										paddingRight: '10px',
+										textDecoration: 'none',
+									}}
 									size='2x'
 									aria-label={id}
 								/>
 							</Link>
 						) : null}
 						<div style={{ paddingRight: '10px' }}>Tags:</div>
-						<div>
+						<>
 							<Tags tags={blog?.tags} />
-						</div>
+						</>
 					</Flex>
 				</div>
 				<MarkdownContainer>
@@ -87,7 +97,14 @@ const PostDetailPage = (props) => {
 						remarkPlugins={[remarkGfm, { singleTilde: false }]}
 						children={blog?.body}
 						components={{
-							code({ node, inline, className, children, includeElementIndex, ...props }) {
+							code({
+								node,
+								inline,
+								className,
+								children,
+								includeElementIndex,
+								...props
+							}) {
 								const match = /language-(\w+)/.exec(className || '');
 								return !inline && match ? (
 									<SyntaxHighlighter
