@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { signOut } from 'firebase/auth';
 import { useSelector } from 'react-redux';
@@ -19,14 +19,12 @@ import NotFound from './pages/NotFound';
 import Portfolio from './pages/Portfolio';
 import Resume from './pages/Resume';
 
-export const ThemeContext = createContext();
-
 function App() {
 	const [user, setUser] = useState(null);
 
 	const navigate = useNavigate();
 
-	const mode = useSelector((state) => state.darkmode.mode);
+	const mode = useSelector(state => state.darkmode.mode);
 	// 		/* xs: '575.98px' */
 	// @media (max-width: ${({ theme }) => theme.xs}) {
 	// }
@@ -120,7 +118,7 @@ function App() {
 	};
 
 	useEffect(() => {
-		auth.onAuthStateChanged((authUser) => {
+		auth.onAuthStateChanged(authUser => {
 			if (authUser) {
 				setUser(authUser);
 			} else {
@@ -149,11 +147,15 @@ function App() {
 					<Route path='/portfolio/' element={<Portfolio />} />
 					<Route
 						path='/create'
-						element={user?.uid ? <AddEdit user={user} /> : <Navigate to='/auth' />}
+						element={
+							user?.uid ? <AddEdit user={user} /> : <Navigate to='/auth' />
+						}
 					/>
 					<Route
 						path='/update/:id'
-						element={user?.uid ? <AddEdit user={user} /> : <Navigate to='/auth' />}
+						element={
+							user?.uid ? <AddEdit user={user} /> : <Navigate to='/auth' />
+						}
 					/>
 					<Route path='/auth' element={<Auth setUser={setUser} />} />
 					<Route path='/resume' element={<Resume />} />
