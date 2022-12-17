@@ -1,32 +1,32 @@
-import JavascriptLogo from '../assets/img/javascript.svg';
 import angular from '../assets/img/angular.svg';
-import html from '../assets/img/html.svg';
-import typescript from '../assets/img/typescript.svg';
-import react from '../assets/img/react.svg';
-import css from '../assets/img/css3.svg';
-import sass from '../assets/img/sass.svg';
 import bootstrap from '../assets/img/bootstrap.svg';
-import materialUi from '../assets/img/material-ui.svg';
-import wordpress from '../assets/img/wordpress.svg';
-import styledComponents from '../assets/img/styledComponentsLogo.svg';
+import css from '../assets/img/css3.svg';
 import firebase from '../assets/img/firebase-icon.svg';
+import html from '../assets/img/html.svg';
+import JavascriptLogo from '../assets/img/javascript.svg';
+import materialUi from '../assets/img/material-ui.svg';
+import react from '../assets/img/react.svg';
+import sass from '../assets/img/sass.svg';
+import styledComponents from '../assets/img/styledComponentsLogo.svg';
+import typescript from '../assets/img/typescript.svg';
+import wordpress from '../assets/img/wordpress.svg';
 import profilePicture from '../assets/resume/사진.jpg';
 import Flex from '../components/styles/Flex.styled.js';
-import { ProfilePic } from '../components/styles/resume/profile.styled.js';
-import { Contact } from '../components/styles/resume/Contact.styled.js';
-import { Stack } from '../components/styles/resume/Stack.styled.js';
+import { LineBreak } from '../components/styles/LineBreak.styled.js';
+import { Badge } from '../components/styles/resume/Badge.styled.js';
 import {
-	CardContainer,
 	Border,
 	Card,
+	CardContainer,
 	Content1,
 	Content2,
 } from '../components/styles/resume/CardContainer.styled.js';
-import { Section } from '../components/styles/resume/Section.styled.js';
-import { Badge } from '../components/styles/resume/Badge.styled.js';
+import { Contact } from '../components/styles/resume/Contact.styled.js';
 import { Highlight } from '../components/styles/resume/Highlight.styled.js';
+import { ProfilePic } from '../components/styles/resume/profile.styled.js';
+import { Section } from '../components/styles/resume/Section.styled.js';
+import { Stack } from '../components/styles/resume/Stack.styled.js';
 import { H2, H3 } from '../components/styles/Title.styled.js';
-import { LineBreak } from '../components/styles/LineBreak.styled.js';
 
 const Resume = () => {
 	return (
@@ -61,7 +61,7 @@ const Resume = () => {
 					<p>
 						<Highlight>JavaScript</Highlight>와 <Highlight>React</Highlight>
 						프레임워크 그리고 <Highlight>Styled Components</Highlight>를 통해 디자인과 기능들을
-						구축하면서 직접 학습을 진행하고 있습니다. <br />
+						구축하고 <Highlight>Redux</Highlight>를 통해 스테이트 관리를 진행하고 있습니다. <br />
 						UX/UI 디자인을 고민하며 레이아웃과 반응형 앱을 구현하고 개선을 통해 사용자가 즐기는 앱을
 						만드는 것이 목적입니다. <br />
 						<br />
@@ -70,8 +70,7 @@ const Resume = () => {
 						유지하는 것을 늘 고민 하고 있고, 매일 배우며 중요한 컨셉은 직접 진행 하고 있는
 						프로젝트에 적용을 함으로써 학습을 진행하고 있습니다.
 						<br />
-						<br /> "성공한 회사는 주 클라이언트들이 가지고 있는 문제를 인식하고 해결할 수 있는
-						방법을 기획하여 효과적인 해결책을 제공하면서 끊임없이 성장하는 것을 중요하게 생각 하듯",
+						<br />
 						동료들과 협업하는 소프트 스킬과 관리하는 리더십의 중요성을 이해하고, 특히 대화 방식들
 						중에 미괄식보다 두괄식 대화를 더 자주 사용 하는 편입니다. <br />
 						<br />

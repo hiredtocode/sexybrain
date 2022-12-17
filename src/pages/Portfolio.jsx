@@ -1,56 +1,52 @@
-import Flex from '../components/styles/Flex.styled.js';
-
-import javascript from '../assets/img/javascript.svg';
-import angular from '../assets/img/angular.svg';
-import html from '../assets/img/html.svg';
-import typescript from '../assets/img/typescript.svg';
-import react from '../assets/img/react.svg';
-import css from '../assets/img/css3.svg';
-import sass from '../assets/img/sass.svg';
-import bootstrap from '../assets/img/bootstrap.svg';
-import materialUi from '../assets/img/material-ui.svg';
-import wordpress from '../assets/img/wordpress.svg';
-import styledComponents from '../assets/img/styledComponentsLogo.svg';
-import firebase from '../assets/img/firebase-icon.svg';
-import tailwindcss from '../assets/img/tailwindcss.svg';
-import programmer from '../assets/img/programmer.svg';
-import php from '../assets/img/php.svg';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import { v4 as uuidv4 } from 'uuid';
+import angular from '../assets/img/angular.svg';
+import bootstrap from '../assets/img/bootstrap.svg';
+import css from '../assets/img/css3.svg';
+import firebase from '../assets/img/firebase-icon.svg';
+import html from '../assets/img/html.svg';
+import javascript from '../assets/img/javascript.svg';
+import materialUi from '../assets/img/material-ui.svg';
+import php from '../assets/img/php.svg';
+import programmer from '../assets/img/programmer.svg';
 import question from '../assets/img/question.svg';
-import { H2 } from '../components/styles/Title.styled';
-import Projects from '../projects/projects.json';
+import react from '../assets/img/react.svg';
+import sass from '../assets/img/sass.svg';
+import darkScreenShot from '../assets/img/sexybrain-main-page-dark.jpg';
+import styledComponents from '../assets/img/styledComponentsLogo.svg';
+import tailwindcss from '../assets/img/tailwindcss.svg';
+import typescript from '../assets/img/typescript.svg';
+import visualStudioCode from '../assets/img/visualStudioCode.svg';
+import wordpress from '../assets/img/wordpress.svg';
 import GithubButtonForPortfolio from '../components/GithubButtonForPortfolio';
+import LinkButton from '../components/LinkButton.jsx';
 import {
-	StackButton,
 	CategoryFilter,
-	ContentContainer,
 	Content,
+	ContentContainer,
+	Description,
+	FilterContainer,
 	PortFolioContainer,
 	ProjectContainer,
-	FilterContainer,
 	ProjectContent,
 	ProjectImage,
-	Description,
 	ProjectLink,
 	ProjectStack,
+	StackButton,
 } from '../components/styles/portfolio/ProjectContainer.styled.js';
-import visualStudioCode from '../assets/img/visualStudioCode.svg';
-import LinkButton from '../components/LinkButton.jsx';
-import { useState, useEffect } from 'react';
-import { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
-import darkScreenShot from '../assets/img/sexybrain-main-page-dark.jpg';
-import { toast } from 'react-toastify';
-import ResetButton from '../features/buttonState/ResetButton.js';
+import { Highlight } from '../components/styles/resume/Highlight.styled.js';
+import { H2 } from '../components/styles/Title.styled';
+import Projects from '../projects/projects.json';
 
-const Portfolio = (props) => {
-	const { resetClickHandler } = props;
-	const { isPressed } = useContext(ThemeContext);
-
+const Portfolio = () => {
 	const [projects, setProjects] = useState(Projects);
 	const [categories, setCategories] = useState();
 	const [loading, setLoading] = useState(true);
 	const [isActive, setActive] = useState(1);
+	const isPressed = useSelector((state) => state.resetButton.buttonPressed);
+	const [selectedCategory, setSelectedCategory] = useState(null);
 
 	useEffect(() => {
 		const categories = () => {
@@ -68,11 +64,11 @@ const Portfolio = (props) => {
 	}, [projects]);
 
 	// Show posts that are only related to the clicked category when clicked
-	const handleCategory = (selectedCategory) => {
+	const handleSelectedCategory = (selectedCategory) => {
 		const filtered = projects.filter((project) => project.stack.includes(selectedCategory));
 		return () => {
 			setProjects(filtered);
-
+			setSelectedCategory(selectedCategory);
 			toast.info(
 				`카테고리는 자동으로 채워집니다. ${selectedCategory} 카테고리를 선택 하였지만 아직 포트폴리오에 올라온 프로젝트가 하나이기 때문에 필터링 되는게 않보일 것입니다.`
 			);
@@ -82,19 +78,21 @@ const Portfolio = (props) => {
 	const toggleActive = (index) => {
 		setActive(index);
 	};
+	const handleClose = () => {
+		setProjects(Projects);
+	};
 	return (
 		<PortFolioContainer>
 			{/* Left sidebar filter section start */}
 			<FilterContainer>
 				<div>Filter by category:</div>
-				<ResetButton onClick={resetClickHandler} />
 				{categories &&
 					categories.length > 2 &&
 					categories.map((category) => {
 						return (
 							<CategoryFilter
 								key={uuidv4()}
-								onClick={handleCategory(category)}
+								onClick={handleSelectedCategory(category)}
 								className={isPressed ? 'pressed' : ''}
 							>
 								<span>{category}</span>
@@ -126,9 +124,13 @@ const Portfolio = (props) => {
 										</mark>
 									</H2>
 									<Description>
-										This is a website I am currently working on which is also my featured project
-										since it's built from ground and up by me to be able to learn the React
-										framework and also Javascript.
+										프론트앤드는 <Highlight> React + Styled Components</Highlight>로 만들고 백앤드는
+										<Highlight>Firebase로 로그인</Highlight> 처리와 블로그 포스팅을 할 수 있게
+										만들었고 <Highlight>Redux를 통해 상태 관리</Highlight>를 하고 있습니다.
+										<br /> 이미 만들어진 플랫폼이나 템플릿 혹은{' '}
+										<Highlight>Bootstrap / Material UI</Highlight>를 사용하여 쉽게 디자인을 할 수
+										있었지만 <Highlight>완전한 제어와 학습을 위해</Highlight> 일부러 처음부터 끝까지
+										디자인과 제작을 하고 있습니다.
 									</Description>
 
 									<ProjectStack>
