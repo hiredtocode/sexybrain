@@ -3,7 +3,7 @@ const admin = require('firebase-admin');
 
 admin.initializeApp();
 
-exports.addAdminRole = functions.https.onCall(async (data, context) => {
+exports.addAdminRole = functions.https.onCall(async data => {
 	// Get user and add custom claim (admin)
 	try {
 		const user = await admin.auth().getUserByEmail(data.email);
