@@ -10,8 +10,8 @@ export const GithubTop = styled.img`
 	border-radius: 50px;
 	position: absolute;
 	opacity: 0;
-	min-width: 50px;
-	min-height: 50px;
+	width: 50px;
+	height: 50px;
 	object-fit: cover;
 	transition: 0.5s;
 	outline-width: 1px;

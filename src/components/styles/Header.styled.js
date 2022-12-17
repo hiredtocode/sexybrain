@@ -52,12 +52,12 @@ export const Nav = styled.nav`
 `;
 
 export const Logo = styled.img`
-	max-height: 60px;
-	max-width: 60px;
+	height: 60px;
+	width: 60px;
 	object-fit: cover;
 `;
 
-export const LinkContainer = styled.header`
+export const LinkContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
