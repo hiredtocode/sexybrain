@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 
 export const Highlight = styled.span`
 	text-decoration: none;
-	color: ${({ theme }) => theme.colors.font};
+	color: ${({ theme }) => theme.colors.heading};
 	font-weight: 500;
 	display: inline;
 	background-image: linear-gradient(
