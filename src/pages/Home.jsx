@@ -93,6 +93,7 @@ const Home = props => {
 				return blog.category === category;
 			});
 			setBlogs(result);
+			setSelectedTag(null);
 		};
 	};
 
@@ -103,6 +104,7 @@ const Home = props => {
 			return blog.tags.includes(tag);
 		});
 		setBlogs(result);
+		setSelectedCategory(null);
 	};
 
 	const handleClose = () => {
