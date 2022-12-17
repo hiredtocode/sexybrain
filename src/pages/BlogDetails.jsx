@@ -1,21 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { doc, getDoc } from 'firebase/firestore';
-import { useParams } from 'react-router-dom';
-import Tags from '../components/Tags';
-import { db } from '../firebase.config';
-import { BlogTitleBox, BlogDetail } from '../components/styles/BlogDetails.styled.js';
-import Flex from '../components/styles/Flex.styled.js';
-import { H2 } from '../components/styles/Title.styled.js';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
-import DefaultImage from '../assets/img/default.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { doc, getDoc } from 'firebase/firestore';
+import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { useSelector } from 'react-redux';
+import { Link, useParams } from 'react-router-dom';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import remarkGfm from 'remark-gfm';
-import { MarkdownContainer } from '../components/styles/BlogDetails.styled.js';
-import { useSelector } from 'react-redux';
+import DefaultImage from '../assets/img/default.jpg';
+import {
+	BlogDetail,
+	BlogTitleBox,
+	MarkdownContainer,
+} from '../components/styles/BlogDetails.styled.js';
+import Flex from '../components/styles/Flex.styled.js';
+import { H2 } from '../components/styles/Title.styled.js';
+import Tags from '../components/Tags';
+import { db } from '../firebase.config';
 
 const PostDetailPage = (props) => {
 	const { id } = useParams();

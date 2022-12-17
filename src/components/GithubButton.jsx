@@ -1,7 +1,7 @@
-import { GithubBottom, GithubIconContainer, GithubTop } from './styles/Github.styled';
-import Github from '../assets/img/github.svg';
 import GithubBlack from '../assets/img/github-black.svg';
 import GithubWhite from '../assets/img/github-white.svg';
+import Github from '../assets/img/github.svg';
+import { GithubBottom, GithubIconContainer, GithubTop } from './styles/Github.styled';
 
 const GithubButton = ({ mode }) => {
 	return (

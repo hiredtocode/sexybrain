@@ -1,24 +1,23 @@
-import { useState, useEffect, createContext } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
-import Home from './pages/Home';
-import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import BlogDetails from './pages/BlogDetails';
-import Portfolio from './pages/Portfolio';
-import AddEdit from './pages/AddEdit';
-import NotFound from './pages/NotFound';
-import Auth from './pages/Auth';
-import { auth } from './firebase.config';
 import { signOut } from 'firebase/auth';
-import Header from './components/Header';
-import Resume from './pages/Resume';
-import { RootContainer } from './components/styles/RootContainer.styled.js';
-import { ThemeProvider } from 'styled-components';
-import GlobalStyles from './components/styles/Global';
-import { toast } from 'react-toastify';
-import Footer from './components/Footer';
 import { useSelector } from 'react-redux';
+import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ThemeProvider } from 'styled-components';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import GlobalStyles from './components/styles/Global';
+import { RootContainer } from './components/styles/RootContainer.styled.js';
+import { auth } from './firebase.config';
+import AddEdit from './pages/AddEdit';
+import Auth from './pages/Auth';
+import BlogDetails from './pages/BlogDetails';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
+import Portfolio from './pages/Portfolio';
+import Resume from './pages/Resume';
 
 export const ThemeContext = createContext();
 

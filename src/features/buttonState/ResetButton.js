@@ -1,5 +1,5 @@
-import { DivContainer } from '../../components/styles/DivContainer.styled';
 import { connect, useSelector } from 'react-redux';
+import { DivContainer } from '../../components/styles/DivContainer.styled';
 
 const ResetButton = ({ buttonPressed, pressButton, releaseButton }) => {
 	const isPressed = useSelector((state) => state.resetButton.buttonPressed);

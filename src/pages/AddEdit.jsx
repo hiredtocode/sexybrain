@@ -1,25 +1,25 @@
-import { useState, useEffect } from 'react';
 import ReactTagInput from '@pathofdev/react-tag-input';
 import '@pathofdev/react-tag-input/build/index.css';
-import { db, storage } from '../firebase.config';
-import { useNavigate, useParams } from 'react-router-dom';
+import { addDoc, collection, doc, getDoc, serverTimestamp, updateDoc } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
-import { addDoc, collection, getDoc, serverTimestamp, doc, updateDoc } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { v4 as uuidv4 } from 'uuid';
+import Flex from '../components/styles/Flex.styled.js';
 import {
-	FormContainer,
 	Form,
-	FormSubmitButton,
-	FormLabel,
-	FormInput,
-	FormSelect,
 	FormCancelButton,
+	FormContainer,
+	FormInput,
+	FormLabel,
+	FormSelect,
+	FormSubmitButton,
 	Textarea,
 } from '../components/styles/FormContainer.styled.js';
-import Flex from '../components/styles/Flex.styled.js';
 import { MarkdownContainer } from '../components/styles/MarkdownContainer.styled.js';
-import { v4 as uuidv4 } from 'uuid';
-import ReactMarkdown from 'react-markdown';
+import { db, storage } from '../firebase.config';
 
 const AddEdit = (props) => {
 	const { user } = props;

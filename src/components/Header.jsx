@@ -1,20 +1,20 @@
 import { useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
-import {
-	StyledHeader,
-	Nav,
-	LinkContainer,
-	HamburgerMenu,
-	MobileNav,
-	ShowOnWebContainer,
-	ShowOnMobileContainer,
-} from './styles/Header.styled.js';
-import GithubButton from './GithubButton';
+import { Link, NavLink } from 'react-router-dom';
 import DarkLightMode from '../features/darkMode/DarkLightMode';
-import Logo from './Logo';
-import Login from './LoginButton';
-import Logout from './LogOutButton';
 import Write from './CreatePostButton';
+import GithubButton from './GithubButton';
+import Login from './LoginButton';
+import Logo from './Logo';
+import Logout from './LogOutButton';
+import {
+	HamburgerMenu,
+	LinkContainer,
+	MobileNav,
+	Nav,
+	ShowOnMobileContainer,
+	ShowOnWebContainer,
+	StyledHeader,
+} from './styles/Header.styled.js';
 
 const Header = (props) => {
 	const { user, handleLogout } = props;

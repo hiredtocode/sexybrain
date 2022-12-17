@@ -1,12 +1,12 @@
+import { useSelector } from 'react-redux';
+import GithubBlack from '../assets/img/github-black.svg';
+import GithubWhite from '../assets/img/github-white.svg';
+import Github from '../assets/img/github.svg';
 import {
 	GithubBottom,
 	GithubIconContainer,
 	GithubTop,
 } from './styles/portfolio/ProjectContainer.styled.js';
-import Github from '../assets/img/github.svg';
-import GithubBlack from '../assets/img/github-black.svg';
-import GithubWhite from '../assets/img/github-white.svg';
-import { useSelector } from 'react-redux';
 
 const GithubButtonForPortfolio = (props) => {
 	const { link } = props;

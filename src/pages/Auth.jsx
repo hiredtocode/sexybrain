@@ -1,16 +1,16 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react';
-import { toast } from 'react-toastify';
-import { auth } from '../firebase.config';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import {
 	FormContainer,
 	FormInput,
 	FormLabel,
-	LoginForm,
 	LoginButton,
+	LoginForm,
 } from '../components/styles/FormContainer.styled.js';
 import { H1 } from '../components/styles/Title.styled.js';
+import { auth } from '../firebase.config';
 
 const initialState = {
 	email: '',

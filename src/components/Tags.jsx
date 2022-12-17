@@ -1,5 +1,5 @@
-import { TagSection, TagButton } from './styles/TagSection.styled.js';
 import { v4 as uuidv4 } from 'uuid';
+import { TagButton, TagSection } from './styles/TagSection.styled.js';
 
 const Tags = (props) => {
 	const { tags, handleSelectTag } = props;
