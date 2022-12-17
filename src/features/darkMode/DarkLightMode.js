@@ -10,20 +10,17 @@ const DarkLightMode = ({ mode, setDarkMode, setLightMode }) => {
 	};
 
 	return (
-		<DarkLightContainer
-			onClick={handleClick(mode, setDarkMode, setLightMode)}
-			aria-label='Light dark mode'
-		>
+		<DarkLightContainer onClick={handleClick(mode, setDarkMode, setLightMode)}>
 			{mode === 'dark' ? <MoonIcon /> : <SunIcon />}
 		</DarkLightContainer>
 	);
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
 	mode: state.darkmode.mode,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
 	setDarkMode: () => dispatch({ type: 'SET_DARK_MODE' }),
 	setLightMode: () => dispatch({ type: 'SET_LIGHT_MODE' }),
 });

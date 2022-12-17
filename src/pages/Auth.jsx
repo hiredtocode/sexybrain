@@ -17,24 +17,28 @@ const initialState = {
 	password: '',
 };
 //TODO success / error message when logging in
-const Auth = (props) => {
+const Auth = props => {
 	const { setUser } = props;
 	const [state, setState] = useState(initialState);
-	const [signUp, setSignUp] = useState(false);
+	const [signUp] = useState(false);
 
 	const { email, password } = state;
 
 	const navigate = useNavigate();
 
-	const handleChange = (e) => {
+	const handleChange = e => {
 		setState({ ...state, [e.target.name]: e.target.value });
 	};
 
-	const handleAuth = async (e) => {
+	const handleAuth = async e => {
 		e.preventDefault();
 		if (!signUp) {
 			if (email && password) {
-				const { user } = await signInWithEmailAndPassword(auth, email, password);
+				const { user } = await signInWithEmailAndPassword(
+					auth,
+					email,
+					password,
+				);
 				setUser(user);
 				toast.success(`Login Success. Welcome Jason!`);
 			} else {
@@ -44,18 +48,7 @@ const Auth = (props) => {
 
 		navigate('/');
 	};
-	// add admin cloud function
-	// const adminForm = document.querySelector('.admin-actions');
-	// adminForm.addEventListener('submit', (e) => {
-	// 	e.preventDefault();
-	// 	const adminEmail = document.querySelector('#admin-email').value;
-	// 	const addAdminRole = functions.httpsCallable('addAdminRole');
-	// 	addAdminRole({ email: adminEmail });
-	// });
-	// 			<form className='admin-actions' style={{ margin: '40px auto', maxWidth: '300px' }}>
-	// 				<input type='email' placeholder='User email' id='admin-email' required />
-	// 				<button className='btn-small yellow darken-2 z-depth-0'>Make admin</button>
-	// 			</form>
+
 	return (
 		<>
 			{/* <!-- ADMIN ACTIONS --> */}
@@ -81,7 +74,9 @@ const Auth = (props) => {
 						onChange={handleChange}
 					/>
 
-					<LoginButton type='submit'>{!signUp ? 'Login' : 'Sign-up'}</LoginButton>
+					<LoginButton type='submit'>
+						{!signUp ? 'Login' : 'Sign-up'}
+					</LoginButton>
 				</LoginForm>
 			</FormContainer>
 		</>

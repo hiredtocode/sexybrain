@@ -1,6 +1,13 @@
 import ReactTagInput from '@pathofdev/react-tag-input';
 import '@pathofdev/react-tag-input/build/index.css';
-import { addDoc, collection, doc, getDoc, serverTimestamp, updateDoc } from 'firebase/firestore';
+import {
+	addDoc,
+	collection,
+	doc,
+	getDoc,
+	serverTimestamp,
+	updateDoc,
+} from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
@@ -21,7 +28,7 @@ import {
 import { MarkdownContainer } from '../components/styles/MarkdownContainer.styled.js';
 import { db, storage } from '../firebase.config';
 
-const AddEdit = (props) => {
+const AddEdit = props => {
 	const { user } = props;
 	const categoryOption = [
 		'JavaScript',
@@ -60,21 +67,25 @@ const AddEdit = (props) => {
 			if (!file) return;
 
 			const storageRef = ref(storage, file.name);
-			const uploadTask = uploadBytesResumable(storageRef, file);
+			const imageUpload = uploadBytesResumable(storageRef, file);
 
-			uploadTask.on(
+			imageUpload.on(
 				'state_changed',
-				(snapshot) => {
-					const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+				snapshot => {
+					const progress = Math.round(
+						(snapshot.bytesTransferred / snapshot.totalBytes) * 100,
+					);
 					setProgress(progress);
 				},
-				(error) => toast.error(`${error}`),
+				error => toast.error(`${error}`),
 				() => {
-					getDownloadURL(uploadTask.snapshot.ref).then((downloadUrl) => {
-						setForm((prev) => ({ ...prev, imgUrl: downloadUrl }));
-						toast.info(`Image upload to firebase successfully and the URL is: ${downloadUrl}`);
+					getDownloadURL(imageUpload.snapshot.ref).then(downloadUrl => {
+						setForm(prev => ({ ...prev, imgUrl: downloadUrl }));
+						toast.info(
+							`Image upload to firebase successfully and the URL is: ${downloadUrl}`,
+						);
 					});
-				}
+				},
 			);
 		};
 		file && uploadFile();
@@ -96,27 +107,28 @@ const AddEdit = (props) => {
 		}
 	};
 	// Get blog post END
-
-	const onCategoryChange = (e) => {
+	// Click handlers
+	const onCategoryChange = e => {
 		setForm({ ...form, category: e.target.value });
 	};
-	const onTitleChange = (e) => {
+	const onTitleChange = e => {
 		setForm({ ...form, title: e.target.value });
 	};
-	const onBodyChange = (e) => {
+	const onBodyChange = e => {
 		setForm({ ...form, body: e.target.value });
 	};
-	const onDescriptionChange = (e) => {
+	const onDescriptionChange = e => {
 		setForm({ ...form, description: e.target.value });
 	};
-	const handleTags = (tags) => {
+	const handleTags = tags => {
 		setForm({ ...form, tags });
 	};
-	const onFileChange = (e) => {
+	const onFileChange = e => {
 		setFile(e.target.files[0]);
 	};
+	// Click handlers END
 
-	const handleSubmit = async (e) => {
+	const handleSubmit = async e => {
 		e.preventDefault();
 
 		if (category && title && body && tags && description) {
@@ -157,7 +169,7 @@ const AddEdit = (props) => {
 			<FormContainer>
 				<Form className='form' onSubmit={handleSubmit}>
 					{/* Title section  */}
-					<div>
+					<>
 						<FormLabel htmlFor='title'>Title</FormLabel>
 						<FormInput
 							type='text'
@@ -166,26 +178,36 @@ const AddEdit = (props) => {
 							value={title}
 							onChange={onTitleChange}
 						/>
-					</div>
+					</>
 					{/* Title section end */}
 					{/* Tag section */}
-					<div>
+					<>
 						<FormLabel htmlFor='tags'>Tags</FormLabel>
-						<ReactTagInput tags={tags} onChange={handleTags} removeOnBackspace={true} maxTags={5} />
-					</div>
+						<ReactTagInput
+							tags={tags}
+							onChange={handleTags}
+							removeOnBackspace={true}
+							maxTags={5}
+						/>
+					</>
 					{/* Tag section end */}
 					{/* category section */}
 					<FormSelect value={category} onChange={onCategoryChange}>
 						<option>Select a category</option>
-						{categoryOption.map((option) => (
+						{categoryOption.map(option => (
 							<option value={option || ''} key={uuidv4()}>
 								{option}
 							</option>
 						))}
 					</FormSelect>
 					{/* category section end */} {/* body section */}
-					<Textarea placeholder='body' value={body} name='body' onChange={onBodyChange} />
-					<div>
+					<Textarea
+						placeholder='body'
+						value={body}
+						name='body'
+						onChange={onBodyChange}
+					/>
+					<>
 						<FormLabel htmlFor='description'>Description</FormLabel>
 						<FormInput
 							type='text'
@@ -194,7 +216,7 @@ const AddEdit = (props) => {
 							value={description}
 							onChange={onDescriptionChange}
 						/>
-					</div>
+					</>
 					{/* body section end  */}
 					{/* file upload section */}
 					<input type='file' onChange={onFileChange} />
@@ -202,7 +224,10 @@ const AddEdit = (props) => {
 						<FormCancelButton className='cancel' onClick={() => navigate('/')}>
 							Cancel
 						</FormCancelButton>
-						<FormSubmitButton type='submit' disabled={progress !== null && progress < 100}>
+						<FormSubmitButton
+							type='submit'
+							disabled={progress !== null && progress < 100}
+						>
 							{id ? 'Update' : 'Submit'}
 						</FormSubmitButton>
 					</Flex>
