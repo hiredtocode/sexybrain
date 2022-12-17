@@ -54,9 +54,8 @@ export const BlogContainer = styled.main`
 			}
 		}
 	}
+	span,
 	button:hover {
-		border: 1px solid ${({ theme }) => theme.colors.primary};
-
 		cursor: pointer;
 	}
 `;
