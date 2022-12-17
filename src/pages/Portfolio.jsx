@@ -1,7 +1,7 @@
+import { nanoid } from '@reduxjs/toolkit';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import { v4 as uuidv4 } from 'uuid';
 import angular from '../assets/img/angular.svg';
 import bootstrap from '../assets/img/bootstrap.svg';
 import css from '../assets/img/css3.svg';
@@ -85,7 +85,7 @@ const Portfolio = () => {
 					categories.map(category => {
 						return (
 							<CategoryFilter
-								key={uuidv4()}
+								key={nanoid()}
 								onClick={handleSelectedCategory(category)}
 								className={isPressed ? 'pressed' : ''}
 							>
@@ -109,7 +109,7 @@ const Portfolio = () => {
 						projects.map(project => (
 							<Content
 								className={isActive === 1 ? 'isActive' : ''}
-								key={uuidv4()}
+								key={nanoid()}
 							>
 								<ProjectContent>
 									<p className='featured'>
@@ -142,119 +142,119 @@ const Portfolio = () => {
 											switch (stack) {
 												case 'JavaScript':
 													return (
-														<StackButton key={uuidv4()}>
+														<StackButton key={nanoid()}>
 															<img src={javascript} alt={stack} />
 															<span>{stack}</span>
 														</StackButton>
 													);
 												case 'TypeScript':
 													return (
-														<StackButton key={uuidv4()}>
+														<StackButton key={nanoid()}>
 															<img src={typescript} alt={stack} />
 															<span>{stack}</span>
 														</StackButton>
 													);
 												case 'React':
 													return (
-														<StackButton key={uuidv4()}>
+														<StackButton key={nanoid()}>
 															<img src={react} alt={stack} />
 															<span>{stack}</span>
 														</StackButton>
 													);
 												case 'Angular':
 													return (
-														<StackButton key={uuidv4()}>
+														<StackButton key={nanoid()}>
 															<img src={angular} alt={stack} />
 															<span>{stack}</span>
 														</StackButton>
 													);
 												case 'CSS':
 													return (
-														<StackButton key={uuidv4()}>
+														<StackButton key={nanoid()}>
 															<img src={css} alt={stack} />
 															<span>{stack}</span>
 														</StackButton>
 													);
 												case 'HTML':
 													return (
-														<StackButton key={uuidv4()}>
+														<StackButton key={nanoid()}>
 															<img src={html} alt={stack} />
 															<span>{stack}</span>
 														</StackButton>
 													);
 												case 'SASS':
 													return (
-														<StackButton key={uuidv4()}>
+														<StackButton key={nanoid()}>
 															<img src={sass} alt={stack} />
 															<span>{stack}</span>
 														</StackButton>
 													);
 												case 'Bootstrap':
 													return (
-														<StackButton key={uuidv4()}>
+														<StackButton key={nanoid()}>
 															<img src={bootstrap} alt={stack} />
 															<span>{stack}</span>
 														</StackButton>
 													);
 												case 'Material UI':
 													return (
-														<StackButton key={uuidv4()}>
+														<StackButton key={nanoid()}>
 															<img src={materialUi} alt={stack} />
 															<span>{stack}</span>
 														</StackButton>
 													);
 												case 'Tailwind CSS':
 													return (
-														<StackButton key={uuidv4()}>
+														<StackButton key={nanoid()}>
 															<img src={tailwindcss} alt={stack} />
 															<span>{stack}</span>
 														</StackButton>
 													);
 												case 'Styled Components':
 													return (
-														<StackButton key={uuidv4()}>
+														<StackButton key={nanoid()}>
 															<img src={styledComponents} alt={stack} />
 															<span>{stack}</span>
 														</StackButton>
 													);
 												case 'What I learned':
 													return (
-														<StackButton key={uuidv4()}>
+														<StackButton key={nanoid()}>
 															<img src={programmer} alt={stack} />
 															<span>{stack}</span>
 														</StackButton>
 													);
 												case 'Firebase':
 													return (
-														<StackButton key={uuidv4()}>
+														<StackButton key={nanoid()}>
 															<img src={firebase} alt={stack} />
 															<span>{stack}</span>
 														</StackButton>
 													);
 												case 'Wordpress':
 													return (
-														<StackButton key={uuidv4()}>
+														<StackButton key={nanoid()}>
 															<img src={wordpress} alt={stack} />
 															<span>{stack}</span>
 														</StackButton>
 													);
 												case 'PHP':
 													return (
-														<StackButton key={uuidv4()}>
+														<StackButton key={nanoid()}>
 															<img src={php} alt={stack} />
 															<span>{stack}</span>
 														</StackButton>
 													);
 												case 'VSCode':
 													return (
-														<StackButton key={uuidv4()}>
+														<StackButton key={nanoid()}>
 															<img src={visualStudioCode} alt={stack} />
 															<span>{stack}</span>
 														</StackButton>
 													);
 												default:
 													return (
-														<StackButton key={uuidv4()}>
+														<StackButton key={nanoid()}>
 															<img src={question} alt={stack} />
 															<span>{stack}</span>
 														</StackButton>

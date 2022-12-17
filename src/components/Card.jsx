@@ -1,5 +1,5 @@
+import { nanoid } from '@reduxjs/toolkit';
 import { Link } from 'react-router-dom';
-import { v4 as uuidv4 } from 'uuid';
 import { CategoryMark } from '../components/styles/Card.styled';
 import { TagBox } from '../components/styles/TagSection.styled.js';
 import { H2 } from '../components/styles/Title.styled.js';
@@ -26,7 +26,7 @@ export default function Card(props) {
 	return (
 		<>
 			{blogs?.map(post => (
-				<CardContainer key={uuidv4()}>
+				<CardContainer key={nanoid()}>
 					<Link
 						to={`/detail/${post.id}`}
 						style={{ textDecoration: 'none', color: { fontColor } }}
@@ -35,7 +35,7 @@ export default function Card(props) {
 							{/* Category matching logo on each card */}
 							<CategoryMark>
 								<img
-									key={uuidv4()}
+									key={nanoid()}
 									src={CategoryToImageMap[post.category]}
 									alt={post.category}
 								/>

@@ -1,5 +1,6 @@
 import ReactTagInput from '@pathofdev/react-tag-input';
 import '@pathofdev/react-tag-input/build/index.css';
+import { nanoid } from '@reduxjs/toolkit';
 import {
 	addDoc,
 	collection,
@@ -13,7 +14,6 @@ import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { v4 as uuidv4 } from 'uuid';
 import Flex from '../components/styles/Flex.styled.js';
 import {
 	Form,
@@ -195,7 +195,7 @@ const AddEdit = props => {
 					<FormSelect value={category} onChange={onCategoryChange}>
 						<option>Select a category</option>
 						{categoryOption.map(option => (
-							<option value={option || ''} key={uuidv4()}>
+							<option value={option || ''} key={nanoid()}>
 								{option}
 							</option>
 						))}

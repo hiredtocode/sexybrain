@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+import { nanoid } from '@reduxjs/toolkit';
 import angular from '../assets/img/angular.svg';
 import bootstrap from '../assets/img/bootstrap.svg';
 import css from '../assets/img/css3.svg';
@@ -26,7 +26,7 @@ const CategoryList = props => {
 					case 'JavaScript':
 						return (
 							<CategoryButton
-								key={uuidv4()}
+								key={nanoid()}
 								onClick={handleSelectCategory(category)}
 							>
 								<img src={javascript} alt={category} />
@@ -36,7 +36,7 @@ const CategoryList = props => {
 					case 'TypeScript':
 						return (
 							<CategoryButton
-								key={uuidv4()}
+								key={nanoid()}
 								onClick={handleSelectCategory(category)}
 							>
 								<img src={typescript} alt={category} />
@@ -46,7 +46,7 @@ const CategoryList = props => {
 					case 'React':
 						return (
 							<CategoryButton
-								key={uuidv4()}
+								key={nanoid()}
 								onClick={handleSelectCategory(category)}
 							>
 								<img src={react} alt={category} />
@@ -56,7 +56,7 @@ const CategoryList = props => {
 					case 'Angular':
 						return (
 							<CategoryButton
-								key={uuidv4()}
+								key={nanoid()}
 								onClick={handleSelectCategory(category)}
 							>
 								<img src={angular} alt={category} />
@@ -66,7 +66,7 @@ const CategoryList = props => {
 					case 'CSS':
 						return (
 							<CategoryButton
-								key={uuidv4()}
+								key={nanoid()}
 								onClick={handleSelectCategory(category)}
 							>
 								<img src={css} alt={category} />
@@ -76,7 +76,7 @@ const CategoryList = props => {
 					case 'HTML':
 						return (
 							<CategoryButton
-								key={uuidv4()}
+								key={nanoid()}
 								onClick={handleSelectCategory(category)}
 							>
 								<img src={html} alt={category} />
@@ -86,7 +86,7 @@ const CategoryList = props => {
 					case 'SASS':
 						return (
 							<CategoryButton
-								key={uuidv4()}
+								key={nanoid()}
 								onClick={handleSelectCategory(category)}
 							>
 								<img src={sass} alt={category} />
@@ -96,7 +96,7 @@ const CategoryList = props => {
 					case 'Bootstrap':
 						return (
 							<CategoryButton
-								key={uuidv4()}
+								key={nanoid()}
 								onClick={handleSelectCategory(category)}
 							>
 								<img src={bootstrap} alt={category} />
@@ -106,7 +106,7 @@ const CategoryList = props => {
 					case 'Material UI':
 						return (
 							<CategoryButton
-								key={uuidv4()}
+								key={nanoid()}
 								onClick={handleSelectCategory(category)}
 							>
 								<img src={materialUi} alt={category} />
@@ -116,7 +116,7 @@ const CategoryList = props => {
 					case 'Tailwind CSS':
 						return (
 							<CategoryButton
-								key={uuidv4()}
+								key={nanoid()}
 								onClick={handleSelectCategory(category)}
 							>
 								<img src={tailwindcss} alt={category} />
@@ -126,7 +126,7 @@ const CategoryList = props => {
 					case 'Styled Components':
 						return (
 							<CategoryButton
-								key={uuidv4()}
+								key={nanoid()}
 								onClick={handleSelectCategory(category)}
 							>
 								<img src={styledComponents} alt={category} />
@@ -136,7 +136,7 @@ const CategoryList = props => {
 					case 'Today I learned':
 						return (
 							<CategoryButton
-								key={uuidv4()}
+								key={nanoid()}
 								onClick={handleSelectCategory(category)}
 							>
 								<img src={programmer} alt={category} />
@@ -146,7 +146,7 @@ const CategoryList = props => {
 					case 'Firebase':
 						return (
 							<CategoryButton
-								key={uuidv4()}
+								key={nanoid()}
 								onClick={handleSelectCategory(category)}
 							>
 								<img src={firebase} alt={category} />
@@ -156,7 +156,7 @@ const CategoryList = props => {
 					case 'Wordpress':
 						return (
 							<CategoryButton
-								key={uuidv4()}
+								key={nanoid()}
 								onClick={handleSelectCategory(category)}
 							>
 								<img src={wordpress} alt={category} />
@@ -166,7 +166,7 @@ const CategoryList = props => {
 					default:
 						return (
 							<CategoryButton
-								key={uuidv4()}
+								key={nanoid()}
 								onClick={handleSelectCategory(category)}
 							>
 								<img src={question} alt={category} />

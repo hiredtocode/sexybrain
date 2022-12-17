@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+import { nanoid } from '@reduxjs/toolkit';
 import { TagButton, TagSection } from './styles/TagSection.styled.js';
 
 const Tags = props => {
@@ -9,7 +9,7 @@ const Tags = props => {
 			{tags?.map(tag => (
 				<TagButton
 					className='tag'
-					key={uuidv4()}
+					key={nanoid()}
 					onClick={() => handleSelectTag(tag)}
 				>
 					<span>#</span>
