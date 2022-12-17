@@ -28,6 +28,7 @@ const Home = props => {
 	const [tags, setTags] = useState([]);
 	const [tagReset, setTagReset] = useState(false);
 	const [selectedCategory, setSelectedCategory] = useState(null);
+	const [selectedTag, setSelectedTag] = useState(null);
 
 	//This block retrieves blog posts from firebase by latest timestamp
 	const blogCollectionRef = collection(db, 'blogPosts');
@@ -97,20 +98,17 @@ const Home = props => {
 
 	// Show posts that are only related to the clicked tag
 	const handleSelectTag = tag => {
-		if (tagReset) {
-			setBlogs(blogBackup);
-			setTagReset(false);
-		} else {
-			const result = blogBackup.filter(blog => {
-				return blog.tags.includes(tag);
-			});
-			setBlogs(result);
-			setTagReset(true);
-		}
+		setSelectedTag(tag);
+		const result = blogBackup.filter(blog => {
+			return blog.tags.includes(tag);
+		});
+		setBlogs(result);
 	};
+
 	const handleClose = () => {
 		setBlogs(blogBackup);
 		setSelectedCategory(null);
+		setSelectedTag(null);
 	};
 	return (
 		<>
@@ -121,6 +119,16 @@ const Home = props => {
 						<p>
 							Selected category:{' '}
 							<span onClick={handleClose}>{selectedCategory}</span>
+						</p>
+						<button className='cancel' onClick={handleClose}>
+							<CancelButton />
+						</button>
+					</div>
+				)}
+				{selectedTag && (
+					<div className='selected'>
+						<p>
+							Selected tag: <span onClick={handleClose}>{selectedTag}</span>
 						</p>
 						<button className='cancel' onClick={handleClose}>
 							<CancelButton />
