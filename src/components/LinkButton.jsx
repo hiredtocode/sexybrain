@@ -1,7 +1,9 @@
+import { useSelector } from 'react-redux';
 import { LinkButtonDiv } from './styles/portfolio/ProjectContainer.styled';
 
 function LinkButton(props) {
 	const { link, title } = props;
+	const mode = useSelector(state => state.darkmode.mode);
 
 	return (
 		<LinkButtonDiv>
@@ -15,7 +17,7 @@ function LinkButton(props) {
 					<rect width='256' height='256' fill='none' />
 					<polyline
 						fill='none'
-						stroke='#64ffda'
+						stroke={mode === 'dark' ? '#64ffda' : '#087ea4'}
 						strokeLinecap='round'
 						strokeLinejoin='round'
 						strokeWidth='16'
@@ -27,14 +29,14 @@ function LinkButton(props) {
 						y1='112.029'
 						y2='40.029'
 						fill='none'
-						stroke='#64ffda'
+						stroke={mode === 'dark' ? '#64ffda' : '#087ea4'}
 						strokeLinecap='round'
 						strokeLinejoin='round'
 						strokeWidth='16'
 					/>
 					<path
 						fill='none'
-						stroke='#64ffda'
+						stroke={mode === 'dark' ? '#64ffda' : '#087ea4'}
 						strokeLinecap='round'
 						strokeLinejoin='round'
 						strokeWidth='16'

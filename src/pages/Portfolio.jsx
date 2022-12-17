@@ -264,7 +264,10 @@ const Portfolio = () => {
 									</ProjectStack>
 									<ProjectLink>
 										{project && project.githubRepo ? (
-											<GithubButtonForPortfolio link='https://github.com/hiredtocode/sexybrain' />
+											<GithubButtonForPortfolio
+												link='https://github.com/hiredtocode/sexybrain'
+												title='sexybrain github'
+											/>
 										) : null}
 										{project && project.hyperlink ? (
 											<LinkButton

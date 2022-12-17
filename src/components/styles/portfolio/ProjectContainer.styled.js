@@ -460,6 +460,15 @@ export const GithubIconContainer = styled.a`
 	align-items: center;
 	transition: 0.5s;
 	margin: 0 10px;
+	.icon {
+		opacity: 0.6;
+	}
+	.icon:hover {
+		opacity: 1;
+	}
+	svg {
+		width: 2.5rem;
+	}
 `;
 
 export const GithubTop = styled.img`
