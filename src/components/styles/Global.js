@@ -7,8 +7,9 @@ const GlobalStyles = createGlobalStyle`
 	font-family: 'Quicksand', 'sans-serif';
 
 	/* Firefox scrollbar */
-  scrollbar-color: ${({ theme }) => theme.colors.primaryBackground} ${({ theme }) =>
-	theme.colors.body};
+  scrollbar-color: ${({ theme }) => theme.colors.primaryBackground} ${({
+	theme,
+}) => theme.colors.body};
   scrollbar-width: thin;
 	/* Firefox scrollbar END */
 

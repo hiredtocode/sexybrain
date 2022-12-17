@@ -2,7 +2,7 @@ import { connect, useSelector } from 'react-redux';
 import { DivContainer } from '../../components/styles/DivContainer.styled';
 
 const ResetButton = ({ buttonPressed, pressButton, releaseButton }) => {
-	const isPressed = useSelector((state) => state.resetButton.buttonPressed);
+	const isPressed = useSelector(state => state.resetButton.buttonPressed);
 
 	const handleClick = (buttonPressed, pressButton, releaseButton) => {
 		return () => {
@@ -11,7 +11,9 @@ const ResetButton = ({ buttonPressed, pressButton, releaseButton }) => {
 	};
 
 	return (
-		<DivContainer onClick={handleClick(buttonPressed, pressButton, releaseButton)}>
+		<DivContainer
+			onClick={handleClick(buttonPressed, pressButton, releaseButton)}
+		>
 			<ul>
 				<li className={isPressed ? 'pressed' : ''}>Reset</li>
 			</ul>
@@ -19,13 +21,13 @@ const ResetButton = ({ buttonPressed, pressButton, releaseButton }) => {
 	);
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
 	return {
 		buttonPressed: state.resetButton.buttonPressed,
 	};
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
 	return {
 		pressButton: () => dispatch({ type: 'BUTTON_PRESSED' }),
 		releaseButton: () => dispatch({ type: 'BUTTON_RELEASED' }),

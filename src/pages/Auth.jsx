@@ -37,7 +37,7 @@ const Auth = props => {
 				const { user } = await signInWithEmailAndPassword(
 					auth,
 					email,
-					password,
+					password
 				);
 				setUser(user);
 				toast.success(`Login Success. Welcome Jason!`);

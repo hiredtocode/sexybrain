@@ -73,7 +73,7 @@ const AddEdit = props => {
 				'state_changed',
 				snapshot => {
 					const progress = Math.round(
-						(snapshot.bytesTransferred / snapshot.totalBytes) * 100,
+						(snapshot.bytesTransferred / snapshot.totalBytes) * 100
 					);
 					setProgress(progress);
 				},
@@ -82,10 +82,10 @@ const AddEdit = props => {
 					getDownloadURL(imageUpload.snapshot.ref).then(downloadUrl => {
 						setForm(prev => ({ ...prev, imgUrl: downloadUrl }));
 						toast.info(
-							`Image upload to firebase successfully and the URL is: ${downloadUrl}`,
+							`Image upload to firebase successfully and the URL is: ${downloadUrl}`
 						);
 					});
-				},
+				}
 			);
 		};
 		file && uploadFile();

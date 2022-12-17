@@ -1,7 +1,7 @@
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const DeletePostButton = (props) => {
+const DeletePostButton = props => {
 	const { post, handleDelete } = props;
 	return (
 		<FontAwesomeIcon
