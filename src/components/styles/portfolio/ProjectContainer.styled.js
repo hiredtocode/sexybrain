@@ -153,6 +153,10 @@ export const Description = styled.div`
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
 	}
+
+	p {
+		line-height: 1.4;
+	}
 `;
 
 export const ProjectContent = styled.div`
