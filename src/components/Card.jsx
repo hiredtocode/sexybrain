@@ -47,13 +47,13 @@ export default function Card(props) {
 										<mark>{post.title}</mark>
 									</H2>
 									<Date>
-										<div>
+										<>
 											<mark>
 												Created:{' '}
 												{post.createdTimestamp?.toDate().toDateString()}
 											</mark>
-										</div>
-										<div>
+										</>
+										<>
 											{/* This checks if the created date === edited date. If so it won't display the edited date */}
 											{post.lastUpdatedTimestamp ? (
 												post.createdTimestamp.toDate().toDateString() ===
@@ -66,7 +66,7 @@ export default function Card(props) {
 													</mark>
 												)
 											) : null}
-										</div>
+										</>
 									</Date>
 								</Box>
 								<Description>

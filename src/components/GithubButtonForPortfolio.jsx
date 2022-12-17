@@ -8,12 +8,12 @@ import {
 	GithubTop,
 } from './styles/portfolio/ProjectContainer.styled.js';
 
-const GithubButtonForPortfolio = (props) => {
+const GithubButtonForPortfolio = props => {
 	const { link } = props;
-	const mode = useSelector((state) => state.darkmode.mode);
+	const mode = useSelector(state => state.darkmode.mode);
 
 	return (
-		<div>
+		<>
 			<GithubIconContainer
 				//TODO Make this a component and reuse it in portfolio
 				href={link}
@@ -31,7 +31,7 @@ const GithubButtonForPortfolio = (props) => {
 					aria-label='Click to go to my github page'
 				/>
 			</GithubIconContainer>
-		</div>
+		</>
 	);
 };
 

@@ -1,22 +1,19 @@
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import DarkLightMode from '../features/darkMode/DarkLightMode';
-import Write from './CreatePostButton';
 import GithubButton from './GithubButton';
-import Login from './LoginButton';
+import LoginLogoutButton from './LoginLogoutButton';
 import Logo from './Logo';
-import Logout from './LogOutButton';
+import MainLinks from './MainLinks';
 import {
 	HamburgerMenu,
-	LinkContainer,
 	MobileNav,
 	Nav,
 	ShowOnMobileContainer,
-	ShowOnWebContainer,
 	StyledHeader,
 } from './styles/Header.styled.js';
 
-const Header = (props) => {
+const Header = props => {
 	const { user, handleLogout } = props;
 	const userId = user?.uid;
 	const [isActive, setActive] = useState(false);
@@ -28,56 +25,10 @@ const Header = (props) => {
 	return (
 		<StyledHeader>
 			<Nav>
-				<div>
-					<NavLink to='/'>
-						<Logo />
-					</NavLink>
-				</div>
-				{userId ? (
-					<>
-						{/* Create and Logout button appears if logged in */}
-						<NavLink to='/create'>
-							<span>
-								<Write />
-							</span>
-						</NavLink>
-						<Link to='/'>
-							<span onClick={handleLogout}>
-								<Logout />
-							</span>
-						</Link>
-						{/* Create and Logout button appears if logged in END */}
-					</>
-				) : (
-					// if not logged in
-					<NavLink to='/auth'>
-						<span>
-							<Login />
-						</span>
-					</NavLink>
-					// if not logged in END
-				)}
+				<Logo />
+				<LoginLogoutButton userId={userId} handleLogout={handleLogout} />
 				{/* Navbar menu container */}
-				<LinkContainer>
-					<NavLink to='/'>
-						<span>블로그</span>
-					</NavLink>
-					<NavLink to='/resume'>
-						<span>이력서</span>
-					</NavLink>
-					<NavLink to='/portfolio'>
-						<span>포트폴리오</span>
-					</NavLink>
-					{/* Resume page menu END*/}
-					<ShowOnWebContainer>
-						{/* Dark / light mode toggle */}
-						<DarkLightMode />
-						{/* Dark / light mode toggle END */}
-						{/* Github icon */}
-						<GithubButton />
-						{/* Github icon END */}
-					</ShowOnWebContainer>
-				</LinkContainer>
+				<MainLinks />
 				<ShowOnMobileContainer>
 					{/* Dark / light mode toggle */}
 					<DarkLightMode />
@@ -85,7 +36,10 @@ const Header = (props) => {
 					{/* Github icon */}
 					<GithubButton />
 					{/* Github icon END */}
-					<HamburgerMenu className={isActive ? 'isActive' : ''} onClick={toggleHamburgerMenu}>
+					<HamburgerMenu
+						className={isActive ? 'isActive' : ''}
+						onClick={toggleHamburgerMenu}
+					>
 						<span></span>
 						<span></span>
 						<span></span>
