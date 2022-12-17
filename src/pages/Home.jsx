@@ -34,7 +34,7 @@ const Home = props => {
 
 	const createdTimestamp = query(
 		blogCollectionRef,
-		orderBy('createdTimestamp', 'desc'),
+		orderBy('createdTimestamp', 'desc')
 	);
 
 	useEffect(() => {
@@ -58,7 +58,7 @@ const Home = props => {
 			},
 			error => {
 				toast.error(`There was an error ${error}`);
-			},
+			}
 		);
 		return () => fetchBlogPosts();
 
@@ -119,7 +119,8 @@ const Home = props => {
 				{selectedCategory && (
 					<div className='selected'>
 						<p>
-							Selected category: <span>{selectedCategory}</span>
+							Selected category:{' '}
+							<span onClick={handleClose}>{selectedCategory}</span>
 						</p>
 						<button className='cancel' onClick={handleClose}>
 							<CancelButton />
