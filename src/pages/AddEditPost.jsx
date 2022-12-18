@@ -61,9 +61,9 @@ const AddEdit = props => {
 
 	const { title, body, tags, category, description } = form;
 
-	// Upload file
+	// Upload selected file from computer to firebase storage
 	useEffect(() => {
-		const uploadFile = () => {
+		const uploadFileFromComputer = () => {
 			if (!file) return;
 
 			const storageRef = ref(storage, file.name);
@@ -88,25 +88,26 @@ const AddEdit = props => {
 				}
 			);
 		};
-		file && uploadFile();
-		return () => uploadFile();
+		file && uploadFileFromComputer();
+		return () => uploadFileFromComputer();
 	}, [file]);
-	// Upload file END
+	// Upload selected file from computer to firebase storage END
 
-	// Get blog post
+	// Get selected blog post
 	useEffect(() => {
-		id && getBlogDetail();
+		id && getBlogPostDetail();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [id]);
 
-	const getBlogDetail = async () => {
+	const getBlogPostDetail = async () => {
 		const docRef = doc(db, 'blogPosts', id);
 		const snapshot = await getDoc(docRef);
 		if (snapshot.exists()) {
 			setForm({ ...snapshot.data() });
 		}
 	};
-	// Get blog post END
+	// Get selected blog post END
+
 	// Click handlers
 	const onCategoryChange = e => {
 		setForm({ ...form, category: e.target.value });

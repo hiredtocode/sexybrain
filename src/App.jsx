@@ -11,10 +11,10 @@ import Header from './components/Header';
 import GlobalStyles from './components/styles/Global';
 import { RootContainer } from './components/styles/RootContainer.styled.js';
 import { auth } from './firebase.config';
-import AddEdit from './pages/AddEdit';
-import Auth from './pages/Auth';
-import BlogDetails from './pages/BlogDetails';
+import AddEditPost from './pages/AddEditPost';
+import BlogPostDetails from './pages/BlogPostDetails';
 import Home from './pages/Home';
+import LoginOrSignup from './pages/LoginOrSignup';
 import NotFound from './pages/NotFound';
 import Portfolio from './pages/Portfolio';
 import Resume from './pages/Resume';
@@ -143,21 +143,21 @@ function App() {
 			<RootContainer>
 				<Routes>
 					<Route path='/' element={<Home user={user} />} />
-					<Route path='/detail/:id' element={<BlogDetails user={user} />} />
+					<Route path='/detail/:id' element={<BlogPostDetails user={user} />} />
 					<Route path='/portfolio/' element={<Portfolio />} />
 					<Route
 						path='/create'
 						element={
-							user?.uid ? <AddEdit user={user} /> : <Navigate to='/auth' />
+							user?.uid ? <AddEditPost user={user} /> : <Navigate to='/auth' />
 						}
 					/>
 					<Route
 						path='/update/:id'
 						element={
-							user?.uid ? <AddEdit user={user} /> : <Navigate to='/auth' />
+							user?.uid ? <AddEditPost user={user} /> : <Navigate to='/auth' />
 						}
 					/>
-					<Route path='/auth' element={<Auth setUser={setUser} />} />
+					<Route path='/auth' element={<LoginOrSignup setUser={setUser} />} />
 					<Route path='/resume' element={<Resume />} />
 					<Route path='*' element={<NotFound />} />
 				</Routes>
