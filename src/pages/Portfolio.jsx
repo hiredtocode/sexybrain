@@ -1,27 +1,11 @@
 import { nanoid } from '@reduxjs/toolkit';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { toast } from 'react-toastify';
-import angular from '../assets/img/angular.svg';
-import bootstrap from '../assets/img/bootstrap.svg';
-import css from '../assets/img/css3.svg';
-import firebase from '../assets/img/firebase-icon.svg';
-import html from '../assets/img/html.svg';
-import javascript from '../assets/img/javascript.svg';
-import materialUi from '../assets/img/material-ui.svg';
-import php from '../assets/img/php.svg';
-import programmer from '../assets/img/programmer.svg';
-import question from '../assets/img/question.svg';
-import react from '../assets/img/react.svg';
-import sass from '../assets/img/sass.svg';
+
 import darkScreenShot from '../assets/img/sexybrain-main-page-dark.jpg';
-import styledComponents from '../assets/img/styledComponentsLogo.svg';
-import tailwindcss from '../assets/img/tailwindcss.svg';
-import typescript from '../assets/img/typescript.svg';
-import visualStudioCode from '../assets/img/visualStudioCode.svg';
-import wordpress from '../assets/img/wordpress.svg';
 import GithubButtonForPortfolio from '../components/GithubButtonForPortfolio';
 import LinkButton from '../components/LinkButton.jsx';
+import ProjectStacks from '../components/ProjectStacks';
 import {
 	Content,
 	ContentContainer,
@@ -32,7 +16,6 @@ import {
 	ProjectImage,
 	ProjectLink,
 	ProjectStack,
-	StackButton,
 } from '../components/styles/portfolio/ProjectContainer.styled.js';
 import { Highlight } from '../components/styles/resume/Highlight.styled.js';
 import { H2 } from '../components/styles/Title.styled';
@@ -69,9 +52,9 @@ const Portfolio = () => {
 		return () => {
 			setProjects(filtered);
 			setSelectedCategory(selectedCategory);
-			toast.info(
-				`카테고리는 자동으로 채워집니다. ${selectedCategory} 카테고리를 선택 하였지만 아직 포트폴리오에 올라온 프로젝트가 하나이기 때문에 필터링 되는게 않보일 것입니다.`
-			);
+			// toast.info(
+			// 	`카테고리는 자동으로 채워집니다. ${selectedCategory} 카테고리를 선택 하였지만 아직 포트폴리오에 올라온 프로젝트가 하나이기 때문에 필터링 되는게 않보일 것입니다.`
+			// );
 		};
 	};
 
@@ -138,129 +121,7 @@ const Portfolio = () => {
 									</Description>
 
 									<ProjectStack>
-										{project.stack.map(stack => {
-											switch (stack) {
-												case 'JavaScript':
-													return (
-														<StackButton key={nanoid()}>
-															<img src={javascript} alt={stack} />
-															<span>{stack}</span>
-														</StackButton>
-													);
-												case 'TypeScript':
-													return (
-														<StackButton key={nanoid()}>
-															<img src={typescript} alt={stack} />
-															<span>{stack}</span>
-														</StackButton>
-													);
-												case 'React':
-													return (
-														<StackButton key={nanoid()}>
-															<img src={react} alt={stack} />
-															<span>{stack}</span>
-														</StackButton>
-													);
-												case 'Angular':
-													return (
-														<StackButton key={nanoid()}>
-															<img src={angular} alt={stack} />
-															<span>{stack}</span>
-														</StackButton>
-													);
-												case 'CSS':
-													return (
-														<StackButton key={nanoid()}>
-															<img src={css} alt={stack} />
-															<span>{stack}</span>
-														</StackButton>
-													);
-												case 'HTML':
-													return (
-														<StackButton key={nanoid()}>
-															<img src={html} alt={stack} />
-															<span>{stack}</span>
-														</StackButton>
-													);
-												case 'SASS':
-													return (
-														<StackButton key={nanoid()}>
-															<img src={sass} alt={stack} />
-															<span>{stack}</span>
-														</StackButton>
-													);
-												case 'Bootstrap':
-													return (
-														<StackButton key={nanoid()}>
-															<img src={bootstrap} alt={stack} />
-															<span>{stack}</span>
-														</StackButton>
-													);
-												case 'Material UI':
-													return (
-														<StackButton key={nanoid()}>
-															<img src={materialUi} alt={stack} />
-															<span>{stack}</span>
-														</StackButton>
-													);
-												case 'Tailwind CSS':
-													return (
-														<StackButton key={nanoid()}>
-															<img src={tailwindcss} alt={stack} />
-															<span>{stack}</span>
-														</StackButton>
-													);
-												case 'Styled Components':
-													return (
-														<StackButton key={nanoid()}>
-															<img src={styledComponents} alt={stack} />
-															<span>{stack}</span>
-														</StackButton>
-													);
-												case 'What I learned':
-													return (
-														<StackButton key={nanoid()}>
-															<img src={programmer} alt={stack} />
-															<span>{stack}</span>
-														</StackButton>
-													);
-												case 'Firebase':
-													return (
-														<StackButton key={nanoid()}>
-															<img src={firebase} alt={stack} />
-															<span>{stack}</span>
-														</StackButton>
-													);
-												case 'Wordpress':
-													return (
-														<StackButton key={nanoid()}>
-															<img src={wordpress} alt={stack} />
-															<span>{stack}</span>
-														</StackButton>
-													);
-												case 'PHP':
-													return (
-														<StackButton key={nanoid()}>
-															<img src={php} alt={stack} />
-															<span>{stack}</span>
-														</StackButton>
-													);
-												case 'VSCode':
-													return (
-														<StackButton key={nanoid()}>
-															<img src={visualStudioCode} alt={stack} />
-															<span>{stack}</span>
-														</StackButton>
-													);
-												default:
-													return (
-														<StackButton key={nanoid()}>
-															<img src={question} alt={stack} />
-															<span>{stack}</span>
-														</StackButton>
-													);
-											}
-										})}
+										<ProjectStacks project={project} />
 									</ProjectStack>
 									<ProjectLink>
 										{project && project.githubRepo ? (
