@@ -10,7 +10,6 @@ import {
 const GithubButton = ({ mode }) => {
 	return (
 		<GithubIconContainer
-			//TODO Make this a component and reuse it in portfolio
 			href='https://github.com/hiredtocode'
 			target='_blank'
 			rel='noreferrer'
