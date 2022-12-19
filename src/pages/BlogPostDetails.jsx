@@ -1,44 +1,46 @@
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { doc, getDoc } from 'firebase/firestore';
-import React, { useEffect, useState } from 'react';
-import ReactMarkdown from 'react-markdown';
-import { useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { faEdit } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { doc, getDoc } from 'firebase/firestore'
+import React, { useEffect, useState } from 'react'
+import ReactMarkdown from 'react-markdown'
+import { useSelector } from 'react-redux'
+import { Link, useParams } from 'react-router-dom'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import {
 	oneDark,
 	oneLight,
-} from 'react-syntax-highlighter/dist/esm/styles/prism';
-import remarkGfm from 'remark-gfm';
-import DefaultImage from '../assets/img/default.jpg';
+} from 'react-syntax-highlighter/dist/esm/styles/prism'
+import remarkGfm from 'remark-gfm'
+import DefaultImage from '../assets/img/default.jpg'
+import useTitle from '../components/hook/useTitle'
 import {
 	BlogDetail,
 	BlogTitleBox,
 	MarkdownContainer,
-} from '../components/styles/BlogDetails.styled.js';
-import Flex from '../components/styles/Flex.styled.js';
-import { H2 } from '../components/styles/Title.styled.js';
-import Tags from '../components/Tags';
-import { db } from '../firebase.config';
+} from '../components/styles/BlogDetails.styled.js'
+import Flex from '../components/styles/Flex.styled.js'
+import { H2 } from '../components/styles/Title.styled.js'
+import Tags from '../components/Tags'
+import { db } from '../firebase.config'
 
 const PostDetailPage = props => {
-	const { id } = useParams();
-	const [blog, setBlog] = useState(null);
-	const { user } = props;
-	const userId = user?.uid;
-	const mode = useSelector(state => state.darkmode.mode);
+	const { id } = useParams()
+	const [blog, setBlog] = useState(null)
+	const { user } = props
+	const userId = user?.uid
+	const mode = useSelector(state => state.darkmode.mode)
 
+	useTitle(`${blog?.title}`)
 	useEffect(() => {
-		id && getBlogDetail();
+		id && getBlogDetail()
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [id]);
+	}, [id])
 
 	const getBlogDetail = async () => {
-		const docRef = doc(db, 'blogPosts', id);
-		const blogDetail = await getDoc(docRef);
-		setBlog(blogDetail.data());
-	};
+		const docRef = doc(db, 'blogPosts', id)
+		const blogDetail = await getDoc(docRef)
+		setBlog(blogDetail.data())
+	}
 
 	return (
 		<div className='single' style={{ flexGrow: '1' }}>
@@ -105,7 +107,7 @@ const PostDetailPage = props => {
 								includeElementIndex,
 								...props
 							}) {
-								const match = /language-(\w+)/.exec(className || '');
+								const match = /language-(\w+)/.exec(className || '')
 								return !inline && match ? (
 									<SyntaxHighlighter
 										children={String(children).replace(/\n$/, '')}
@@ -117,14 +119,14 @@ const PostDetailPage = props => {
 									<code className={className} {...props}>
 										{children}
 									</code>
-								);
+								)
 							},
 						}}
 					/>
 				</MarkdownContainer>
 			</BlogDetail>
 		</div>
-	);
-};
+	)
+}
 
-export default PostDetailPage;
+export default PostDetailPage

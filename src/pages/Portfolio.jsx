@@ -1,11 +1,12 @@
-import { nanoid } from '@reduxjs/toolkit';
-import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { nanoid } from '@reduxjs/toolkit'
+import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 
-import darkScreenShot from '../assets/img/sexybrain-main-page-dark.jpg';
-import GithubButtonForPortfolio from '../components/GithubButtonForPortfolio';
-import LinkButton from '../components/LinkButton.jsx';
-import ProjectStacks from '../components/ProjectStacks';
+import darkScreenShot from '../assets/img/sexybrain-main-page-dark.jpg'
+import GithubButtonForPortfolio from '../components/GithubButtonForPortfolio'
+import useTitle from '../components/hook/useTitle'
+import LinkButton from '../components/LinkButton.jsx'
+import ProjectStacks from '../components/ProjectStacks'
 import {
 	Content,
 	ContentContainer,
@@ -16,47 +17,48 @@ import {
 	ProjectImage,
 	ProjectLink,
 	ProjectStack,
-} from '../components/styles/portfolio/ProjectContainer.styled.js';
-import { Highlight } from '../components/styles/resume/Highlight.styled.js';
-import { H2 } from '../components/styles/Title.styled';
-import Projects from '../projects/projects.json';
+} from '../components/styles/portfolio/ProjectContainer.styled.js'
+import { Highlight } from '../components/styles/resume/Highlight.styled.js'
+import { H2 } from '../components/styles/Title.styled'
+import Projects from '../projects/projects.json'
 
 const Portfolio = () => {
-	const [projects, setProjects] = useState(Projects);
-	const [categories, setCategories] = useState();
-	const [loading, setLoading] = useState(true);
-	const [isActive, setActive] = useState(1);
-	const isPressed = useSelector(state => state.resetButton.buttonPressed);
-	const [selectedCategory, setSelectedCategory] = useState(null);
+	useTitle('Portfolio')
+	const [projects, setProjects] = useState(Projects)
+	const [categories, setCategories] = useState()
+	const [loading, setLoading] = useState(true)
+	const [isActive, setActive] = useState(1)
+	const isPressed = useSelector(state => state.resetButton.buttonPressed)
+	const [selectedCategory, setSelectedCategory] = useState(null)
 
 	useEffect(() => {
 		const categories = () => {
-			let array = [];
+			let array = []
 			projects.forEach(project => {
-				array.push(...project.stack);
-			});
-			const uniqueCategories = [...new Set(array.map(stack => stack))];
-			setCategories(uniqueCategories);
-			setLoading(false);
-		};
+				array.push(...project.stack)
+			})
+			const uniqueCategories = [...new Set(array.map(stack => stack))]
+			setCategories(uniqueCategories)
+			setLoading(false)
+		}
 
-		categories();
+		categories()
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [projects]);
+	}, [projects])
 
 	// Show posts that are only related to the clicked category when clicked
 	const handleSelectedCategory = selectedCategory => {
 		const filtered = projects.filter(project =>
 			project.stack.includes(selectedCategory)
-		);
+		)
 		return () => {
-			setProjects(filtered);
-			setSelectedCategory(selectedCategory);
+			setProjects(filtered)
+			setSelectedCategory(selectedCategory)
 			// toast.info(
 			// 	`카테고리는 자동으로 채워집니다. ${selectedCategory} 카테고리를 선택 하였지만 아직 포트폴리오에 올라온 프로젝트가 하나이기 때문에 필터링 되는게 않보일 것입니다.`
 			// );
-		};
-	};
+		}
+	}
 
 	return (
 		<PortFolioContainer>
@@ -154,6 +156,6 @@ const Portfolio = () => {
 				</ContentContainer>
 			</ProjectContainer>
 		</PortFolioContainer>
-	);
-};
-export default Portfolio;
+	)
+}
+export default Portfolio

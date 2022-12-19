@@ -1,34 +1,37 @@
-import angular from '../assets/img/angular.svg';
-import bootstrap from '../assets/img/bootstrap.svg';
-import css from '../assets/img/css3.svg';
-import firebase from '../assets/img/firebase-icon.svg';
-import html from '../assets/img/html.svg';
-import JavascriptLogo from '../assets/img/javascript.svg';
-import materialUi from '../assets/img/material-ui.svg';
-import react from '../assets/img/react.svg';
-import sass from '../assets/img/sass.svg';
-import styledComponents from '../assets/img/styledComponentsLogo.svg';
-import typescript from '../assets/img/typescript.svg';
-import wordpress from '../assets/img/wordpress.svg';
-import profilePicture from '../assets/resume/사진.jpg';
-import Flex from '../components/styles/Flex.styled.js';
-import { LineBreak } from '../components/styles/LineBreak.styled.js';
-import { Badge } from '../components/styles/resume/Badge.styled.js';
+import angular from '../assets/img/angular.svg'
+import bootstrap from '../assets/img/bootstrap.svg'
+import css from '../assets/img/css3.svg'
+import firebase from '../assets/img/firebase-icon.svg'
+import html from '../assets/img/html.svg'
+import JavascriptLogo from '../assets/img/javascript.svg'
+import materialUi from '../assets/img/material-ui.svg'
+import react from '../assets/img/react.svg'
+import sass from '../assets/img/sass.svg'
+import styledComponents from '../assets/img/styledComponentsLogo.svg'
+import typescript from '../assets/img/typescript.svg'
+import wordpress from '../assets/img/wordpress.svg'
+import profilePicture from '../assets/resume/사진.jpg'
+import useTitle from '../components/hook/useTitle'
+import Flex from '../components/styles/Flex.styled.js'
+import { LineBreak } from '../components/styles/LineBreak.styled.js'
+import { Badge } from '../components/styles/resume/Badge.styled.js'
 import {
 	Border,
 	Card,
 	CardContainer,
 	Content1,
 	Content2,
-} from '../components/styles/resume/CardContainer.styled.js';
-import { Contact } from '../components/styles/resume/Contact.styled.js';
-import { Highlight } from '../components/styles/resume/Highlight.styled.js';
-import { ProfilePic } from '../components/styles/resume/profile.styled.js';
-import { Section } from '../components/styles/resume/Section.styled.js';
-import { Stack } from '../components/styles/resume/Stack.styled.js';
-import { H2, H3 } from '../components/styles/Title.styled.js';
+} from '../components/styles/resume/CardContainer.styled.js'
+import { Contact } from '../components/styles/resume/Contact.styled.js'
+import { Highlight } from '../components/styles/resume/Highlight.styled.js'
+import { ProfilePic } from '../components/styles/resume/profile.styled.js'
+import { Section } from '../components/styles/resume/Section.styled.js'
+import { Stack } from '../components/styles/resume/Stack.styled.js'
+import { H2, H3 } from '../components/styles/Title.styled.js'
 
 const Resume = () => {
+	useTitle('Resume')
+
 	return (
 		<main>
 			<Flex justify={'space-around'}>
@@ -243,7 +246,7 @@ const Resume = () => {
 				</ul>
 			</Section>
 		</main>
-	);
-};
+	)
+}
 
-export default Resume;
+export default Resume

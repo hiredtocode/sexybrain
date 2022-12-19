@@ -1,6 +1,6 @@
-import ReactTagInput from '@pathofdev/react-tag-input';
-import '@pathofdev/react-tag-input/build/index.css';
-import { nanoid } from '@reduxjs/toolkit';
+import ReactTagInput from '@pathofdev/react-tag-input'
+import '@pathofdev/react-tag-input/build/index.css'
+import { nanoid } from '@reduxjs/toolkit'
 import {
 	addDoc,
 	collection,
@@ -8,13 +8,14 @@ import {
 	getDoc,
 	serverTimestamp,
 	updateDoc,
-} from 'firebase/firestore';
-import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
-import { useEffect, useState } from 'react';
-import ReactMarkdown from 'react-markdown';
-import { useNavigate, useParams } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import Flex from '../components/styles/Flex.styled.js';
+} from 'firebase/firestore'
+import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
+import { useEffect, useState } from 'react'
+import ReactMarkdown from 'react-markdown'
+import { useNavigate, useParams } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import useTitle from '../components/hook/useTitle.js'
+import Flex from '../components/styles/Flex.styled.js'
 import {
 	Form,
 	FormCancelButton,
@@ -24,12 +25,14 @@ import {
 	FormSelect,
 	FormSubmitButton,
 	Textarea,
-} from '../components/styles/FormContainer.styled.js';
-import { MarkdownContainer } from '../components/styles/MarkdownContainer.styled.js';
-import { db, storage } from '../firebase.config';
+} from '../components/styles/FormContainer.styled.js'
+import { MarkdownContainer } from '../components/styles/MarkdownContainer.styled.js'
+import { db, storage } from '../firebase.config'
 
 const AddEdit = props => {
-	const { user } = props;
+	useTitle('Add/Edit Post')
+
+	const { user } = props
 	const categoryOption = [
 		'JavaScript',
 		'TypeScript',
@@ -45,92 +48,92 @@ const AddEdit = props => {
 		'Firebase',
 		'Wordpress',
 		'Today I learned',
-	];
+	]
 	const [form, setForm] = useState({
 		title: '',
 		tags: [],
 		category: '',
 		body: '',
 		description: '',
-	});
-	const [file, setFile] = useState(null);
-	const [progress, setProgress] = useState(null);
-	const { id } = useParams();
-	const navigate = useNavigate();
-	const blogCollectionRef = collection(db, 'blogPosts');
+	})
+	const [file, setFile] = useState(null)
+	const [progress, setProgress] = useState(null)
+	const { id } = useParams()
+	const navigate = useNavigate()
+	const blogCollectionRef = collection(db, 'blogPosts')
 
-	const { title, body, tags, category, description } = form;
+	const { title, body, tags, category, description } = form
 
 	// Upload selected file from computer to firebase storage
 	useEffect(() => {
 		const uploadFileFromComputer = () => {
-			if (!file) return;
+			if (!file) return
 
-			const storageRef = ref(storage, file.name);
-			const imageUpload = uploadBytesResumable(storageRef, file);
+			const storageRef = ref(storage, file.name)
+			const imageUpload = uploadBytesResumable(storageRef, file)
 
 			imageUpload.on(
 				'state_changed',
 				snapshot => {
 					const progress = Math.round(
 						(snapshot.bytesTransferred / snapshot.totalBytes) * 100
-					);
-					setProgress(progress);
+					)
+					setProgress(progress)
 				},
 				error => toast.error(`${error}`),
 				() => {
 					getDownloadURL(imageUpload.snapshot.ref).then(downloadUrl => {
-						setForm(prev => ({ ...prev, imgUrl: downloadUrl }));
+						setForm(prev => ({ ...prev, imgUrl: downloadUrl }))
 						toast.info(
 							`Image upload to firebase successfully and the URL is: ${downloadUrl}`
-						);
-					});
+						)
+					})
 				}
-			);
-		};
-		file && uploadFileFromComputer();
-		return () => uploadFileFromComputer();
-	}, [file]);
+			)
+		}
+		file && uploadFileFromComputer()
+		return () => uploadFileFromComputer()
+	}, [file])
 	// Upload selected file from computer to firebase storage END
 
 	// Get selected blog post
 	useEffect(() => {
-		id && getBlogPostDetail();
+		id && getBlogPostDetail()
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [id]);
+	}, [id])
 
 	const getBlogPostDetail = async () => {
-		const docRef = doc(db, 'blogPosts', id);
-		const snapshot = await getDoc(docRef);
+		const docRef = doc(db, 'blogPosts', id)
+		const snapshot = await getDoc(docRef)
 		if (snapshot.exists()) {
-			setForm({ ...snapshot.data() });
+			setForm({ ...snapshot.data() })
 		}
-	};
+	}
 	// Get selected blog post END
 
 	// Click handlers
 	const onCategoryChange = e => {
-		setForm({ ...form, category: e.target.value });
-	};
+		setForm({ ...form, category: e.target.value })
+	}
 	const onTitleChange = e => {
-		setForm({ ...form, title: e.target.value });
-	};
+		setForm({ ...form, title: e.target.value })
+	}
 	const onBodyChange = e => {
-		setForm({ ...form, body: e.target.value });
-	};
+		setForm({ ...form, body: e.target.value })
+	}
 	const onDescriptionChange = e => {
-		setForm({ ...form, description: e.target.value });
-	};
+		setForm({ ...form, description: e.target.value })
+	}
 	const handleTags = tags => {
-		setForm({ ...form, tags });
-	};
+		setForm({ ...form, tags })
+	}
 	const onFileChange = e => {
-		setFile(e.target.files[0]);
-	};
+		setFile(e.target.files[0])
+	}
 	// Click handlers END
 
 	const handleSubmit = async e => {
-		e.preventDefault();
+		e.preventDefault()
 
 		if (category && title && body && tags && description) {
 			if (!id) {
@@ -140,10 +143,10 @@ const AddEdit = props => {
 						createdTimestamp: serverTimestamp(),
 						author: user.displayName,
 						userId: user.uid,
-					});
-					toast.success('Blog created successfully');
+					})
+					toast.success('Blog created successfully')
 				} catch (err) {
-					toast.error(`There was an error ${err}`);
+					toast.error(`There was an error ${err}`)
 				}
 			} else {
 				try {
@@ -152,17 +155,17 @@ const AddEdit = props => {
 						lastUpdatedTimestamp: serverTimestamp(),
 						author: user.displayName,
 						userId: user.uid,
-					});
-					toast.success('Blog updated successfully');
+					})
+					toast.success('Blog updated successfully')
 				} catch (err) {
-					toast.error(`There was an error ${err}`);
+					toast.error(`There was an error ${err}`)
 				}
 			}
 		} else {
-			return toast.error('All fields are mandatory to fill');
+			return toast.error('All fields are mandatory to fill')
 		}
-		navigate(`/`);
-	};
+		navigate(`/`)
+	}
 	// Submit handle end
 
 	return (
@@ -239,7 +242,7 @@ const AddEdit = props => {
 				<ReactMarkdown children={body} />
 			</MarkdownContainer>
 		</>
-	);
-};
+	)
+}
 
-export default AddEdit;
+export default AddEdit

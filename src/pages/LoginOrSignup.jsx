@@ -1,53 +1,51 @@
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import useTitle from '../components/hook/useTitle.js'
 import {
 	FormContainer,
 	FormInput,
 	FormLabel,
 	LoginButton,
 	LoginForm,
-} from '../components/styles/FormContainer.styled.js';
-import { H1 } from '../components/styles/Title.styled.js';
-import { auth } from '../firebase.config';
+} from '../components/styles/FormContainer.styled.js'
+import { H1 } from '../components/styles/Title.styled.js'
+import { auth } from '../firebase.config'
 
 const initialState = {
 	email: '',
 	password: '',
-};
+}
 //TODO success / error message when logging in
 const Auth = props => {
-	const { setUser } = props;
-	const [state, setState] = useState(initialState);
-	const [signUp] = useState(false);
+	useTitle('Login')
+	const { setUser } = props
+	const [state, setState] = useState(initialState)
+	const [signUp] = useState(false)
 
-	const { email, password } = state;
+	const { email, password } = state
 
-	const navigate = useNavigate();
+	const navigate = useNavigate()
 
 	const handleChange = e => {
-		setState({ ...state, [e.target.name]: e.target.value });
-	};
+		setState({ ...state, [e.target.name]: e.target.value })
+	}
 
 	const handleAuth = async e => {
-		e.preventDefault();
+		e.preventDefault()
 		if (!signUp) {
 			if (email && password) {
-				const { user } = await signInWithEmailAndPassword(
-					auth,
-					email,
-					password
-				);
-				setUser(user);
-				toast.success(`Login Success. Welcome Jason!`);
+				const { user } = await signInWithEmailAndPassword(auth, email, password)
+				setUser(user)
+				toast.success(`Login Success. Welcome Jason!`)
 			} else {
-				return toast.error('All fields are mandatory to fill');
+				return toast.error('All fields are mandatory to fill')
 			}
 		}
 
-		navigate('/');
-	};
+		navigate('/')
+	}
 
 	return (
 		<>
@@ -80,7 +78,7 @@ const Auth = props => {
 				</LoginForm>
 			</FormContainer>
 		</>
-	);
-};
+	)
+}
 
-export default Auth;
+export default Auth

@@ -5,113 +5,116 @@ import {
 	onSnapshot,
 	orderBy,
 	query,
-} from 'firebase/firestore';
-import React, { useEffect, useMemo, useState } from 'react';
-import { toast } from 'react-toastify';
-import { CancelButton } from '../components/CancelButton';
-import Card from '../components/Card';
-import CategoryList from '../components/CategoryList';
-import Spinner from '../components/Spinner';
-import { BlogContainer } from '../components/styles/BlogContainer.styled';
-import { Aside } from '../components/styles/CategoryContainer.styled';
-import { TagContainer } from '../components/styles/TagSection.styled.js';
-import { H2 } from '../components/styles/Title.styled.js';
-import Tags from '../components/Tags';
-import { db } from '../firebase.config';
+} from 'firebase/firestore'
+import React, { useEffect, useMemo, useState } from 'react'
+import { toast } from 'react-toastify'
+import { CancelButton } from '../components/CancelButton'
+import Card from '../components/Card'
+import CategoryList from '../components/CategoryList'
+import useTitle from '../components/hook/useTitle.js'
+import Spinner from '../components/Spinner'
+import { BlogContainer } from '../components/styles/BlogContainer.styled'
+import { Aside } from '../components/styles/CategoryContainer.styled'
+import { TagContainer } from '../components/styles/TagSection.styled.js'
+import { H2 } from '../components/styles/Title.styled.js'
+import Tags from '../components/Tags'
+import { db } from '../firebase.config'
 
 const Home = props => {
-	const { user } = props;
-	const [loading, setLoading] = useState(true);
-	const [blogBackup, setBlogBackup] = useState([]);
-	const [blogs, setBlogs] = useState(blogBackup);
-	const [categories, setCategory] = useState([]);
-	const [tags, setTags] = useState([]);
-	const [tagReset, setTagReset] = useState(false);
-	const [selectedCategory, setSelectedCategory] = useState(null);
-	const [selectedTag, setSelectedTag] = useState(null);
+	useTitle('JH Blog')
+
+	const { user } = props
+	const [loading, setLoading] = useState(true)
+	const [blogBackup, setBlogBackup] = useState([])
+	const [blogs, setBlogs] = useState(blogBackup)
+	const [categories, setCategory] = useState([])
+	const [tags, setTags] = useState([])
+	const [tagReset, setTagReset] = useState(false)
+	const [selectedCategory, setSelectedCategory] = useState(null)
+	const [selectedTag, setSelectedTag] = useState(null)
 
 	//This block retrieves blog posts from firebase by latest timestamp
-	const blogCollectionRef = collection(db, 'blogPosts');
+	const blogCollectionRef = collection(db, 'blogPosts')
 
 	const createdTimestamp = query(
 		blogCollectionRef,
 		orderBy('createdTimestamp', 'desc')
-	);
+	)
 
 	useEffect(() => {
 		const fetchBlogPosts = onSnapshot(
 			createdTimestamp,
 			snapshot => {
-				let tags = [];
-				let list = [];
+				let tags = []
+				let list = []
 				snapshot.docs.forEach(doc => {
-					tags.push(...doc.get('tags'));
-					list.push({ ...doc.data(), id: doc.id });
-				});
-				const uniqueTags = [...new Set(tags)];
-				const uniqueCategories = [...new Set(list.map(item => item.category))];
-				setCategory(uniqueCategories);
-				setTags(uniqueTags);
-				setLoading(false);
+					tags.push(...doc.get('tags'))
+					list.push({ ...doc.data(), id: doc.id })
+				})
+				const uniqueTags = [...new Set(tags)]
+				const uniqueCategories = [...new Set(list.map(item => item.category))]
+				setCategory(uniqueCategories)
+				setTags(uniqueTags)
+				setLoading(false)
 
-				setBlogs(list);
-				setBlogBackup(list);
+				setBlogs(list)
+				setBlogBackup(list)
 			},
 			error => {
-				toast.error(`There was an error ${error}`);
+				toast.error(`There was an error ${error}`)
 			}
-		);
-		return () => fetchBlogPosts();
+		)
+		return () => fetchBlogPosts()
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
-	const memoizedBlogs = useMemo(() => blogs, [blogs]);
+	}, [])
+	const memoizedBlogs = useMemo(() => blogs, [blogs])
 
 	if (loading) {
-		return <Spinner />;
+		return <Spinner />
 	}
 	const handleDelete = id => {
 		return async () => {
 			if (window.confirm('Are you sure?')) {
 				try {
-					setLoading(true);
-					await deleteDoc(doc(db, 'blogPosts', id));
-					toast.success('Blog deleted successfully');
-					setLoading(false);
+					setLoading(true)
+					await deleteDoc(doc(db, 'blogPosts', id))
+					toast.success('Blog deleted successfully')
+					setLoading(false)
 				} catch (err) {
-					toast.error(`Sorry there was an error ${err}`);
+					toast.error(`Sorry there was an error ${err}`)
 				}
 			}
-		};
-	};
+		}
+	}
 
 	// Show posts that are only related to the clicked category when clicked
 	const handleSelectCategory = category => {
 		return () => {
-			setSelectedCategory(category);
+			setSelectedCategory(category)
 			const result = blogBackup.filter(blog => {
-				return blog.category === category;
-			});
-			setBlogs(result);
-			setSelectedTag(null);
-		};
-	};
+				return blog.category === category
+			})
+			setBlogs(result)
+			setSelectedTag(null)
+		}
+	}
 
 	// Show posts that are only related to the clicked tag
 	const handleSelectTag = tag => {
-		setSelectedTag(tag);
+		setSelectedTag(tag)
 		const result = blogBackup.filter(blog => {
-			return blog.tags.includes(tag);
-		});
-		setBlogs(result);
-		setSelectedCategory(null);
-	};
+			return blog.tags.includes(tag)
+		})
+		setBlogs(result)
+		setSelectedCategory(null)
+	}
 
 	const handleClose = () => {
-		setBlogs(blogBackup);
-		setSelectedCategory(null);
-		setSelectedTag(null);
-	};
+		setBlogs(blogBackup)
+		setSelectedCategory(null)
+		setSelectedTag(null)
+	}
 	return (
 		<>
 			<BlogContainer>
@@ -152,7 +155,7 @@ const Home = props => {
 				</TagContainer>
 			</Aside>
 		</>
-	);
-};
+	)
+}
 
-export default Home;
+export default Home
