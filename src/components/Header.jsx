@@ -27,15 +27,10 @@ const Header = props => {
 			<Nav>
 				<Logo />
 				<LoginLogoutButton userId={userId} handleLogout={handleLogout} />
-				{/* Navbar menu container */}
 				<MainLinks />
 				<ShowOnMobileContainer>
-					{/* Dark / light mode toggle */}
 					<DarkLightMode />
-					{/* Dark / light mode toggle END */}
-					{/* Github icon */}
 					<GithubButton />
-					{/* Github icon END */}
 					<HamburgerMenu
 						className={isActive ? 'isActive' : ''}
 						onClick={toggleHamburgerMenu}

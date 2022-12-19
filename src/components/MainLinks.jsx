@@ -11,14 +11,9 @@ const MainLinks = () => {
 			<BlogButton />
 			<ResumeButton />
 			<PortfolioButton />
-			{/* Resume page menu END*/}
 			<ShowOnWebContainer>
-				{/* Dark / light mode toggle */}
 				<DarkLightMode />
-				{/* Dark / light mode toggle END */}
-				{/* Github icon */}
 				<GithubButton />
-				{/* Github icon END */}
 			</ShowOnWebContainer>
 		</LinkContainer>
 	)
