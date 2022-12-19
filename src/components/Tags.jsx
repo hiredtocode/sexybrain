@@ -1,8 +1,8 @@
-import { nanoid } from '@reduxjs/toolkit';
-import { TagButton, TagSection } from './styles/TagSection.styled.js';
+import { nanoid } from '@reduxjs/toolkit'
+import { TagButton, TagSection } from './styles/Blog.styled.js'
 
 const Tags = props => {
-	const { tags, handleSelectTag } = props;
+	const { tags, handleSelectTag } = props
 
 	return (
 		<TagSection>
@@ -17,7 +17,7 @@ const Tags = props => {
 				</TagButton>
 			))}
 		</TagSection>
-	);
-};
+	)
+}
 
-export default Tags;
+export default Tags

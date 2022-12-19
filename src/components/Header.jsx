@@ -1,26 +1,26 @@
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import DarkLightMode from '../features/darkMode/DarkLightMode';
-import GithubButton from './GithubButton';
-import LoginLogoutButton from './LoginLogoutButton';
-import Logo from './Logo';
-import MainLinks from './MainLinks';
+import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
+import DarkLightMode from '../features/darkMode/DarkLightMode'
+import GithubButton from './GithubButton'
+import LoginLogoutButton from './LoginLogoutButton'
+import Logo from './Logo'
+import MainLinks from './MainLinks'
 import {
 	HamburgerMenu,
 	MobileNav,
 	Nav,
 	ShowOnMobileContainer,
 	StyledHeader,
-} from './styles/Header.styled.js';
+} from './styles/Header.styled.js'
 
 const Header = props => {
-	const { user, handleLogout } = props;
-	const userId = user?.uid;
-	const [isActive, setActive] = useState(false);
+	const { user, handleLogout } = props
+	const userId = user?.uid
+	const [isActive, setActive] = useState(false)
 
 	const toggleHamburgerMenu = () => {
-		setActive(!isActive);
-	};
+		setActive(!isActive)
+	}
 
 	return (
 		<StyledHeader>
@@ -58,7 +58,7 @@ const Header = props => {
 				</MobileNav>
 			</Nav>
 		</StyledHeader>
-	);
-};
+	)
+}
 
-export default Header;
+export default Header

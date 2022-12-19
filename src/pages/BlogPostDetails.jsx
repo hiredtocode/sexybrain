@@ -17,9 +17,8 @@ import {
 	BlogDetail,
 	BlogTitleBox,
 	MarkdownContainer,
-} from '../components/styles/BlogDetails.styled.js'
-import Flex from '../components/styles/Flex.styled.js'
-import { H2 } from '../components/styles/Title.styled.js'
+} from '../components/styles/Blog.styled.js'
+import { Flex, H2 } from '../components/styles/General.styled.js'
 import Tags from '../components/Tags'
 import { db } from '../firebase.config'
 

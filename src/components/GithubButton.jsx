@@ -1,11 +1,11 @@
-import GithubBlack from '../assets/img/github-black.svg';
-import GithubWhite from '../assets/img/github-white.svg';
-import Github from '../assets/img/github.svg';
+import GithubBlack from '../assets/img/github-black.svg'
+import GithubWhite from '../assets/img/github-white.svg'
+import Github from '../assets/img/github.svg'
 import {
 	GithubBottom,
 	GithubIconContainer,
 	GithubTop,
-} from './styles/Github.styled';
+} from './styles/Header.styled'
 
 const GithubButton = ({ mode }) => {
 	return (
@@ -26,7 +26,7 @@ const GithubButton = ({ mode }) => {
 				aria-label='Click to go to my github page'
 			/>
 		</GithubIconContainer>
-	);
-};
+	)
+}
 
-export default GithubButton;
+export default GithubButton

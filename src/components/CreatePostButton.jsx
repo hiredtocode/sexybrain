@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom';
-import { DivContainer } from './styles/Header.styled';
+import { NavLink } from 'react-router-dom'
+import { DivContainer } from './styles/Header.styled'
 
 function CreatePostButton() {
 	return (
@@ -63,7 +63,7 @@ function CreatePostButton() {
 				</svg>
 			</DivContainer>
 		</NavLink>
-	);
+	)
 }
 
-export default CreatePostButton;
+export default CreatePostButton

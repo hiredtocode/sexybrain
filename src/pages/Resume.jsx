@@ -12,22 +12,26 @@ import typescript from '../assets/img/typescript.svg'
 import wordpress from '../assets/img/wordpress.svg'
 import profilePicture from '../assets/resume/사진.jpg'
 import useTitle from '../components/hook/useTitle'
-import Flex from '../components/styles/Flex.styled.js'
-import { LineBreak } from '../components/styles/LineBreak.styled.js'
-import { Badge } from '../components/styles/resume/Badge.styled.js'
 import {
+	Flex,
+	H2,
+	H3,
+	Highlight,
+	LineBreak,
+} from '../components/styles/General.styled.js'
+
+import {
+	Badge,
 	Border,
 	Card,
 	CardContainer,
+	Contact,
 	Content1,
 	Content2,
-} from '../components/styles/resume/CardContainer.styled.js'
-import { Contact } from '../components/styles/resume/Contact.styled.js'
-import { Highlight } from '../components/styles/resume/Highlight.styled.js'
-import { ProfilePic } from '../components/styles/resume/profile.styled.js'
-import { Section } from '../components/styles/resume/Section.styled.js'
-import { Stack } from '../components/styles/resume/Stack.styled.js'
-import { H2, H3 } from '../components/styles/Title.styled.js'
+	ProfilePic,
+	Section,
+	Stack,
+} from '../components/styles/Resume.styled.js'
 
 const Resume = () => {
 	useTitle('Resume')

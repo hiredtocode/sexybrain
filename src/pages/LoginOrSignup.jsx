@@ -9,8 +9,8 @@ import {
 	FormLabel,
 	LoginButton,
 	LoginForm,
-} from '../components/styles/FormContainer.styled.js'
-import { H1 } from '../components/styles/Title.styled.js'
+} from '../components/styles/Form.styled.js'
+import { H1 } from '../components/styles/General.styled.js'
 import { auth } from '../firebase.config'
 
 const initialState = {

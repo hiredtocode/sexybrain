@@ -1,4 +1,4 @@
-import { FooterContainer } from './styles/FooterContainer.sytled';
+import { FooterContainer } from './styles/FooterContainer.sytled'
 
 function Footer() {
 	return (
@@ -7,7 +7,7 @@ function Footer() {
 				<span>Designed & Built by Jason Han</span>
 			</a>
 		</FooterContainer>
-	);
+	)
 }
 
-export default Footer;
+export default Footer

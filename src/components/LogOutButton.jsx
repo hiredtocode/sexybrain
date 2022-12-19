@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
-import { DivContainer } from './styles/Header.styled';
+import { Link } from 'react-router-dom'
+import { DivContainer } from './styles/Header.styled'
 
 const LogOutButton = props => {
-	const { handleLogout } = props;
+	const { handleLogout } = props
 
 	return (
 		<Link to='/' aria-label='Logout button' onClick={handleLogout}>
@@ -25,7 +25,7 @@ const LogOutButton = props => {
 				</svg>
 			</DivContainer>
 		</Link>
-	);
-};
+	)
+}
 
-export default LogOutButton;
+export default LogOutButton

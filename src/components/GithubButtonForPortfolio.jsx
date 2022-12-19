@@ -1,9 +1,9 @@
-import { useSelector } from 'react-redux';
-import { GithubIconContainer } from './styles/portfolio/ProjectContainer.styled.js';
+import { useSelector } from 'react-redux'
+import { GithubIconContainer } from './styles/Portfolio.styled.js'
 
 const GithubButtonForPortfolio = props => {
-	const { link, title } = props;
-	const mode = useSelector(state => state.darkmode.mode);
+	const { link, title } = props
+	const mode = useSelector(state => state.darkmode.mode)
 
 	return (
 		<>
@@ -33,7 +33,7 @@ const GithubButtonForPortfolio = props => {
 				</svg>
 			</GithubIconContainer>
 		</>
-	);
-};
+	)
+}
 
-export default GithubButtonForPortfolio;
+export default GithubButtonForPortfolio

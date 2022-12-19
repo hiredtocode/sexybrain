@@ -1,30 +1,30 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
-import { signOut } from 'firebase/auth';
-import { useSelector } from 'react-redux';
-import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { ThemeProvider } from 'styled-components';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import GlobalStyles from './components/styles/Global';
-import { RootContainer } from './components/styles/RootContainer.styled.js';
-import { auth } from './firebase.config';
-import AddEditPost from './pages/AddEditPost';
-import BlogPostDetails from './pages/BlogPostDetails';
-import Home from './pages/Home';
-import LoginOrSignup from './pages/LoginOrSignup';
-import NotFound from './pages/NotFound';
-import Portfolio from './pages/Portfolio';
-import Resume from './pages/Resume';
+import { signOut } from 'firebase/auth'
+import { useSelector } from 'react-redux'
+import { Navigate, Route, Routes, useNavigate } from 'react-router-dom'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { ThemeProvider } from 'styled-components'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import { RootContainer } from './components/styles/General.styled.js'
+import GlobalStyles from './components/styles/Global'
+import { auth } from './firebase.config'
+import AddEditPost from './pages/AddEditPost'
+import BlogPostDetails from './pages/BlogPostDetails'
+import Home from './pages/Home'
+import LoginOrSignup from './pages/LoginOrSignup'
+import NotFound from './pages/NotFound'
+import Portfolio from './pages/Portfolio'
+import Resume from './pages/Resume'
 
 function App() {
-	const [user, setUser] = useState(null);
+	const [user, setUser] = useState(null)
 
-	const navigate = useNavigate();
+	const navigate = useNavigate()
 
-	const mode = useSelector(state => state.darkmode.mode);
+	const mode = useSelector(state => state.darkmode.mode)
 	// 		/* xs: '575.98px' */
 	// @media (max-width: ${({ theme }) => theme.xs}) {
 	// }
@@ -76,7 +76,7 @@ function App() {
 		s: '767.98px',
 		md: '991.98px',
 		lg: '1199.98px',
-	};
+	}
 	const darkTheme = {
 		colors: {
 			primary: '#64ffda',
@@ -115,24 +115,24 @@ function App() {
 		s: '767.98px',
 		md: '991.98px',
 		lg: '1199.98px',
-	};
+	}
 
 	useEffect(() => {
 		auth.onAuthStateChanged(authUser => {
 			if (authUser) {
-				setUser(authUser);
+				setUser(authUser)
 			} else {
-				setUser(null);
+				setUser(null)
 			}
-		});
-	}, []);
+		})
+	}, [])
 	const handleLogout = () => {
 		signOut(auth).then(() => {
-			setUser(null);
-			navigate('/');
-			toast.info(`You've been logged out.`);
-		});
-	};
+			setUser(null)
+			navigate('/')
+			toast.info(`You've been logged out.`)
+		})
+	}
 
 	return (
 		<ThemeProvider theme={mode === 'dark' ? darkTheme : lightTheme}>
@@ -164,7 +164,7 @@ function App() {
 			</RootContainer>
 			<Footer />
 		</ThemeProvider>
-	);
+	)
 }
 
-export default App;
+export default App

@@ -15,7 +15,7 @@ import ReactMarkdown from 'react-markdown'
 import { useNavigate, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import useTitle from '../components/hook/useTitle.js'
-import Flex from '../components/styles/Flex.styled.js'
+import { MarkdownContainer } from '../components/styles/Blog.styled.js'
 import {
 	Form,
 	FormCancelButton,
@@ -25,8 +25,8 @@ import {
 	FormSelect,
 	FormSubmitButton,
 	Textarea,
-} from '../components/styles/FormContainer.styled.js'
-import { MarkdownContainer } from '../components/styles/MarkdownContainer.styled.js'
+} from '../components/styles/Form.styled.js'
+import { Flex } from '../components/styles/General.styled.js'
 import { db, storage } from '../firebase.config'
 
 const AddEdit = props => {

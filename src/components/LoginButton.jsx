@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom';
-import { DivContainer } from './styles/Header.styled';
+import { NavLink } from 'react-router-dom'
+import { DivContainer } from './styles/Header.styled'
 
 function LoginButton() {
 	return (
@@ -23,7 +23,7 @@ function LoginButton() {
 				</svg>
 			</DivContainer>
 		</NavLink>
-	);
+	)
 }
 
-export default LoginButton;
+export default LoginButton

@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components/macro'
 
 export const FormContainer = styled.div`
 	display: flex;
@@ -7,7 +7,7 @@ export const FormContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	min-width: 400px;
-`;
+`
 
 export const FormInput = styled.input`
 	width: 100%;
@@ -23,7 +23,7 @@ export const FormInput = styled.input`
 		border: 1.5px solid ${({ theme }) => theme.colors.input};
 		background: ${({ theme }) => theme.colors.card};
 	}
-`;
+`
 
 export const FormSubmitButton = styled.button`
 	border-radius: 0.5rem;
@@ -51,7 +51,7 @@ export const FormSubmitButton = styled.button`
 	&:hover span {
 		color: ${({ theme }) => theme.colors.font};
 	}
-`;
+`
 
 export const FormCancelButton = styled.button`
 	border-radius: 0.5rem;
@@ -81,7 +81,7 @@ export const FormCancelButton = styled.button`
 	&:hover span {
 		color: ${({ theme }) => theme.colors.heading};
 	}
-`;
+`
 export const LoginButton = styled.button`
 	border-radius: 0.5rem;
 	border: none;
@@ -111,13 +111,13 @@ export const LoginButton = styled.button`
 	&:hover span {
 		color: ${({ theme }) => theme.colors.font};
 	}
-`;
+`
 export const FormLabel = styled.label`
 	background-color: ${({ theme }) => theme.colors.card};
 	color: ${({ theme }) => theme.colors.font};
 	font-size: 1.3rem;
 	top: -20px;
-`;
+`
 
 export const Form = styled.form`
 	display: flex;
@@ -132,7 +132,7 @@ export const Form = styled.form`
 	background-color: ${({ theme }) => theme.colors.card};
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 	width: 30%;
-`;
+`
 
 export const LoginForm = styled.form`
 	display: flex;
@@ -141,7 +141,7 @@ export const LoginForm = styled.form`
 	border-radius: 1rem;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 	background-color: ${({ theme }) => theme.colors.card};
-`;
+`
 
 export const FormSelect = styled.select`
 	top: 0;
@@ -156,7 +156,7 @@ export const FormSelect = styled.select`
 	z-index: 1;
 	color: ${({ theme }) => theme.colors.font};
 	background-color: ${({ theme }) => theme.colors.card};
-`;
+`
 export const Textarea = styled.textarea`
 	width: 100%;
 	height: 20vh;
@@ -164,10 +164,20 @@ export const Textarea = styled.textarea`
 	font-size: 1rem;
 	color: ${({ theme }) => theme.colors.font};
 	background-color: ${({ theme }) => theme.colors.card};
-`;
+`
 export const MarkdownArea = styled.div`
 	width: 50%;
 	height: 100vh;
 	padding: 20px;
 	color: ${({ theme }) => theme.colors.font};
-`;
+`
+
+export const MarkdownContainer = styled.div`
+	width: 70%;
+	padding: 20px;
+	background: ${({ theme }) => theme.colors.card};
+	border-radius: 1rem;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+	margin-left: 1em;
+	height: 80vh;
+`

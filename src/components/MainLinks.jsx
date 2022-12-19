@@ -1,9 +1,9 @@
-import DarkLightMode from '../features/darkMode/DarkLightMode';
-import BlogButton from './BlogButton';
-import GithubButton from './GithubButton';
-import PortfolioButton from './PortfolioButton';
-import ResumeButton from './ResumeButton';
-import { LinkContainer, ShowOnWebContainer } from './styles/Header.styled';
+import DarkLightMode from '../features/darkMode/DarkLightMode'
+import BlogButton from './BlogButton'
+import GithubButton from './GithubButton'
+import PortfolioButton from './PortfolioButton'
+import ResumeButton from './ResumeButton'
+import { LinkContainer, ShowOnWebContainer } from './styles/Header.styled'
 
 const MainLinks = () => {
 	return (
@@ -21,7 +21,7 @@ const MainLinks = () => {
 				{/* Github icon END */}
 			</ShowOnWebContainer>
 		</LinkContainer>
-	);
-};
+	)
+}
 
-export default MainLinks;
+export default MainLinks

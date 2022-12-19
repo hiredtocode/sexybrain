@@ -13,10 +13,12 @@ import Card from '../components/Card'
 import CategoryList from '../components/CategoryList'
 import useTitle from '../components/hook/useTitle.js'
 import Spinner from '../components/Spinner'
-import { BlogContainer } from '../components/styles/BlogContainer.styled'
-import { Aside } from '../components/styles/CategoryContainer.styled'
-import { TagContainer } from '../components/styles/TagSection.styled.js'
-import { H2 } from '../components/styles/Title.styled.js'
+import {
+	Aside,
+	BlogContainer,
+	TagContainer,
+} from '../components/styles/Blog.styled'
+import { H2 } from '../components/styles/General.styled.js'
 import Tags from '../components/Tags'
 import { db } from '../firebase.config'
 

@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components/macro'
 
 export const StyledHeader = styled.header`
 	/* background-color: ${({ theme }) => theme.colors.header}; */
@@ -41,7 +41,7 @@ export const StyledHeader = styled.header`
 	.active span {
 		color: ${({ theme }) => theme.colors.primary};
 	}
-`;
+`
 
 export const Nav = styled.nav`
 	display: flex;
@@ -49,13 +49,13 @@ export const Nav = styled.nav`
 	justify-content: space-between;
 	align-items: center;
 	margin: 0 auto;
-`;
+`
 
 export const Logo = styled.img`
 	height: 60px;
 	width: 60px;
 	object-fit: cover;
-`;
+`
 
 export const LinkContainer = styled.div`
 	display: flex;
@@ -65,7 +65,7 @@ export const LinkContainer = styled.div`
 	@media (max-width: ${({ theme }) => theme.s}) {
 		display: none;
 	}
-`;
+`
 
 export const HamburgerMenu = styled.button`
 	display: block;
@@ -119,7 +119,7 @@ export const HamburgerMenu = styled.button`
 	@media (min-width: ${({ theme }) => theme.s}) {
 		display: none;
 	}
-`;
+`
 
 export const MobileNav = styled.div`
 	position: fixed;
@@ -163,7 +163,7 @@ export const MobileNav = styled.div`
 	@media (min-width: ${({ theme }) => theme.s}) {
 		display: none;
 	}
-`;
+`
 
 export const ShowOnWebContainer = styled.div`
 	display: flex;
@@ -173,7 +173,7 @@ export const ShowOnWebContainer = styled.div`
 	@media (max-width: ${({ theme }) => theme.s}) {
 		display: none;
 	}
-`;
+`
 
 export const ShowOnMobileContainer = styled.div`
 	display: flex;
@@ -182,7 +182,7 @@ export const ShowOnMobileContainer = styled.div`
 	@media (min-width: ${({ theme }) => theme.s}) {
 		display: none;
 	}
-`;
+`
 
 export const DarkLightContainer = styled.div`
 	border: none;
@@ -217,6 +217,71 @@ export const DarkLightContainer = styled.div`
 	&:hover svg {
 		fill: ${({ theme }) => theme.colors.strongAccent};
 	}
-`;
+`
 
-export const DivContainer = styled.div``;
+export const DivContainer = styled.div``
+
+export const GithubIconContainer = styled.a`
+	position: relative;
+	align-items: center;
+	transition: 0.5s;
+`
+
+export const GithubTop = styled.img`
+	border-radius: 50px;
+	position: absolute;
+	opacity: 0;
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
+	transition: 0.5s;
+	outline-width: 1px;
+	outline-style: groove;
+	outline-color: black;
+
+	background: linear-gradient(
+		135deg,
+		${({ theme }) => theme.colors.hover},
+		${({ theme }) => theme.colors.hovered}
+	);
+
+	&:hover {
+		opacity: 1;
+	}
+`
+
+export const GithubBottom = styled.img`
+	min-width: 50px;
+	min-height: 50px;
+	background: linear-gradient(
+		135deg,
+		${({ theme }) => theme.colors.hover},
+		${({ theme }) => theme.colors.hovered}
+	);
+	border-radius: 50px;
+	object-fit: cover;
+	transition: 0.5s;
+	outline-width: 1px;
+	outline-style: groove;
+	outline-color: black;
+`
+
+export const GithubLink = styled.img`
+	border-radius: 50px;
+	position: absolute;
+	opacity: 0;
+	min-width: 50px;
+	min-height: 50px;
+	object-fit: cover;
+	transition: 0.5s;
+
+	background: linear-gradient(
+		135deg,
+		${({ theme }) => theme.colors.hover},
+		${({ theme }) => theme.colors.hovered}
+	);
+
+	&:hover {
+		opacity: 1;
+	}
+`

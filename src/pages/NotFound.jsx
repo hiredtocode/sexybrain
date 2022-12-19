@@ -1,7 +1,6 @@
 import error from '../assets/img/404.jpg'
 import useTitle from '../components/hook/useTitle'
-import Flex from '../components/styles/Flex.styled.js'
-import { LinkStyled } from '../components/styles/Link.styled.js'
+import { Flex, LinkStyled } from '../components/styles/General.styled.js'
 
 const NotFound = () => {
 	useTitle('404 Not Found')

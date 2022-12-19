@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components/macro';
+import { createGlobalStyle } from 'styled-components/macro'
 
 const GlobalStyles = createGlobalStyle`
 
@@ -106,6 +106,6 @@ button{
 	}
 
 
-`;
+`
 
-export default GlobalStyles;
+export default GlobalStyles

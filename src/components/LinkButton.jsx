@@ -1,9 +1,9 @@
-import { useSelector } from 'react-redux';
-import { LinkButtonDiv } from './styles/portfolio/ProjectContainer.styled';
+import { useSelector } from 'react-redux'
+import { LinkButtonDiv } from './styles/Portfolio.styled'
 
 function LinkButton(props) {
-	const { link, title } = props;
-	const mode = useSelector(state => state.darkmode.mode);
+	const { link, title } = props
+	const mode = useSelector(state => state.darkmode.mode)
 
 	return (
 		<LinkButtonDiv>
@@ -45,7 +45,7 @@ function LinkButton(props) {
 				</svg>
 			</a>
 		</LinkButtonDiv>
-	);
+	)
 }
 
-export default LinkButton;
+export default LinkButton

@@ -1,27 +1,27 @@
-import { nanoid } from '@reduxjs/toolkit';
-import { Link } from 'react-router-dom';
-import { CategoryMark } from '../components/styles/Card.styled';
-import { TagBox } from '../components/styles/TagSection.styled.js';
-import { H2 } from '../components/styles/Title.styled.js';
-import Tags from '../components/Tags';
-import { excerpt } from '../utility/excerpt';
-import CategoryToImageMap from './CategoryToImageMap';
-import DeletePostButton from './deletePostButton';
-import EditPostButton from './editPostButton';
+import { nanoid } from '@reduxjs/toolkit'
+import { Link } from 'react-router-dom'
+import Tags from '../components/Tags'
+import { excerpt } from '../utility/excerpt'
+import CategoryToImageMap from './CategoryToImageMap'
+import DeletePostButton from './deletePostButton'
+import EditPostButton from './editPostButton'
 import {
 	Box,
 	CardContainer,
+	CategoryMark,
 	Content,
 	Date,
 	Description,
 	IconContainer,
 	StyledCard,
-} from './styles/Card.styled.js';
+	TagBox,
+} from './styles/Blog.styled'
+import { H2 } from './styles/General.styled.js'
 
 export default function Card(props) {
-	const { blogs, user, handleDelete } = props;
-	const userId = user?.uid;
-	const fontColor = `${({ theme }) => theme.colors.font}`;
+	const { blogs, user, handleDelete } = props
+	const userId = user?.uid
+	const fontColor = `${({ theme }) => theme.colors.font}`
 
 	return (
 		<>
@@ -90,5 +90,5 @@ export default function Card(props) {
 				</CardContainer>
 			))}
 		</>
-	);
+	)
 }

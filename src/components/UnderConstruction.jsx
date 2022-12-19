@@ -1,4 +1,4 @@
-import { H1 } from './styles/Title.styled';
+import { H1 } from './styles/General.styled'
 
 const UnderConstruction = () => {
 	return (
@@ -14,7 +14,7 @@ const UnderConstruction = () => {
 		>
 			블로그와 포트폴리오는 개발중입다.
 		</H1>
-	);
-};
+	)
+}
 
-export default UnderConstruction;
+export default UnderConstruction

@@ -1,24 +1,23 @@
-import { nanoid } from '@reduxjs/toolkit';
-import angular from '../assets/img/angular.svg';
-import bootstrap from '../assets/img/bootstrap.svg';
-import css from '../assets/img/css3.svg';
-import firebase from '../assets/img/firebase-icon.svg';
-import html from '../assets/img/html.svg';
-import javascript from '../assets/img/javascript.svg';
-import materialUi from '../assets/img/material-ui.svg';
-import programmer from '../assets/img/programmer.svg';
-import question from '../assets/img/question.svg';
-import react from '../assets/img/react.svg';
-import sass from '../assets/img/sass.svg';
-import styledComponents from '../assets/img/styledComponentsLogo.svg';
-import tailwindcss from '../assets/img/tailwindcss.svg';
-import typescript from '../assets/img/typescript.svg';
-import wordpress from '../assets/img/wordpress.svg';
-import { Categories } from './styles/Categories.styled';
-import CategoryButton from './styles/CategoryButton.styled';
+import { nanoid } from '@reduxjs/toolkit'
+import angular from '../assets/img/angular.svg'
+import bootstrap from '../assets/img/bootstrap.svg'
+import css from '../assets/img/css3.svg'
+import firebase from '../assets/img/firebase-icon.svg'
+import html from '../assets/img/html.svg'
+import javascript from '../assets/img/javascript.svg'
+import materialUi from '../assets/img/material-ui.svg'
+import programmer from '../assets/img/programmer.svg'
+import question from '../assets/img/question.svg'
+import react from '../assets/img/react.svg'
+import sass from '../assets/img/sass.svg'
+import styledComponents from '../assets/img/styledComponentsLogo.svg'
+import tailwindcss from '../assets/img/tailwindcss.svg'
+import typescript from '../assets/img/typescript.svg'
+import wordpress from '../assets/img/wordpress.svg'
+import { Categories, CategoryButton } from './styles/Blog.styled'
 
 const CategoryList = props => {
-	const { categories, handleSelectCategory } = props;
+	const { categories, handleSelectCategory } = props
 	return (
 		<Categories>
 			{categories?.map(category => {
@@ -32,7 +31,7 @@ const CategoryList = props => {
 								<img src={javascript} alt={category} />
 								<span>{category}</span>
 							</CategoryButton>
-						);
+						)
 					case 'TypeScript':
 						return (
 							<CategoryButton
@@ -42,7 +41,7 @@ const CategoryList = props => {
 								<img src={typescript} alt={category} />
 								<span>{category}</span>
 							</CategoryButton>
-						);
+						)
 					case 'React':
 						return (
 							<CategoryButton
@@ -52,7 +51,7 @@ const CategoryList = props => {
 								<img src={react} alt={category} />
 								<span>{category}</span>
 							</CategoryButton>
-						);
+						)
 					case 'Angular':
 						return (
 							<CategoryButton
@@ -62,7 +61,7 @@ const CategoryList = props => {
 								<img src={angular} alt={category} />
 								<span>{category}</span>
 							</CategoryButton>
-						);
+						)
 					case 'CSS':
 						return (
 							<CategoryButton
@@ -72,7 +71,7 @@ const CategoryList = props => {
 								<img src={css} alt={category} />
 								<span>{category}</span>
 							</CategoryButton>
-						);
+						)
 					case 'HTML':
 						return (
 							<CategoryButton
@@ -82,7 +81,7 @@ const CategoryList = props => {
 								<img src={html} alt={category} />
 								<span>{category}</span>
 							</CategoryButton>
-						);
+						)
 					case 'SASS':
 						return (
 							<CategoryButton
@@ -92,7 +91,7 @@ const CategoryList = props => {
 								<img src={sass} alt={category} />
 								<span>{category}</span>
 							</CategoryButton>
-						);
+						)
 					case 'Bootstrap':
 						return (
 							<CategoryButton
@@ -102,7 +101,7 @@ const CategoryList = props => {
 								<img src={bootstrap} alt={category} />
 								<span>{category}</span>
 							</CategoryButton>
-						);
+						)
 					case 'Material UI':
 						return (
 							<CategoryButton
@@ -112,7 +111,7 @@ const CategoryList = props => {
 								<img src={materialUi} alt={category} />
 								<span>{category}</span>
 							</CategoryButton>
-						);
+						)
 					case 'Tailwind CSS':
 						return (
 							<CategoryButton
@@ -122,7 +121,7 @@ const CategoryList = props => {
 								<img src={tailwindcss} alt={category} />
 								<span>{category}</span>
 							</CategoryButton>
-						);
+						)
 					case 'Styled Components':
 						return (
 							<CategoryButton
@@ -132,7 +131,7 @@ const CategoryList = props => {
 								<img src={styledComponents} alt={category} />
 								<span>{category}</span>
 							</CategoryButton>
-						);
+						)
 					case 'Today I learned':
 						return (
 							<CategoryButton
@@ -142,7 +141,7 @@ const CategoryList = props => {
 								<img src={programmer} alt={category} />
 								<span>{category}</span>
 							</CategoryButton>
-						);
+						)
 					case 'Firebase':
 						return (
 							<CategoryButton
@@ -152,7 +151,7 @@ const CategoryList = props => {
 								<img src={firebase} alt={category} />
 								<span>{category}</span>
 							</CategoryButton>
-						);
+						)
 					case 'Wordpress':
 						return (
 							<CategoryButton
@@ -162,7 +161,7 @@ const CategoryList = props => {
 								<img src={wordpress} alt={category} />
 								<span>{category}</span>
 							</CategoryButton>
-						);
+						)
 					default:
 						return (
 							<CategoryButton
@@ -172,11 +171,11 @@ const CategoryList = props => {
 								<img src={question} alt={category} />
 								<span>{category}</span>
 							</CategoryButton>
-						);
+						)
 				}
 			})}
 		</Categories>
-	);
-};
+	)
+}
 
-export default CategoryList;
+export default CategoryList

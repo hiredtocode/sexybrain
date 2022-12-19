@@ -7,6 +7,7 @@ import GithubButtonForPortfolio from '../components/GithubButtonForPortfolio'
 import useTitle from '../components/hook/useTitle'
 import LinkButton from '../components/LinkButton.jsx'
 import ProjectStacks from '../components/ProjectStacks'
+import { H2, Highlight } from '../components/styles/General.styled'
 import {
 	Content,
 	ContentContainer,
@@ -17,9 +18,7 @@ import {
 	ProjectImage,
 	ProjectLink,
 	ProjectStack,
-} from '../components/styles/portfolio/ProjectContainer.styled.js'
-import { Highlight } from '../components/styles/resume/Highlight.styled.js'
-import { H2 } from '../components/styles/Title.styled'
+} from '../components/styles/Portfolio.styled.js'
 import Projects from '../projects/projects.json'
 
 const Portfolio = () => {
