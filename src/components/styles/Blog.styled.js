@@ -382,7 +382,6 @@ export const Date = styled.div`
 	@media (max-width: ${({ theme }) => theme.md}) {
 		margin-left: auto;
 		padding-right: 0;
-		width: 100%;
 		font-size: 0.8rem;
 	}
 	/* lg: '1199.98px'  */
