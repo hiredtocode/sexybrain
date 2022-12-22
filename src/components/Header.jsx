@@ -32,6 +32,7 @@ const Header = props => {
 					<DarkLightMode />
 					<GithubButton />
 					<HamburgerMenu
+						title='Hamburger menu'
 						className={isActive ? 'isActive' : ''}
 						onClick={toggleHamburgerMenu}
 					>
