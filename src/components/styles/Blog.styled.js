@@ -201,7 +201,7 @@ export const MarkdownContainer = styled.div`
 		width: 100%;
 	}
 
-	hr:after {
+	hr::after {
 		background: ${({ theme }) => theme.colors.body};
 		content: '§';
 		padding: 0 4px;
