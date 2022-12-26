@@ -2,6 +2,7 @@ import { nanoid } from '@reduxjs/toolkit'
 import angular from '../assets/img/angular.svg'
 import bootstrap from '../assets/img/bootstrap.svg'
 import css from '../assets/img/css3.svg'
+import figma from '../assets/img/figma.svg'
 import firebase from '../assets/img/firebase-icon.svg'
 import html from '../assets/img/html.svg'
 import javascript from '../assets/img/javascript.svg'
@@ -29,6 +30,16 @@ const CategoryList = props => {
 								onClick={handleSelectCategory(category)}
 							>
 								<img src={javascript} alt={category} />
+								<span>{category}</span>
+							</CategoryButton>
+						)
+					case 'Figma':
+						return (
+							<CategoryButton
+								key={nanoid()}
+								onClick={handleSelectCategory(category)}
+							>
+								<img src={figma} alt={category} />
 								<span>{category}</span>
 							</CategoryButton>
 						)

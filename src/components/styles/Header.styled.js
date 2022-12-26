@@ -52,9 +52,8 @@ export const Nav = styled.nav`
 `
 
 export const Logo = styled.img`
-	height: 60px;
-	width: 60px;
-	object-fit: cover;
+	max-height: 50px;
+	max-width: 50px;
 `
 
 export const LinkContainer = styled.div`

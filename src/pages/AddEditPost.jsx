@@ -14,6 +14,7 @@ import { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { useNavigate, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import CategoryToImageMap from '../components/CategoryToImageMap.jsx'
 import useTitle from '../components/hook/useTitle.js'
 import { MarkdownContainer } from '../components/styles/Blog.styled.js'
 import {
@@ -47,8 +48,15 @@ const AddEdit = props => {
 		'Styled Components',
 		'Firebase',
 		'Wordpress',
+		'NodeJS',
+		'Redux',
+		'NextJS',
+		'Figma',
 		'Today I learned',
 	]
+	console.log('categoryOption.length:', categoryOption.length)
+	console.log('CategoryToImageMap.length:', CategoryToImageMap.length)
+
 	const [form, setForm] = useState({
 		title: '',
 		tags: [],
@@ -56,6 +64,7 @@ const AddEdit = props => {
 		body: '',
 		description: '',
 	})
+
 	const [file, setFile] = useState(null)
 	const [progress, setProgress] = useState(null)
 	const { id } = useParams()
@@ -91,6 +100,7 @@ const AddEdit = props => {
 				}
 			)
 		}
+
 		file && uploadFileFromComputer()
 		return () => uploadFileFromComputer()
 	}, [file])
@@ -204,6 +214,9 @@ const AddEdit = props => {
 							</option>
 						))}
 					</FormSelect>
+					{categoryOption.length !== CategoryToImageMap.length ? (
+						<div>Need to update total `categoryOptions`</div>
+					) : null}
 					{/* category section end */} {/* body section */}
 					<Textarea
 						placeholder='body'
