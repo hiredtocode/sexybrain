@@ -1,5 +1,5 @@
 import { signInWithEmailAndPassword } from 'firebase/auth'
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import useTitle from '../components/hook/useTitle.js'
@@ -23,7 +23,7 @@ const Auth = props => {
 	const { setUser } = props
 	const [state, setState] = useState(initialState)
 	const [signUp] = useState(false)
-
+	const inputRef = useRef()
 	const { email, password } = state
 
 	const navigate = useNavigate()
@@ -47,6 +47,9 @@ const Auth = props => {
 		navigate('/')
 	}
 
+	useEffect(() => {
+		inputRef.current.focus()
+	})
 	return (
 		<>
 			{/* <!-- ADMIN ACTIONS --> */}
@@ -57,6 +60,7 @@ const Auth = props => {
 					<FormLabel htmlFor='email'>Email</FormLabel>
 					<FormInput
 						type='email'
+						ref={inputRef}
 						autoComplete='username'
 						name='email'
 						value={email}
