@@ -49,7 +49,8 @@ const Auth = props => {
 
 	useEffect(() => {
 		inputRef.current.focus()
-	})
+	}, [])
+
 	return (
 		<>
 			{/* <!-- ADMIN ACTIONS --> */}
