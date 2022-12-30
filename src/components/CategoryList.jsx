@@ -7,9 +7,12 @@ import firebase from '../assets/img/firebase-icon.svg'
 import html from '../assets/img/html.svg'
 import javascript from '../assets/img/javascript.svg'
 import materialUi from '../assets/img/material-ui.svg'
+import nextjs from '../assets/img/nextjs.svg'
+import nodejs from '../assets/img/nodejs.svg'
 import programmer from '../assets/img/programmer.svg'
 import question from '../assets/img/question.svg'
 import react from '../assets/img/react.svg'
+import redux from '../assets/img/redux.svg'
 import sass from '../assets/img/sass.svg'
 import styledComponents from '../assets/img/styledComponentsLogo.svg'
 import tailwindcss from '../assets/img/tailwindcss.svg'
@@ -160,6 +163,36 @@ const CategoryList = props => {
 								onClick={handleSelectCategory(category)}
 							>
 								<img src={firebase} alt={category} />
+								<span>{category}</span>
+							</CategoryButton>
+						)
+					case 'Redux':
+						return (
+							<CategoryButton
+								key={nanoid()}
+								onClick={handleSelectCategory(category)}
+							>
+								<img src={redux} alt={category} />
+								<span>{category}</span>
+							</CategoryButton>
+						)
+					case 'NextJS':
+						return (
+							<CategoryButton
+								key={nanoid()}
+								onClick={handleSelectCategory(category)}
+							>
+								<img src={nextjs} alt={category} />
+								<span>{category}</span>
+							</CategoryButton>
+						)
+					case 'NodeJS':
+						return (
+							<CategoryButton
+								key={nanoid()}
+								onClick={handleSelectCategory(category)}
+							>
+								<img src={nodejs} alt={category} />
 								<span>{category}</span>
 							</CategoryButton>
 						)
