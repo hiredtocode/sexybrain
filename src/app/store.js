@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
 let store
 
 if (
-	process.env.NODE_ENV === 'production' ||
+	process.env.REACT_APP_NODE_ENV === 'production' ||
 	!window.__REDUX_DEVTOOLS_EXTENSION__
 ) {
 	store = configureStore({ reducer: rootReducer })
