@@ -20,7 +20,7 @@ import NotFound from './pages/NotFound'
 import Portfolio from './pages/Portfolio'
 import Resume from './pages/Resume'
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.REACT_APP_NODE_ENV === 'production') {
 	disableReactDevTools()
 }
 
