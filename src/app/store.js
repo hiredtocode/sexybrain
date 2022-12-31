@@ -9,18 +9,6 @@ const rootReducer = combineReducers({
 	counter: counterReducer,
 })
 
-let store
-
-if (
-	process.env.REACT_APP_NODE_ENV === 'production' ||
-	!window.__REDUX_DEVTOOLS_EXTENSION__
-) {
-	store = configureStore({ reducer: rootReducer })
-} else {
-	store = configureStore(
-		{ reducer: rootReducer },
-		window.__REDUX_DEVTOOLS_EXTENSION__()
-	)
-}
+const store = configureStore({ reducer: rootReducer })
 
 export default store
