@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 
+import { disableReactDevTools } from '@fvilers/disable-react-devtools'
 import { signOut } from 'firebase/auth'
 import { useSelector } from 'react-redux'
 import { Navigate, Route, Routes, useNavigate } from 'react-router-dom'
@@ -18,6 +19,10 @@ import LoginOrSignup from './pages/LoginOrSignup'
 import NotFound from './pages/NotFound'
 import Portfolio from './pages/Portfolio'
 import Resume from './pages/Resume'
+
+if (process.env.NODE_ENV === 'production') {
+	disableReactDevTools()
+}
 
 function App() {
 	const [user, setUser] = useState(null)
