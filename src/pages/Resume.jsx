@@ -4,8 +4,12 @@ import css from '../assets/img/css3.svg'
 import firebase from '../assets/img/firebase-icon.svg'
 import html from '../assets/img/html.svg'
 import JavascriptLogo from '../assets/img/javascript.svg'
+import jwt from '../assets/img/jwt.svg'
 import materialUi from '../assets/img/material-ui.svg'
+import mongodb from '../assets/img/mongodb.svg'
+import nodejs from '../assets/img/nodejs.svg'
 import react from '../assets/img/react.svg'
+import redux from '../assets/img/redux.svg'
 import sass from '../assets/img/sass.svg'
 import styledComponents from '../assets/img/styledComponentsLogo.svg'
 import typescript from '../assets/img/typescript.svg'
@@ -235,18 +239,83 @@ const Resume = () => {
 						</Badge>
 					</Stack>{' '}
 					<li>
-						처음부터 끝까지 <Highlight>템플릿 없이</Highlight> 개발중
+						처음부터 끝까지 <Highlight>템플릿 없이</Highlight> 개발중입니다. 그
+						이유는 React로 개발을 처음 해 보았고, 블로그라는 웹 앱이 어떻게
+						돌아가는지 궁금증을 풀고 무엇보다 형식적인 공부를 하는 것 보다는
+						작은 프로젝트를 개발 하면서 궁금해지고 필요한 스킬을 배울때 효율성이
+						좋다고 생각을 했습니다.
+					</li>
+					<li>
+						Styling은 처음에 CSS로 진행을 하였고, SASS을 배운 후에 잠깐 도입을
+						시켰다가 Styled Components를 알게 된 후로 Styled components로 개발을
+						하여 추후 관리를 할 때에 편하고 무엇보다 예상치 못한 스타일링
+						버그들이 없는게 큰 장점 입니다.
+					</li>
+					<li>
+						백앤드는 Firebase로 로그인, 포스팅, 수정, 지우기를 활성화
+						하였습니다.
 					</li>
 					<ul>
 						<li>반응형 웹</li>
 						<li>블로그 (마크다운)</li>
 						<ul>
 							<li>로그인 / 로그아웃</li>
-							<li>로그인시 포스팅 페이지, 수정/지우기 활성화</li>
+							<li>로그인시 포스팅 페이지, 수정/지우기</li>
 							<li>태그 + 카테고리로 정렬</li>
 						</ul>
 						<li>포트폴리오</li>
 					</ul>
+				</ul>
+			</Section>
+			<section className='mainTitle'>
+				<H2 className='mainTitle'>진행중인 프로젝트</H2>
+				<LineBreak />
+			</section>
+			<Section>
+				<H3>Dev (이름과 주소 미정)</H3>
+				<span className='light'> 2022.1 ~ Present</span>
+				<br />
+				<ul className='projectBullet'>
+					<Stack>
+						<span>스택: </span>
+						<Badge>
+							<img src={react} alt='React' />
+							<p> React </p>
+						</Badge>
+						<Badge>
+							<img src={styledComponents} alt='Styled Components' />
+							<p> Styled Components </p>
+						</Badge>
+						<Badge>
+							<img src={redux} alt='Redux' />
+							<p> Redux </p>
+						</Badge>
+						<Badge>
+							<img src={jwt} alt='JWT' />
+							<p> JWT Auth </p>
+						</Badge>
+						<Badge>
+							<img src={mongodb} alt='Firebase' />
+							<p> MongoDB </p>
+						</Badge>
+						<Badge>
+							<img src={nodejs} alt='NodeJS' />
+							<p> Express JS </p>
+						</Badge>
+					</Stack>{' '}
+					<li>
+						개발자들의 막막함을 없애주는 플랫폼을 개발 중입니다. (더 자세한
+						내용은 나중에 추가 하겠습니다.)
+					</li>
+					<li>
+						이 프로젝트를 개발 하면서 학습을 해야 하는것들:
+						<ul>
+							<li>Redux</li>
+							<li>JWT Auth</li>
+							<li>Express JS</li>
+							<li>MongoDB</li>
+						</ul>
+					</li>
 				</ul>
 			</Section>
 		</main>
