@@ -26,6 +26,8 @@ import {
 	LineBreak,
 } from '../components/styles/General.styled.js'
 
+import GithubButtonForPortfolio from '../components/GithubButtonForPortfolio'
+import { ProjectLink } from '../components/styles/Portfolio.styled'
 import {
 	Badge,
 	Border,
@@ -257,7 +259,15 @@ const Resume = () => {
 				<LineBreak />
 			</section>
 			<Section>
-				<H3>sexybrain.dev (현재 사이트)</H3>
+				<Flex>
+					<H3>sexybrain.dev (현재 사이트)</H3>
+					<ProjectLink>
+						<GithubButtonForPortfolio
+							link='https://github.com/hiredtocode/sexybrain'
+							title='sexybrain github'
+						/>
+					</ProjectLink>
+				</Flex>
 				<span className='light'> 2022.09 ~ Present</span>
 				<br />
 				<ul className='projectBullet'>
@@ -268,16 +278,16 @@ const Resume = () => {
 							<p> React </p>
 						</Badge>
 						<Badge>
-							<img src={styledComponents} alt='Styled Components' />
-							<p> Styled Components </p>
-						</Badge>
-						<Badge>
-							<img src={sass} alt='Sass' />
-							<p> Sass </p>
+							<img src={redux} alt='Redux' />
+							<p> Redux </p>
 						</Badge>
 						<Badge>
 							<img src={firebase} alt='Firebase' />
 							<p> Firebase </p>
+						</Badge>
+						<Badge>
+							<img src={styledComponents} alt='Styled Components' />
+							<p> Styled Components </p>
 						</Badge>
 					</Stack>{' '}
 					<li>
@@ -292,13 +302,15 @@ const Resume = () => {
 						시켰다가 Styled Components를 알게 된 후로 Styled components로 개발을
 						하여 추후 관리를 할 때에 편하고 무엇보다 예상치 못한 스타일링
 						버그들이 없는게 큰 장점 입니다.
+						<ul>
+							<li>반응형 웹엡</li>
+						</ul>
 					</li>
 					<li>
 						백앤드는 Firebase로 로그인, 포스팅, 수정, 지우기를 활성화
 						하였습니다.
 					</li>
 					<ul>
-						<li>반응형 웹</li>
 						<li>블로그 (마크다운)</li>
 						<ul>
 							<li>로그인 / 로그아웃</li>
@@ -326,10 +338,6 @@ const Resume = () => {
 							<p> Next.js </p>
 						</Badge>
 						<Badge>
-							<img src={styledComponents} alt='Styled Components' />
-							<p> Styled Components </p>
-						</Badge>
-						<Badge>
 							<img src={redux} alt='Redux' />
 							<p> Redux </p>
 						</Badge>
@@ -344,6 +352,10 @@ const Resume = () => {
 						<Badge>
 							<img src={nodejs} alt='NodeJS' />
 							<p> Express JS </p>
+						</Badge>
+						<Badge>
+							<img src={styledComponents} alt='Styled Components' />
+							<p> Styled Components </p>
 						</Badge>
 					</Stack>{' '}
 					<li>
