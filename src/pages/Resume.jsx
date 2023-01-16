@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux'
 import angular from '../assets/img/angular.svg'
 import bootstrap from '../assets/img/bootstrap.svg'
 import css from '../assets/img/css3.svg'
@@ -7,13 +8,14 @@ import JavascriptLogo from '../assets/img/javascript.svg'
 import jwt from '../assets/img/jwt.svg'
 import materialUi from '../assets/img/material-ui.svg'
 import mongodb from '../assets/img/mongodb.svg'
+import nextjsWhite from '../assets/img/nextjs-white.svg'
+import nextjs from '../assets/img/nextjs.svg'
 import nodejs from '../assets/img/nodejs.svg'
 import react from '../assets/img/react.svg'
 import redux from '../assets/img/redux.svg'
 import sass from '../assets/img/sass.svg'
 import styledComponents from '../assets/img/styledComponentsLogo.svg'
 import typescript from '../assets/img/typescript.svg'
-import wordpress from '../assets/img/wordpress.svg'
 import profilePicture from '../assets/resume/사진.jpg'
 import useTitle from '../components/hook/useTitle'
 import {
@@ -38,6 +40,8 @@ import {
 } from '../components/styles/Resume.styled.js'
 
 const Resume = () => {
+	const mode = useSelector(state => state.darkmode.mode)
+
 	useTitle('Resume')
 
 	return (
@@ -76,7 +80,7 @@ const Resume = () => {
 						구축하고 <Highlight>Redux</Highlight>로 생태 관리 패턴을 진행하고
 						있습니다. <br />
 						<Highlight>사용자 중심의 UX/UI</Highlight> 디자인을 고민하며
-						레이아웃과 반응형 앱을 구현하고 성능을 최적화 하고 개선을 통해
+						레이아웃과 반응형 앱을 구현하고 성능의 최적화를 위해 개선을 통해
 						사용자가 보기에도 좋고 사용하기 편한 웹앱을 만들고{' '}
 						<Highlight>Git</Highlight>을 통해 버전 컨트롤링을 하고 있습니다.{' '}
 						<br />
@@ -92,10 +96,11 @@ const Resume = () => {
 						특히 대화 방식들 중에 미괄식보다 두괄식 대화를 더 자주 사용 하는
 						편입니다. <br />
 						<br />
-						해외에서 20년 넘게 진해 온 저는 한국말과 영어 둘 다 편합니다. 비록
-						개발자로서는 늦은 나이에 시작해서 아직 주니어 개발자이지만, 지금까지
-						쌓아온 경험을 토대로 더욱더 멋진 개발자로 회사에 기여할 수 있기를
-						원합니다. <br />
+						어린 나이에 이민을 가서 캐나다 국적을 가지고 있습니다. <br /> 20년
+						넘게 살았고 저는 한국말과 영어 둘 다 편합니다. 비록 개발자로서는
+						늦은 나이에 시작해서 아직 주니어 개발자이지만, 지금까지 쌓아온
+						경험을 토대로 더욱더 멋진 개발자로 회사에 기여할 수 있기를 원합니다.{' '}
+						<br />
 						<br />
 						기회만 주신다면 더욱더 성장을 할 수 있는 회사를 만들기 위해 최선을
 						다하는 개발자가 되겠습니다. 감사합니다.
@@ -119,16 +124,20 @@ const Resume = () => {
 						<p> JavaScript(ES6) </p>
 					</Badge>
 					<Badge>
+						<img src={mode === 'dark' ? nextjsWhite : nextjs} alt='Next js' />
+						<p> Next.js </p>
+					</Badge>
+					<Badge>
+						<img src={react} alt='React' />
+						<p> React </p>
+					</Badge>
+					<Badge>
 						<img src={angular} alt='Angular' />
 						<p> Angular </p>
 					</Badge>
 					<Badge>
 						<img src={typescript} alt='TypeScript' />
 						<p> TypeScript </p>
-					</Badge>
-					<Badge>
-						<img src={react} alt='React' />
-						<p> React </p>
 					</Badge>
 					<Badge>
 						<img src={css} alt='CSS3' />
@@ -138,6 +147,11 @@ const Resume = () => {
 						<img src={sass} alt='Sass' />
 						<p> Sass </p>
 					</Badge>
+
+					<Badge>
+						<img src={styledComponents} alt='Styled Components' />
+						<p> Styled Components </p>
+					</Badge>
 					<Badge>
 						<img src={bootstrap} alt='Bootstrap' />
 						<p> Bootstrap </p>
@@ -146,15 +160,43 @@ const Resume = () => {
 						<img src={materialUi} alt='Material UI' />
 						<p> Material UI </p>
 					</Badge>
-					<Badge>
-						<img src={wordpress} alt='Wordpress' />
-						<p> Wordpress </p>
-					</Badge>
-					<Badge>
-						<img src={styledComponents} alt='Styled Components' />
-						<p> Styled Components </p>
-					</Badge>
 				</Flex>
+
+				<h3>HTML, SASS, JavaScript(TypeScript)</h3>
+				<ul>
+					<li>HTML / SASS를 통한 레이아웃과 반응형 웹엡 구현이 가능합니다.</li>
+					<li>
+						Styled Component를 사용하여 앱이 확장을 하여도 스타일링 버그가
+						생기는것을 방지 합니다.
+					</li>
+					<li>JavaScript ES6+ 로 개발이 가능합니다.</li>
+					<li>
+						Angular으로 개발을 시작 하여서 Typescript를 사용한 경험이 있습니다.
+					</li>
+				</ul>
+
+				<h3>Framework & Library</h3>
+				<ul>
+					<li>
+						React의 상태 관리 및 props, 그리고 컴포넌트를 설계 가능 합니다.
+					</li>
+					<li>React-router-dom을 통해 SPA 구현이 가능 합니다.</li>
+					<li>
+						React.memo, useMemo, useCallback을 통해 어플리케이션의 최적화 경험이
+						있습니다.
+					</li>
+					<li>Redux Toolkit을 통해 상태관리를 해 보았습니다.</li>
+					<li>
+						Next.js를 통해 서버사이드 렌더링, 스테틱 웹사이트 앱을 개발하고
+						있습니다.
+					</li>
+					<li>Angular를 사용하여서 웹앱을 2개월정도 개발 한 적이 있습니다.</li>
+				</ul>
+
+				<h3>Tools</h3>
+				<ul>
+					<li>Jira를 통해 프로젝트를 진행 해 보았던 경험이 있습니다.</li>
+				</ul>
 
 				<Flex wrap={'wrap'} justify={'space-around'}>
 					<CardContainer>
@@ -186,10 +228,10 @@ const Resume = () => {
 								<Content2>
 									<H3>Collaboration</H3>
 									<p>Jira</p>
-									<p>Confluence</p>
-									<p>Google Drive</p>
 									<p>Slack</p>
 									<p>Notion</p>
+									<p>Google Drive</p>
+									<p>Discord</p>
 								</Content2>
 							</Card>
 						</Border>
@@ -278,9 +320,10 @@ const Resume = () => {
 				<ul className='projectBullet'>
 					<Stack>
 						<span>스택: </span>
+
 						<Badge>
-							<img src={react} alt='React' />
-							<p> React </p>
+							<img src={mode === 'dark' ? nextjsWhite : nextjs} alt='Next js' />
+							<p> Next.js </p>
 						</Badge>
 						<Badge>
 							<img src={styledComponents} alt='Styled Components' />
@@ -310,6 +353,7 @@ const Resume = () => {
 					<li>
 						이 프로젝트를 개발 하면서 학습을 해야 하는것들:
 						<ul>
+							<li>Next.js</li>
 							<li>Redux</li>
 							<li>JWT Auth</li>
 							<li>Express JS</li>
