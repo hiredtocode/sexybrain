@@ -59,21 +59,23 @@ const Resume = () => {
 
 				<Contact>
 					<p>
-						한형석 / Jason
-						<span className='subText'> 1984 (39세/만 38세) / 남 </span>
+						한형석 / Jason Han
+						{/* <span className='subText'> 1984 (39세/만 38세) / 남 </span> */}
 					</p>
 					<p>jasonhan@kakao.com</p>
 					<p>010-4394-8891</p>
 					<p>서울 동작구</p>
-					<p>
+					{/* <p>
 						<span>국적:</span> 캐나다 (F4 재외동포)
-					</p>
+					</p> */}
 				</Contact>
 			</Flex>
 			<H2 className='mainTitle'>자기소개서</H2>
 			<LineBreak />
 			<Section>
-				<H3>안녕하세요,</H3>
+				<H3>
+					안녕하세요, 독학으로 꾸준히 성장을 하고 있는 프론트엔드 개발자 입니다.
+				</H3>
 				<Content1>
 					<p>
 						<Highlight>JavaScript(ES6+)</Highlight>와{' '}
@@ -98,14 +100,12 @@ const Resume = () => {
 						특히 대화 방식들 중에 미괄식보다 두괄식 대화를 더 자주 사용 하는
 						편입니다. <br />
 						<br />
-						어린 나이에 이민을 가서 캐나다 국적을 가지고 있습니다. <br /> 20년
-						넘게 살았고 저는 한국말과 영어 둘 다 편합니다. 비록 개발자로서는
-						늦은 나이에 시작해서 아직 주니어 개발자이지만, 지금까지 쌓아온
-						경험을 토대로 더욱더 멋진 개발자로 회사에 기여할 수 있기를 원합니다.{' '}
+						10살때 가족과 이민을 가서 캐나다 국적을 가지고 있습니다. <br />{' '}
+						캐나다에서 23년 넘게 살았고 한국말과 영어 둘 다 편합니다. <br />{' '}
+						<br /> 신입/인턴 프론트엔드 개발자로 성장과 기여를 할 수 있기를
+						원합니다. <br />
 						<br />
-						<br />
-						기회만 주신다면 더욱더 성장을 할 수 있는 회사를 만들기 위해 최선을
-						다하는 개발자가 되겠습니다. 감사합니다.
+						감사합니다.
 					</p>
 				</Content1>
 			</Section>
@@ -172,9 +172,7 @@ const Resume = () => {
 						생기는것을 방지 합니다.
 					</li>
 					<li>JavaScript ES6+ 로 개발이 가능합니다.</li>
-					<li>
-						Angular으로 개발을 시작 하여서 Typescript를 사용한 경험이 있습니다.
-					</li>
+					<li>Typescript를 사용한 경험이 있습니다.</li>
 				</ul>
 
 				<h3>Framework & Library</h3>
