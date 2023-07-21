@@ -7,7 +7,7 @@ import store from './app/store'
 import reportWebVitals from './reportWebVitals'
 import { I18nextProvider } from 'react-i18next'
 import language_en from './languages/en/global.json'
-import language_kr from './languages/ko/global.json'
+import language_kr from './languages/kr/global.json'
 import i18next from 'i18next'
 
 i18next.init({

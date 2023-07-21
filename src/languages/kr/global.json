@@ -1,0 +1,11 @@
+{
+	"Resume": {
+		"title": "이력서",
+		"name": "한형석",
+		"email": "jasonhan@kakao.com",
+		"phone": "010-4394-8891",
+		"address": "서울 동작구",
+		"mainTitle": "자기소개",
+		"mainSubTitle": "안녕하세요, 독학으로 꾸준히 성장을 하고 있는 프론트엔드 개발자 입니다."
+	}
+}
