@@ -41,10 +41,13 @@ import {
 	Stack,
 } from '../components/styles/Resume.styled.js'
 
+import { useTranslation } from 'react-i18next'
+
 const Resume = () => {
+	const { t } = useTranslation('global') // Initialize the i18next translation hook
 	const mode = useSelector(state => state.darkmode.mode)
 
-	useTitle('Resume')
+	useTitle(t('Resume.title')) // Set the title using the translated title
 
 	return (
 		<main>
@@ -58,19 +61,13 @@ const Resume = () => {
 				</ProfilePic>
 
 				<Contact>
-					<p>
-						한형석 / Jason Han
-						{/* <span className='subText'> 1984 (39세/만 38세) / 남 </span> */}
-					</p>
-					<p>jasonhan@kakao.com</p>
-					<p>010-4394-8891</p>
-					<p>서울 동작구</p>
-					{/* <p>
-						<span>국적:</span> 캐나다 (F4 재외동포)
-					</p> */}
+					<p>{t('Resume.name')}</p>
+					<p>{t('Resume.email')}</p>
+					<p>{t('Resume.phone')}</p>
+					<p>{t('Resume.address')}</p>
 				</Contact>
 			</Flex>
-			<H2 className='mainTitle'>자기소개서</H2>
+			<H2 className='mainTitle'>{t('Resume.mainTitle')}</H2>
 			<LineBreak />
 			<Section>
 				<H3>
