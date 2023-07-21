@@ -2,7 +2,11 @@ import { connect } from 'react-redux'
 import { UnitedStatesIcon, KoreanIcon } from '../../assets/icons.js'
 import { LanguageContainer } from '../../components/styles/Header.styled'
 
-const DarkLightMode = ({ language, setEnglishLanguage, setKoreanLanguage }) => {
+const SelectLanguage = ({
+	language,
+	setEnglishLanguage,
+	setKoreanLanguage,
+}) => {
 	const handleClick = (language, setEnglishLanguage, setKoreanLanguage) => {
 		return () => {
 			language === 'en' ? setKoreanLanguage() : setEnglishLanguage()
@@ -27,4 +31,4 @@ const mapDispatchToProps = dispatch => ({
 	setKoreanLanguage: () => dispatch({ type: 'SET_KOREAN_LANGUAGE' }),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(DarkLightMode)
+export default connect(mapStateToProps, mapDispatchToProps)(SelectLanguage)
