@@ -1,28 +1,30 @@
 import { connect } from 'react-redux'
 import { UnitedStatesIcon, KoreanIcon } from '../../assets/icons.js'
-import { DarkLightContainer } from '../../components/styles/Header.styled'
+import { LanguageContainer } from '../../components/styles/Header.styled'
 
-const DarkLightMode = ({ mode, setDarkMode, setLightMode }) => {
-	const handleClick = (mode, setDarkMode, setLightMode) => {
+const DarkLightMode = ({ mode, setEnglishLanguage, setKoreanLanguage }) => {
+	const handleClick = (mode, setEnglishLanguage, setKoreanLanguage) => {
 		return () => {
-			mode === 'dark' ? setLightMode() : setDarkMode()
+			mode === 'en' ? setKoreanLanguage() : setEnglishLanguage()
 		}
 	}
 
 	return (
-		<DarkLightContainer onClick={handleClick(mode, setDarkMode, setLightMode)}>
-			{mode === 'dark' ? <UnitedStatesIcon /> : <KoreanIcon />}
-		</DarkLightContainer>
+		<LanguageContainer
+			onClick={handleClick(mode, setEnglishLanguage, setKoreanLanguage)}
+		>
+			{mode === 'en' ? <UnitedStatesIcon /> : <KoreanIcon />}
+		</LanguageContainer>
 	)
 }
 
 const mapStateToProps = state => ({
-	mode: state.darkmode.mode,
+	mode: state.toggleLanguageButton.mode,
 })
 
 const mapDispatchToProps = dispatch => ({
-	setDarkMode: () => dispatch({ type: 'SET_DARK_MODE' }),
-	setLightMode: () => dispatch({ type: 'SET_LIGHT_MODE' }),
+	setEnglishLanguage: () => dispatch({ type: 'SET_ENGLISH_LANGUAGE' }),
+	setKoreanLanguage: () => dispatch({ type: 'SET_KOREAN_LANGUAGE' }),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(DarkLightMode)
