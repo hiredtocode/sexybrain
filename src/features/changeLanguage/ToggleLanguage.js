@@ -2,24 +2,24 @@ import { connect } from 'react-redux'
 import { UnitedStatesIcon, KoreanIcon } from '../../assets/icons.js'
 import { LanguageContainer } from '../../components/styles/Header.styled'
 
-const DarkLightMode = ({ mode, setEnglishLanguage, setKoreanLanguage }) => {
-	const handleClick = (mode, setEnglishLanguage, setKoreanLanguage) => {
+const DarkLightMode = ({ language, setEnglishLanguage, setKoreanLanguage }) => {
+	const handleClick = (language, setEnglishLanguage, setKoreanLanguage) => {
 		return () => {
-			mode === 'en' ? setKoreanLanguage() : setEnglishLanguage()
+			language === 'en' ? setKoreanLanguage() : setEnglishLanguage()
 		}
 	}
 
 	return (
 		<LanguageContainer
-			onClick={handleClick(mode, setEnglishLanguage, setKoreanLanguage)}
+			onClick={handleClick(language, setEnglishLanguage, setKoreanLanguage)}
 		>
-			{mode === 'en' ? <UnitedStatesIcon /> : <KoreanIcon />}
+			{language === 'en' ? <UnitedStatesIcon /> : <KoreanIcon />}
 		</LanguageContainer>
 	)
 }
 
 const mapStateToProps = state => ({
-	mode: state.toggleLanguageButton.mode,
+	language: state.toggleLanguageButton.language,
 })
 
 const mapDispatchToProps = dispatch => ({
