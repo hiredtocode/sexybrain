@@ -9,10 +9,10 @@ import { LinkContainer, ShowOnWebContainer } from './styles/Header.styled'
 const MainLinks = () => {
 	return (
 		<LinkContainer>
-			<LangButton />
 			<BlogButton />
 			<ResumeButton />
 			<PortfolioButton />
+			<LangButton />
 			<ShowOnWebContainer>
 				<DarkLightMode />
 				<GithubButton />
