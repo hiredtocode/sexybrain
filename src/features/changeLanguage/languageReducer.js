@@ -1,5 +1,5 @@
 const initialState = {
-	language: 'en',
+	language: 'kr',
 }
 
 function languageButtonReducer(state = initialState, action) {
@@ -7,12 +7,12 @@ function languageButtonReducer(state = initialState, action) {
 		case 'SET_ENGLISH_LANGUAGE':
 			return {
 				...state,
-				language: 'en',
+				language: 'kr',
 			}
 		case 'SET_KOREAN_LANGUAGE':
 			return {
 				...state,
-				language: 'kr',
+				language: 'en',
 			}
 		default:
 			return state
