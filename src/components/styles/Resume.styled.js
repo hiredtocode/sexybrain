@@ -39,7 +39,7 @@ export const Section = styled.section`
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
-	} ;
+	}
 `
 
 export const ProfilePic = styled.section`
@@ -139,7 +139,7 @@ export const Contact = styled.section`
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
-	} ;
+	}
 `
 
 export const CardContainer = styled.article`
@@ -194,7 +194,7 @@ export const Content1 = styled.div`
 		font-size: 1.2rem;
 		font-weight: 500;
 		color: ${({ theme }) => theme.colors.font};
-		margin: 10px auto;
+		margin: 10px 0;
 		z-index: 1;
 	}
 `
