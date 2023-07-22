@@ -6,6 +6,14 @@
 		"phone": "+82 10-4394-8891",
 		"address": "South Korea, Seoul",
 		"mainTitle": "Hi and welcome!",
-		"mainSubTitle": "I'm a self-taught front-end developer."
+		"mainSubTitle": "I'm a self-taught front-end developer.",
+		"blog": "Blog",
+		"resume": "Resume",
+		"portfolio": "Portfolio"
+	},
+	"Menu": {
+		"blog": "Blog",
+		"resume": "Resume",
+		"portfolio": "Portfolio"
 	}
 }

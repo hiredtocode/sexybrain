@@ -1,11 +1,14 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 const BlogButton = () => {
+	const { t } = useTranslation('global') // Initialize the i18next translation hook
+
 	return (
 		<NavLink to='/'>
-			<span>블로그</span>
+			<span>{t('Menu.blog')}</span>
 		</NavLink>
-	);
-};
+	)
+}
 
-export default BlogButton;
+export default BlogButton

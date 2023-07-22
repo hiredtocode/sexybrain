@@ -1,11 +1,14 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 const ResumeButton = () => {
+	const { t } = useTranslation('global') // Initialize the i18next translation hook
+
 	return (
 		<NavLink to='/resume'>
-			<span>이력서</span>
+			<span>{t('Menu.resume')}</span>
 		</NavLink>
-	);
-};
+	)
+}
 
-export default ResumeButton;
+export default ResumeButton

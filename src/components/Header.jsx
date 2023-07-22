@@ -12,11 +12,15 @@ import {
 	ShowOnMobileContainer,
 	StyledHeader,
 } from './styles/Header.styled.js'
+import { useTranslation } from 'react-i18next'
+import LangButton from '../features/changeLanguage/ToggleLanguage.js'
 
 const Header = props => {
 	const { user, handleLogout } = props
 	const userId = user?.uid
 	const [isActive, setActive] = useState(false)
+
+	const { t } = useTranslation('global') // Initialize the i18next translation hook
 
 	const toggleHamburgerMenu = () => {
 		setActive(!isActive)
@@ -29,6 +33,7 @@ const Header = props => {
 				<LoginLogoutButton userId={userId} handleLogout={handleLogout} />
 				<MainLinks />
 				<ShowOnMobileContainer>
+					<LangButton />
 					<DarkLightMode />
 					<GithubButton />
 					<HamburgerMenu
@@ -43,13 +48,13 @@ const Header = props => {
 				</ShowOnMobileContainer>
 				<MobileNav className={isActive ? 'isActive' : ''}>
 					<NavLink to='/' onClick={toggleHamburgerMenu}>
-						블로그
+						{t('Menu.blog')}
 					</NavLink>
 					<NavLink to='/resume' onClick={toggleHamburgerMenu}>
-						이력서
+						{t('Menu.resume')}
 					</NavLink>
 					<NavLink to='/portfolio' onClick={toggleHamburgerMenu}>
-						포트폴리오
+						{t('Menu.portfolio')}
 					</NavLink>
 				</MobileNav>
 			</Nav>
