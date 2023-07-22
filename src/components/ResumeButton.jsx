@@ -6,7 +6,7 @@ const ResumeButton = () => {
 
 	return (
 		<NavLink to='/resume'>
-			<span>{t('Menu.resume')}</span>
+			<span>{t('menu.resume')}</span>
 		</NavLink>
 	)
 }

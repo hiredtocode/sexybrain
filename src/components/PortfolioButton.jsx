@@ -6,7 +6,7 @@ const PortfolioButton = () => {
 
 	return (
 		<NavLink to='/portfolio'>
-			<span>{t('Menu.portfolio')}</span>
+			<span>{t('menu.portfolio')}</span>
 		</NavLink>
 	)
 }

@@ -48,13 +48,13 @@ const Header = props => {
 				</ShowOnMobileContainer>
 				<MobileNav className={isActive ? 'isActive' : ''}>
 					<NavLink to='/' onClick={toggleHamburgerMenu}>
-						{t('Menu.blog')}
+						{t('menu.blog')}
 					</NavLink>
 					<NavLink to='/resume' onClick={toggleHamburgerMenu}>
-						{t('Menu.resume')}
+						{t('menu.resume')}
 					</NavLink>
 					<NavLink to='/portfolio' onClick={toggleHamburgerMenu}>
-						{t('Menu.portfolio')}
+						{t('menu.portfolio')}
 					</NavLink>
 				</MobileNav>
 			</Nav>

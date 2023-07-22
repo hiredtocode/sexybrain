@@ -6,7 +6,7 @@ const BlogButton = () => {
 
 	return (
 		<NavLink to='/'>
-			<span>{t('Menu.blog')}</span>
+			<span>{t('menu.blog')}</span>
 		</NavLink>
 	)
 }
