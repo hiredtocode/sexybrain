@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components/macro'
 
 export const PortFolioContainer = styled.main`
 	display: flex;
@@ -19,7 +19,7 @@ export const PortFolioContainer = styled.main`
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
 	}
-`;
+`
 
 export const ProjectContainer = styled.section`
 	display: flex;
@@ -29,7 +29,7 @@ export const ProjectContainer = styled.section`
 	flex-direction: column;
 	position: relative;
 	width: calc(1200px - 200px);
-	height: 500px;
+	/* height: 500px; */
 	word-break: break-all;
 
 	/* xs: '575.98px' */
@@ -47,12 +47,12 @@ export const ProjectContainer = styled.section`
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
 	}
-`;
+`
 
 export const Tabs = styled.div`
 	display: flex;
 	min-width: 90%;
-`;
+`
 
 export const Tab = styled.button`
 	box-shadow: none;
@@ -75,12 +75,12 @@ export const Tab = styled.button`
 	&.active {
 		color: ${({ theme }) => theme.colors.primary};
 	}
-`;
+`
 
 export const ContentContainer = styled.div`
 	flex-grow: 1;
 	width: 100%;
-`;
+`
 export const Content = styled.div`
 	padding: 20px;
 	min-width: 100%;
@@ -125,12 +125,12 @@ export const Content = styled.div`
 			background-color: ${({ theme }) => theme.colors.body};
 		}
 	}
-`;
+`
 
 export const CardContainer = styled.div`
 	width: 100%;
 	position: relative;
-`;
+`
 
 export const Description = styled.div`
 	background: ${({ theme }) => theme.colors.card};
@@ -157,11 +157,11 @@ export const Description = styled.div`
 	p {
 		line-height: 1.4;
 	}
-`;
+`
 
 export const ProjectContent = styled.div`
 	grid-column: 6 / -1;
-	max-height: 400px;
+	/* max-height: 400px; */
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -215,7 +215,7 @@ export const ProjectContent = styled.div`
 		color: ${({ theme }) => theme.colors.primary};
 		transition: 0.3s;
 	}
-`;
+`
 
 export const ProjectImage = styled.picture`
 	grid-column: 1 / 7;
@@ -223,6 +223,7 @@ export const ProjectImage = styled.picture`
 	height: 400px;
 	z-index: 1;
 	position: relative;
+	align-self: center;
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
 		grid-column: 1 / 9;
@@ -255,7 +256,6 @@ export const ProjectImage = styled.picture`
 		position: absolute;
 		width: 99%;
 		border-radius: 11px;
-		height: 99%;
 		inset: 0px;
 		border: none;
 		background-color: ${({ theme }) => theme.colors.primary};
@@ -274,7 +274,7 @@ export const ProjectImage = styled.picture`
 		filter: grayscale(100%) contrast(1) brightness(90%);
 		border: none;
 	}
-`;
+`
 
 export const ProjectCard = styled.div`
 	display: flex;
@@ -349,12 +349,12 @@ export const ProjectCard = styled.div`
 			min-width: 100%;
 		}
 	}
-`;
+`
 
 export const ProjectDescription = styled.div`
 	transition: 0.5s;
 	padding: 15px;
-`;
+`
 
 export const ProjectLink = styled.div`
 	display: flex;
@@ -368,7 +368,7 @@ export const ProjectLink = styled.div`
 			display: none;
 		}
 	}
-`;
+`
 
 export const ProjectStack = styled.div`
 	transition: 0.5s;
@@ -392,7 +392,7 @@ export const ProjectStack = styled.div`
 		flex-direction: row;
 		margin-bottom: 10px;
 	}
-`;
+`
 
 export const StackButton = styled.div`
 	border: none;
@@ -451,7 +451,7 @@ export const StackButton = styled.div`
 			font-size: 0.9rem;
 		}
 	}
-`;
+`
 
 // Github button styling
 
@@ -469,7 +469,7 @@ export const GithubIconContainer = styled.a`
 	svg {
 		width: 2.5rem;
 	}
-`;
+`
 
 export const GithubTop = styled.img`
 	border-radius: 50px;
@@ -493,7 +493,7 @@ export const GithubTop = styled.img`
 	&:hover {
 		opacity: 1;
 	}
-`;
+`
 
 export const GithubBottom = styled.img`
 	min-width: 30px;
@@ -509,7 +509,7 @@ export const GithubBottom = styled.img`
 	outline-width: 1px;
 	outline-style: groove;
 	outline-color: black;
-`;
+`
 
 export const GithubLink = styled.img`
 	border-radius: 50px;
@@ -529,7 +529,7 @@ export const GithubLink = styled.img`
 	&:hover {
 		opacity: 1;
 	}
-`;
+`
 
 export const FilterContainer = styled.div`
 	display: flex;
@@ -563,7 +563,7 @@ export const FilterContainer = styled.div`
 	@media (max-width: ${({ theme }) => theme.lg}) {
 		min-width: 180px;
 	}
-`;
+`
 
 export const CategoryFilter = styled.div`
 	margin: 3px 3px;
@@ -607,7 +607,7 @@ export const CategoryFilter = styled.div`
 			font-size: 1rem;
 		}
 	}
-`;
+`
 
 export const LinkButtonDiv = styled.div`
 	.icon {
@@ -616,4 +616,4 @@ export const LinkButtonDiv = styled.div`
 	.icon:hover {
 		opacity: 1;
 	}
-`;
+`
