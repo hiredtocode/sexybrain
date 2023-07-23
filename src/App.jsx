@@ -19,6 +19,7 @@ import LoginOrSignup from './pages/LoginOrSignup'
 import NotFound from './pages/NotFound'
 import Portfolio from './pages/Portfolio'
 import Resume from './pages/Resume'
+import { useTranslation } from 'react-i18next'
 
 if (process.env.REACT_APP_NODE_ENV === 'production') {
 	disableReactDevTools()
@@ -138,6 +139,7 @@ function App() {
 			toast.info(`You've been logged out.`)
 		})
 	}
+	const { t } = useTranslation()
 
 	return (
 		<ThemeProvider theme={mode === 'dark' ? darkTheme : lightTheme}>

@@ -18,13 +18,7 @@ import styledComponents from '../assets/img/styledComponentsLogo.svg'
 import typescript from '../assets/img/typescript.svg'
 import profilePicture from '../assets/resume/사진.jpg'
 import useTitle from '../components/hook/useTitle'
-import {
-	Flex,
-	H2,
-	H3,
-	Highlight,
-	LineBreak,
-} from '../components/styles/General.styled.js'
+import { Flex, H2, H3, LineBreak } from '../components/styles/General.styled.js'
 
 import GithubButtonForPortfolio from '../components/GithubButtonForPortfolio'
 import { ProjectLink } from '../components/styles/Portfolio.styled'
@@ -41,10 +35,13 @@ import {
 	Stack,
 } from '../components/styles/Resume.styled.js'
 
+import { useTranslation } from 'react-i18next'
+
 const Resume = () => {
+	const { t } = useTranslation('global') // Initialize the i18next translation hook
 	const mode = useSelector(state => state.darkmode.mode)
 
-	useTitle('Resume')
+	useTitle(t('resume.title')) // Set the title using the translated title
 
 	return (
 		<main>
@@ -58,61 +55,31 @@ const Resume = () => {
 				</ProfilePic>
 
 				<Contact>
-					<p>
-						한형석 / Jason Han
-						{/* <span className='subText'> 1984 (39세/만 38세) / 남 </span> */}
-					</p>
-					<p>jasonhan@kakao.com</p>
-					<p>010-4394-8891</p>
-					<p>서울 동작구</p>
-					{/* <p>
-						<span>국적:</span> 캐나다 (F4 재외동포)
-					</p> */}
+					<p>{t('resume.name')}</p>
+					<p>{t('resume.email')}</p>
+					<p>{t('resume.phone')}</p>
+					<p>{t('resume.address')}</p>
 				</Contact>
 			</Flex>
-			<H2 className='mainTitle'>자기소개서</H2>
+			{/* Intro section */}
+			<H2 className='mainTitle'>{t('resume.mainTitle')}</H2>
 			<LineBreak />
 			<Section>
-				<H3>
-					안녕하세요, 독학으로 꾸준히 성장을 하고 있는 프론트엔드 개발자 입니다.
-				</H3>
+				<H3>{t('resume.mainSubTitle')}</H3>
 				<Content1>
-					<p>
-						<Highlight>JavaScript(ES6+)</Highlight>와{' '}
-						<Highlight>React</Highlight>프레임워크 그리고{' '}
-						<Highlight>Styled Components</Highlight>를 통해 디자인과 기능들을
-						구축하고 <Highlight>Redux</Highlight>로 생태 관리 패턴을 진행하고
-						있습니다. <br />
-						<Highlight>사용자 중심의 UX/UI</Highlight> 디자인을 고민하며
-						레이아웃과 반응형 앱을 구현하고 성능의 최적화를 위해 개선을 통해
-						사용자가 보기에도 좋고 사용하기 편한 웹앱을 만들고{' '}
-						<Highlight>Git</Highlight>을 통해 버전 컨트롤링을 하고 있습니다.{' '}
-						<br />
-						<br />
-						새로운 기술에 관심이 많고, 논리적인 사고방식으로 인해 문제를
-						이해하고 효율적으로 처리를 하는 것을 즐깁니다. <br />
-						끊임없는 노력과 작업을 통해 효율이 좋은 기능과 환경을 구축하여 코드
-						리팩토링과 클린 코드 베이스를 유지하는 것을 늘 신경쓰고 있고, 매일
-						배우며 중요한 컨셉은 직접 진행 하고 있는 프로젝트에 적용을 하고 개인
-						블로그를 작성하여 학습을 진행하고 있습니다. <br />
-						<br />
-						동료들과 협업하는 소프트 스킬과 관리하는 리더십의 중요성을 이해하고,
-						특히 대화 방식들 중에 미괄식보다 두괄식 대화를 더 자주 사용 하는
-						편입니다. <br />
-						<br />
-						10살때 가족과 이민을 가서 캐나다 국적을 가지고 있습니다. <br />{' '}
-						캐나다에서 23년 넘게 살았고 한국말과 영어 둘 다 가능합니다. <br />{' '}
-						<br /> 신입/인턴 프론트엔드 개발자로 성장과 기여를 할 수 있기를
-						원합니다. <br />
-						<br />
-						감사합니다.
-					</p>
+					{t('resume.content1.paragraph1')
+						.split('\n')
+						.map((paragraph, index) => (
+							<p key={index}>{paragraph}</p>
+						))}
 				</Content1>
 			</Section>
-			<H2 className='mainTitle'>보유기술</H2>
+			{/* Intro section END */}
+			{/* Skills section */}
+			<H2 className='mainTitle'>{t('skills.title')}</H2>
 			<LineBreak />
 			<Section>
-				<H3>프론트엔드</H3>
+				<H3>{t('skills.subtitle1')}</H3>
 				<Flex
 					wrap={'wrap'}
 					style={{ paddingTop: '15px', paddingBottom: '25px' }}
@@ -133,10 +100,10 @@ const Resume = () => {
 						<img src={react} alt='React' />
 						<p> React </p>
 					</Badge>
-					<Badge>
+					{/* <Badge>
 						<img src={angular} alt='Angular' />
 						<p> Angular </p>
-					</Badge>
+					</Badge> */}
 					<Badge>
 						<img src={typescript} alt='TypeScript' />
 						<p> TypeScript </p>
@@ -149,7 +116,6 @@ const Resume = () => {
 						<img src={sass} alt='Sass' />
 						<p> Sass </p>
 					</Badge>
-
 					<Badge>
 						<img src={styledComponents} alt='Styled Components' />
 						<p> Styled Components </p>
@@ -166,44 +132,30 @@ const Resume = () => {
 
 				<h3>HTML, SASS, JavaScript(TypeScript)</h3>
 				<ul>
-					<li>HTML / SASS를 통한 레이아웃과 반응형 웹엡 구현이 가능합니다.</li>
-					<li>
-						Styled Component를 사용하여 앱이 확장을 하여도 스타일링 버그가
-						생기는것을 방지 합니다.
-					</li>
-					<li>JavaScript ES6+ 로 개발이 가능합니다.</li>
-					<li>Typescript를 사용한 경험이 있습니다.</li>
+					<li>{t('skills.htmlSassLayout')}</li>
+					<li>{t('skills.styledComponents')}</li>
+					<li>{t('skills.javascriptEs6')}</li>
+					<li>{t('skills.typescriptExperience')}</li>
 				</ul>
 
 				<h3>Framework & Library</h3>
 				<ul>
-					<li>
-						React의 상태 관리 및 props, 그리고 컴포넌트를 설계 가능 합니다.
-					</li>
-					<li>React-router-dom을 통해 SPA 구현이 가능 합니다.</li>
-					<li>
-						React.memo, useMemo, useCallback을 통해 어플리케이션의 최적화 경험이
-						있습니다.
-					</li>
-					<li>Redux Toolkit을 통해 상태관리를 해 보았습니다.</li>
-					<li>
-						Next.js를 통해 서버사이드 렌더링, 스테틱 웹사이트 앱을 개발하고
-						있습니다.
-					</li>
-					<li>Angular를 사용하여서 웹앱을 2개월정도 개발 한 적이 있습니다.</li>
+					<li>{t('framework.statePropsComponent')}</li>
+					<li>{t('framework.spaImplementation')}</li>
+					<li>{t('framework.optimizationExperience')}</li>
+					<li>{t('framework.reduxToolkit')}</li>
+					<li>{t('framework.nextJsExperience')}</li>
+					{/* <li>{t('reactSkills.angularExperience')}</li> */}
 				</ul>
 
-				<h3>Tools</h3>
-				<ul>
-					<li>Jira를 통해 프로젝트를 진행 해 보았던 경험이 있습니다.</li>
-				</ul>
+				<h3>{t('tools.title')}</h3>
 
 				<Flex wrap={'wrap'} justify={'space-around'}>
 					<CardContainer>
 						<Border>
 							<Card>
 								<Content2>
-									<H3>백엔드</H3>
+									<H3>Back-end</H3>
 									<p>RESTful API</p>
 									<p>NodeJS</p>
 									<p>Firebase</p>
@@ -216,7 +168,7 @@ const Resume = () => {
 							<Card>
 								<Content2>
 									<H3>DevOps</H3>
-									<p>Git (버전 컨트롤)</p>
+									<p>Git</p>
 									<p>Github - CI/CD</p>
 								</Content2>
 							</Card>
@@ -240,37 +192,37 @@ const Resume = () => {
 						<Border>
 							<Card>
 								<Content2>
-									<H3>Other</H3>
-									<p>영어작문</p>
-									<p>문제해결</p>
-									<p>컴퓨터활용</p>
-									<p>리더십</p>
+									<H3>{t('other.title')}</H3>
+									<p>{t('other.skills.englishComposition')}</p>
+									<p>{t('other.skills.problemSolving')}</p>
+									<p>{t('other.skills.computerSkills')}</p>
+									<p>{t('other.skills.leadership')}</p>
 								</Content2>
 							</Card>
 						</Border>
 					</CardContainer>
 				</Flex>
 			</Section>
-
+			{/* Skills section END */}
+			{/* Personal project section */}
 			<section className='mainTitle'>
-				<H2 className='mainTitle'>개인 프로젝트</H2>
+				<H2 className='mainTitle'>{t('project1.title')}</H2>
 				<LineBreak />
 			</section>
 			<Section>
 				<Flex>
-					<H3>sexybrain.dev (현재 사이트)</H3>
+					<H3>{t('project1.subtitle')}</H3>
 					<ProjectLink>
 						<GithubButtonForPortfolio
-							link='https://github.com/hiredtocode/sexybrain'
-							title='sexybrain github'
+							link={t('project1.link')}
+							title={t('project1.linkTitle')}
 						/>
 					</ProjectLink>
 				</Flex>
-				<span className='light'> 2022.09 ~ Present</span>
-				<br />
+				<span className='light'>{t('project1.duration')}</span> <br />
 				<ul className='projectBullet'>
 					<Stack>
-						<span>스택: </span>
+						<span>{t('project1.stack')}</span>
 						<Badge>
 							<img src={react} alt='React' />
 							<p> React </p>
@@ -288,48 +240,36 @@ const Resume = () => {
 							<p> Styled Components </p>
 						</Badge>
 					</Stack>{' '}
-					<li>
-						처음부터 끝까지 <Highlight>템플릿 없이</Highlight> 개발중입니다. 그
-						이유는 React로 개발을 처음 해 보았고, 블로그라는 웹 앱이 어떻게
-						돌아가는지 궁금증을 풀고 무엇보다 형식적인 공부를 하는 것 보다는
-						작은 프로젝트를 개발 하면서 궁금해지고 필요한 스킬을 배울때 효율성이
-						좋다고 생각을 했습니다.
-					</li>
-					<li>
-						Styling은 처음에 CSS로 진행을 하였고, SASS을 배운 후에 잠깐 도입을
-						시켰다가 Styled Components를 알게 된 후로 Styled components로 개발을
-						하여 추후 관리를 할 때에 편하고 무엇보다 예상치 못한 스타일링
-						버그들이 없는게 큰 장점 입니다.
-						<ul>
-							<li>반응형 웹엡</li>
-						</ul>
-					</li>
-					<li>
-						백앤드는 Firebase로 로그인, 포스팅, 수정, 지우기를 활성화
-						하였습니다.
-					</li>
 					<ul>
-						<li>블로그 (마크다운)</li>
-						<ul>
-							<li>로그인 / 로그아웃</li>
-							<li>로그인시 포스팅 페이지, 수정/지우기</li>
-							<li>태그 + 카테고리로 정렬</li>
-						</ul>
-						<li>포트폴리오</li>
+						<li>{t('project1.description.listItem1')}</li>
+						<li>{t('project1.description.listItem2')}</li>
+						<li>{t('project1.description.listItem3')}</li>
+						<li>{t('project1.description.listItem4')}</li>
+						<li>
+							{t('project1.description.listItem5')}
+							<ul>
+								<li>{t('project1.description.listSubItem1')}</li>
+								<li>{t('project1.description.listSubItem2')}</li>
+								<li>{t('project1.description.listSubItem3')}</li>
+							</ul>
+						</li>
+						<li>{t('project1.description.listItem6')}</li>
 					</ul>
 				</ul>
 			</Section>
+			{/* Personal project section END */}
+			{/* Project in progress section */}
 			<section className='mainTitle'>
-				<H2 className='mainTitle'>진행중인 프로젝트</H2>
+				<H2 className='mainTitle'>{t('project2.title')}</H2>
 				<LineBreak />
 			</section>
 			<Section>
-				<H3>Dev (이름과 주소 미정)</H3>
+				<H3>{t('project2.subtitle')}</H3>
 				<span className='light'> 2022.1 ~ Present</span>
 				<br />
 				<ul className='projectBullet'>
 					<Stack>
-						<span>스택: </span>
+						<span>{t('project1.stack')}</span>
 
 						<Badge>
 							<img src={mode === 'dark' ? nextjsWhite : nextjs} alt='Next js' />
@@ -356,22 +296,21 @@ const Resume = () => {
 							<p> Styled Components </p>
 						</Badge>
 					</Stack>{' '}
-					<li>
-						개발자들의 막막함을 없애주는 플랫폼을 개발 중입니다. (더 자세한
-						내용은 나중에 추가 하겠습니다.)
-					</li>
-					<li>
-						이 프로젝트를 개발 하면서 학습을 해야 하는것들:
+					<ul>
+						<li>{t('project2.description.listItem1')}</li>
+						<li>{t('project2.description.listItem2')}</li>
 						<ul>
-							<li>Next.js</li>
-							<li>Redux</li>
-							<li>JWT Auth</li>
-							<li>Express JS</li>
-							<li>MongoDB</li>
+							<li>{t('project2.description.listSubItem1')}</li>
+							<li>{t('project2.description.listSubItem2')}</li>
+							<li>{t('project2.description.listSubItem3')}</li>
+							<li>{t('project2.description.listSubItem4')}</li>
+							<li>{t('project2.description.listSubItem5')}</li>
 						</ul>
-					</li>
+					</ul>
 				</ul>
 			</Section>
+
+			{/* Project in progress section END*/}
 		</main>
 	)
 }
