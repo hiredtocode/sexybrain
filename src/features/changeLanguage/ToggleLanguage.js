@@ -12,13 +12,13 @@ const SelectLanguage = ({
 	const { i18n } = useTranslation('global') // Initialize the i18next translation hook
 
 	const handleClick = language => () => {
-		language === 'kr' ? setKoreanLanguage() : setEnglishLanguage()
+		language === 'ko' ? setKoreanLanguage() : setEnglishLanguage()
 		i18n.changeLanguage(language)
 	}
 
 	return (
 		<LanguageContainer onClick={handleClick(language)}>
-			{language === 'kr' ? <KoreanIcon /> : <UnitedStatesIcon />}
+			{language === 'ko' ? <KoreanIcon /> : <UnitedStatesIcon />}
 		</LanguageContainer>
 	)
 }
