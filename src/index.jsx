@@ -9,10 +9,14 @@ import { I18nextProvider } from 'react-i18next'
 import language_en from './languages/en/global.json'
 import language_kr from './languages/kr/global.json'
 import i18next from 'i18next'
+import { setDefaultLanguage } from './languages/languageDetector.js'
 
+// Get the default language using the setDefaultLanguage function
+const defaultLanguage = setDefaultLanguage()
+console.log('defaultLanguage:', defaultLanguage)
 i18next.init({
 	interpolation: { escapeValue: true },
-	lng: 'en',
+	lng: defaultLanguage,
 	resources: {
 		en: {
 			global: language_en,
