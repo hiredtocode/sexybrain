@@ -75,5 +75,8 @@
 			"listSubItem4": "Express JS",
 			"listSubItem5": "MongoDB"
 		}
+	},
+	"portfolio": {
+		"description": "In this project, I leveraged React with Styled Components for the frontend, while employing Firebase for seamless login processing and blog posting capabilities on the backend. To efficiently manage the application state, I utilized Redux. Despite the convenience of existing platforms, templates, or frameworks like Bootstrap and Material UI, I opted to design and develop the entire project from scratch to ensure complete control over the process and to enhance my learning experience."
 	}
 }

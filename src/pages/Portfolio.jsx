@@ -7,7 +7,7 @@ import GithubButtonForPortfolio from '../components/GithubButtonForPortfolio'
 import useTitle from '../components/hook/useTitle'
 import LinkButton from '../components/LinkButton.jsx'
 import ProjectStacks from '../components/ProjectStacks'
-import { H2, Highlight } from '../components/styles/General.styled'
+import { H2 } from '../components/styles/General.styled'
 import {
 	Content,
 	ContentContainer,
@@ -20,8 +20,11 @@ import {
 	ProjectStack,
 } from '../components/styles/Portfolio.styled.js'
 import Projects from '../projects/projects.json'
+import { useTranslation } from 'react-i18next'
 
 const Portfolio = () => {
+	const { t } = useTranslation('global') // Initialize the i18next translation hook
+
 	useTitle('Portfolio')
 	const [projects, setProjects] = useState(Projects)
 	const [categories, setCategories] = useState()
@@ -105,20 +108,7 @@ const Portfolio = () => {
 										</mark>
 									</H2>
 									<Description>
-										<p>
-											프론트앤드는{' '}
-											<Highlight> React + Styled Components</Highlight>로 만들고
-											백앤드는
-											<Highlight>Firebase로 로그인</Highlight> 처리와 블로그
-											포스팅을 할 수 있게 만들었고{' '}
-											<Highlight>Redux를 통해 상태 관리</Highlight>를 하고
-											있습니다.
-											<br /> 이미 만들어진 플랫폼이나 템플릿 혹은{' '}
-											<Highlight>Bootstrap / Material UI</Highlight>를 사용하여
-											쉽게 디자인을 할 수 있었지만{' '}
-											<Highlight>완전한 제어와 학습을 위해</Highlight> 일부러
-											처음부터 끝까지 디자인과 제작을 하고 있습니다.
-										</p>
+										<p>{t('portfolio.description')}</p>
 									</Description>
 
 									<ProjectStack>
