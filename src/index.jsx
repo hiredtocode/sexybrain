@@ -7,13 +7,12 @@ import store from './app/store'
 import reportWebVitals from './reportWebVitals'
 import { I18nextProvider } from 'react-i18next'
 import language_en from './languages/en/global.json'
-import language_kr from './languages/kr/global.json'
+import language_ko from './languages/kr/global.json'
 import i18next from 'i18next'
 import { setDefaultLanguage } from './languages/languageDetector.js'
 
 // Get the default language using the setDefaultLanguage function
 const defaultLanguage = setDefaultLanguage()
-console.log('defaultLanguage:', defaultLanguage)
 i18next.init({
 	interpolation: { escapeValue: true },
 	lng: defaultLanguage,
@@ -21,8 +20,8 @@ i18next.init({
 		en: {
 			global: language_en,
 		},
-		kr: {
-			global: language_kr,
+		ko: {
+			global: language_ko,
 		},
 	},
 })

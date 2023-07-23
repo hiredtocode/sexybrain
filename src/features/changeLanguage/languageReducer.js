@@ -1,5 +1,9 @@
+import { setDefaultLanguage } from '../../languages/languageDetector.js'
+
+const defaultLanguage = setDefaultLanguage()
+
 const initialState = {
-	language: 'ko',
+	language: defaultLanguage === 'en' ? 'ko' : 'en',
 }
 
 function languageButtonReducer(state = initialState, action) {
