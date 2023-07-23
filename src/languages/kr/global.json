@@ -35,7 +35,12 @@
 	},
 	"other": {
 		"title": "Other",
-		"skills": ["영어작문", "문제해결", "컴퓨터활용", "리더십"]
+		"skills": {
+			"englishComposition": "영어작문",
+			"problemSolving": "문제해결",
+			"computerSkills": "컴퓨터활용",
+			"leadership": "리더십"
+		}
 	},
 	"project1": {
 		"title": "개인 프로젝트",
@@ -44,31 +49,31 @@
 		"linkTitle": "sexybrain 깃허브",
 		"stack": "스택",
 		"duration": "2022.09 ~ 현재",
-		"description": [
-			"이 프로젝트를 처음부터 끝까지 템플릿 없이 개발하고 있습니다. 이유는 React로 개발을 시작했을 때, 블로그와 같은 웹 앱이 어떻게 동작하는지 이해하고, 형식적인 공부보다는 작은 프로젝트를 개발하며 필요한 기술을 효율적으로 배우는 것이 더 도움이 되기 때문입니다.",
-			"스타일링은 처음에 CSS를 사용하고, 잠깐 SASS를 시도한 뒤 Styled Components로 전환하였습니다. Styled Components를 사용하면 유지보수가 용이하며 예상치 못한 스타일링 버그가 발생하지 않아 큰 장점입니다.",
-			"반응형 웹앱",
-			"백앤드는 Firebase를 사용하여 로그인, 포스팅, 수정, 지우기 등의 기능을 활성화하였습니다.",
-			"블로그 (마크다운)",
-			"- 로그인 / 로그아웃",
-			"- 로그인 후 포스팅 페이지, 수정 / 지우기",
-			"- 태그 + 카테고리별 정렬",
-			"포트폴리오"
-		]
+		"description": {
+			"listItem1": "이 프로젝트를 처음부터 끝까지 템플릿 없이 개발하고 있습니다. 이유는 React로 개발을 시작했을 때, 블로그와 같은 웹 앱이 어떻게 동작하는지 이해하고, 형식적인 공부보다는 작은 프로젝트를 개발하며 필요한 기술을 효율적으로 배우는 것이 더 도움이 되기 때문입니다.",
+			"listItem2": "스타일링은 처음에 CSS를 사용하고, 잠깐 SASS를 시도한 뒤 Styled Components로 전환하였습니다. Styled Components를 사용하면 유지보수가 용이하며 예상치 못한 스타일링 버그가 발생하지 않아 큰 장점입니다.",
+			"listItem3": "반응형 웹앱",
+			"listItem4": "백앤드는 Firebase를 사용하여 로그인, 포스팅, 수정, 지우기 등의 기능을 활성화하였습니다.",
+			"listItem5": "블로그 (마크다운)",
+			"listSubItem1": "로그인 / 로그아웃",
+			"listSubItem2": "로그인 후 포스팅 페이지, 수정 / 지우기",
+			"listSubItem3": "태그 + 카테고리별 정렬",
+			"listItem6": "포트폴리오"
+		}
 	},
 	"project2": {
 		"title": "진행중인 프로젝트",
 		"subtitle": "Dev (이름과 주소 미정)",
 		"duration": "2022.1 ~ 현재",
 		"stack": "스택:",
-		"description": [
-			"개발자들의 막막함을 없애주는 플랫폼을 개발 중입니다. (더 자세한 내용은 나중에 추가 하겠습니다.)",
-			"이 프로젝트를 개발 하면서 학습을 해야 하는것들:",
-			"- Next.js",
-			"- Redux",
-			"- JWT Auth",
-			"- Express JS",
-			"- MongoDB"
-		]
+		"description": {
+			"listItem1": "개발자들의 막막함을 없애주는 플랫폼을 개발 중입니다. (더 자세한 내용은 나중에 추가 하겠습니다.)",
+			"listItem2": "이 프로젝트를 개발 하면서 학습을 해야 하는것들:",
+			"listSubItem1": "Next.js",
+			"listSubItem2": "Redux",
+			"listSubItem3": "JWT Auth",
+			"listSubItem4": "Express JS",
+			"listSubItem5": "MongoDB"
+		}
 	}
 }

@@ -35,12 +35,12 @@
 	},
 	"other": {
 		"title": "Other",
-		"skills": [
-			"English Composition",
-			"Problem Solving",
-			"Computer Skills",
-			"Leadership"
-		]
+		"skills": {
+			"englishComposition": "English Composition",
+			"problemSolving": "Problem Solving",
+			"computerSkills": "Computer Skills",
+			"leadership": "Leadership"
+		}
 	},
 	"project1": {
 		"title": "Personal Project",
@@ -49,39 +49,31 @@
 		"linkTitle": "sexybrain github",
 		"duration": "2022.09 ~ Present",
 		"stack": "Stack",
-		"description": [
-			"I am developing this project from scratch without using any templates. The reason for this approach is that when I started developing with React, I wanted to understand how web apps like a blog function. I found that working on small projects and exploring the required skills efficiently helped me learn more than formal studying.",
-			"For styling, I initially used CSS, then briefly tried SASS, and later switched to Styled Components. Using Styled Components allows for easier maintenance and eliminates unexpected styling bugs, which is a significant advantage.",
-			"Responsive web app",
-			"Backend is built with Firebase to enable features like login, posting, editing, and deleting.",
-			"Blog (Markdown)",
-			"- Login / Logout",
-			"- Posting page after login, Editing / Deleting",
-			"- Sorted by tags + categories",
-			"Portfolio"
-		]
+		"description": {
+			"listItem1": "I am developing this project from scratch without using any templates. The reason for this approach is that when I started developing with React, I wanted to understand how web apps like a blog function. I found that working on small projects and exploring the required skills efficiently helped me learn more than formal studying.",
+			"listItem2": "For styling, I initially used CSS, then briefly tried SASS, and later switched to Styled Components. Using Styled Components allows for easier maintenance and eliminates unexpected styling bugs, which is a significant advantage.",
+			"listItem3": "Responsive web app",
+			"listItem4": "Backend is built with Firebase to enable features like login, posting, editing, and deleting.",
+			"listItem5": "Blog (Markdown)",
+			"listSubItem1": "Login / Logout",
+			"listSubItem2": "Posting page after login, Editing / Deleting",
+			"listSubItem3": "Sorted by tags + categories",
+			"listItem6": "Portfolio"
+		}
 	},
 	"project2": {
 		"title": "Project in progress",
 		"subtitle": "Dev (Name and Address Undecided)",
 		"duration": "2022.1 ~ Present",
 		"stack": "Stack:",
-		"stackItems": [
-			"Next.js",
-			"Redux",
-			"JWT Auth",
-			"MongoDB",
-			"Express JS",
-			"Styled Components"
-		],
-		"description": [
-			"I am developing a platform to help developers overcome challenges. (More details will be added later.)",
-			"Things I am learning while working on this project:",
-			"- Next.js",
-			"- Redux",
-			"- JWT Auth",
-			"- Express JS",
-			"- MongoDB"
-		]
+		"description": {
+			"listItem1": "I am developing a platform to help developers overcome challenges. (More details will be added later.)",
+			"listItem2": "Things I am learning while working on this project:",
+			"listSubItem1": "Next.js",
+			"listSubItem2": "Redux",
+			"listSubItem3": "JWT Auth",
+			"listSubItem4": "Express JS",
+			"listSubItem5": "MongoDB"
+		}
 	}
 }

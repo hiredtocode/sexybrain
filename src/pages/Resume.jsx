@@ -193,11 +193,10 @@ const Resume = () => {
 							<Card>
 								<Content2>
 									<H3>{t('other.title')}</H3>
-									{t('other.skills', { returnObjects: true }).map(
-										(skill, index) => (
-											<p key={index}>{skill}</p>
-										)
-									)}
+									<p>{t('other.skills.englishComposition')}</p>
+									<p>{t('other.skills.problemSolving')}</p>
+									<p>{t('other.skills.computerSkills')}</p>
+									<p>{t('other.skills.leadership')}</p>
 								</Content2>
 							</Card>
 						</Border>
@@ -241,11 +240,22 @@ const Resume = () => {
 							<p> Styled Components </p>
 						</Badge>
 					</Stack>{' '}
-					{t('project1.description', { returnObjects: true }).map(
-						(item, index) => (
-							<li key={index}>{item}</li>
-						)
-					)}
+					{t('project1.description')}
+					<ul>
+						<li>{t('project1.description.listItem1')}</li>
+						<li>{t('project1.description.listItem2')}</li>
+						<li>{t('project1.description.listItem3')}</li>
+						<li>{t('project1.description.listItem4')}</li>
+						<li>
+							{t('project1.description.listItem5')}
+							<ul>
+								<li>{t('project1.description.listSubItem1')}</li>
+								<li>{t('project1.description.listSubItem2')}</li>
+								<li>{t('project1.description.listSubItem3')}</li>
+							</ul>
+						</li>
+						<li>{t('project1.description.listItem6')}</li>
+					</ul>
 				</ul>
 			</Section>
 			{/* Personal project section END */}
@@ -287,11 +297,18 @@ const Resume = () => {
 							<p> Styled Components </p>
 						</Badge>
 					</Stack>{' '}
-					{t('project2.description', { returnObjects: true }).map(
-						(item, index) => (
-							<li key={index}>{item}</li>
-						)
-					)}
+					{t('project2.description')}
+					<ul>
+						<li>{t('project2.description.listItem1')}</li>
+						<li>{t('project2.description.listItem2')}</li>
+						<ul>
+							<li>{t('project2.description.listSubItem1')}</li>
+							<li>{t('project2.description.listSubItem2')}</li>
+							<li>{t('project2.description.listSubItem3')}</li>
+							<li>{t('project2.description.listSubItem4')}</li>
+							<li>{t('project2.description.listSubItem5')}</li>
+						</ul>
+					</ul>
 				</ul>
 			</Section>
 
