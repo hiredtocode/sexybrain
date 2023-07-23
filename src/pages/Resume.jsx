@@ -240,7 +240,6 @@ const Resume = () => {
 							<p> Styled Components </p>
 						</Badge>
 					</Stack>{' '}
-					{t('project1.description')}
 					<ul>
 						<li>{t('project1.description.listItem1')}</li>
 						<li>{t('project1.description.listItem2')}</li>
@@ -297,7 +296,6 @@ const Resume = () => {
 							<p> Styled Components </p>
 						</Badge>
 					</Stack>{' '}
-					{t('project2.description')}
 					<ul>
 						<li>{t('project2.description.listItem1')}</li>
 						<li>{t('project2.description.listItem2')}</li>
