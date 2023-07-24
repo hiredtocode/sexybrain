@@ -114,6 +114,7 @@ const Portfolio = () => {
 									<ProjectStack>
 										<ProjectStacks project={project} />
 									</ProjectStack>
+
 									<ProjectLink>
 										{project && project.githubRepo ? (
 											<GithubButtonForPortfolio
