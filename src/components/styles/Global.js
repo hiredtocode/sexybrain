@@ -96,7 +96,7 @@ mark {
 	padding: 0 10px;
 }
 button{
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+	/* box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); */
 
 }
 
