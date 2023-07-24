@@ -70,7 +70,7 @@ export const HamburgerMenu = styled.button`
 	display: block;
 	position: relative;
 	z-index: 1;
-	margin-left: 15px;
+	margin-left: 2.7rem;
 
 	user-select: none;
 
@@ -144,14 +144,14 @@ export const MobileNav = styled.div`
 		text-decoration: none;
 
 		&:hover {
-			transition: 0.8s;
-			box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+			transition: 0.5s;
+			/* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); */
 			background: linear-gradient(
 				135deg,
 				${({ theme }) => theme.colors.hover},
 				${({ theme }) => theme.colors.hovered}
 			);
-			color: white;
+			color: black;
 		}
 	}
 
@@ -186,20 +186,15 @@ export const ShowOnMobileContainer = styled.div`
 export const DarkLightContainer = styled.div`
 	border: none;
 	cursor: pointer;
-	height: 50px;
-	width: 50px;
-	margin: 0 20px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: 50%;
 
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
 	}
 	/* s: '767.98px'  */
 	@media (max-width: ${({ theme }) => theme.s}) {
-		margin-right: 5px;
 	}
 	/* md: '991.98px'  */
 	@media (max-width: ${({ theme }) => theme.md}) {
@@ -220,20 +215,15 @@ export const DarkLightContainer = styled.div`
 export const LanguageContainer = styled.div`
 	border: none;
 	cursor: pointer;
-	height: 50px;
-	width: 50px;
-	margin: 0 20px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: 50%;
 
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
 	}
 	/* s: '767.98px'  */
 	@media (max-width: ${({ theme }) => theme.s}) {
-		margin-right: 5px;
 	}
 	/* md: '991.98px'  */
 	@media (max-width: ${({ theme }) => theme.md}) {
