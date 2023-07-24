@@ -128,7 +128,9 @@ export const MobileNav = styled.div`
 	width: 250px;
 	min-height: 100vh;
 	display: block;
-	background-color: ${({ theme }) => theme.colors.primaryBackground};
+	background-color: ${({ theme }) => theme.colors.body};
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+
 	font-size: 1.2rem;
 	font-weight: 700;
 	transition: 0.3s;
