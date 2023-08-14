@@ -12,8 +12,8 @@ const MainLinks = () => {
 			<BlogButton />
 			<ResumeButton />
 			<PortfolioButton />
-			<LangButton />
 			<ShowOnWebContainer>
+				<LangButton />
 				<DarkLightMode />
 				<GithubButton />
 			</ShowOnWebContainer>
