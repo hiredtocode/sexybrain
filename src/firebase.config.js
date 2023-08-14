@@ -21,7 +21,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const appCheck = initializeAppCheck(app, {
 	provider: new ReCaptchaV3Provider(process.env.REACT_APP_CAPTCHA_APPCHECK),
-	isTokenAutoRefreshEnabled: true,
+	isTokenAutoRefreshEnabled: false,
 })
 const auth = getAuth(app)
 const storage = getStorage(app)
