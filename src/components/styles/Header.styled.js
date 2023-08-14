@@ -191,6 +191,7 @@ export const DarkLightContainer = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	padding: 1rem;
 
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
@@ -200,7 +201,6 @@ export const DarkLightContainer = styled.div`
 	}
 	/* md: '991.98px'  */
 	@media (max-width: ${({ theme }) => theme.md}) {
-		padding: 1rem;
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
@@ -220,6 +220,7 @@ export const LanguageContainer = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	padding: 1rem;
 
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
@@ -229,7 +230,6 @@ export const LanguageContainer = styled.div`
 	}
 	/* md: '991.98px'  */
 	@media (max-width: ${({ theme }) => theme.md}) {
-		padding: 1rem;
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
