@@ -100,22 +100,22 @@ p{
 		}
 	}
 
-	ul > li{
+	li{
+		font-size: 1.2rem;
 
-		font-size: 1.2em;
-
-		/* xs: '575.98px' */
-		@media (max-width: ${({ theme }) => theme.xs}) {
+		/* lg: '1199.98px'  */
+		@media (max-width: ${({ theme }) => theme.lg}) {
+			font-size: 1.2rem;
+		}
+		/* md: '991.98px'  */
+		@media (max-width: ${({ theme }) => theme.md}) {
 		}
 		/* s: '767.98px'  */
 		@media (max-width: ${({ theme }) => theme.s}) {
 			font-size: 1rem;
 		}
-		/* md: '991.98px'  */
-		@media (max-width: ${({ theme }) => theme.md}) {
-		}
-		/* lg: '1199.98px'  */
-		@media (max-width: ${({ theme }) => theme.lg}) {
+		/* xs: '575.98px' */
+		@media (max-width: ${({ theme }) => theme.xs}) {
 		}
 }
 

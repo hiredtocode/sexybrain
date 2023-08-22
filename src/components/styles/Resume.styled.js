@@ -211,7 +211,6 @@ export const Content2 = styled.div`
 	h3 {
 		position: relative;
 		text-align: center;
-		font-size: 1.3em;
 		color: ${({ theme }) => theme.colors.font};
 		z-index: 1;
 		font-weight: 600;
@@ -244,7 +243,7 @@ export const Badge = styled.div`
 		}
 		/* s: '767.98px'  */
 		@media (max-width: ${({ theme }) => theme.s}) {
-			font-size: 1.1rem;
+			font-size: 1rem;
 		}
 		/* md: '991.98px'  */
 		@media (max-width: ${({ theme }) => theme.md}) {
