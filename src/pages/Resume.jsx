@@ -130,7 +130,7 @@ const Resume = () => {
 					</Badge>
 				</Flex>
 
-				<h3>HTML, SASS, JavaScript(TypeScript)</h3>
+				<H3>HTML, SASS, JavaScript(TypeScript)</H3>
 				<ul>
 					<li>{t('skills.htmlSassLayout')}</li>
 					<li>{t('skills.styledComponents')}</li>
@@ -138,7 +138,7 @@ const Resume = () => {
 					<li>{t('skills.typescriptExperience')}</li>
 				</ul>
 
-				<h3>Framework & Library</h3>
+				<H3>Framework & Library</H3>
 				<ul>
 					<li>{t('framework.statePropsComponent')}</li>
 					<li>{t('framework.spaImplementation')}</li>
@@ -148,7 +148,7 @@ const Resume = () => {
 					{/* <li>{t('reactSkills.angularExperience')}</li> */}
 				</ul>
 
-				<h3>{t('tools.title')}</h3>
+				<H3>{t('tools.title')}</H3>
 
 				<Flex wrap={'wrap'} justify={'space-around'}>
 					<CardContainer>
