@@ -13,23 +13,8 @@ const GlobalStyles = createGlobalStyle`
   scrollbar-width: thin;
 	/* Firefox scrollbar END */
 
+	transition: 0.5s;
 
-			/* xs: '575.98px' */
-		@media (max-width: ${({ theme }) => theme.xs}) {
-			transition: 0.5s;
-		}
-		/* s: '767.98px'  */
-		@media (max-width: ${({ theme }) => theme.s}) {
-			transition: 0.5s;
-		}
-		/* md: '991.98px'  */
-		@media (max-width: ${({ theme }) => theme.md}) {
-			transition: 0.5s;
-		}
-		/* lg: '1199.98px'  */
-		@media (max-width: ${({ theme }) => theme.lg}) {
-			transition: 0.5s;
-		}
 }
 
 /* @media (prefers-color-scheme: dark){
@@ -84,39 +69,21 @@ a:link,
 p{
 	font-size: 1.2em;
 
-
-	/* xs: '575.98px' */
-	@media (max-width: ${({ theme }) => theme.xs}) {
-	}
 	/* s: '767.98px'  */
 	@media (max-width: ${({ theme }) => theme.s}) {
 		font-size: 1rem;
 	}
-	/* md: '991.98px'  */
-		@media (max-width: ${({ theme }) => theme.md}) {
-		}
-		/* lg: '1199.98px'  */
-		@media (max-width: ${({ theme }) => theme.lg}) {
-		}
+
 	}
 
 	li{
 		font-size: 1.2rem;
 
-		/* lg: '1199.98px'  */
-		@media (max-width: ${({ theme }) => theme.lg}) {
-			font-size: 1.2rem;
-		}
-		/* md: '991.98px'  */
-		@media (max-width: ${({ theme }) => theme.md}) {
-		}
 		/* s: '767.98px'  */
 		@media (max-width: ${({ theme }) => theme.s}) {
 			font-size: 1rem;
 		}
-		/* xs: '575.98px' */
-		@media (max-width: ${({ theme }) => theme.xs}) {
-		}
+
 }
 
 img {
