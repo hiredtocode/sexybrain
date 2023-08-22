@@ -11,7 +11,7 @@ const DarkLightMode = ({ mode, setDarkMode, setLightMode }) => {
 
 	return (
 		<DarkLightContainer onClick={handleClick(mode, setDarkMode, setLightMode)}>
-			{mode === 'dark' ? <MoonIcon /> : <SunIcon />}
+			{mode === 'dark' ? <SunIcon /> : <MoonIcon />}
 		</DarkLightContainer>
 	)
 }
