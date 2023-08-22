@@ -83,6 +83,40 @@ a:link,
 	}
 p{
 	font-size: 1.2em;
+
+
+	/* xs: '575.98px' */
+	@media (max-width: ${({ theme }) => theme.xs}) {
+	}
+	/* s: '767.98px'  */
+	@media (max-width: ${({ theme }) => theme.s}) {
+		font-size: 1rem;
+	}
+	/* md: '991.98px'  */
+		@media (max-width: ${({ theme }) => theme.md}) {
+		}
+		/* lg: '1199.98px'  */
+		@media (max-width: ${({ theme }) => theme.lg}) {
+		}
+	}
+
+	ul > li{
+
+		font-size: 1.2em;
+
+		/* xs: '575.98px' */
+		@media (max-width: ${({ theme }) => theme.xs}) {
+		}
+		/* s: '767.98px'  */
+		@media (max-width: ${({ theme }) => theme.s}) {
+			font-size: 1rem;
+		}
+		/* md: '991.98px'  */
+		@media (max-width: ${({ theme }) => theme.md}) {
+		}
+		/* lg: '1199.98px'  */
+		@media (max-width: ${({ theme }) => theme.lg}) {
+		}
 }
 
 img {

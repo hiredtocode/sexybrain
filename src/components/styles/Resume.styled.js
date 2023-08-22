@@ -21,14 +21,12 @@ export const Section = styled.section`
 
 	ul > li {
 		margin-left: 30px;
-		font-size: 1.2rem;
 	}
 
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
 		ul > li {
 			margin-left: -20px;
-			font-size: 1.2rem;
 		}
 	}
 	/* s: '767.98px'  */
@@ -191,7 +189,6 @@ export const Content1 = styled.div`
 	flex-direction: column;
 
 	p {
-		font-size: 1.2rem;
 		font-weight: 500;
 		color: ${({ theme }) => theme.colors.font};
 		margin: 10px 0;
@@ -205,7 +202,6 @@ export const Content2 = styled.div`
 	flex-direction: column;
 
 	p {
-		font-size: 1.2rem;
 		font-weight: 500;
 		text-align: center;
 		color: ${({ theme }) => theme.colors.font};
@@ -242,6 +238,20 @@ export const Badge = styled.div`
 		color: ${({ theme }) => theme.colors.font};
 
 		padding: 0 4px;
+
+		/* xs: '575.98px' */
+		@media (max-width: ${({ theme }) => theme.xs}) {
+		}
+		/* s: '767.98px'  */
+		@media (max-width: ${({ theme }) => theme.s}) {
+			font-size: 1.1rem;
+		}
+		/* md: '991.98px'  */
+		@media (max-width: ${({ theme }) => theme.md}) {
+		}
+		/* lg: '1199.98px'  */
+		@media (max-width: ${({ theme }) => theme.lg}) {
+		}
 	}
 	&:hover {
 		border: 1px solid ${({ theme }) => theme.colors.subText};

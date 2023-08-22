@@ -180,7 +180,6 @@ export const BlogDetail = styled.div`
 export const Author = styled.p`
 	display: inline-block;
 	font-weight: 500;
-	font-size: 1.2rem;
 `
 
 export const MarkdownContainer = styled.div`
@@ -349,7 +348,7 @@ export const CategoryMark = styled.div`
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
-	} ;
+	}
 `
 // Language logo on the left hand side of the card END
 
@@ -387,7 +386,7 @@ export const Date = styled.div`
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
 		margin-left: auto;
-	} ;
+	}
 `
 
 export const Box = styled.div`
@@ -423,7 +422,7 @@ export const Box = styled.div`
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
 		align-items: flex-start;
-	} ;
+	}
 `
 
 export const Description = styled.div`
@@ -460,7 +459,7 @@ export const Description = styled.div`
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
-	} ;
+	}
 `
 
 export const Categories = styled.div`
@@ -485,7 +484,7 @@ export const Categories = styled.div`
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
 		flex-direction: column;
-	} ;
+	}
 `
 
 export const CategoryButton = styled.button`
@@ -598,7 +597,7 @@ export const Aside = styled.aside`
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
-	} ;
+	}
 `
 
 export const TagSection = styled.div`
@@ -666,7 +665,7 @@ export const TagContainer = styled.div`
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
-	} ;
+	}
 `
 export const TagBox = styled.div`
 	display: flex;

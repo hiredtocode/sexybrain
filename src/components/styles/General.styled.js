@@ -18,7 +18,7 @@ export const H2 = styled.h2`
 	@media (max-width: ${({ theme }) => theme.s}) {
 		z-index: 10;
 		opacity: 1;
-		font-size: 1.4rem;
+		font-size: 1.6rem;
 	}
 	/* md: '991.98px'  */
 	@media (max-width: ${({ theme }) => theme.md}) {
@@ -31,6 +31,20 @@ export const H3 = styled.h3`
 	font-size: 1.3rem;
 
 	color: ${({ theme }) => theme.colors.heading};
+
+	/* xs: '575.98px' */
+	@media (max-width: ${({ theme }) => theme.xs}) {
+	}
+	/* s: '767.98px'  */
+	@media (max-width: ${({ theme }) => theme.s}) {
+		font-size: 1.1rem;
+	}
+	/* md: '991.98px'  */
+	@media (max-width: ${({ theme }) => theme.md}) {
+	}
+	/* lg: '1199.98px'  */
+	@media (max-width: ${({ theme }) => theme.lg}) {
+	}
 `
 
 export const LineBreak = styled.div`
@@ -76,7 +90,7 @@ export const Flex = styled.div`
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
-	} ;
+	}
 `
 
 export const Button = styled.button`
@@ -179,9 +193,9 @@ export const DivContainer = styled.div`
 
 export const RootContainer = styled.div`
 	display: flex;
-	max-width: 1200px;
+	max-width: 1000px;
 	align-items: flex-start;
-	padding: 130px 30px;
+	padding: 130px 50px;
 	margin: 0 auto;
 
 	/* xs: '575.98px' */
@@ -195,7 +209,7 @@ export const RootContainer = styled.div`
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {
-	} ;
+	}
 `
 export const Highlight = styled.span`
 	text-decoration: none;
