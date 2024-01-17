@@ -17,6 +17,7 @@
 	"skills": {
 		"title": "Technical Skills",
 		"subtitle1": "Front-end",
+		"subtitle2": "Back-end",
 		"htmlSassLayout": "Capable of implementing layouts and responsive web apps using HTML / SASS.",
 		"styledComponents": "Preventing styling bugs even when the app is extended, using Styled Components.",
 		"javascriptEs6": "Proficient in JavaScript ES6+ development.",
