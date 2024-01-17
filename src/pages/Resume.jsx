@@ -193,7 +193,6 @@ const Resume = () => {
 							<Card>
 								<Content2>
 									<H3>{t('other.title')}</H3>
-									<p>{t('other.skills.englishComposition')}</p>
 									<p>{t('other.skills.problemSolving')}</p>
 									<p>{t('other.skills.computerSkills')}</p>
 									<p>{t('other.skills.leadership')}</p>
