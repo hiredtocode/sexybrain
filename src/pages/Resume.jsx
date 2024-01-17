@@ -11,6 +11,8 @@ import mongodb from '../assets/img/mongodb.svg'
 import nextjsWhite from '../assets/img/nextjs-white.svg'
 import nextjs from '../assets/img/nextjs.svg'
 import nodejs from '../assets/img/nodejs.svg'
+import nodejsLight from '../assets/img/nodejsLight.svg'
+import python from '../assets/img/python.svg'
 import react from '../assets/img/react.svg'
 import redux from '../assets/img/redux.svg'
 import sass from '../assets/img/sass.svg'
@@ -100,10 +102,6 @@ const Resume = () => {
 						<img src={react} alt='React' />
 						<p> React </p>
 					</Badge>
-					{/* <Badge>
-						<img src={angular} alt='Angular' />
-						<p> Angular </p>
-					</Badge> */}
 					<Badge>
 						<img src={typescript} alt='TypeScript' />
 						<p> TypeScript </p>
@@ -127,6 +125,20 @@ const Resume = () => {
 					<Badge>
 						<img src={materialUi} alt='Material UI' />
 						<p> Material UI </p>
+					</Badge>
+				</Flex>
+				<H3>{t('skills.subtitle2')}</H3>
+				<Flex
+					wrap={'wrap'}
+					style={{ paddingTop: '15px', paddingBottom: '25px' }}
+				>
+					<Badge>
+						<img src={python} alt='Python' />
+						<p> Python </p>
+					</Badge>
+					<Badge>
+						<img src={mode === 'dark' ? nodejsLight : nodejs} alt='Node JS' />
+						<p> Node.js </p>
 					</Badge>
 				</Flex>
 
@@ -156,8 +168,9 @@ const Resume = () => {
 							<Card>
 								<Content2>
 									<H3>Back-end</H3>
-									<p>RESTful API</p>
+									<p>Python</p>
 									<p>NodeJS</p>
+									<p>RESTful API</p>
 									<p>Firebase</p>
 								</Content2>
 							</Card>
