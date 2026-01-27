@@ -205,6 +205,17 @@ const Portfolio = () => {
 						</ProjectLink>
 					</Flex>
 					<span className='light'>{t('project3.duration')}</span> <br />
+					<p style={{ marginTop: '12px', marginBottom: '16px' }}>
+						{t('project3.tryAppLabel')}{' '}
+						<a
+							href={t('project3.releasesLink')}
+							target='_blank'
+							rel='noreferrer'
+							style={{ fontWeight: 600, textDecoration: 'underline' }}
+						>
+							{t('project3.releasesLinkTitle')}
+						</a>
+					</p>
 					<ul className='projectBullet'>
 						<Stack>
 							<span>{t('project3.stack')}</span>
