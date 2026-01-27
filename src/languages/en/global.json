@@ -8,8 +8,8 @@
 		"title": "Resume",
 		"name": "Jason Han",
 		"email": "jasonhan@kakao.com",
-		"phone": "+82 10-4394-8891",
-		"address": "South Korea, Seoul",
+		"phone": "437-254-8891",
+		"address": "151 Townsgate Dr, Thornhill, ON, Canada",
 		"mainTitle": "Hi and welcome!",
 		"mainSubTitle": "From Entrepreneurship to Code: My Frontend Journey",
 		"content1.paragraph1": "I'm a Web Developer with a diverse background spanning various fields, including sales, marketing, project management, professional day trading, and operating my own business for over 10 years.\n In the last 1~2 years, I embarked on a journey to learn coding and dedicated myself to honing my skills in JavaScript (ES6+), React framework, and Styled Components while having a full-time job as a hardware engineer. This experience has enabled me to proficiently create engaging designs and interactive functionalities for web applications.\nThroughout my career, I have gathered valuable transferable skills, such as effective communication, problem-solving, and adaptability, which I bring to my programming projects. I am continuously driven by my passion for technology, which motivates me to explore new advancements and trends, allowing me to identify efficient solutions for complex challenges.\nHaving moved to Canada at a young age, I am fluent in both Korean and English, which facilitates effective communication and collaboration with diverse teams and stakeholders. As a junior Frontend Developer, I am eager to contribute my diverse skill set to innovative projects and further enhance my expertise in the programming world.\nI am always open to learning and growing, understanding that there's endless potential for improvement. I humbly appreciate your consideration of my profile, and I am excited to discuss how my unique background can benefit your team."
@@ -44,10 +44,10 @@
 	},
 	"project1": {
 		"title": "Personal Project",
-		"subtitle": "sexybrain.dev (Current Site)",
+		"subtitle": "Current portfolio site",
 		"link": "https://github.com/hiredtocode/sexybrain",
 		"linkTitle": "sexybrain github",
-		"duration": "2022.09 ~ Present",
+		"duration": "2022.09 ~ 2022.12",
 		"stack": "Stack",
 		"description": {
 			"listItem1": "I am developing this project from scratch without using any templates. The reason for this approach is that when I started developing with React, I wanted to understand how web apps like a blog function. I found that working on small projects and exploring the required skills efficiently helped me learn more than formal studying.",
@@ -62,21 +62,53 @@
 		}
 	},
 	"project2": {
-		"title": "Project in progress",
-		"subtitle": "Dev (Name and Address Undecided)",
-		"duration": "2022.1 ~ Present",
-		"stack": "Stack:",
+		"title": "Full-Stack Web Application",
+		"subtitle": "Torino - Construction Site Management System",
+		"link": "https://github.com/hiredtocode/torino",
+		"linkTitle": "Torino GitHub",
+		"duration": "2024.10 ~ 2024.11",
+		"stack": "Stack",
 		"description": {
-			"listItem1": "I am developing a platform to help developers overcome challenges. (More details will be added later.)",
-			"listItem2": "Things I am learning while working on this project:",
-			"listSubItem1": "Next.js",
-			"listSubItem2": "Redux",
-			"listSubItem3": "JWT Auth",
-			"listSubItem4": "Express JS",
-			"listSubItem5": "MongoDB"
+			"listItem1": "Developed a full-stack construction site management application using Next.js 16, React 19, and TypeScript. Built comprehensive inventory tracking, work logging, and site management features with real-time updates.",
+			"listItem2": "Implemented secure backend with Supabase (PostgreSQL) including Row Level Security policies, database migrations, and RESTful API routes. Integrated Supabase Auth for authentication with OAuth and email/password support.",
+			"listItem3": "Built multi-language support (English/Korean) using next-intl with locale-aware routing. Created responsive UI with Tailwind CSS and shadcn/ui components for modern, accessible design.",
+			"listItem4": "Developed role-based access control with four user roles (Worker, Manager, Owner, Admin), each with customized dashboards and permissions. Implemented real-time features using Supabase Realtime subscriptions.",
+			"listItem5": "Key Features",
+			"listSubItem1": "Inventory Management: Check-in/check-out system with real-time tracking",
+			"listSubItem2": "Work Logs: Daily logging with approval workflows",
+			"listSubItem3": "Site & Floor Management: Multi-floor configuration with drag-and-drop interface",
+			"listSubItem4": "Role-Specific Dashboards: Tailored views for each user role",
+			"listItem6": "Established comprehensive testing with Jest (unit/component), Playwright (E2E), and database integration tests. Maintained 90%+ coverage and TDD workflow. Deployed using three-environment architecture (Test/Staging/Production) with Vercel."
+		}
+	},
+	"project3": {
+		"title": "Desktop App",
+		"subtitle": "YouTube Copilot – Educational Video Pre-Production Tool",
+		"link": "https://github.com/hiredtocode/youtube_copilot",
+		"linkTitle": "YouTube Copilot GitHub",
+		"releasesLink": "https://github.com/hiredtocode/youtube_copilot/releases",
+		"releasesLinkTitle": "Download app (Windows / macOS / Linux)",
+		"duration": "In progress",
+		"stack": "Stack",
+		"description": {
+			"listItem1": "Educational video pre-production desktop app. Streamlines turning a topic into a structured outline, script, scene plan, and visual assets.",
+			"listItem2": "Built with Tauri (Rust) and React + TypeScript + Tailwind CSS. Cross-platform (Windows, macOS, Linux) with local state and filesystem persistence.",
+			"listItem3": "Scene-based workflow: segment narration, manage prompts, and track per-scene assets. Integrates with local AI (e.g. LM Studio) for outline and script generation.",
+			"listItem4": "Visual tooling: generate images per scene and optional image-to-video generation. Pre-built installers published via GitHub Releases.",
+			"listItem5": "Key features",
+			"listSubItem1": "End-to-end flow: Topic → outline → script → scenes → visual assets",
+			"listSubItem2": "Scene-based workflow with local state and quick access to recents",
+			"listSubItem3": "Local AI support (LM Studio); ElevenLabs TTS on macOS/Linux",
+			"listSubItem4": "Desktop-first: Tauri app with native filesystem and local persistence",
+			"listItem6": "Portfolio piece; many features in progress. Try this app: use the \"Download app\" link above to get installers for Windows (.exe/.msi), macOS (.dmg), or Linux (.deb/.AppImage)."
 		}
 	},
 	"portfolio": {
 		"description": "In this project, I leveraged React with Styled Components for the frontend, while employing Firebase for seamless login processing and blog posting capabilities on the backend. To efficiently manage the application state, I utilized Redux. Despite the convenience of existing platforms, templates, or frameworks like Bootstrap and Material UI, I opted to design and develop the entire project from scratch to ensure complete control over the process and to enhance my learning experience."
+	},
+	"categories": {
+		"fullStack": "Full Stack Web Application",
+		"electron": "Electron App",
+		"comingSoon": "Coming soon..."
 	}
 }

@@ -1,12 +1,22 @@
 [
 	{
 		"id": 1,
-		"title": "SexyBrain.Dev (현재 웹사이트)",
-		"date": "2022.09 ~ 진행중",
-		"image": "first-blog.jpg",
-		"description": "템플릿 없이 처음부터 끝까지 개발중입니다. 로그인을 하면 블로그 글을 쓰고, 업데이트, 삭제를 할 수 있습니다.",
+		"title": "Torino - Construction Site Management System",
+		"date": "2024.10 ~ 2024.11",
+		"image": "torino-screenshot.jpg",
+		"description": "Full-stack construction site management application built with Next.js 16, React 19, and TypeScript. Features include inventory tracking, work logging, role-based access control, and real-time updates using Supabase.",
+		"githubRepo": "https://github.com/hiredtocode/torino",
+		"hyperlink": "https://torino-git-develop-jasons-projects-78bd2c92.vercel.app/login",
+		"stack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL"]
+	},
+	{
+		"id": 2,
+		"title": "SexyBrain.Dev (Current Site)",
+		"date": "2022.09 ~ 2022.12",
+		"image": "sexybrain-main-page-dark.jpg",
+		"description": "Personal portfolio and blog built from scratch without templates. Features include Firebase authentication, blog posting with Markdown support, and Redux state management.",
 		"githubRepo": "https://github.com/hiredtocode/sexybrain",
 		"hyperlink": "https://sexybrain.dev",
-		"stack": ["React", "Firebase", "JavaScript", "Styled Components"]
+		"stack": ["React", "Firebase", "JavaScript", "Styled Components", "Redux"]
 	}
 ]

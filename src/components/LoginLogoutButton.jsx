@@ -1,6 +1,6 @@
 import CreatePostButton from './CreatePostButton';
 import LoginButton from './LoginButton';
-import LogoutButton from './LogoutButton';
+import LogoutButton from './LogOutButton';
 
 const LoginLogoutButton = props => {
 	const { userId, handleLogout } = props;

@@ -13,6 +13,7 @@ const GithubButton = ({ mode }) => {
 			href='https://github.com/hiredtocode'
 			target='_blank'
 			rel='noreferrer'
+			aria-label='Visit GitHub profile'
 		>
 			<GithubTop
 				src={mode === 'dark' ? Github : GithubWhite}

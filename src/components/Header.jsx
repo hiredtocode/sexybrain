@@ -6,10 +6,12 @@ import LoginLogoutButton from './LoginLogoutButton'
 import Logo from './Logo'
 import MainLinks from './MainLinks'
 import {
+	DesktopLoginContainer,
 	HamburgerMenu,
+	MobileLoginContainer,
 	MobileNav,
 	Nav,
-	ShowOnMobileContainer,
+	RightContainer,
 	StyledHeader,
 } from './styles/Header.styled.js'
 import { useTranslation } from 'react-i18next'
@@ -30,12 +32,14 @@ const Header = props => {
 		<StyledHeader>
 			<Nav>
 				<Logo />
-				<LoginLogoutButton userId={userId} handleLogout={handleLogout} />
 				<MainLinks />
-				<ShowOnMobileContainer>
+				<RightContainer>
 					<LangButton />
 					<DarkLightMode />
 					<GithubButton />
+					<DesktopLoginContainer>
+						<LoginLogoutButton userId={userId} handleLogout={handleLogout} />
+					</DesktopLoginContainer>
 					<HamburgerMenu
 						title='Hamburger menu'
 						className={isActive ? 'isActive' : ''}
@@ -45,7 +49,7 @@ const Header = props => {
 						<span></span>
 						<span></span>
 					</HamburgerMenu>
-				</ShowOnMobileContainer>
+				</RightContainer>
 				<MobileNav className={isActive ? 'isActive' : ''}>
 					<NavLink to='/' onClick={toggleHamburgerMenu}>
 						{t('menu.blog')}
@@ -56,6 +60,9 @@ const Header = props => {
 					<NavLink to='/portfolio' onClick={toggleHamburgerMenu}>
 						{t('menu.portfolio')}
 					</NavLink>
+					<MobileLoginContainer onClick={toggleHamburgerMenu}>
+						<LoginLogoutButton userId={userId} handleLogout={handleLogout} />
+					</MobileLoginContainer>
 				</MobileNav>
 			</Nav>
 		</StyledHeader>

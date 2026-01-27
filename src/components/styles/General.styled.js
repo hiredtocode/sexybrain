@@ -7,6 +7,7 @@ export const H1 = styled.h1`
 `
 export const H2 = styled.h2`
 	font-size: 1.8rem;
+	font-weight: 700;
 	transition: 0.7s;
 
 	color: ${({ theme }) => theme.colors.heading};
@@ -29,6 +30,7 @@ export const H2 = styled.h2`
 `
 export const H3 = styled.h3`
 	font-size: 1.3rem;
+	font-weight: 700;
 
 	color: ${({ theme }) => theme.colors.heading};
 
@@ -68,6 +70,7 @@ export const Flex = styled.div`
 	flex-direction: ${({ direction }) => direction};
 	justify-content: ${({ justify }) => justify};
 	align-items: ${({ align }) => align};
+	gap: ${({ gap }) => gap};
 	margin-top: ${({ margin }) => margin};
 	margin-right: ${({ margin }) => margin};
 	margin-bottom: ${({ margin }) => margin};
@@ -191,21 +194,33 @@ export const DivContainer = styled.div`
 	}
 `
 
+export const AppLayout = styled.div`
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+`
+
 export const RootContainer = styled.div`
 	display: flex;
-	max-width: 1000px;
+	flex-direction: column;
+	flex: 1 0 auto;
+	max-width: 1200px;
+	width: 100%;
 	align-items: flex-start;
 	padding: 130px 50px;
 	margin: 0 auto;
 
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
+		padding: 100px 10px;
 	}
 	/* s: '767.98px'  */
 	@media (max-width: ${({ theme }) => theme.s}) {
+		padding: 110px 15px;
 	}
 	/* md: '991.98px'  */
 	@media (max-width: ${({ theme }) => theme.md}) {
+		padding: 120px 25px;
 	}
 	/* lg: '1199.98px'  */
 	@media (max-width: ${({ theme }) => theme.lg}) {

@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import { H2 } from './General.styled'
 
 export const PortFolioContainer = styled.main`
 	display: flex;
@@ -30,7 +31,8 @@ export const ProjectContainer = styled.section`
 	position: relative;
 	width: calc(1200px - 200px);
 	/* height: 500px; */
-	word-break: break-all;
+	word-break: normal;
+	overflow-wrap: break-word;
 
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
@@ -51,35 +53,100 @@ export const ProjectContainer = styled.section`
 
 export const Tabs = styled.div`
 	display: flex;
-	min-width: 90%;
+	width: 100%;
+	margin-bottom: 30px;
+	border-bottom: 2px solid ${({ theme }) => theme.colors.lineBreak};
+	gap: 0;
 `
 
 export const Tab = styled.button`
 	box-shadow: none;
 	color: ${({ theme }) => theme.colors.font};
-	background-color: ${({ theme }) => theme.colors.body};
-	min-width: 30%;
-	font-size: 1.5rem;
+	background-color: transparent;
+	font-size: 1.2rem;
+	font-weight: 600;
 	border: none;
-	padding: 15px;
+	border-bottom: 3px solid transparent;
+	padding: 15px 30px;
 	text-align: center;
-	width: 100%;
 	cursor: pointer;
 	box-sizing: border-box;
 	position: relative;
+	transition: all 0.3s ease;
 
 	&:hover {
-		color: ${({ theme }) => theme.colors.heading};
-		transition: 0.3s;
+		color: ${({ theme }) => theme.colors.primary};
+		background-color: ${({ theme }) => theme.colors.button};
+		transition: all 0.3s ease;
 	}
 	&.active {
 		color: ${({ theme }) => theme.colors.primary};
+		border-bottom: 3px solid ${({ theme }) => theme.colors.primary};
+		background-color: ${({ theme }) => theme.colors.button};
 	}
+`
+
+export const TabContent = styled.div`
+	width: 100%;
+	padding: 20px 0;
+`
+
+export const ProjectButton = styled.button`
+	width: 100%;
+	padding: 20px 25px;
+	margin-bottom: 15px;
+	background-color: ${({ theme }) => theme.colors.button};
+	border: 1px solid ${({ theme }) => theme.colors.lineBreak};
+	border-radius: 8px;
+	cursor: pointer;
+	text-align: left;
+	transition: all 0.3s ease;
+	color: ${({ theme }) => theme.colors.font};
+	font-size: 1.1rem;
+	font-weight: 600;
+
+	&:hover {
+		background-color: ${({ theme }) => theme.colors.hover};
+		border-color: ${({ theme }) => theme.colors.primary};
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	}
+
+	&.active {
+		background-color: ${({ theme }) => theme.colors.hover};
+		color: ${({ theme }) => theme.colors.primary};
+	}
+`
+
+export const ProjectDetails = styled.div`
+	width: 100%;
+	padding: ${({ isOpen }) => (isOpen ? '25px' : '0 25px')};
+	margin-bottom: ${({ isOpen }) => (isOpen ? '15px' : '0')};
+	background-color: ${({ theme }) => theme.colors.card};
+	border: ${({ isOpen, theme }) => (isOpen ? `1px solid ${theme.colors.lineBreak}` : '1px solid transparent')};
+	border-radius: 8px;
+	overflow: hidden;
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	max-height: ${({ isOpen }) => (isOpen ? '5000px' : '0')};
+	opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
+	transform: ${({ isOpen }) => (isOpen ? 'translateY(0)' : 'translateY(-10px)')};
+	pointer-events: ${({ isOpen }) => (isOpen ? 'auto' : 'none')};
+	word-break: normal;
+	overflow-wrap: break-word;
 `
 
 export const ContentContainer = styled.div`
 	flex-grow: 1;
 	width: 100%;
+	
+	/* xs: '575.98px' */
+	@media (max-width: ${({ theme }) => theme.xs}) {
+		padding: 0 10px;
+	}
+	/* s: '767.98px'  */
+	@media (max-width: ${({ theme }) => theme.s}) {
+		padding: 0 15px;
+	}
 `
 export const Content = styled.div`
 	padding: 20px;
@@ -363,7 +430,8 @@ export const ProjectLink = styled.div`
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	margin-top: 20px;
+	margin-top: 0;
+	gap: 0.5rem;
 
 	@media (max-width: ${({ theme }) => theme.xs}) {
 		z-index: 2; /* xs: '575.98px' */
@@ -459,10 +527,13 @@ export const StackButton = styled.div`
 // Github button styling
 
 export const GithubIconContainer = styled.a`
-	position: relative;
+	display: inline-flex;
 	align-items: center;
+	justify-content: center;
+	position: relative;
 	transition: 0.5s;
 	margin: 0 10px;
+	line-height: 0;
 	.icon {
 		opacity: 0.6;
 	}
@@ -471,6 +542,72 @@ export const GithubIconContainer = styled.a`
 	}
 	svg {
 		width: 2.5rem;
+		vertical-align: middle;
+	}
+`
+
+export const GithubPrivateTooltip = styled.span`
+	position: absolute;
+	bottom: calc(100% + 8px);
+	left: 50%;
+	transform: translateX(-50%);
+	white-space: nowrap;
+	padding: 10px 14px;
+	border-radius: 6px;
+	font-size: 0.95rem;
+	line-height: 1.2;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: ${({ theme }) => theme.colors.card};
+	color: ${({ theme }) => theme.colors.font};
+	border: 1px solid ${({ theme }) => theme.colors.lineBreak};
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.05s ease 0s;
+	z-index: 10;
+`
+
+export const GithubIconDisabled = styled.span`
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	transition: 0.2s;
+	margin: 0 10px;
+	line-height: 0;
+	cursor: not-allowed;
+	pointer-events: auto;
+	.icon {
+		opacity: 0.45;
+		filter: grayscale(1);
+		transition: filter 0.2s, opacity 0.2s;
+	}
+	svg {
+		width: 2.5rem;
+		vertical-align: middle;
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 50%;
+		height: 2px;
+		background: ${({ theme }) => theme.colors.subText};
+		opacity: 0.9;
+		transform: translateY(-50%);
+		transition: opacity 0.2s, background 0.2s;
+		pointer-events: none;
+	}
+	&:hover {
+		${GithubPrivateTooltip} {
+			opacity: 1;
+		}
+		.icon {
+			opacity: 0.5;
+		}
 	}
 `
 
@@ -613,10 +750,33 @@ export const CategoryFilter = styled.div`
 `
 
 export const LinkButtonDiv = styled.div`
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 0;
 	.icon {
 		opacity: 0.6;
 	}
 	.icon:hover {
 		opacity: 1;
 	}
+`
+
+export const CategorySection = styled.div`
+	margin-bottom: 60px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+`
+
+export const CategoryTitle = styled(H2)`
+	margin-bottom: 30px;
+`
+
+export const EmptyCategory = styled.div`
+	padding: 40px 20px;
+	text-align: center;
+	color: ${({ theme }) => theme.colors.subText};
+	font-style: italic;
 `

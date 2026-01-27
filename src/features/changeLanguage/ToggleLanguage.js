@@ -17,7 +17,12 @@ const SelectLanguage = ({
 	}
 
 	return (
-		<LanguageContainer onClick={handleClick(language)}>
+		<LanguageContainer 
+			onClick={handleClick(language)}
+			aria-label={language === 'ko' ? 'Switch to English' : 'Switch to Korean'}
+			role="button"
+			tabIndex={0}
+		>
 			{language === 'ko' ? <KoreanIcon /> : <UnitedStatesIcon />}
 		</LanguageContainer>
 	)

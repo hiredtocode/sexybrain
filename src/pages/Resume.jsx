@@ -1,20 +1,15 @@
 import { useSelector } from 'react-redux'
-import angular from '../assets/img/angular.svg'
 import bootstrap from '../assets/img/bootstrap.svg'
 import css from '../assets/img/css3.svg'
-import firebase from '../assets/img/firebase-icon.svg'
 import html from '../assets/img/html.svg'
 import JavascriptLogo from '../assets/img/javascript.svg'
-import jwt from '../assets/img/jwt.svg'
 import materialUi from '../assets/img/material-ui.svg'
-import mongodb from '../assets/img/mongodb.svg'
 import nextjsWhite from '../assets/img/nextjs-white.svg'
 import nextjs from '../assets/img/nextjs.svg'
 import nodejs from '../assets/img/nodejs.svg'
 import nodejsLight from '../assets/img/nodejsLight.svg'
 import python from '../assets/img/python.svg'
 import react from '../assets/img/react.svg'
-import redux from '../assets/img/redux.svg'
 import sass from '../assets/img/sass.svg'
 import styledComponents from '../assets/img/styledComponentsLogo.svg'
 import typescript from '../assets/img/typescript.svg'
@@ -22,8 +17,6 @@ import profilePicture from '../assets/resume/사진.jpg'
 import useTitle from '../components/hook/useTitle'
 import { Flex, H2, H3, LineBreak } from '../components/styles/General.styled.js'
 
-import GithubButtonForPortfolio from '../components/GithubButtonForPortfolio'
-import { ProjectLink } from '../components/styles/Portfolio.styled'
 import {
 	Badge,
 	Border,
@@ -34,7 +27,6 @@ import {
 	Content2,
 	ProfilePic,
 	Section,
-	Stack,
 } from '../components/styles/Resume.styled.js'
 
 import { useTranslation } from 'react-i18next'
@@ -216,113 +208,6 @@ const Resume = () => {
 				</Flex>
 			</Section>
 			{/* Skills section END */}
-			{/* Personal project section */}
-			<section className='mainTitle'>
-				<H2 className='mainTitle'>{t('project1.title')}</H2>
-				<LineBreak />
-			</section>
-			<Section>
-				<Flex>
-					<H3>{t('project1.subtitle')}</H3>
-					<ProjectLink>
-						<GithubButtonForPortfolio
-							link={t('project1.link')}
-							title={t('project1.linkTitle')}
-						/>
-					</ProjectLink>
-				</Flex>
-				<span className='light'>{t('project1.duration')}</span> <br />
-				<ul className='projectBullet'>
-					<Stack>
-						<span>{t('project1.stack')}</span>
-						<Badge>
-							<img src={react} alt='React' />
-							<p> React </p>
-						</Badge>
-						<Badge>
-							<img src={redux} alt='Redux' />
-							<p> Redux </p>
-						</Badge>
-						<Badge>
-							<img src={firebase} alt='Firebase' />
-							<p> Firebase </p>
-						</Badge>
-						<Badge>
-							<img src={styledComponents} alt='Styled Components' />
-							<p> Styled Components </p>
-						</Badge>
-					</Stack>{' '}
-					<ul>
-						<li>{t('project1.description.listItem1')}</li>
-						<li>{t('project1.description.listItem2')}</li>
-						<li>{t('project1.description.listItem3')}</li>
-						<li>{t('project1.description.listItem4')}</li>
-						<li>
-							{t('project1.description.listItem5')}
-							<ul>
-								<li>{t('project1.description.listSubItem1')}</li>
-								<li>{t('project1.description.listSubItem2')}</li>
-								<li>{t('project1.description.listSubItem3')}</li>
-							</ul>
-						</li>
-						<li>{t('project1.description.listItem6')}</li>
-					</ul>
-				</ul>
-			</Section>
-			{/* Personal project section END */}
-			{/* Project in progress section */}
-			<section className='mainTitle'>
-				<H2 className='mainTitle'>{t('project2.title')}</H2>
-				<LineBreak />
-			</section>
-			<Section>
-				<H3>{t('project2.subtitle')}</H3>
-				<span className='light'> 2022.1 ~ Present</span>
-				<br />
-				<ul className='projectBullet'>
-					<Stack>
-						<span>{t('project1.stack')}</span>
-
-						<Badge>
-							<img src={mode === 'dark' ? nextjsWhite : nextjs} alt='Next js' />
-							<p> Next.js </p>
-						</Badge>
-						<Badge>
-							<img src={redux} alt='Redux' />
-							<p> Redux </p>
-						</Badge>
-						<Badge>
-							<img src={jwt} alt='JWT' />
-							<p> JWT Auth </p>
-						</Badge>
-						<Badge>
-							<img src={mongodb} alt='Firebase' />
-							<p> MongoDB </p>
-						</Badge>
-						<Badge>
-							<img src={nodejs} alt='NodeJS' />
-							<p> Express JS </p>
-						</Badge>
-						<Badge>
-							<img src={styledComponents} alt='Styled Components' />
-							<p> Styled Components </p>
-						</Badge>
-					</Stack>{' '}
-					<ul>
-						<li>{t('project2.description.listItem1')}</li>
-						<li>{t('project2.description.listItem2')}</li>
-						<ul>
-							<li>{t('project2.description.listSubItem1')}</li>
-							<li>{t('project2.description.listSubItem2')}</li>
-							<li>{t('project2.description.listSubItem3')}</li>
-							<li>{t('project2.description.listSubItem4')}</li>
-							<li>{t('project2.description.listSubItem5')}</li>
-						</ul>
-					</ul>
-				</ul>
-			</Section>
-
-			{/* Project in progress section END*/}
 		</main>
 	)
 }

@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import { ThemeProvider } from 'styled-components'
 import Footer from './components/Footer'
 import Header from './components/Header'
-import { RootContainer } from './components/styles/General.styled.js'
+import { AppLayout, RootContainer } from './components/styles/General.styled.js'
 import GlobalStyles from './components/styles/Global'
 import { auth } from './firebase.config'
 import AddEditPost from './pages/AddEditPost'
@@ -144,32 +144,33 @@ function App() {
 	return (
 		<ThemeProvider theme={mode === 'dark' ? darkTheme : lightTheme}>
 			<GlobalStyles />
-			<Header user={user} handleLogout={handleLogout} />
-			<ToastContainer position='bottom-right' />
-
-			<RootContainer>
-				<Routes>
-					<Route path='/' element={<Home user={user} />} />
-					<Route path='/detail/:id' element={<BlogPostDetails user={user} />} />
-					<Route path='/portfolio/' element={<Portfolio />} />
-					<Route
-						path='/create'
-						element={
-							user?.uid ? <AddEditPost user={user} /> : <Navigate to='/auth' />
-						}
-					/>
-					<Route
-						path='/update/:id'
-						element={
-							user?.uid ? <AddEditPost user={user} /> : <Navigate to='/auth' />
-						}
-					/>
-					<Route path='/auth' element={<LoginOrSignup setUser={setUser} />} />
-					<Route path='/resume' element={<Resume />} />
-					<Route path='*' element={<NotFound />} />
-				</Routes>
-			</RootContainer>
-			<Footer />
+			<AppLayout>
+				<Header user={user} handleLogout={handleLogout} />
+				<ToastContainer position='bottom-right' />
+				<RootContainer>
+					<Routes>
+						<Route path='/' element={<Home user={user} />} />
+						<Route path='/detail/:id' element={<BlogPostDetails user={user} />} />
+						<Route path='/portfolio/' element={<Portfolio />} />
+						<Route
+							path='/create'
+							element={
+								user?.uid ? <AddEditPost user={user} /> : <Navigate to='/auth' />
+							}
+						/>
+						<Route
+							path='/update/:id'
+							element={
+								user?.uid ? <AddEditPost user={user} /> : <Navigate to='/auth' />
+							}
+						/>
+						<Route path='/auth' element={<LoginOrSignup setUser={setUser} />} />
+						<Route path='/resume' element={<Resume />} />
+						<Route path='*' element={<NotFound />} />
+					</Routes>
+				</RootContainer>
+				<Footer />
+			</AppLayout>
 		</ThemeProvider>
 	)
 }

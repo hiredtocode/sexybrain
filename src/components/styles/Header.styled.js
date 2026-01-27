@@ -166,6 +166,40 @@ export const MobileNav = styled.div`
 	}
 `
 
+export const MobileLoginContainer = styled.div`
+	display: block;
+	min-width: 50%;
+	margin: 15px auto;
+	text-align: center;
+	padding: 12px 16px;
+	background-color: ${({ theme }) => theme.colors.button};
+	color: ${({ theme }) => theme.colors.font};
+
+	& > * {
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 5px;
+	}
+
+	& a {
+		display: inline-block;
+		padding: 0;
+		margin: 0;
+		background-color: transparent;
+		color: ${({ theme }) => theme.colors.font};
+		text-decoration: none;
+	}
+
+	& a:hover {
+		background: transparent;
+		color: ${({ theme }) => theme.colors.primary};
+	}
+
+	@media (min-width: ${({ theme }) => theme.s}) {
+		display: none;
+	}
+`
+
 export const ShowOnWebContainer = styled.div`
 	display: flex;
 	flex-direction: row;
@@ -181,6 +215,29 @@ export const ShowOnMobileContainer = styled.div`
 	align-items: center;
 
 	@media (min-width: ${({ theme }) => theme.s}) {
+		display: none;
+	}
+`
+
+export const RightContainer = styled.div`
+	display: flex;
+	align-items: center;
+	gap: 5px;
+
+	/* Hide hamburger menu on desktop */
+	& > button:last-child {
+		@media (min-width: ${({ theme }) => theme.s}) {
+			display: none;
+		}
+	}
+`
+
+export const DesktopLoginContainer = styled.div`
+	display: flex;
+	align-items: center;
+
+	/* Hide on mobile - login button moves to hamburger menu */
+	@media (max-width: ${({ theme }) => theme.s}) {
 		display: none;
 	}
 `
@@ -244,7 +301,29 @@ export const LanguageContainer = styled.div`
 	}
 `
 
-export const DivContainer = styled.div``
+export const DivContainer = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 8px 12px;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	background-color: transparent;
+	color: ${({ theme }) => theme.colors.font};
+
+	svg {
+		transition: all 0.3s ease;
+	}
+
+	&:hover {
+		color: ${({ theme }) => theme.colors.primary};
+	}
+
+	&:hover svg path {
+		stroke: currentColor;
+	}
+`
 
 export const GithubIconContainer = styled.a`
 	position: relative;

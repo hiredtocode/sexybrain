@@ -3,14 +3,35 @@ import styled from 'styled-components/macro'
 export const Stack = styled.div`
 	display: flex;
 	justify-content: flex-start;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	max-width: 100%;
 	margin-bottom: 15px;
 	align-items: center;
+	gap: 0;
 
 	span {
 		margin-right: 15px;
+		flex-shrink: 0;
 	}
+
+	/* xs: '575.98px' */
+	@media (max-width: ${({ theme }) => theme.xs}) {
+		margin-left: 0;
+		padding-left: 0;
+	}
+	/* s: '767.98px'  */
+	@media (max-width: ${({ theme }) => theme.s}) {
+		margin-left: 0;
+	}
+`
+
+export const StackBadges = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	flex: 1 1 0;
+	min-width: 0;
+	gap: 6px;
+	align-items: center;
 `
 
 export const Section = styled.section`
@@ -25,12 +46,37 @@ export const Section = styled.section`
 
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
+		padding-left: 0;
+		margin-left: 0;
+		
+		ul {
+			padding-left: 15px;
+			margin-left: 0;
+		}
 		ul > li {
-			margin-left: -20px;
+			margin-left: 0;
+		}
+		ul ul {
+			padding-left: 15px;
+		}
+		ul ul > li {
+			margin-left: 0;
 		}
 	}
 	/* s: '767.98px'  */
 	@media (max-width: ${({ theme }) => theme.s}) {
+		padding-left: 0;
+		
+		ul {
+			padding-left: 20px;
+			margin-left: 0;
+		}
+		ul > li {
+			margin-left: 0;
+		}
+		ul ul {
+			padding-left: 15px;
+		}
 	}
 	/* md: '991.98px'  */
 	@media (max-width: ${({ theme }) => theme.md}) {
@@ -189,7 +235,7 @@ export const Content1 = styled.div`
 	flex-direction: column;
 
 	p {
-		font-weight: 500;
+		font-weight: 400;
 		color: ${({ theme }) => theme.colors.font};
 		margin: 10px 0;
 		z-index: 1;
@@ -202,7 +248,7 @@ export const Content2 = styled.div`
 	flex-direction: column;
 
 	p {
-		font-weight: 500;
+		font-weight: 400;
 		text-align: center;
 		color: ${({ theme }) => theme.colors.font};
 		margin: 10px auto;
@@ -213,14 +259,14 @@ export const Content2 = styled.div`
 		text-align: center;
 		color: ${({ theme }) => theme.colors.font};
 		z-index: 1;
-		font-weight: 600;
+		font-weight: 700;
 	}
 `
 
 export const Badge = styled.div`
 	margin: 3px 3px;
 	display: flex;
-	padding: 0 10px;
+	padding: 5px 10px;
 	align-items: center;
 	max-height: 40px;
 	justify-content: center;
@@ -229,9 +275,29 @@ export const Badge = styled.div`
 	font-size: 1rem;
 	border: 1px solid ${({ theme }) => theme.colors.lineBreak};
 
+	/* xs: '575.98px' */
+	@media (max-width: ${({ theme }) => theme.xs}) {
+		padding: 8px;
+	}
+	/* s: '767.98px'  */
+	@media (max-width: ${({ theme }) => theme.s}) {
+		padding: 8px;
+	}
+
 	img {
 		max-width: 35px;
 		padding: 0 5px;
+
+		/* xs: '575.98px' */
+		@media (max-width: ${({ theme }) => theme.xs}) {
+			padding: 0;
+			max-width: 28px;
+		}
+		/* s: '767.98px'  */
+		@media (max-width: ${({ theme }) => theme.s}) {
+			padding: 0;
+			max-width: 28px;
+		}
 	}
 	p {
 		color: ${({ theme }) => theme.colors.font};
@@ -240,10 +306,11 @@ export const Badge = styled.div`
 
 		/* xs: '575.98px' */
 		@media (max-width: ${({ theme }) => theme.xs}) {
+			display: none;
 		}
 		/* s: '767.98px'  */
 		@media (max-width: ${({ theme }) => theme.s}) {
-			font-size: 1rem;
+			display: none;
 		}
 		/* md: '991.98px'  */
 		@media (max-width: ${({ theme }) => theme.md}) {

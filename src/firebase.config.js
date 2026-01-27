@@ -1,6 +1,4 @@
 import { initializeApp } from 'firebase/app'
-// import { getAnalytics } from "firebase/analytics";
-import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check'
 import { getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 import { getFunctions } from 'firebase/functions'
@@ -19,10 +17,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
-const appCheck = initializeAppCheck(app, {
-	provider: new ReCaptchaV3Provider(process.env.REACT_APP_CAPTCHA_APPCHECK),
-	isTokenAutoRefreshEnabled: false,
-})
 const auth = getAuth(app)
 const storage = getStorage(app)
 const db = getFirestore(app)

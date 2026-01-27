@@ -1,151 +1,324 @@
-import { nanoid } from '@reduxjs/toolkit'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
 
-import darkScreenShot from '../assets/img/sexybrain-main-page-dark.jpg'
 import GithubButtonForPortfolio from '../components/GithubButtonForPortfolio'
 import useTitle from '../components/hook/useTitle'
 import LinkButton from '../components/LinkButton.jsx'
-import ProjectStacks from '../components/ProjectStacks'
-import { H2 } from '../components/styles/General.styled'
+import { Flex, H3 } from '../components/styles/General.styled'
 import {
-	Content,
-	ContentContainer,
-	Description,
 	PortFolioContainer,
 	ProjectContainer,
-	ProjectContent,
-	ProjectImage,
+	ContentContainer,
 	ProjectLink,
-	ProjectStack,
+	Tabs,
+	Tab,
+	TabContent,
+	ProjectButton,
+	ProjectDetails,
 } from '../components/styles/Portfolio.styled.js'
-import Projects from '../projects/projects.json'
+import {
+	Badge,
+	Section,
+	Stack,
+	StackBadges,
+} from '../components/styles/Resume.styled.js'
 import { useTranslation } from 'react-i18next'
 
+// Import icons
+import nextjsWhite from '../assets/img/nextjs-white.svg'
+import nextjs from '../assets/img/nextjs.svg'
+import react from '../assets/img/react.svg'
+import typescript from '../assets/img/typescript.svg'
+import tailwindcss from '../assets/img/tailwindcss.svg'
+import supabase from '../assets/img/supabase.svg'
+import postgresql from '../assets/img/postgresql.svg'
+import redux from '../assets/img/redux.svg'
+import firebase from '../assets/img/firebase-icon.svg'
+import styledComponents from '../assets/img/styledComponentsLogo.svg'
+
+const PROJECT_IDS_BY_TAB = {
+	fullStack: ['torino', 'sexybrain'],
+	electron: ['youtube_copilot'],
+}
+
 const Portfolio = () => {
-	const { t } = useTranslation('global') // Initialize the i18next translation hook
+	const { t } = useTranslation('global')
+	const mode = useSelector(state => state.darkmode.mode)
+	const [activeTab, setActiveTab] = useState('fullStack')
+	const [activeProject, setActiveProject] = useState(null)
 
 	useTitle('Portfolio')
-	const [projects, setProjects] = useState(Projects)
-	const [categories, setCategories] = useState()
-	const [loading, setLoading] = useState(true)
-	const [isActive, setActive] = useState(1)
-	const isPressed = useSelector(state => state.resetButton.buttonPressed)
-	const [selectedCategory, setSelectedCategory] = useState(null)
 
-	useEffect(() => {
-		const categories = () => {
-			let array = []
-			projects.forEach(project => {
-				array.push(...project.stack)
-			})
-			const uniqueCategories = [...new Set(array.map(stack => stack))]
-			setCategories(uniqueCategories)
-			setLoading(false)
+	const handleTabClick = tab => {
+		setActiveTab(tab)
+		const projectIds = PROJECT_IDS_BY_TAB[tab] || []
+		if (projectIds.length === 1) {
+			setActiveProject(projectIds[0])
+		} else {
+			setActiveProject(null)
 		}
+	}
 
-		categories()
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [projects])
+	const handleProjectClick = projectId => {
+		setActiveProject(activeProject === projectId ? null : projectId)
+	}
 
-	// Show posts that are only related to the clicked category when clicked
-	const handleSelectedCategory = selectedCategory => {
-		const filtered = projects.filter(project =>
-			project.stack.includes(selectedCategory)
-		)
-		return () => {
-			setProjects(filtered)
-			setSelectedCategory(selectedCategory)
-			// toast.info(
-			// 	`카테고리는 자동으로 채워집니다. ${selectedCategory} 카테고리를 선택 하였지만 아직 포트폴리오에 올라온 프로젝트가 하나이기 때문에 필터링 되는게 않보일 것입니다.`
-			// );
+	const renderProjectDetails = projectId => {
+		if (projectId === 'torino') {
+			return (
+				<Section>
+					<Flex align='center' justify='flex-start' gap='1rem'>
+						<H3>{t('project2.subtitle')}</H3>
+						<ProjectLink>
+							<GithubButtonForPortfolio
+								link={t('project2.link')}
+								title={t('project2.linkTitle')}
+								isPrivate
+							/>
+							<LinkButton
+								link='https://torino-git-develop-jasons-projects-78bd2c92.vercel.app/login'
+								title='Torino Live Demo'
+							/>
+						</ProjectLink>
+					</Flex>
+					<span className='light'>{t('project2.duration')}</span> <br />
+					<ul className='projectBullet'>
+						<Stack>
+							<span>{t('project2.stack')}</span>
+							<StackBadges>
+								<Badge>
+									<img src={mode === 'dark' ? nextjsWhite : nextjs} alt='Next.js' />
+									<p> Next.js </p>
+								</Badge>
+								<Badge>
+									<img src={react} alt='React' />
+									<p> React </p>
+								</Badge>
+								<Badge>
+									<img src={typescript} alt='TypeScript' />
+									<p> TypeScript </p>
+								</Badge>
+								<Badge>
+									<img src={tailwindcss} alt='Tailwind CSS' />
+									<p> Tailwind CSS </p>
+								</Badge>
+								<Badge>
+									<img src={supabase} alt='Supabase' />
+									<p> Supabase </p>
+								</Badge>
+								<Badge>
+									<img src={postgresql} alt='PostgreSQL' />
+									<p> PostgreSQL </p>
+								</Badge>
+							</StackBadges>
+						</Stack>{' '}
+						<ul>
+							<li>{t('project2.description.listItem1')}</li>
+							<li>{t('project2.description.listItem2')}</li>
+							<li>{t('project2.description.listItem3')}</li>
+							<li>{t('project2.description.listItem4')}</li>
+							<li>
+								{t('project2.description.listItem5')}
+								<ul>
+									<li>{t('project2.description.listSubItem1')}</li>
+									<li>{t('project2.description.listSubItem2')}</li>
+									<li>{t('project2.description.listSubItem3')}</li>
+									<li>{t('project2.description.listSubItem4')}</li>
+								</ul>
+							</li>
+							<li>{t('project2.description.listItem6')}</li>
+						</ul>
+					</ul>
+				</Section>
+			)
+		} else if (projectId === 'sexybrain') {
+			return (
+				<Section>
+					<Flex align='center' justify='flex-start' gap='1rem'>
+						<H3>{t('project1.subtitle')}</H3>
+						<ProjectLink>
+							<GithubButtonForPortfolio
+								link={t('project1.link')}
+								title={t('project1.linkTitle')}
+							/>
+							<LinkButton
+								link='https://sexybrain.dev'
+								title='sexybrain website'
+							/>
+						</ProjectLink>
+					</Flex>
+					<span className='light'>{t('project1.duration')}</span> <br />
+					<ul className='projectBullet'>
+						<Stack>
+							<span>{t('project1.stack')}</span>
+							<StackBadges>
+								<Badge>
+									<img src={react} alt='React' />
+									<p> React </p>
+								</Badge>
+								<Badge>
+									<img src={redux} alt='Redux' />
+									<p> Redux </p>
+								</Badge>
+								<Badge>
+									<img src={firebase} alt='Firebase' />
+									<p> Firebase </p>
+								</Badge>
+								<Badge>
+									<img src={styledComponents} alt='Styled Components' />
+									<p> Styled Components </p>
+								</Badge>
+							</StackBadges>
+						</Stack>{' '}
+						<ul>
+							<li>{t('project1.description.listItem1')}</li>
+							<li>{t('project1.description.listItem2')}</li>
+							<li>{t('project1.description.listItem3')}</li>
+							<li>{t('project1.description.listItem4')}</li>
+							<li>
+								{t('project1.description.listItem5')}
+								<ul>
+									<li>{t('project1.description.listSubItem1')}</li>
+									<li>{t('project1.description.listSubItem2')}</li>
+									<li>{t('project1.description.listSubItem3')}</li>
+								</ul>
+							</li>
+							<li>{t('project1.description.listItem6')}</li>
+						</ul>
+					</ul>
+				</Section>
+			)
+		} else if (projectId === 'youtube_copilot') {
+			return (
+				<Section>
+					<Flex align='center' justify='flex-start' gap='1rem'>
+						<H3>{t('project3.subtitle')}</H3>
+						<ProjectLink>
+							<GithubButtonForPortfolio
+								link={t('project3.link')}
+								title={t('project3.linkTitle')}
+							/>
+							<LinkButton
+								link={t('project3.releasesLink')}
+								title={t('project3.releasesLinkTitle')}
+							/>
+						</ProjectLink>
+					</Flex>
+					<span className='light'>{t('project3.duration')}</span> <br />
+					<ul className='projectBullet'>
+						<Stack>
+							<span>{t('project3.stack')}</span>
+							<StackBadges>
+								<Badge>
+									<img src={react} alt='React' />
+									<p> React </p>
+								</Badge>
+								<Badge>
+									<img src={typescript} alt='TypeScript' />
+									<p> TypeScript </p>
+								</Badge>
+								<Badge>
+									<img src={tailwindcss} alt='Tailwind CSS' />
+									<p> Tailwind CSS </p>
+								</Badge>
+								<Badge>
+									<p>Tauri</p>
+								</Badge>
+								<Badge>
+									<p>Rust</p>
+								</Badge>
+								<Badge>
+									<p>Vite</p>
+								</Badge>
+							</StackBadges>
+						</Stack>{' '}
+						<ul>
+							<li>{t('project3.description.listItem1')}</li>
+							<li>{t('project3.description.listItem2')}</li>
+							<li>{t('project3.description.listItem3')}</li>
+							<li>{t('project3.description.listItem4')}</li>
+							<li>
+								{t('project3.description.listItem5')}
+								<ul>
+									<li>{t('project3.description.listSubItem1')}</li>
+									<li>{t('project3.description.listSubItem2')}</li>
+									<li>{t('project3.description.listSubItem3')}</li>
+									<li>{t('project3.description.listSubItem4')}</li>
+								</ul>
+							</li>
+							<li>{t('project3.description.listItem6')}</li>
+						</ul>
+					</ul>
+				</Section>
+			)
 		}
+		return null
 	}
 
 	return (
 		<PortFolioContainer>
-			{/* Left sidebar filter section start */}
-			{/* <FilterContainer>
-				<>Filter by category:</>
-				{categories &&
-					categories.length > 2 &&
-					categories.map(category => {
-						return (
-							<CategoryFilter
-								key={nanoid()}
-								onClick={handleSelectedCategory(category)}
-								className={isPressed ? 'pressed' : ''}
-							>
-								<span>{category}</span>
-							</CategoryFilter>
-						);
-					})}
-			</FilterContainer> */}
-			{/* Left sidebar filter section start END*/}
-			<ProjectContainer>
-				{/* <Tabs>
-					<Tab className={isActive === 1 ? 'active' : ''} onClick={() => toggleActive(1)}>
-						SexyBrain.Dev
-					</Tab>
-					<Tab className={isActive === 2 ? 'active' : ''} onClick={() => toggleActive(2)}>
-						Project 2
-					</Tab>
-				</Tabs> */}
+			<ProjectContainer style={{ width: '100%', maxWidth: '1200px' }}>
 				<ContentContainer>
-					{projects &&
-						projects.map(project => (
-							<Content
-								className={isActive === 1 ? 'isActive' : ''}
-								key={nanoid()}
-							>
-								<ProjectContent>
-									<p className='featured'>
-										<mark>Featured Project</mark>
-									</p>
-									<H2>
-										<mark>
-											<a href='http://sexybrain.dev'>Sexy Brain Developer</a>
-										</mark>
-									</H2>
-									<Description>
-										<p>{t('portfolio.description')}</p>
-									</Description>
+					{/* Tab Navigation */}
+					<Tabs>
+						<Tab
+							className={activeTab === 'fullStack' ? 'active' : ''}
+							onClick={() => handleTabClick('fullStack')}
+						>
+							{t('categories.fullStack')}
+						</Tab>
+						<Tab
+							className={activeTab === 'electron' ? 'active' : ''}
+							onClick={() => handleTabClick('electron')}
+						>
+							{t('categories.electron')}
+						</Tab>
+					</Tabs>
 
-									<ProjectStack>
-										<ProjectStacks project={project} />
-									</ProjectStack>
+					{/* Tab Content */}
+					<TabContent>
+						{activeTab === 'fullStack' && (
+							<>
+								<ProjectButton
+									className={activeProject === 'torino' ? 'active' : ''}
+									onClick={() => handleProjectClick('torino')}
+								>
+									{t('project2.subtitle')}
+								</ProjectButton>
+								<ProjectDetails isOpen={activeProject === 'torino'}>
+									{renderProjectDetails('torino')}
+								</ProjectDetails>
 
-									<ProjectLink>
-										{project && project.githubRepo ? (
-											<GithubButtonForPortfolio
-												link='https://github.com/hiredtocode/sexybrain'
-												title='sexybrain github'
-											/>
-										) : null}
-										{project && project.hyperlink ? (
-											<LinkButton
-												link='https://sexybrain.dev'
-												title='sexybrain website'
-											/>
-										) : null}
-									</ProjectLink>
-								</ProjectContent>
-								<ProjectImage>
-									<a
-										href='https://sexybrain.dev'
-										rel='author noreferrer'
-										target='_blank'
-										aria-label='sexybrain main page'
-									>
-										<img src={darkScreenShot} alt='' className='image' />
-									</a>
-								</ProjectImage>
-							</Content>
-						))}
-					<Content className={isActive === 2 ? 'active' : ''}></Content>
+								<ProjectButton
+									className={activeProject === 'sexybrain' ? 'active' : ''}
+									onClick={() => handleProjectClick('sexybrain')}
+								>
+									{t('project1.subtitle')}
+								</ProjectButton>
+								<ProjectDetails isOpen={activeProject === 'sexybrain'}>
+									{renderProjectDetails('sexybrain')}
+								</ProjectDetails>
+							</>
+						)}
+
+						{activeTab === 'electron' && (
+							<>
+								<ProjectButton
+									className={activeProject === 'youtube_copilot' ? 'active' : ''}
+									onClick={() => handleProjectClick('youtube_copilot')}
+								>
+									{t('project3.subtitle')}
+								</ProjectButton>
+								<ProjectDetails isOpen={activeProject === 'youtube_copilot'}>
+									{renderProjectDetails('youtube_copilot')}
+								</ProjectDetails>
+							</>
+						)}
+					</TabContent>
 				</ContentContainer>
 			</ProjectContainer>
 		</PortFolioContainer>
 	)
 }
+
 export default Portfolio

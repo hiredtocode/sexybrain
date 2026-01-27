@@ -10,7 +10,12 @@ const DarkLightMode = ({ mode, setDarkMode, setLightMode }) => {
 	}
 
 	return (
-		<DarkLightContainer onClick={handleClick(mode, setDarkMode, setLightMode)}>
+		<DarkLightContainer 
+			onClick={handleClick(mode, setDarkMode, setLightMode)}
+			aria-label={mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+			role="button"
+			tabIndex={0}
+		>
 			{mode === 'dark' ? <SunIcon /> : <MoonIcon />}
 		</DarkLightContainer>
 	)

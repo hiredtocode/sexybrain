@@ -2,9 +2,11 @@ import { createGlobalStyle } from 'styled-components/macro'
 
 const GlobalStyles = createGlobalStyle`
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
 * {
   box-sizing: border-box;
-	font-family: 'Quicksand', 'sans-serif';
+	font-family: 'Quicksand', 'Noto Sans KR', sans-serif;
 
 	/* Firefox scrollbar */
   scrollbar-color: ${({ theme }) => theme.colors.primaryBackground} ${({
