@@ -266,10 +266,13 @@ export const Content2 = styled.div`
 export const Badge = styled.div`
 	margin: 3px 3px;
 	display: flex;
-	padding: 5px 10px;
 	align-items: center;
-	max-height: 40px;
 	justify-content: center;
+	gap: 8px;
+	padding: 5px 14px;
+	min-width: 100px;
+	max-height: 40px;
+	box-sizing: border-box;
 	border-radius: 10px;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 	font-size: 1rem;
@@ -277,26 +280,35 @@ export const Badge = styled.div`
 
 	/* xs: '575.98px' */
 	@media (max-width: ${({ theme }) => theme.xs}) {
-		padding: 8px;
+		padding: 8px 12px;
+		min-width: 80px;
 	}
 	/* s: '767.98px'  */
 	@media (max-width: ${({ theme }) => theme.s}) {
-		padding: 8px;
+		padding: 8px 12px;
+		min-width: 80px;
 	}
 
 	img {
+		width: 28px;
+		min-width: 28px;
 		max-width: 35px;
-		padding: 0 5px;
+		max-height: 28px;
+		height: auto;
+		object-fit: contain;
+		flex-shrink: 0;
 
 		/* xs: '575.98px' */
 		@media (max-width: ${({ theme }) => theme.xs}) {
 			padding: 0;
 			max-width: 28px;
+			max-height: 24px;
 		}
 		/* s: '767.98px'  */
 		@media (max-width: ${({ theme }) => theme.s}) {
 			padding: 0;
 			max-width: 28px;
+			max-height: 24px;
 		}
 	}
 	p {

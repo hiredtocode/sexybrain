@@ -25,16 +25,20 @@ import {
 import { useTranslation } from 'react-i18next'
 
 // Import icons
+import firebase from '../assets/img/firebase-icon.svg'
+import javascript from '../assets/img/javascript.svg'
 import nextjsWhite from '../assets/img/nextjs-white.svg'
 import nextjs from '../assets/img/nextjs.svg'
-import react from '../assets/img/react.svg'
-import typescript from '../assets/img/typescript.svg'
-import tailwindcss from '../assets/img/tailwindcss.svg'
-import supabase from '../assets/img/supabase.svg'
 import postgresql from '../assets/img/postgresql.svg'
+import react from '../assets/img/react.svg'
 import redux from '../assets/img/redux.svg'
-import firebase from '../assets/img/firebase-icon.svg'
 import styledComponents from '../assets/img/styledComponentsLogo.svg'
+import supabase from '../assets/img/supabase.svg'
+import tailwindcss from '../assets/img/tailwindcss.svg'
+import typescript from '../assets/img/typescript.svg'
+import rust from '../assets/img/Rust.svg'
+import tauri from '../assets/img/Tauri.svg'
+import vite from '../assets/img/Vite.js.svg'
 
 const PROJECT_IDS_BY_TAB = {
 	fullStack: ['torino', 'sexybrain'],
@@ -179,16 +183,20 @@ const Portfolio = () => {
 									<p> React </p>
 								</Badge>
 								<Badge>
-									<img src={redux} alt='Redux' />
-									<p> Redux </p>
-								</Badge>
-								<Badge>
 									<img src={firebase} alt='Firebase' />
 									<p> Firebase </p>
 								</Badge>
 								<Badge>
+									<img src={javascript} alt='JavaScript' />
+									<p> JavaScript </p>
+								</Badge>
+								<Badge>
 									<img src={styledComponents} alt='Styled Components' />
 									<p> Styled Components </p>
+								</Badge>
+								<Badge>
+									<img src={redux} alt='Redux' />
+									<p> Redux </p>
 								</Badge>
 							</StackBadges>
 						</Stack>{' '}
@@ -255,13 +263,16 @@ const Portfolio = () => {
 									<p> Tailwind CSS </p>
 								</Badge>
 								<Badge>
-									<p>Tauri</p>
+									<img src={tauri} alt='Tauri' />
+									<p> Tauri </p>
 								</Badge>
 								<Badge>
-									<p>Rust</p>
+									<img src={rust} alt='Rust' />
+									<p> Rust </p>
 								</Badge>
 								<Badge>
-									<p>Vite</p>
+									<img src={vite} alt='Vite' />
+									<p> Vite </p>
 								</Badge>
 							</StackBadges>
 						</Stack>{' '}

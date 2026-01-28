@@ -488,6 +488,9 @@ export const StackButton = styled.div`
 
 	img {
 		width: 30px;
+		max-height: 28px;
+		height: auto;
+		object-fit: contain;
 		opacity: 0.6;
 	}
 

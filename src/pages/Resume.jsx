@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux'
 import bootstrap from '../assets/img/bootstrap.svg'
 import css from '../assets/img/css3.svg'
+import firebase from '../assets/img/firebase-icon.svg'
 import html from '../assets/img/html.svg'
 import JavascriptLogo from '../assets/img/javascript.svg'
 import materialUi from '../assets/img/material-ui.svg'
@@ -8,10 +9,12 @@ import nextjsWhite from '../assets/img/nextjs-white.svg'
 import nextjs from '../assets/img/nextjs.svg'
 import nodejs from '../assets/img/nodejs.svg'
 import nodejsLight from '../assets/img/nodejsLight.svg'
-import python from '../assets/img/python.svg'
+import postgresql from '../assets/img/postgresql.svg'
 import react from '../assets/img/react.svg'
 import sass from '../assets/img/sass.svg'
 import styledComponents from '../assets/img/styledComponentsLogo.svg'
+import supabase from '../assets/img/supabase.svg'
+import tailwindcss from '../assets/img/tailwindcss.svg'
 import typescript from '../assets/img/typescript.svg'
 import profilePicture from '../assets/resume/사진.jpg'
 import useTitle from '../components/hook/useTitle'
@@ -111,6 +114,10 @@ const Resume = () => {
 						<p> Styled Components </p>
 					</Badge>
 					<Badge>
+						<img src={tailwindcss} alt='Tailwind CSS' />
+						<p> Tailwind CSS </p>
+					</Badge>
+					<Badge>
 						<img src={bootstrap} alt='Bootstrap' />
 						<p> Bootstrap </p>
 					</Badge>
@@ -125,12 +132,20 @@ const Resume = () => {
 					style={{ paddingTop: '15px', paddingBottom: '25px' }}
 				>
 					<Badge>
-						<img src={python} alt='Python' />
-						<p> Python </p>
+						<img src={mode === 'dark' ? nodejsLight : nodejs} alt='Node.js' />
+						<p> Node.js </p>
 					</Badge>
 					<Badge>
-						<img src={mode === 'dark' ? nodejsLight : nodejs} alt='Node JS' />
-						<p> Node.js </p>
+						<img src={firebase} alt='Firebase' />
+						<p> Firebase </p>
+					</Badge>
+					<Badge>
+						<img src={supabase} alt='Supabase' />
+						<p> Supabase </p>
+					</Badge>
+					<Badge>
+						<img src={postgresql} alt='PostgreSQL' />
+						<p> PostgreSQL </p>
 					</Badge>
 				</Flex>
 
@@ -158,10 +173,11 @@ const Resume = () => {
 					<ToolsCard>
 						<ToolsCardTitle>Back-end</ToolsCardTitle>
 						<ToolsCardList>
-							<p>Python</p>
-							<p>NodeJS</p>
-							<p>RESTful API</p>
 							<p>Firebase</p>
+							<p>Supabase</p>
+							<p>PostgreSQL</p>
+							<p>Node.js</p>
+							<p>RESTful API</p>
 						</ToolsCardList>
 					</ToolsCard>
 					<ToolsCard>

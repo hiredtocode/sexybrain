@@ -9,7 +9,9 @@ import javascript from '../assets/img/javascript.svg'
 import materialUi from '../assets/img/material-ui.svg'
 import nextjs from '../assets/img/nextjs.svg'
 import nodejs from '../assets/img/nodejs.svg'
+import postgresql from '../assets/img/postgresql.svg'
 import programmer from '../assets/img/programmer.svg'
+import supabase from '../assets/img/supabase.svg'
 import question from '../assets/img/question.svg'
 import react from '../assets/img/react.svg'
 import redux from '../assets/img/redux.svg'
@@ -177,6 +179,7 @@ const CategoryList = props => {
 							</CategoryButton>
 						)
 					case 'NextJS':
+					case 'Next.js':
 						return (
 							<CategoryButton
 								key={nanoid()}
@@ -187,12 +190,33 @@ const CategoryList = props => {
 							</CategoryButton>
 						)
 					case 'NodeJS':
+					case 'Node.js':
 						return (
 							<CategoryButton
 								key={nanoid()}
 								onClick={handleSelectCategory(category)}
 							>
 								<img src={nodejs} alt={category} />
+								<span>{category}</span>
+							</CategoryButton>
+						)
+					case 'Supabase':
+						return (
+							<CategoryButton
+								key={nanoid()}
+								onClick={handleSelectCategory(category)}
+							>
+								<img src={supabase} alt={category} />
+								<span>{category}</span>
+							</CategoryButton>
+						)
+					case 'PostgreSQL':
+						return (
+							<CategoryButton
+								key={nanoid()}
+								onClick={handleSelectCategory(category)}
+							>
+								<img src={postgresql} alt={category} />
 								<span>{category}</span>
 							</CategoryButton>
 						)

@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+# Exclude build output from secret scanning: CRA inlines REACT_APP_* at build time,
+# and Firebase client config (projectId, apiKey, etc.) is public by design.
+[build.environment]
+  SECRETS_SCAN_OMIT_PATHS = "build"
