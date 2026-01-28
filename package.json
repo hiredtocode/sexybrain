@@ -3,7 +3,7 @@
 	"version": "2.0.1",
 	"private": true,
 	"engines": {
-		"node": ">=18"
+		"node": "24.x"
 	},
 	"dependencies": {
 		"node-sass": "npm:sass@^1.71.0",
