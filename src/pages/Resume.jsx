@@ -19,14 +19,14 @@ import { Flex, H2, H3, LineBreak } from '../components/styles/General.styled.js'
 
 import {
 	Badge,
-	Border,
-	Card,
-	CardContainer,
 	Contact,
 	Content1,
-	Content2,
 	ProfilePic,
 	Section,
+	ToolsCard,
+	ToolsCardGrid,
+	ToolsCardList,
+	ToolsCardTitle,
 } from '../components/styles/Resume.styled.js'
 
 import { useTranslation } from 'react-i18next'
@@ -39,7 +39,7 @@ const Resume = () => {
 
 	return (
 		<main>
-			<Flex justify={'space-around'}>
+			<Flex justify={'space-around'} align='center'>
 				<ProfilePic>
 					<div className='box'>
 						<div className='box-cover'>
@@ -154,58 +154,43 @@ const Resume = () => {
 
 				<H3>{t('tools.title')}</H3>
 
-				<Flex wrap={'wrap'} justify={'space-around'}>
-					<CardContainer>
-						<Border>
-							<Card>
-								<Content2>
-									<H3>Back-end</H3>
-									<p>Python</p>
-									<p>NodeJS</p>
-									<p>RESTful API</p>
-									<p>Firebase</p>
-								</Content2>
-							</Card>
-						</Border>
-					</CardContainer>
-					<CardContainer>
-						<Border>
-							<Card>
-								<Content2>
-									<H3>DevOps</H3>
-									<p>Git</p>
-									<p>Github - CI/CD</p>
-								</Content2>
-							</Card>
-						</Border>
-					</CardContainer>
-					<CardContainer>
-						<Border>
-							<Card>
-								<Content2>
-									<H3>Collaboration</H3>
-									<p>Jira</p>
-									<p>Slack</p>
-									<p>Notion</p>
-									<p>Google Drive</p>
-									<p>Discord</p>
-								</Content2>
-							</Card>
-						</Border>
-					</CardContainer>
-					<CardContainer>
-						<Border>
-							<Card>
-								<Content2>
-									<H3>{t('other.title')}</H3>
-									<p>{t('other.skills.problemSolving')}</p>
-									<p>{t('other.skills.computerSkills')}</p>
-									<p>{t('other.skills.leadership')}</p>
-								</Content2>
-							</Card>
-						</Border>
-					</CardContainer>
-				</Flex>
+				<ToolsCardGrid>
+					<ToolsCard>
+						<ToolsCardTitle>Back-end</ToolsCardTitle>
+						<ToolsCardList>
+							<p>Python</p>
+							<p>NodeJS</p>
+							<p>RESTful API</p>
+							<p>Firebase</p>
+						</ToolsCardList>
+					</ToolsCard>
+					<ToolsCard>
+						<ToolsCardTitle>DevOps</ToolsCardTitle>
+						<ToolsCardList>
+							<p>Git</p>
+							<p>Github - CI/CD</p>
+						</ToolsCardList>
+					</ToolsCard>
+					<ToolsCard>
+						<ToolsCardTitle>Collaboration</ToolsCardTitle>
+						<ToolsCardList>
+							<p>Jira</p>
+							<p>Slack</p>
+							<p>Notion</p>
+							<p>Google Drive</p>
+							<p>Discord</p>
+						</ToolsCardList>
+					</ToolsCard>
+					<ToolsCard>
+						<ToolsCardTitle>{t('other.title')}</ToolsCardTitle>
+						<ToolsCardList>
+							<p>{t('other.skills.problemSolving')}</p>
+							<p>{t('other.skills.computerSkills')}</p>
+							<p>{t('other.skills.leadership')}</p>
+							<p>{t('other.skills.criticalThinking')}</p>
+						</ToolsCardList>
+					</ToolsCard>
+				</ToolsCardGrid>
 			</Section>
 			{/* Skills section END */}
 		</main>

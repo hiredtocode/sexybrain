@@ -326,3 +326,70 @@ export const Badge = styled.div`
 		color: ${({ theme }) => theme.colors.heading};
 	}
 `
+
+/** Tools section: responsive grid of modern cards */
+export const ToolsCardGrid = styled.div`
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 1.25rem;
+	width: 100%;
+	max-width: 100%;
+	margin-top: 0.5rem;
+	margin-bottom: 1rem;
+
+	@media (min-width: 600px) {
+		grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	}
+`
+
+/** Single Tools card – clean layout, no text overflow */
+export const ToolsCard = styled.article`
+	background: ${({ theme }) => theme.colors.card};
+	border-radius: 12px;
+	padding: 1.25rem 1rem;
+	min-width: 0;
+	overflow: hidden;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+	border: 1px solid ${({ theme }) => theme.colors.lineBreak};
+	border-top: 3px solid ${({ theme }) => theme.colors.primary};
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+	&:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+		border-color: ${({ theme }) => theme.colors.subText};
+	}
+`
+
+export const ToolsCardTitle = styled.h3`
+	font-size: 1rem;
+	font-weight: 700;
+	color: ${({ theme }) => theme.colors.heading};
+	margin: 0 0 0.75rem 0;
+	text-align: center;
+	letter-spacing: 0.02em;
+`
+
+export const ToolsCardList = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.35rem 0.5rem;
+	justify-content: center;
+	align-items: center;
+	min-width: 0;
+
+	p {
+		margin: 0;
+		font-size: 0.875rem;
+		font-weight: 500;
+		color: ${({ theme }) => theme.colors.font};
+		background: ${({ theme }) => theme.colors.body};
+		padding: 0.25rem 0.5rem;
+		border-radius: 6px;
+		overflow-wrap: break-word;
+		word-break: break-word;
+		max-width: 100%;
+		line-height: 1.35;
+		border: 1px solid ${({ theme }) => theme.colors.lineBreak};
+	}
+`
