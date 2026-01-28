@@ -11,25 +11,34 @@
 		"phone": "437-254-8891",
 		"address": "151 Townsgate Dr, Thornhill, ON, Canada",
 		"mainTitle": "Hi and welcome!",
-		"mainSubTitle": "From Entrepreneurship to Code: My Frontend Journey",
-		"content1.paragraph1": "I'm a Web Developer with a diverse background spanning various fields, including sales, marketing, project management, professional day trading, and operating my own business for over 10 years.\n In the last 1~2 years, I embarked on a journey to learn coding and dedicated myself to honing my skills in JavaScript (ES6+), React framework, and Styled Components while having a full-time job as a hardware engineer. This experience has enabled me to proficiently create engaging designs and interactive functionalities for web applications.\nThroughout my career, I have gathered valuable transferable skills, such as effective communication, problem-solving, and adaptability, which I bring to my programming projects. I am continuously driven by my passion for technology, which motivates me to explore new advancements and trends, allowing me to identify efficient solutions for complex challenges.\nHaving moved to Canada at a young age, I am fluent in both Korean and English, which facilitates effective communication and collaboration with diverse teams and stakeholders. As a junior Frontend Developer, I am eager to contribute my diverse skill set to innovative projects and further enhance my expertise in the programming world.\nI am always open to learning and growing, understanding that there's endless potential for improvement. I humbly appreciate your consideration of my profile, and I am excited to discuss how my unique background can benefit your team."
+		"mainSubTitle": "From Entrepreneurship to Code: My Developer Journey",
+		"content1.paragraph1": "I'm a Web Developer with a diverse background in sales, marketing, project management, professional day trading, and over 10 years running my own business.\n\nA few years ago I started learning to code and have focused on JavaScript (ES6+), React, and Styled Components while working full-time as a hardware engineer. That has given me a strong foundation in building engaging designs and interactive features for web applications.\n\nFrom my previous roles I bring transferable skills in communication, problem-solving, and adaptability, and I keep up with new tools and trends to find efficient solutions to complex problems.\n\nI grew up in Canada and am fluent in Korean and English, which helps me work effectively with diverse teams and stakeholders. As a Developer, I'm eager to apply this background to impactful projects and keep growing in web development.\n\nI'm always open to learning and improving, and I use AI-assisted development and other tools to learn efficiently and deliver reliably. I'd be glad to discuss how my experience could support your team. Thank you for considering my profile."
 	},
 	"skills": {
 		"title": "Technical Skills",
-		"subtitle1": "Front-end",
+		"subtitle1": "HTML, SASS, JavaScript / TypeScript",
 		"subtitle2": "Back-end",
-		"htmlSassLayout": "Capable of implementing layouts and responsive web apps using HTML / SASS.",
-		"styledComponents": "Preventing styling bugs even when the app is extended, using Styled Components.",
-		"javascriptEs6": "Proficient in JavaScript ES6+ development.",
-		"typescriptExperience": "Experience in using TypeScript."
+		"htmlSassLayout": "Experienced in implementing layouts and responsive web apps with HTML and SASS.",
+		"styledComponents": "Use Styled Components to prevent styling bugs even as the app grows.",
+		"javascriptEs6": "Experienced in JavaScript ES6+ development.",
+		"typescriptExperience": "Experienced in TypeScript.",
+		"tailwindCss": "Experienced in utility-first styling with Tailwind CSS."
+	},
+	"backend": {
+		"nodeJs": "Experienced in server-side development with Node.js.",
+		"firebase": "Experienced in authentication, database, and hosting with Firebase.",
+		"supabase": "Experienced in backend development with Supabase (PostgreSQL, Auth, Realtime).",
+		"postgresql": "Experienced in relational database design and queries with PostgreSQL.",
+		"restfulApi": "Experienced in designing and consuming RESTful APIs."
 	},
 	"framework": {
-		"statePropsComponent": "Capable of designing React components and managing state and props.",
+		"title": "Framework & Library",
+		"statePropsComponent": "Experienced in designing React components and managing state and props.",
 		"spaImplementation": "Experienced in implementing Single Page Applications (SPAs) using React Router.",
-		"optimizationExperience": "Have experience in optimizing applications using React.memo, useMemo, and useCallback.",
-		"reduxToolkit": "Familiar with state management using Redux Toolkit.",
-		"nextJsExperience": "Developed server-side rendering and static website apps using Next.js.",
-		"angularExperience": "Worked on web applications using Angular for approximately 2 months."
+		"optimizationExperience": "Experienced in optimizing applications using React.memo, useMemo, and useCallback.",
+		"reduxToolkit": "Experienced in state management with Redux Toolkit.",
+		"nextJsExperience": "Built server-rendered and static web apps with Next.js.",
+		"angularExperience": "Experienced in building web applications with Angular (approx. 2 months)."
 	},
 	"tools": {
 		"title": "Tools"
@@ -54,13 +63,13 @@
 		"duration": "2022.09 ~ 2022.12",
 		"stack": "Stack",
 		"description": {
-			"listItem1": "I am developing this project from scratch without using any templates. The reason for this approach is that when I started developing with React, I wanted to understand how web apps like a blog function. I found that working on small projects and exploring the required skills efficiently helped me learn more than formal studying.",
+			"listItem1": "I developed this project from scratch without using any templates. The reason for this approach is that when I started developing with React, I wanted to understand how web apps like a blog function. I found that working on small projects and learning the skills hands-on helped me learn more than formal study.",
 			"listItem2": "For styling, I initially used CSS, then briefly tried SASS, and later switched to Styled Components. Using Styled Components allows for easier maintenance and eliminates unexpected styling bugs, which is a significant advantage.",
-			"listItem3": "Responsive web app",
-			"listItem4": "Backend is built with Firebase to enable features like login, posting, editing, and deleting.",
-			"listItem5": "Blog (Markdown)",
+			"listItem3": "Responsive layout for mobile and desktop",
+			"listItem4": "Backend uses Firebase for login, posting, editing, and deleting.",
+			"listItem5": "Blog posts written in Markdown",
 			"listSubItem1": "Login / Logout",
-			"listSubItem2": "Posting page after login, Editing / Deleting",
+			"listSubItem2": "Post, edit, and delete (after login)",
 			"listSubItem3": "Sorted by tags + categories",
 			"listItem6": "Portfolio"
 		}

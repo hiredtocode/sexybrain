@@ -11,6 +11,7 @@ import nodejs from '../assets/img/nodejs.svg'
 import nodejsLight from '../assets/img/nodejsLight.svg'
 import postgresql from '../assets/img/postgresql.svg'
 import react from '../assets/img/react.svg'
+import redux from '../assets/img/redux.svg'
 import sass from '../assets/img/sass.svg'
 import styledComponents from '../assets/img/styledComponentsLogo.svg'
 import supabase from '../assets/img/supabase.svg'
@@ -114,6 +115,10 @@ const Resume = () => {
 						<p> Styled Components </p>
 					</Badge>
 					<Badge>
+						<img src={redux} alt='Redux' />
+						<p> Redux </p>
+					</Badge>
+					<Badge>
 						<img src={tailwindcss} alt='Tailwind CSS' />
 						<p> Tailwind CSS </p>
 					</Badge>
@@ -149,22 +154,32 @@ const Resume = () => {
 					</Badge>
 				</Flex>
 
-				<H3>HTML, SASS, JavaScript(TypeScript)</H3>
+				<H3>{t('skills.subtitle1')}</H3>
 				<ul>
 					<li>{t('skills.htmlSassLayout')}</li>
 					<li>{t('skills.styledComponents')}</li>
 					<li>{t('skills.javascriptEs6')}</li>
 					<li>{t('skills.typescriptExperience')}</li>
+					<li>{t('skills.tailwindCss')}</li>
 				</ul>
 
-				<H3>Framework & Library</H3>
+				<H3>{t('framework.title')}</H3>
 				<ul>
 					<li>{t('framework.statePropsComponent')}</li>
 					<li>{t('framework.spaImplementation')}</li>
 					<li>{t('framework.optimizationExperience')}</li>
 					<li>{t('framework.reduxToolkit')}</li>
 					<li>{t('framework.nextJsExperience')}</li>
-					{/* <li>{t('reactSkills.angularExperience')}</li> */}
+					{/* <li>{t('framework.angularExperience')}</li> */}
+				</ul>
+
+				<H3>{t('skills.subtitle2')}</H3>
+				<ul>
+					<li>{t('backend.nodeJs')}</li>
+					<li>{t('backend.firebase')}</li>
+					<li>{t('backend.supabase')}</li>
+					<li>{t('backend.postgresql')}</li>
+					<li>{t('backend.restfulApi')}</li>
 				</ul>
 
 				<H3>{t('tools.title')}</H3>

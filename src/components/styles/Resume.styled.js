@@ -374,7 +374,7 @@ export const ToolsCard = styled.article`
 `
 
 export const ToolsCardTitle = styled.h3`
-	font-size: 1rem;
+	font-size: 1.25rem;
 	font-weight: 700;
 	color: ${({ theme }) => theme.colors.heading};
 	margin: 0 0 0.75rem 0;
@@ -392,11 +392,11 @@ export const ToolsCardList = styled.div`
 
 	p {
 		margin: 0;
-		font-size: 0.875rem;
+		font-size: 1rem;
 		font-weight: 500;
 		color: ${({ theme }) => theme.colors.font};
 		background: ${({ theme }) => theme.colors.body};
-		padding: 0.25rem 0.5rem;
+		padding: 0.3rem 0.6rem;
 		border-radius: 6px;
 		overflow-wrap: break-word;
 		word-break: break-word;
