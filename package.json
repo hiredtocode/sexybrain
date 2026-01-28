@@ -18,7 +18,6 @@
 		"@types/semver": "^7.3.13",
 		"firebase": "^9.23.0",
 		"i18next": "^23.2.11",
-		"node-sass": "npm:sass@^1.71.0",
 		"react": "^18.2.0",
 		"react-copy-to-clipboard": "^5.1.0",
 		"react-dom": "^18.2.0",
