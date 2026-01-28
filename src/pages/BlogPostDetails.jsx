@@ -15,6 +15,7 @@ import DefaultImage from '../assets/img/default.jpg'
 import useTitle from '../components/hook/useTitle'
 import {
 	BlogDetail,
+	BlogDetailPageLayout,
 	BlogTitleBox,
 	MarkdownContainer,
 } from '../components/styles/Blog.styled.js'
@@ -42,7 +43,7 @@ const PostDetailPage = props => {
 	}
 
 	return (
-		<div className='single' style={{ flexGrow: '1' }}>
+		<BlogDetailPageLayout className='single'>
 			{/* Show default image if no image was uploaded */}
 			<BlogTitleBox
 				style={
@@ -124,7 +125,7 @@ const PostDetailPage = props => {
 					/>
 				</MarkdownContainer>
 			</BlogDetail>
-		</div>
+		</BlogDetailPageLayout>
 	)
 }
 
