@@ -35,15 +35,30 @@ const Auth = props => {
 	const handleAuth = async e => {
 		e.preventDefault()
 		if (!signUp) {
-			if (email && password) {
+			if (!email || !password) {
+				return toast.error('All fields are mandatory to fill')
+			}
+			try {
 				const { user } = await signInWithEmailAndPassword(auth, email, password)
 				setUser(user)
 				toast.success(`Login Success. Welcome Jason!`)
-			} else {
-				return toast.error('All fields are mandatory to fill')
+				navigate('/')
+			} catch (err) {
+				const code = err?.code ?? ''
+				if (code === 'auth/user-not-found') {
+					toast.error('No account found with this email. Please sign up first.')
+				} else if (code === 'auth/wrong-password' || code === 'auth/invalid-credential') {
+					toast.error('Invalid email or password.')
+				} else if (code === 'auth/invalid-email') {
+					toast.error('Please enter a valid email address.')
+				} else if (code === 'auth/too-many-requests') {
+					toast.error('Too many attempts. Please try again later.')
+				} else {
+					toast.error(err?.message || 'Login failed. Please try again.')
+				}
 			}
+			return
 		}
-
 		navigate('/')
 	}
 
