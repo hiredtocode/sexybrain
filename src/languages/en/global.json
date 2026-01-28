@@ -39,7 +39,8 @@
 		"skills": {
 			"problemSolving": "Problem Solving",
 			"computerSkills": "Computer Skills",
-			"leadership": "Leadership"
+			"leadership": "Leadership",
+			"criticalThinking": "Critical Thinking"
 		}
 	},
 	"project1": {
@@ -47,6 +48,9 @@
 		"subtitle": "Current portfolio site",
 		"link": "https://github.com/hiredtocode/sexybrain",
 		"linkTitle": "sexybrain github",
+		"demoVideoLink": "https://youtu.be/LZf2ztcUjKM",
+		"demoVideoLabel": "View demo:",
+		"demoVideoLinkText": "Watch demo video",
 		"duration": "2022.09 ~ 2022.12",
 		"stack": "Stack",
 		"description": {
@@ -66,6 +70,9 @@
 		"subtitle": "Torino - Construction Site Management System",
 		"link": "https://github.com/hiredtocode/torino",
 		"linkTitle": "Torino GitHub",
+		"demoVideoLink": "https://youtu.be/-PVJx4KDmO4",
+		"demoVideoLabel": "View demo:",
+		"demoVideoLinkText": "Watch demo video",
 		"duration": "2024.10 ~ 2024.11",
 		"stack": "Stack",
 		"description": {
@@ -88,7 +95,9 @@
 		"linkTitle": "YouTube Copilot GitHub",
 		"releasesLink": "https://github.com/hiredtocode/youtube_copilot/releases",
 		"releasesLinkTitle": "Download app (Windows / macOS / Linux)",
-		"tryAppLabel": "Try this app:",
+		"demoVideoLink": "https://youtu.be/0-1ENbRKojE",
+		"demoVideoLabel": "View demo:",
+		"demoVideoLinkText": "Watch demo video",
 		"duration": "In progress",
 		"stack": "Stack",
 		"description": {
@@ -101,7 +110,7 @@
 			"listSubItem2": "Scene-based workflow with local state and quick access to recents",
 			"listSubItem3": "Local AI support (LM Studio); ElevenLabs TTS on macOS/Linux",
 			"listSubItem4": "Desktop-first: Tauri app with native filesystem and local persistence",
-			"listItem6": "Portfolio piece; many features in progress. Try this app: use the \"Download app\" link above to get installers for Windows (.exe/.msi), macOS (.dmg), or Linux (.deb/.AppImage)."
+			"listItem6": "Portfolio piece; many features in progress. Use the \"Download app\" link above for installers. Use the \"View demo\" link for a walkthrough video."
 		}
 	},
 	"portfolio": {

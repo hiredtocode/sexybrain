@@ -39,7 +39,8 @@
 		"skills": {
 			"problemSolving": "문제해결",
 			"computerSkills": "컴퓨터활용",
-			"leadership": "리더십"
+			"leadership": "리더십",
+			"criticalThinking": "비판적 사고"
 		}
 	},
 	"project1": {
@@ -47,6 +48,9 @@
 		"subtitle": "Current portfolio site",
 		"link": "https://github.com/hiredtocode/sexybrain",
 		"linkTitle": "sexybrain 깃허브",
+		"demoVideoLink": "https://youtu.be/LZf2ztcUjKM",
+		"demoVideoLabel": "데모 보기:",
+		"demoVideoLinkText": "데모 영상 보기",
 		"stack": "스택",
 		"duration": "2022.09 ~ 2022.12",
 		"description": {
@@ -66,6 +70,9 @@
 		"subtitle": "Torino - 건설 현장 관리 시스템",
 		"link": "https://github.com/hiredtocode/torino",
 		"linkTitle": "Torino 깃허브",
+		"demoVideoLink": "https://youtu.be/-PVJx4KDmO4",
+		"demoVideoLabel": "데모 보기:",
+		"demoVideoLinkText": "데모 영상 보기",
 		"duration": "2024.10 ~ 2024.11",
 		"stack": "스택",
 		"description": {
@@ -88,7 +95,9 @@
 		"linkTitle": "YouTube Copilot 깃허브",
 		"releasesLink": "https://github.com/hiredtocode/youtube_copilot/releases",
 		"releasesLinkTitle": "앱 다운로드 (Windows / macOS / Linux)",
-		"tryAppLabel": "앱 사용해 보기:",
+		"demoVideoLink": "https://youtu.be/0-1ENbRKojE",
+		"demoVideoLabel": "데모 보기:",
+		"demoVideoLinkText": "데모 영상 보기",
 		"duration": "진행 중",
 		"stack": "스택",
 		"description": {
@@ -101,7 +110,7 @@
 			"listSubItem2": "로컬 상태와 최근 항목 빠른 접근이 있는 씬 기반 워크플로우",
 			"listSubItem3": "로컬 AI 지원(LM Studio); macOS/Linux에서는 ElevenLabs TTS",
 			"listSubItem4": "데스크톱 우선: 네이티브 파일시스템과 로컬 영속성을 갖춘 Tauri 앱",
-			"listItem6": "포트폴리오용 프로젝트이며 많은 기능이 진행 중입니다. 앱 사용해 보기: 위의 \"앱 다운로드\" 링크에서 Windows(.exe/.msi), macOS(.dmg), Linux(.deb/.AppImage)용 설치 프로그램을 받을 수 있습니다."
+			"listItem6": "포트폴리오용 프로젝트이며 많은 기능이 진행 중입니다. 위의 \"앱 다운로드\" 링크에서 설치 프로그램을, \"데모 보기\" 링크에서 워크스루 영상을 볼 수 있습니다."
 		}
 	},
 	"portfolio": {

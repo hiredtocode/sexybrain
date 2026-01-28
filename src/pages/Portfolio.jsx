@@ -82,6 +82,17 @@ const Portfolio = () => {
 						</ProjectLink>
 					</Flex>
 					<span className='light'>{t('project2.duration')}</span> <br />
+					<p style={{ marginTop: '12px', marginBottom: '16px' }}>
+						{t('project2.demoVideoLabel')}{' '}
+						<a
+							href={t('project2.demoVideoLink')}
+							target='_blank'
+							rel='noreferrer'
+							style={{ fontWeight: 600, textDecoration: 'underline' }}
+						>
+							{t('project2.demoVideoLinkText')}
+						</a>
+					</p>
 					<ul className='projectBullet'>
 						<Stack>
 							<span>{t('project2.stack')}</span>
@@ -148,6 +159,17 @@ const Portfolio = () => {
 						</ProjectLink>
 					</Flex>
 					<span className='light'>{t('project1.duration')}</span> <br />
+					<p style={{ marginTop: '12px', marginBottom: '16px' }}>
+						{t('project1.demoVideoLabel')}{' '}
+						<a
+							href={t('project1.demoVideoLink')}
+							target='_blank'
+							rel='noreferrer'
+							style={{ fontWeight: 600, textDecoration: 'underline' }}
+						>
+							{t('project1.demoVideoLinkText')}
+						</a>
+					</p>
 					<ul className='projectBullet'>
 						<Stack>
 							<span>{t('project1.stack')}</span>
@@ -206,14 +228,14 @@ const Portfolio = () => {
 					</Flex>
 					<span className='light'>{t('project3.duration')}</span> <br />
 					<p style={{ marginTop: '12px', marginBottom: '16px' }}>
-						{t('project3.tryAppLabel')}{' '}
+						{t('project3.demoVideoLabel')}{' '}
 						<a
-							href={t('project3.releasesLink')}
+							href={t('project3.demoVideoLink')}
 							target='_blank'
 							rel='noreferrer'
 							style={{ fontWeight: 600, textDecoration: 'underline' }}
 						>
-							{t('project3.releasesLinkTitle')}
+							{t('project3.demoVideoLinkText')}
 						</a>
 					</p>
 					<ul className='projectBullet'>
