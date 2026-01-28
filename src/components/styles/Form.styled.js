@@ -134,6 +134,59 @@ export const Form = styled.form`
 	width: 30%;
 `
 
+/** Two-column layout for Add/Edit Post: form left, preview right. Prevents overlap. */
+export const EditPageLayout = styled.div`
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	gap: 1rem;
+	width: 100%;
+	max-width: 100%;
+	min-height: 80vh;
+	@media (max-width: 900px) {
+		flex-direction: column;
+	}
+`
+
+export const EditFormColumn = styled.div`
+	flex: 0 0 auto;
+	max-width: 420px;
+	min-width: 280px;
+	width: 100%;
+`
+
+/** In-flow form for the edit page (replaces fixed Form so it doesn’t overlap preview). */
+export const EditPostForm = styled.form`
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	justify-content: space-around;
+	padding: 20px;
+	height: 80vh;
+	min-height: 400px;
+	border-radius: 1rem;
+	background-color: ${({ theme }) => theme.colors.card};
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+	width: 100%;
+	box-sizing: border-box;
+`
+
+export const EditPreviewColumn = styled.div`
+	flex: 1 1 0;
+	min-width: 0;
+	overflow: auto;
+`
+
+export const EditPreviewCard = styled.div`
+	padding: 20px;
+	background: ${({ theme }) => theme.colors.card};
+	border-radius: 1rem;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+	min-height: 80vh;
+	height: 100%;
+	box-sizing: border-box;
+`
+
 export const LoginForm = styled.form`
 	display: flex;
 	flex-direction: column;

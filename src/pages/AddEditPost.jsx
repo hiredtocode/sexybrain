@@ -18,9 +18,12 @@ import CategoryToImageMap from '../components/CategoryToImageMap.jsx'
 import useTitle from '../components/hook/useTitle.js'
 import { MarkdownContainer } from '../components/styles/Blog.styled.js'
 import {
-	Form,
+	EditFormColumn,
+	EditPageLayout,
+	EditPostForm,
+	EditPreviewCard,
+	EditPreviewColumn,
 	FormCancelButton,
-	FormContainer,
 	FormInput,
 	FormLabel,
 	FormSelect,
@@ -179,9 +182,9 @@ const AddEdit = props => {
 	// Submit handle end
 
 	return (
-		<>
-			<FormContainer>
-				<Form className='form' onSubmit={handleSubmit}>
+		<EditPageLayout>
+			<EditFormColumn>
+				<EditPostForm onSubmit={handleSubmit}>
 					{/* Title section  */}
 					<>
 						<FormLabel htmlFor='title'>Title</FormLabel>
@@ -249,12 +252,16 @@ const AddEdit = props => {
 						</FormSubmitButton>
 					</Flex>
 					{/* file upload section end  */}
-				</Form>
-			</FormContainer>
-			<MarkdownContainer>
-				<ReactMarkdown children={body} />
-			</MarkdownContainer>
-		</>
+				</EditPostForm>
+			</EditFormColumn>
+			<EditPreviewColumn>
+				<EditPreviewCard>
+					<MarkdownContainer>
+						<ReactMarkdown children={body} />
+					</MarkdownContainer>
+				</EditPreviewCard>
+			</EditPreviewColumn>
+		</EditPageLayout>
 	)
 }
 
