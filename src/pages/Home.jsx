@@ -16,6 +16,7 @@ import Spinner from '../components/Spinner'
 import {
 	Aside,
 	BlogContainer,
+	BlogPageLayout,
 	TagContainer,
 } from '../components/styles/Blog.styled'
 import { H2 } from '../components/styles/General.styled.js'
@@ -118,7 +119,7 @@ const Home = props => {
 		setSelectedTag(null)
 	}
 	return (
-		<>
+		<BlogPageLayout>
 			<BlogContainer>
 				<H2>Blogs</H2>
 				{selectedCategory && (
@@ -143,7 +144,12 @@ const Home = props => {
 					</div>
 				)}
 
-				<Card blogs={memoizedBlogs} user={user} handleDelete={handleDelete} />
+				<Card
+					blogs={memoizedBlogs}
+					user={user}
+					handleDelete={handleDelete}
+					handleSelectTag={handleSelectTag}
+				/>
 			</BlogContainer>
 			<Aside>
 				<H2 style={{ textAlign: 'center' }}>Categories</H2>
@@ -156,7 +162,7 @@ const Home = props => {
 					<Tags tags={tags} handleSelectTag={handleSelectTag} />
 				</TagContainer>
 			</Aside>
-		</>
+		</BlogPageLayout>
 	)
 }
 

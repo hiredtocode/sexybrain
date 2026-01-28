@@ -1,5 +1,25 @@
 import styled from 'styled-components/macro'
 
+/** Wraps a single blog post detail view so it always uses full width of the container. */
+export const BlogDetailPageLayout = styled.div`
+	width: 100%;
+	min-width: 0;
+	flex-grow: 1;
+`
+
+/** Wraps BlogContainer + Aside so they sit side-by-side (blog left, categories/tags right). */
+export const BlogPageLayout = styled.div`
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	align-items: flex-start;
+	gap: 0;
+
+	@media (max-width: ${({ theme }) => theme.md}) {
+		flex-direction: column;
+	}
+`
+
 export const BlogContainer = styled.main`
 	display: flex;
 	flex-direction: column;
@@ -135,6 +155,8 @@ export const BlogTitleBox = styled.div`
 export const BlogDetail = styled.div`
 	display: flex;
 	flex-direction: column;
+	width: 100%;
+	min-width: 0;
 
 	.blog-single-content {
 		z-index: 999;

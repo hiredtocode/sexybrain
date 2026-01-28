@@ -19,7 +19,7 @@ import {
 import { H2 } from './styles/General.styled.js'
 
 export default function Card(props) {
-	const { blogs, user, handleDelete } = props
+	const { blogs, user, handleDelete, handleSelectTag } = props
 	const userId = user?.uid
 	const fontColor = `${({ theme }) => theme.colors.font}`
 
@@ -73,7 +73,10 @@ export default function Card(props) {
 									<mark>{excerpt(post.description, 120)}</mark>
 								</Description>
 								<TagBox>
-									<Tags tags={post.tags} />
+									<Tags
+										tags={post.tags}
+										handleSelectTag={handleSelectTag}
+									/>
 								</TagBox>
 							</Content>
 						</StyledCard>

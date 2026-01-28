@@ -10,7 +10,13 @@ const Tags = props => {
 				<TagButton
 					className='tag'
 					key={nanoid()}
-					onClick={() => handleSelectTag(tag)}
+					onClick={e => {
+						if (typeof handleSelectTag === 'function') {
+							e.preventDefault()
+							e.stopPropagation()
+							handleSelectTag(tag)
+						}
+					}}
 				>
 					<span>#</span>
 					{tag}
